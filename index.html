@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>alasRisas | El viaje del barrio 2026 — Florianópolis</title>
+  <title>alasRisas | El viaje del barrio 2026 — Floripa</title>
 
   <!-- ============ SEO BASE ============ -->
   <meta name="description" content="El viaje grupal que siempre soñaron: Florianópolis 2026. Playas paradisíacas, aventuras con amigos del barrio y recuerdos para toda la vida. ¡Esta vez sí va!">
@@ -31,14 +31,13 @@
   <meta property="og:title" content="Vacaciones con todo el barrio 2026 — ¡Florianópolis nos espera!">
   <meta property="og:description" content="El viaje grupal que siempre soñaron. Playas, aventuras y recuerdos para toda la vida. ¡Esta vez sí va!">
   <meta property="og:url" content="https://alasrisas.xpz/">
-  <meta property="og:image" content="./imgs/barra2 (1)-compressed.jpg">
-  <meta property="og:image:secure_url" content="./imgs/barra2 (1)-compressed.jpg">
+  <meta property="og:image" content="./imgs/barra2 (1).jpg">
+  <meta property="og:image:secure_url" content="./imgs/barra2 (1).jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Grupo de amigos del barrio celebrando en la playa de Florianópolis">
-  <meta property="og:locale" content="es_AR">
-  <meta property="og:locale:alternate" content="es_UY">
+  <meta property="og:locale" content="es_UY">
   <meta property="og:locale:alternate" content="es_ES">
 
   <!-- ============ TWITTER ============ -->
@@ -47,7 +46,7 @@
   <meta name="twitter:creator" content="@alasrisas">
   <meta name="twitter:title" content="Vacaciones con todo el barrio 2026 — ¡Florianópolis!">
   <meta name="twitter:description" content="El viaje grupal que siempre soñaron. ¡Esta vez sí va!">
-  <meta name="twitter:image" content="./imgs/barra2 (1)-compressed.jpg">
+  <meta name="twitter:image" content="./imgs/barra2 (1).jpg">
   <meta name="twitter:image:alt" content="Amigos del barrio en la playa de Florianópolis">
 
   <!-- ============ PWA ============ -->
@@ -169,6 +168,9 @@
       --font-display: 'Syne', system-ui, sans-serif;
       --font-mono: 'Space Mono', monospace;
       --font-body: 'DM Sans', system-ui, sans-serif;
+	  
+	  --shadow: 0 3px 4px rgb(0 0 0 / 74%);
+
 
       --transition-smooth: 400ms cubic-bezier(.4, 0, .2, 1);
       --transition-spring: 600ms cubic-bezier(.34, 1.56, .64, 1);
@@ -344,7 +346,7 @@
       content: '';
       position: absolute;
       inset: -2px;
-      border-radius: 26px;
+      border-radius: 2rem;
       background: linear-gradient(135deg, var(--neon-pink), var(--neon-green), var(--neon-blue), var(--neon-green));
       z-index: -1;
       animation: borderRotate 4s linear infinite;
@@ -353,7 +355,7 @@
     .landing-content::after {
       content: '';
       position: absolute; inset: 0;
-      border-radius: 24px;
+      border-radius: 2rem;
       background: rgb(32 23 42 / 43%);
       z-index: -1;
     }
@@ -361,12 +363,12 @@
     .landing-dot {
       position: absolute;
       top: 50%; left: 50%;
-      width: 12px; height: 12px;
-      background: var(--neon-pink);
+      width: 3rem; height: 3rem;
+      background: transparent;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 12px var(--neon-pink), 0 0 30px rgba(255,45,149,0.5);
-      animation: dotPulse 1.2s ease-in-out 3;
+      box-shadow: 0 0 12px var(--neon-pink), 0 0 30px var(--color-text-dark);
+      animation: dotPulse 1.2s infinite;
       z-index: 3;
     }
 
@@ -383,7 +385,7 @@
     }
     .landing-content p {
       font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      color: rgba(240,240,255,0.8);
+      color: var(--color-text-brown);
       line-height: 1.6;
     }
 
@@ -418,7 +420,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #000000;
+      color: var(--neon-green);
       opacity: 0;
       transition: opacity 0.5s ease;
       white-space: nowrap;
@@ -428,7 +430,7 @@
       content: '';
       display: block;
       width: 1px; height: 32px;
-      background: black;
+      background: var(--neon-green);
       margin: 0 auto 0.5rem;
       animation: lineScroll 1.8s ease-in-out infinite;
     }
@@ -436,12 +438,17 @@
     /* ============ HEADER ============ */
     .header {
       padding: var(--space-sm) var(--space-md);
-      position: sticky;
+      position: fixed;
+	  opacity:1;
+	  width:100%;
       top: 0;
+	  left:0;
       backdrop-filter: blur(3px);
-      background: var(--color_celeste);
-      box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+      background: transparent;
+      box-shadow: 0 1px 15px var(--footer-bg);
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       z-index: 10;
+	      will-change: transform, opacity;
     }
     .header-container {
       max-width: 1200px;
@@ -458,11 +465,16 @@
       cursor: pointer;
     }
     .logo-icon {
-      width: 40px; height: 40px;
+      width: 170px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
+	  flex-basis:0;
+	  flex-grow:1;
     }
+    
     .logo_title {
+		display:none;
       font-family: var(--font-display);
       color: var(--text-primary);
       text-transform: uppercase;
@@ -474,13 +486,13 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       cursor: pointer;
+      transition: var(--transition-smooth);
     }
     .logo_title span { color: red; font-size: clamp(.7em, 4vw, 1em); }
 
     .nav-menu {
       display: none;
       font-family: var(--font-mono);
-      gap: var(--space-md);
     }
 
     /* ============ MAIN CONTENT — sin flash ============ */
@@ -677,12 +689,6 @@
   color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
-  .youtube-embed {
-    padding: 1.5rem 1rem;
-    margin: 1.5rem auto;
-  }
-}
     <!-- /* ============ VIDEO ============ */ -->
     .video-section {
       position: relative;
@@ -919,23 +925,47 @@
     }
     .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 35px rgba(37,211,102,0.5); }
 
-    /* ============ RESPONSIVE ============ */
+    <!-- /* ============ RESPONSIVE ============ */ -->
+	@media (min-width: 768px) {
+	 .faq-container {grid-template-columns: repeat(2, 1fr);}
+	 .logo_title {display:block;}
+	 }
+	 
     @media screen and (min-width: 992px) {
+      ..video-bg { display: block; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
       .nav__toggle { display: none; }
-      .nav-menu { display: flex; }
-      #header-sidebar { display: none; }
-      #main-content.nav-active { transform: none; }
+      .nav-menu { position: static; display: flex; gap: var(--space-xs); flex-direction: row; align-items: center; background: transparent; padding: 0; height: auto; backdrop-filter: none; }
+      #header-sidebar { display: none; } 
+      #main-content.nav-active { transform: none; } 
+      .cards-section { grid-template-columns: repeat(2, 1fr); max-width: 1200px; margin: 0 auto; }
+	  .faq-container {grid-template-columns: repeat(2, 1fr);}
+	  .logo-icon {width: 80px;    height: 60px;}
+		.logo_title { display:block; }
     }
+	
+    @media (min-width: 1024px) {
+      .landing-content h1 { font-size: clamp(1.7rem, 4vh, 2.0rem);	  }
+      .cards-section { grid-template-columns: repeat(3, 1fr); }
+	  .faq-container {grid-template-columns: repeat(3, 1fr);}
+    }
+	
     @media (max-width: 768px) {
       .carousel-slide img { height: 300px; }
       .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
       .carousel-btn.prev { left: 10px; }
       .carousel-btn.next { right: 10px; }
       .faq-container { grid-template-columns: 1fr; }
+	  .youtube-embed { padding: 1.5rem 1rem; margin: 1.5rem auto; }
     }
-    @media (min-width: 1024px) {
-      .faq-container { grid-template-columns: repeat(2, 1fr); }
-    }
+		@media (orientation: landscape) {
+		.landing-content {
+			gap:.5rem; padding:1rem 2rem; height: 80%; top:.1rem;
+		    & h1 { font-size: clamp(20px, 4vw, 28px); }
+		    & p{ line-height: 1.1;}
+		}
+		.landing-hint{display:none;}
+	}
+	
   </style>
 </head>
 <body>
@@ -952,7 +982,7 @@
       <p>Es hora de escribir un nuevo capítulo juntos.</p>
       <p>Ese viaje que llevan años postergando.<br><strong>¡Esta vez sí va!</strong></p>
       <button class="enter-btn" id="enterBtn" aria-label="Ingresar al sitio">
-        INGRESAR <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        ✦ Entrar al viaje ✦ <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </button>
     </div>
     <div class="landing_hint" id="landingHint">Haz clic en cualquier lugar</div>
@@ -965,7 +995,7 @@
     <header class="header" id="mainHeader">
       <div class="header-container">
         <div class="logo" id="logoBtn" tabindex="0" role="button" aria-label="Volver al inicio">
-          <img src="./imgs/star.png" alt="Logo alasRisas" class="logo-icon">
+          <img src="./imgs/ChatGPT 88kb.webp" alt="Logo" class="logo-icon">
           <h2 class="logo_title">alasRisas <span>trip</span></h2>
         </div>
 
@@ -1401,23 +1431,8 @@
         }
       };
 
-      /* =========================================================
-         CAROUSEL
-      ========================================================= */
-      <!-- const galleryImages = [ -->
-        <!-- { src: './imgs/barraV(10).jpg', alt: 'Playa Joaquina', label: 'Playa Joaquina', desc: 'Aguas cristalinas y olas perfectas' }, -->
-        <!-- { src: './imgs/barraV(7).jpg', alt: 'Costa Atlántica', label: 'Costa Atlántica', desc: 'El océano en su máxima expresión' }, -->
-        <!-- { src: './imgs/barraV(2).webp', alt: 'Atardecer Mágico', label: 'Atardecer Mágico', desc: 'Cielos que pintan nuestra aventura' }, -->
-        <!-- { src: './imgs/barraV(1).jpg', alt: 'Palmeras del Sur', label: 'Palmeras del Sur', desc: 'Sombras y brisa tropical' }, -->
-        <!-- { src: './imgs/barraV(4).jpeg', alt: 'Olas Cristalizadas', label: 'Olas Cristalizadas', desc: 'El sonido del mar nos llama' }, -->
-        <!-- { src: './imgs/barraV(7).jpeg', alt: 'Vista Aérea', label: 'Vista Aérea', desc: 'Florianópolis desde las alturas' }, -->
-        <!-- { src: './imgs/barraV(1).jpeg', alt: 'Naturaleza Viva', label: 'Naturaleza Viva', desc: 'Verde y azul, colores del paraíso' }, -->
-        <!-- { src: './imgs/barraV(4).jpg', alt: 'Amanecer Dorado', label: 'Amanecer Dorado', desc: 'Cada día comienza con magia' }, -->
-        <!-- { src: './imgs/barraV(10).jpg', alt: 'Cielo Estrellado', label: 'Cielo Estrellado', desc: 'Bajo las mismas estrellas de siempre' }, -->
-        <!-- { src: './imgs/barraV(11).jpg', alt: 'Lagoa da Conceição', label: 'Lagoa da Conceição', desc: 'El corazón de la isla' }, -->
-        <!-- { src: './imgs/barraV(9).jpg', alt: 'Sendero Tropical', label: 'Sendero Tropical', desc: 'Caminos que nos llevan a la aventura' }, -->
-        <!-- { src: './imgs/barraV(5).jpg', alt: 'Puente Hercílio Luz', label: 'Puente Hercílio Luz', desc: 'Ícono histórico de Florianópolis' } -->
-      <!-- ]; -->
+      /* CAROUSEL */
+    
 	   const galleryMeta = [
         { label: 'Playa Joaquina',     desc: 'Aguas cristalinas y olas perfectas' },
         { label: 'Costa Atlántica',    desc: 'El océano en su máxima expresión' },
@@ -1442,7 +1457,7 @@
     alt: meta.label,
     label: meta.label,
     desc: meta.desc,
-    _placeholder: './imgs/star.png'
+    _placeholder: './imgs/star.png'              
   };
 });
 
@@ -1476,6 +1491,8 @@
 			  type="image/jpg"
               loading="lazy"
               onerror="this.onerror=null; this.src='${img._placeholder}'; this.classList.add('img-error');"
+			  data-title="${img.label || img.alt}"
+				data-desc="${img.desc}"
             >
             <div class="carousel-caption">
               <h3>${img.label}</h3>
@@ -1491,7 +1508,6 @@
           dotsContainer.appendChild(dot);
         });
 
-        // Actualizar contador dinámicamente
         if (counter) counter.textContent = `1 / ${galleryImages.length}`;
 
         goToSlide(0);
