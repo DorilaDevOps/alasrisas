@@ -138,6 +138,10 @@
       font-family: var(--font-body);
       background-color: var(--bg-card);
     }
+	
+	body.no-scroll {
+	  overflow: hidden;
+	}
     img, picture, video, canvas, svg { display: block; max-width: 100%; }
     input, button, textarea, select { font: inherit; }
     a { color: inherit; text-decoration: none; }
@@ -163,6 +167,7 @@
       --color_claro3:#e8d5c4;
 
       --bg-deep:      #0a0a12;
+	  --bg_violeta:   #76409f;
       --text-primary: #f0f0ff;
 
       --font-display: 'Syne', system-ui, sans-serif;
@@ -248,7 +253,7 @@
       position: fixed;
       inset: 0;
       height: 100vh;
-      z-index: 10;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -435,8 +440,7 @@
       animation: lineScroll 1.8s ease-in-out infinite;
     }
 
-    /* ============ HEADER ============ */
-    .header {
+    #mainHeader {
       padding: var(--space-sm) var(--space-md);
       position: fixed;
 	  opacity:1;
@@ -447,8 +451,8 @@
       background: transparent;
       box-shadow: 0 1px 15px var(--footer-bg);
       transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-      z-index: 10;
-	      will-change: transform, opacity;
+      z-index: 95;
+	   will-change: transform, opacity;
     }
     .header-container {
       max-width: 1200px;
@@ -495,7 +499,6 @@
       font-family: var(--font-mono);
     }
 
-    /* ============ MAIN CONTENT — sin flash ============ */
     #main-content {
       opacity: 0;
       visibility: hidden;
@@ -511,43 +514,53 @@
       visibility: visible;
       transition: opacity 0.6s ease, visibility 0s linear 0s;
     }
+	#header-sidebar {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  background-color: var(--bg_violeta); 
+	  z-index: 50;	  
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between; 
+	  padding: 80px 40px 40px 40px; 
+	  box-sizing: border-box;
+	  transform: translateY(-100%);
+	  opacity: 0;
+	  transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.1, 1), opacity 0.4s ease;
+	}
+	
+	body.nav-active #header-sidebar {
+	  transform: translateY(0);
+	  opacity: 1;
+	  }
+	
+	#header-sidebar .top {
+	  flex-grow: 1;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center; 
+	  align-items: center; 
+	  text-align: center;
+	}
 
-    /* Sidebar */
-    #header-sidebar {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--color-quatre);
-      box-shadow: inset 0.25em 0 0.25em 0 rgba(0, 0, 0, 0.15);
-      color: var(--color_claro3);
-      height: 100%;
-      right: 0;
-      overflow-y: auto;
-      position: fixed;
-      text-align: right;
-      top: 0;
-      width: 275px;
-      z-index: 10002;
-      font-family: var(--font-mono);
-      transform: translateX(100%);
-      transition: transform var(--transition-slow);
-    }
-    #main-content.nav-active #header-sidebar { transform: translateX(0); }
-    #main-content.nav-active { transform: translateX(-275px); }
+	#header-sidebar .bottom {
+	  margin-top: auto;
+	  border-top: 1px solid rgba(255, 255, 255, 0.1);
+	  padding-top: 20px;
+	  width: 100%;
+	}
+	body.nav-active .nav__toggle span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+	body.nav-active .nav__toggle span:nth-child(2) { transform: rotate(-45deg) translate(4px, -6px); }
 
-    #header-sidebar .top { flex-grow: 1; }
-    #header-sidebar .bottom {
-      flex-shrink: 0;
-      padding: 1.5em 0;
-      border-top: solid 1px rgba(255, 255, 255, 0.05);
-      margin-top: 1.5rem;
-    }
-
-    #sidebar-logo { position: relative; margin: 1.75em 1.5em; min-height: 48px; text-align: right; }
-    #sidebar-logo h1 { color: #fff; font-weight: 600; font-size: 1.2rem; line-height: 1em; }
+    #sidebar-logo { position: relative; margin: 1.75em 1.5em; min-height: 48px; text-align: center; }
+    #sidebar-logo h3 { color: orange; font-weight: 600; font-size: 1.2rem; line-height: 1em; }
     #sidebar-logo p { display: block; font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); line-height: 1.25em; margin: 0.5em 0 0; }
 
-    #sidebar-nav ul { list-style: none; padding: 0; margin: 0; }
+    #sidebar-nav ul { list-style: none; padding: 0; margin: 20px 0; }
+	#sidebar-nav ul li {  margin: 15px 0;}
     #sidebar-nav ul li a {
       display: block;
       padding: 0.65em 1.5em;
@@ -555,7 +568,7 @@
       font-size: 0.95rem;
       transition: background 0.3s, color 0.3s;
     }
-    #sidebar-nav ul li a:hover, #sidebar-nav ul li a.active { background: rgba(0, 0, 0, 0.25); color: #fff; }
+    #sidebar-nav ul li a:hover, #sidebar-nav ul li a.active { background: rgba(0, 0, 0, 0.25); color: orange; }
 
     .icon { text-decoration: none; border-bottom: none; }
     .icon:before {
@@ -579,16 +592,16 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+	  position: relative;
       width: 26px; height: 18px;
-      z-index: 10003;
+      z-index: 2000;
       background: transparent;
       border: none;
       cursor: pointer;
     }
     .nav__toggle span { width: 100%; height: 2px; background-color: var(--text-primary); border-radius: 2px; transition: transform 0.5s ease, opacity 0.5s ease; }
-    #main-content.nav-active .nav__toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
-    #main-content.nav-active .nav__toggle span:nth-child(2) { opacity: 0; }
-    #main-content.nav-active .nav__toggle span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+    #main-content.nav-active .nav__toggle span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    #main-content.nav-active .nav__toggle span:nth-child(2) { transform: rotate(-45deg) translate(4px, -6px); }
 
     <!-- /* ============ REVEAL ANIMATIONS ============ */ -->
     .reveal, .fade-in {
@@ -606,88 +619,88 @@
     .reveal-delay-2 { transition-delay: 0.3s; }
     .reveal-delay-3 { transition-delay: 0.45s; }
 
-<!-- /* ============ VIDEO YOUTUBE EMBED ============ */ -->
-.youtube-embed {
-  width: 100%;
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  background: linear-gradient(135deg, rgba(176,38,255,0.08), rgba(255,45,149,0.08));
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-card);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
+	<!-- /* ============ VIDEO YOUTUBE EMBED ============ */ -->
+	.youtube-embed {
+	  width: 100%;
+	  max-width: 900px;
+	  margin: 2rem auto;
+	  padding: 2rem 1.5rem;
+	  background: linear-gradient(135deg, rgba(176,38,255,0.08), rgba(255,45,149,0.08));
+	  border: 1px solid rgba(255,255,255,0.1);
+	  border-radius: var(--radius-card);
+	  backdrop-filter: blur(10px);
+	  text-align: center;
+	  opacity: 1 !important;
+	  visibility: visible !important;
+	}
 
-.youtube-embed__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 4vw, 2rem);
-  background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  color: transparent;
-}
+	.youtube-embed__title {
+	  font-family: var(--font-display);
+	  font-size: clamp(1.3rem, 4vw, 2rem);
+	  background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  background-clip: text;
+	  margin-bottom: 0.5rem;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 0.7rem;
+	  color: transparent;
+	}
 
-.live-indicator {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background: #ff0000;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #ff0000, 0 0 24px #ff0000;
-  animation: livePulse 1.5s ease-in-out infinite;
-}
+	.live-indicator {
+	  display: inline-block;
+	  width: 14px;
+	  height: 14px;
+	  background: #ff0000;
+	  border-radius: 50%;
+	  box-shadow: 0 0 12px #ff0000, 0 0 24px #ff0000;
+	  animation: livePulse 1.5s ease-in-out infinite;
+	}
 
-@keyframes livePulse {
-  0%, 100% { 
-    opacity: 1; 
-    transform: scale(1);
-  }
-  50% { 
-    opacity: 0.6; 
-    transform: scale(0.85);
-  }
-}
+	@keyframes livePulse {
+	  0%, 100% { 
+		opacity: 1; 
+		transform: scale(1);
+	  }
+	  50% { 
+		opacity: 0.6; 
+		transform: scale(0.85);
+	  }
+	}
 
-.youtube-embed__subtitle {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
+	.youtube-embed__subtitle {
+	  color: var(--text-muted);
+	  font-size: 1rem;
+	  margin-bottom: 1.5rem;
+	}
 
-.youtube-embed__wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5),
-              0 0 40px rgba(176,38,255,0.25);
-}
+	.youtube-embed__wrapper {
+	  position: relative;
+	  width: 100%;
+	  padding-bottom: 56.25%;
+	  height: 0;
+	  overflow: hidden;
+	  border-radius: 12px;
+	  box-shadow: 0 20px 50px rgba(0,0,0,0.5),
+				  0 0 40px rgba(176,38,255,0.25);
+	}
 
-.youtube-embed__iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+	.youtube-embed__iframe {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  border: none;
+	}
 
-.youtube-embed__hint {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
+	.youtube-embed__hint {
+	  margin-top: 1rem;
+	  font-size: 0.85rem;
+	  color: var(--text-muted);
+	}
 
     <!-- /* ============ VIDEO ============ */ -->
     .video-section {
@@ -774,7 +787,7 @@
       padding: 0 1.5rem 1.2rem;
     }
 
-    /* ============ CAROUSEL ============ */
+    <!-- /* ============ CAROUSEL ============ */ -->
     #galeria {
       padding: 3rem 1rem;
       text-align: center;
@@ -856,8 +869,84 @@
       transition: var(--transition-smooth);
     }
     .carousel-dot.active { background: white; transform: scale(1.3); box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+	
+	<!-- /* Contenedor principal del Modal */ -->
+	.lightbox-modal {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(0, 0, 0, 0.9);
+	  z-index: 9999; 
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: opacity 0.3s ease;
+	}
 
-    /* ============ AUDIO ============ */
+	<!-- /* Estado activo del Modal */ -->
+	.lightbox-modal.is-active {
+	  opacity: 1;
+	  pointer-events: auto;
+	}
+
+	<!-- /* Contenedor interno de elementos */ -->
+	.lightbox-content {
+	  max-width: 85%;
+	  max-height: 80vh;
+	  text-align: center;
+	  position: relative;
+	}
+			
+	<!-- /* La imagen expandida */ -->
+	.lightbox-content img {
+	  max-width: 100%;
+	  max-height: 70vh;
+	  object-fit: contain;
+	  border-radius: 4px;
+	  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+	}
+
+	<!-- /* Textos informativos inferiores */ -->
+	.lightbox-caption {
+	  color: #ffffff;
+	  margin-top: 15px;
+	  font-family: sans-serif;
+	}
+
+	.lightbox-caption h3 {
+	  margin: 0 0 5px 0;
+	  font-size: 1.4rem;
+	}
+
+	.lightbox-caption p {
+	  margin: 0;
+	  font-size: 1rem;
+	  opacity: 0.85;
+	}		
+
+	<!-- /* Botón de cierre (X) */ -->
+	.lightbox-close {
+	  position: absolute;
+	  top: 20px;
+	  right: 25px;
+	  background: none;
+	  border: none;
+	  color: #ffffff;
+	  font-size: 40px;
+	  cursor: pointer;
+	  line-height: 1;
+	  transition: transform 0.2s ease;
+	}
+
+	.lightbox-close:hover {
+	  transform: scale(1.2);
+	}
+
+    <!-- /* ============ AUDIO ============ */ -->
     .audio-player-container {
       display: flex;
       justify-content: center;
@@ -932,7 +1021,7 @@
 	 }
 	 
     @media screen and (min-width: 992px) {
-      ..video-bg { display: block; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
+      .video-bg { display: block; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
       .nav__toggle { display: none; }
       .nav-menu { position: static; display: flex; gap: var(--space-xs); flex-direction: row; align-items: center; background: transparent; padding: 0; height: auto; backdrop-filter: none; }
       #header-sidebar { display: none; } 
@@ -971,7 +1060,7 @@
 <body>
 
   <!-- ============ LANDING ============ -->
-  <div class="landing" id="landingSection" aria-label="Pantalla de bienvenida">
+  <section class="landing" id="landingSection" aria-label="Pantalla de bienvenida">
     <div class="landing-dot" id="landingDot"></div>
     <img src="./imgs/Barra (4).jpeg" alt="Grupo de amigos del barrio disfrutando" class="landing_image" id="landingImg">
     <div class="landing_overlay"></div>
@@ -986,12 +1075,11 @@
       </button>
     </div>
     <div class="landing_hint" id="landingHint">Haz clic en cualquier lugar</div>
-  </div>
+  </section>
 
-  <div class="logo-watermark" aria-hidden="true"></div>
+  <section class="logo-watermark" aria-hidden="true"></section>
 
   <!-- ============ MAIN CONTENT ============ -->
-  <div id="main-content">
     <header class="header" id="mainHeader">
       <div class="header-container">
         <div class="logo" id="logoBtn" tabindex="0" role="button" aria-label="Volver al inicio">
@@ -1000,26 +1088,28 @@
         </div>
 
         <nav class="nav-menu" aria-label="Navegación principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#itinerario">Itinerario</a>
-          <a href="#galeria">Galería</a>
-          <a href="#contacto">Contacto</a>
-          <a href="#faq">Preguntas</a>
+			 <ul>
+				  <a href="#inicio">Inicio</a>
+				  <a href="#itinerario">Itinerario</a>
+				  <a href="#galeria">Galería</a>
+				  <a href="#contacto">Contacto</a>
+				  <a href="#faq">Preguntas</a>
+			</ul>
         </nav>
 
         <button class="nav__toggle" id="navToggle" aria-label="Abrir menú lateral" aria-expanded="false">
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
       </div>
     </header>
 
-    <aside id="header-sidebar" aria-label="Menú lateral">
+    <aside id="header-sidebar" aria-label="Menú de navegación de pantalla completa">
       <div class="top">
         <div id="sidebar-logo">
           <h3>Menu</h3>
           <p>alasRisas trip</p>
         </div>
-        <nav id="sidebar-nav">
+        <nav id="sidebar-nav" aria-label="Enlaces del menú lateral">
           <ul>
             <li><a href="#inicio" class="active"><span class="icon solid fa-home">Inicio</span></a></li>
             <li><a href="#itinerario"><span class="icon solid fa-map-marker-alt">Itinerario</span></a></li>
@@ -1028,7 +1118,7 @@
           </ul>
         </nav>
       </div>
-      <div class="bottom">
+      <div class="bottom" role="contentinfo">
         <ul class="icons">
           <li><a href="#" class="icon brands fa-twitter" aria-label="Twitter"><span class="label">Twitter</span></a></li>
           <li><a href="#" class="icon brands fa-facebook-f" aria-label="Facebook"><span class="label">Facebook</span></a></li>
@@ -1037,9 +1127,9 @@
         </ul>
       </div>
     </aside>
-
-    <main>
-      <section class="video-section" id="video-section" aria-label="Introducción cinematográfica">
+    
+	<main id="main-content">
+      <section class="video-section reveal" id="video-section" aria-label="Introducción cinematográfica">
         <video class="video-bg" autoplay loop muted playsinline aria-hidden="true">
           <source src="./imgs/istockphoto-.mp4" type="video/mp4">
         </video>
@@ -1050,7 +1140,7 @@
         </div>
       </section>
 
-      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <section class="faq-section reveal" id="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading" class="reveal">Preguntas Frecuentes</h2>
         <div class="faq-container reveal reveal-delay-1">
           <div class="faq-item">
@@ -1083,7 +1173,7 @@
         </div>
       </section>
 
-      <section id="galeria">
+      <section id="galeria" class="reveal">
         <h2 class="section-title fade-in">Florianópolis</h2>
         <p class="section-subtitle fade-in">Un vistazo al paraíso que nos espera</p>
         <div class="carousel-container fade-in" id="carousel">
@@ -1101,17 +1191,17 @@
         <p style="color: var(--text-muted);">Tu viaje ideal comienza aquí.</p>
       </section>
 
-      <section class="audio-player-container" aria-label="Reproductor de música de fondo">
+      <section class="audio-player-container reveal" aria-label="Reproductor de música de fondo">
         <div class="audio-card">
           <button id="audioToggleBtn" class="audio-btn" aria-label="Reproducir música de viaje" aria-pressed="false">
             <span class="audio-icon" aria-hidden="true">▶</span>
             <span class="audio-status-text">Música de viaje desactivada</span>
           </button>
           <audio id="tripAudio" src="./imgs/Augsburg.mp3" loop preload="none"></audio>
+		<!-- <audio id="tripAudio" src="./imgs/WhatsApp audio.ogg" loop preload="none"></audio> -->
         </div>
       </section>
     </main>
-  </div>
 
   <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contactar por WhatsApp">
     <span aria-hidden="true">👋</span>
@@ -1134,10 +1224,11 @@
         id="youtubePlayer"
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/v9ne2bJD01U?autoplay=1&mute=1&loop=1&playlist=v9ne2bJD01U&rel=0&modestbranding=1&playsinline=1&controls=1"
+        src="https://www.youtube.com/live/OidQ1nh3yII?si=V77eS43ZwE3Vi_yX"
         title="Transmisión en vivo desde el barrio"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
         loading="lazy">
       </iframe>
@@ -1177,13 +1268,10 @@
 </footer>
 
   <script>
-  (() => {
+    (() => {
     'use strict';
 
-    /* =========================================================
-       UTILIDAD MODERNA: Esperar fin de transición con Promise
-       Elimina cualquier dependencia de setTimeout mágico
-    ========================================================= */
+    /* ====== UTILIDAD MODERNA: Esperar fin de transición con Promise ====== */
     const waitForTransition = (element, propertyName) => new Promise(resolve => {
       const handler = (e) => {
         if (e.target === element && (!propertyName || e.propertyName === propertyName)) {
@@ -1194,23 +1282,101 @@
       element.addEventListener('transitionend', handler);
     });
 
+    // Datos estáticos del carrusel (Seguros de declarar fuera del DOM)
+    const galleryMeta = [
+      { label: 'Playa Joaquina',     desc: 'Aguas cristalinas y olas perfectas' },
+      { label: 'Costa Atlántica',    desc: 'El océano en su máxima expresión' },
+      { label: 'Atardecer Mágico',   desc: 'Cielos que pintan nuestra aventura' },
+      { label: 'Palmeras del Sur',   desc: 'Sombras y brisa tropical' },
+      { label: 'Olas Cristalizadas', desc: 'El sonido del mar nos llama' },
+      { label: 'Vista Aérea',        desc: 'Florianópolis desde las alturas' },
+      { label: 'Naturaleza Viva',    desc: 'Verde y azul, colores del paraíso' },
+      { label: 'Amanecer Dorado',    desc: 'Cada día comienza con magia' },
+      { label: 'Cielo Estrellado',   desc: 'Bajo las mismas estrellas de siempre' },
+      { label: 'Lagoa da Conceição', desc: 'El corazón de la isla' },
+      { label: 'Sendero Tropical',   desc: 'Caminos que nos llevan a la aventura' },
+      { label: 'Puente Hercílio Luz',desc: 'Ícono histórico de Florianópolis' }
+    ];
+	  
+    const PLACEHOLDER = './imgs/placeholder.jpg';
+	   
+    const galleryImages = galleryMeta.map((meta, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      return {
+        src: `./imgs/floripa-${num}.jpg`,
+        alt: meta.label,
+        label: meta.label,
+        desc: meta.desc,
+        _placeholder: './imgs/star.png'              
+      };
+    });
+
+    // Variables globales internas (Se inicializan formalmente dentro del DOMContentLoaded)
+    let landing, landingDot, landingImg, landingContent, landingHint, enterBtn;
+    let mainContent, logoBtn, navToggle, sidebarLinks, mainHeader;
+    let track, dotsContainer, progressBar, counter, carouselEl;
+
+    let animStarted = false;
+    let currentSlide = 0;
+    let carouselAutoplay = null;
+    let carouselProgressInterval = null;
+    const AUTOPLAY_DELAY = 5000;
+    let isMainContentVisible = false;
+
+    // Funciones globales del carrusel con acceso a las variables del ámbito superior
+    const goToSlide = (idx) => {
+      currentSlide = idx;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      counter.textContent = (idx + 1) + ' / ' + galleryImages.length;
+      document.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
+    };
+
+    const nextSlide = () => goToSlide((currentSlide + 1) % galleryImages.length);
+    const prevSlide = () => goToSlide((currentSlide - 1 + galleryImages.length) % galleryImages.length);
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      let progress = 0;
+      carouselAutoplay = setInterval(() => { nextSlide(); progress = 0; }, AUTOPLAY_DELAY);
+      carouselProgressInterval = setInterval(() => {
+        progress += 100 / (AUTOPLAY_DELAY / 50);
+        progressBar.style.width = progress + '%';
+      }, 50);
+    };
+
+    const stopAutoplay = () => {
+      if (carouselAutoplay) clearInterval(carouselAutoplay);
+      if (carouselProgressInterval) clearInterval(carouselProgressInterval);
+      if (progressBar) progressBar.style.width = '0%';
+    };
+
+    const resetAutoplay = () => { stopAutoplay(); startAutoplay(); };
+
+
+    /* ========== ENTRADA PRINCIPAL AL CONTROL DEL DOM ========== */
     document.addEventListener('DOMContentLoaded', () => {
+      // Selectores utilitarios locales
       const $ = (sel, ctx = document) => ctx.querySelector(sel);
       const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-      const landing         = $('#landingSection');
-      const landingDot      = $('#landingDot');
-      const landingImg      = $('#landingImg');
-      const landingContent  = $('#landingContent');
-      const landingHint     = $('#landingHint');
-      const enterBtn        = $('#enterBtn');
-      const mainContent     = $('#main-content');
-      const logoBtn         = $('#logoBtn');
-      const navToggle       = $('#navToggle');
-      const sidebarLinks    = $$('#sidebar-nav ul li a');
-      const mainHeader      = $('#mainHeader');
+      // Asignación segura de elementos del DOM
+      landing         = $('#landingSection');
+      landingDot      = $('#landingDot');
+      landingImg      = $('#landingImg');
+      landingContent  = $('#landingContent');
+      landingHint     = $('#landingHint');
+      enterBtn        = $('#enterBtn');
+      mainContent     = $('#main-content');
+      logoBtn         = $('#logoBtn');
+      navToggle       = $('#navToggle');
+      sidebarLinks    = $$('#sidebar-nav ul li a');
+      mainHeader      = $('#mainHeader');
 
-      let animStarted = false;
+      track           = $('#carouselTrack');
+      dotsContainer   = $('#carouselDots');
+      progressBar     = $('#carouselProgress');
+      counter         = $('#carouselCounter');
+      carouselEl      = $('#carousel');
 
       /* ---------- Animación inicial del landing ---------- */
       const startExpandingAnimation = () => {
@@ -1233,26 +1399,16 @@
         startExpandingAnimation();
       });
 
-      /* =========================================================
-         FLUJO DE ENTRADA — SIN FLASH con transitionend + visibility
-      ========================================================= */
+      /* ========= FLUJO DE ENTRADA — SIN FLASH ===================== */
       enterBtn.addEventListener('click', async (e) => {
         e.stopPropagation();
 
-        // 1. Fade out del contenido del landing
         landingContent.classList.remove('is-visible');
-
-        // 2. Marcar landing como "saliendo" → dispara opacity:0
         landing.classList.add('is-exiting');
 
-        // 3. Esperar a que la transición de opacidad del landing termine
         await waitForTransition(landing, 'opacity');
-
-        // 4. Ocultar landing (ya no participa del layout)
         landing.classList.add('is-hidden');
 
-        // 5. Mostrar main-content y esperar el siguiente frame
-        //    La clase 'visible' quita visibility:hidden y sube opacity a 1
         requestAnimationFrame(() => {
           mainContent.classList.add('visible');
           initIntersectionObservers();
@@ -1267,7 +1423,6 @@
 
         await waitForTransition(mainContent, 'opacity');
 
-        // Reset total
         animStarted = false;
         landing.classList.remove('is-hidden', 'is-exiting');
         landingDot.style.display = 'block';
@@ -1290,15 +1445,23 @@
       /* ---------- Menú hamburguesa ---------- */
       navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isOpen = mainContent.classList.toggle('nav-active');
+        const isOpen = document.body.classList.toggle('nav-active');
         navToggle.setAttribute('aria-expanded', isOpen);
+        if (isOpen) {
+          document.body.classList.add('no-scroll');
+        } else {
+          document.body.classList.remove('no-scroll');
+        }
+		
       });
 
       document.addEventListener('click', (e) => {
         const sidebar = $('#header-sidebar');
-        if (mainContent.classList.contains('nav-active') &&
+        
+        // CORRECCIÓN: Si el menú está abierto, solo se cierra si haces clic 
+         if (document.body.classList.contains('nav-active') &&
             !sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-          mainContent.classList.remove('nav-active');
+          document.body.classList.remove('nav-active', 'no-scroll');
           navToggle.setAttribute('aria-expanded', 'false');
         }
       });
@@ -1307,7 +1470,9 @@
         link.addEventListener('click', function() {
           sidebarLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
-          mainContent.classList.remove('nav-active');
+		            
+          // Cerrar y restaurar estados al navegar hacia una sección
+          document.body.classList.remove('nav-active', 'no-scroll');
           navToggle.setAttribute('aria-expanded', 'false');
         });
       });
@@ -1327,6 +1492,72 @@
           }
         });
       });
+	  
+	  
+
+      /* ---------- EFECTO LIGHTBOX (Clic en Imagen) ---------- */
+      // 1. Crear el contenedor del modal dinámicamente si no existe en el HTML
+      let lightbox = $('#lightboxModal');
+      if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'lightboxModal';
+        lightbox.className = 'lightbox-modal';
+        lightbox.innerHTML = `
+          <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+          <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption">
+              <h3 id="lightboxTitle"></h3>
+              <p id="lightboxDesc"></p>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(lightbox);
+      }
+
+      const lightboxImg = $('#lightboxImg', lightbox);
+      const lightboxTitle = $('#lightboxTitle', lightbox);
+      const lightboxDesc = $('#lightboxDesc', lightbox);
+      const lightboxClose = $('.lightbox-close', lightbox);
+
+      // 2. Escuchar clics en las imágenes del carrusel usando delegación de eventos
+      if (track) {
+        track.addEventListener('click', (e) => {
+          const targetImg = e.target.closest('img');
+          if (!targetImg) return; // Si no es una imagen, ignorar
+
+          // Pausar el autoplay del carrusel para que no avance de fondo
+          if (typeof stopAutoplay === 'function') stopAutoplay();
+
+          // Extraer datos guardados en los atributos del elemento
+          lightboxImg.src = targetImg.src;
+          lightboxImg.alt = targetImg.alt;
+          lightboxTitle.textContent = targetImg.getAttribute('data-title') || targetImg.alt;
+          lightboxDesc.textContent = targetImg.getAttribute('data-desc') || '';
+          // Mostrar modal
+          lightbox.classList.add('is-active');
+        });
+      }
+
+      // 3. Cerrar el modal al hacer clic en la (X) o fuera de la imagen
+      const cerrarLightbox = () => {
+        lightbox.classList.remove('is-active');
+        // Reanudar el carrusel si el usuario sale del modal
+        if (typeof startAutoplay === 'function') startAutoplay();
+      };
+
+      lightboxClose.addEventListener('click', cerrarLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) cerrarLightbox();
+      });
+
+      // 4. Cerrar presionando la tecla Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('is-active')) {
+          cerrarLightbox();
+        }
+      });
+
 
       /* ---------- Audio toggle ---------- */
       const audio = $('#tripAudio');
@@ -1348,215 +1579,150 @@
           audioStatus.textContent = 'Música de viaje pausada';
         }
       });
-
       /* ---------- Fecha dinámica ---------- */
       const dateEl = $('#ti-date');
       if (dateEl) {
         dateEl.textContent = 'Actualizado: ' + new Date().toLocaleDateString('es-AR');
       }
 
-// Observer especial para YouTube (carga diferida)
-
-      /* =========================================================
-         initIntersectionObservers — 3 observers especializados
-      ========================================================= */
+      /* ============== initIntersectionObservers ============== */
       const initIntersectionObservers = () => {
         const observerOptions = {
           threshold: 0.15,
           rootMargin: '0px 0px -50px 0px'
         };
 
-        // Observer 1: Reveals generales (FAQ, video, secciones)
         const revealObserver = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-visible');
-              obs.unobserve(entry.target); // una sola vez
+              obs.unobserve(entry.target);
             }
           });
         }, observerOptions);
 
         // Observer 2: Galería (efecto ligeramente distinto)
-        const galleryObserver = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              // Al primer avistamiento, inicia autoplay del carrusel
-              if (entry.target.id === 'carousel') startAutoplay();
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.2 });
-
-        // Observer 3: Footer con efecto más suave
-        const footerObserver = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-
-        // Asignar cada elemento a su observer
-        $$('.reveal, .fade-in').forEach(el => {
-          if (el.closest('footer')) footerObserver.observe(el);
-          else if (el.id === 'carousel' || el.closest('#galeria')) galleryObserver.observe(el);
-          else revealObserver.observe(el);
-        });
-
-        // Auto-hide del header al hacer scroll (solo si existe)
-        if (mainHeader) {
-          let lastScrollY = 0;
-          let ticking = false;
-          const triggerPoint = window.innerHeight * 0.4;
-
-          const onScroll = () => {
-            const scrollY = window.scrollY;
-            if (scrollY > triggerPoint && scrollY > lastScrollY) {
-              mainHeader.style.transform = 'translateY(-100%)';
-            } else {
-              mainHeader.style.transform = 'translateY(0)';
-            }
-            lastScrollY = scrollY;
-            ticking = false;
-          };
-
-          window.addEventListener('scroll', () => {
-            if (!ticking) {
-              requestAnimationFrame(onScroll);
-              ticking = true;
-            }
-          }, { passive: true });
-        }
-      };
-
-      /* CAROUSEL */
-    
-	   const galleryMeta = [
-        { label: 'Playa Joaquina',     desc: 'Aguas cristalinas y olas perfectas' },
-        { label: 'Costa Atlántica',    desc: 'El océano en su máxima expresión' },
-        { label: 'Atardecer Mágico',   desc: 'Cielos que pintan nuestra aventura' },
-        { label: 'Palmeras del Sur',   desc: 'Sombras y brisa tropical' },
-        { label: 'Olas Cristalizadas', desc: 'El sonido del mar nos llama' },
-        { label: 'Vista Aérea',        desc: 'Florianópolis desde las alturas' },
-        { label: 'Naturaleza Viva',    desc: 'Verde y azul, colores del paraíso' },
-        { label: 'Amanecer Dorado',    desc: 'Cada día comienza con magia' },
-        { label: 'Cielo Estrellado',   desc: 'Bajo las mismas estrellas de siempre' },
-        { label: 'Lagoa da Conceição', desc: 'El corazón de la isla' },
-        { label: 'Sendero Tropical',   desc: 'Caminos que nos llevan a la aventura' },
-        { label: 'Puente Hercílio Luz',desc: 'Ícono histórico de Florianópolis' }
-      ];
-	  
-	   const PLACEHOLDER = './imgs/placeholder.jpg';
-	   
-	  const galleryImages = galleryMeta.map((meta, i) => {
-  const num = String(i + 1).padStart(2, '0');
-  return {
-    src: `./imgs/floripa-${num}.jpg`,
-    alt: meta.label,
-    label: meta.label,
-    desc: meta.desc,
-    _placeholder: './imgs/star.png'              
-  };
-});
-
-      let currentSlide = 0;
-      let carouselAutoplay = null;
-      let carouselProgressInterval = null;
-      const AUTOPLAY_DELAY = 5000;
-      let isMainContentVisible = false;
-
-      const track = document.querySelector('#carouselTrack');
-      const dotsContainer = document.querySelector('#carouselDots');
-      const progressBar = document.querySelector('#carouselProgress');
-      const counter = document.querySelector('#carouselCounter');
-      const carouselEl = document.querySelector('#carousel');
-
+		
+		const galleryObserver = new IntersectionObserver((entries, obs) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+					if (entry.target.id === 'carousel') startAutoplay();
+					obs.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.2 });
+					
+		const footerObserver = new IntersectionObserver((entries, obs) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+					obs.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1 });
+	   // Asignar cada elemento a su observer
+	   $$('.reveal, .fade-in').forEach(el => {
+		if (el.closest('footer')) 
+			footerObserver.observe(el);
+		else if (el.id === 'carousel' || el.closest('#galeria')) 
+			galleryObserver.observe(el);
+		else revealObserver.observe(el);});
+		
+		if (mainHeader) {
+			let lastScrollY = 0;
+			let ticking = false;
+			const triggerPoint = window.innerHeight * 0.8;
+			const onScroll = () => {
+				const scrollY = window.scrollY;
+				if (scrollY > triggerPoint && scrollY > lastScrollY) {
+					mainHeader.style.transform = 'translateY(-100%)';
+				} else {
+					mainHeader.style.transform = 'translateY(0)';
+				}
+				lastScrollY = scrollY;ticking = false;
+			};
+		
+			window.addEventListener('scroll', () => {
+				if (!ticking) {
+					requestAnimationFrame(onScroll);
+					ticking = true;
+				}
+			},{ passive: true });
+		}};
+		
+		/* ========== CAROUSEL ========== */
+		<!-- type="image/webp" -->
       const initCarousel = () => {
         if (!track) return;
         isMainContentVisible = true;
         track.innerHTML = '';
         dotsContainer.innerHTML = '';
+			galleryImages.forEach((img, idx) => {
+			  const slide = document.createElement('div');
+			  slide.className = 'carousel-slide';
+			  slide.innerHTML = `
+				<img 
+				  src="${img.src}" 
+				  alt="${img.alt}" 
+				  type="image/jpg"
+				  loading="lazy"
+				  onerror="this.onerror=null; this.src='${img._placeholder}'; this.classList.add('img-error');"
+				  data-title="${img.label || img.alt}"
+					data-desc="${img.desc}"
+				>
+				<div class="carousel-caption">
+				  <h3>${img.label}</h3>
+				  <p>${img.desc}</p>
+				</div>
+			  `;
+			  track.appendChild(slide);
 
+			  const dot = document.createElement('button');
+			  dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
+			  dot.setAttribute('aria-label', 'Ir a imagen ' + (idx + 1));
+			  dot.addEventListener('click', () => { goToSlide(idx); resetAutoplay(); });
+			  dotsContainer.appendChild(dot);
+			});
 
-<!-- type="image/webp" -->
-        galleryImages.forEach((img, idx) => {
-          const slide = document.createElement('div');
-          slide.className = 'carousel-slide';
-          slide.innerHTML = `
-            <img 
-              src="${img.src}" 
-              alt="${img.alt}" 
-			  type="image/jpg"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='${img._placeholder}'; this.classList.add('img-error');"
-			  data-title="${img.label || img.alt}"
-				data-desc="${img.desc}"
-            >
-            <div class="carousel-caption">
-              <h3>${img.label}</h3>
-              <p>${img.desc}</p>
-            </div>
-          `;
-          track.appendChild(slide);
+			if (counter) counter.textContent = `1 / ${galleryImages.length}`;
 
-          const dot = document.createElement('button');
-          dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', 'Ir a imagen ' + (idx + 1));
-          dot.addEventListener('click', () => { goToSlide(idx); resetAutoplay(); });
-          dotsContainer.appendChild(dot);
-        });
+			goToSlide(0);
+			
+			$('#carouselPrev').addEventListener('click', () => { 
+				prevSlide(); 
+				resetAutoplay(); 
+			});
+			$('#carouselNext').addEventListener('click', () => { 
+				nextSlide(); 
+				resetAutoplay(); 
+			});
+			let touchStartX = 0;
+			carouselEl.addEventListener('touchstart', e => { 
+				touchStartX = e.touches[0].clientX; 
+			}, { passive: true });
+			carouselEl.addEventListener('touchend', e => {
+				const diff = touchStartX - e.changedTouches[0].clientX;
+				if (Math.abs(diff) > 50) { 
+					diff > 0 ? nextSlide() : prevSlide(); 
+					resetAutoplay(); 
+				}}, { passive: true }
+			);
+			document.addEventListener('keydown', (e) => {
+				if (!isMainContentVisible) return;
+				if (e.key === 'ArrowLeft') { prevSlide(); resetAutoplay(); }
+				if (e.key === 'ArrowRight') { 
+					nextSlide(); 
+					resetAutoplay(); 
+				}
+			});
+		<!-- fininitCarousel -->
+		}; 
+	
+	<!-- fin DOMContentLoaded -->
+	});
+})();
 
-        if (counter) counter.textContent = `1 / ${galleryImages.length}`;
-
-        goToSlide(0);
-
-        document.querySelector('#carouselPrev').addEventListener('click', () => { prevSlide(); resetAutoplay(); });
-        document.querySelector('#carouselNext').addEventListener('click', () => { nextSlide(); resetAutoplay(); });
-
-        // Touch support
-        let touchStartX = 0;
-        carouselEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-        carouselEl.addEventListener('touchend', e => {
-          const diff = touchStartX - e.changedTouches[0].clientX;
-          if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); resetAutoplay(); }
-        }, { passive: true });
-
-        // Keyboard support
-        document.addEventListener('keydown', (e) => {
-          if (!isMainContentVisible) return;
-          if (e.key === 'ArrowLeft') { prevSlide(); resetAutoplay(); }
-          if (e.key === 'ArrowRight') { nextSlide(); resetAutoplay(); }
-        });
-      };
-
-      const goToSlide = (idx) => {
-        currentSlide = idx;
-        track.style.transform = `translateX(-${idx * 100}%)`;
-        counter.textContent = (idx + 1) + ' / ' + galleryImages.length;
-        document.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
-      };
-      const nextSlide = () => goToSlide((currentSlide + 1) % galleryImages.length);
-      const prevSlide = () => goToSlide((currentSlide - 1 + galleryImages.length) % galleryImages.length);
-
-      const startAutoplay = () => {
-        stopAutoplay();
-        let progress = 0;
-        carouselAutoplay = setInterval(() => { nextSlide(); progress = 0; }, AUTOPLAY_DELAY);
-        carouselProgressInterval = setInterval(() => {
-          progress += 100 / (AUTOPLAY_DELAY / 50);
-          progressBar.style.width = progress + '%';
-        }, 50);
-      };
-      const stopAutoplay = () => {
-        if (carouselAutoplay) clearInterval(carouselAutoplay);
-        if (carouselProgressInterval) clearInterval(carouselProgressInterval);
-        progressBar.style.width = '0%';
-      };
-      const resetAutoplay = () => { stopAutoplay(); startAutoplay(); };
-    });
-  })();
   </script>
 </body>
 </html>
