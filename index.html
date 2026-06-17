@@ -2585,6 +2585,13 @@
 			  if (ticking) return;
 			  ticking = true;
 			  requestAnimationFrame(updateFloatingButtons);
+			});	  
+			
+			document.getElementById('scrollTopBtn').addEventListener('click', () => {
+			  document.getElementById('inicio').scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			  });
 			});
 
 			window.addEventListener('resize', syncLegalA11y);
