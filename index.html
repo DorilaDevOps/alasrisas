@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>alasRisas | El viaje del barrio 2026 — Floripa</title>
 
   <!-- ============ SEO BASE ============ -->
   <meta name="description" content="El viaje grupal que siempre soñaron: Florianópolis 2026. Playas paradisíacas, aventuras con amigos del barrio y recuerdos para toda la vida. ¡Esta vez sí va!">
@@ -16,10 +13,12 @@
   <meta name="language" content="Spanish">
   <meta name="theme-color" content="#0f4c2a" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0a2e19" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://alasrisas.xpz/">
 
+  <title> El viaje del barrio</title>
   <link rel="icon" type="image/png" href="./imgs/Transporte6.png">
 
+  <!-- Canonical -->
+	<link rel="canonical" href="https://alasrisas.netlify.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -27,16 +26,16 @@
 
   <!-- ============ OPEN GRAPH ============ -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="alasRisas trip">
-  <meta property="og:title" content="Vacaciones con todo el barrio 2026 — ¡Florianópolis nos espera!">
-  <meta property="og:description" content="El viaje grupal que siempre soñaron. Playas, aventuras y recuerdos para toda la vida. ¡Esta vez sí va!">
-  <meta property="og:url" content="https://alasrisas.xpz/">
-  <meta property="og:image" content="./imgs/barra2 (1).jpg">
-  <meta property="og:image:secure_url" content="./imgs/barra2 (1).jpg">
-  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:site_name" content="alasRisas viaje entre amigos">
+  <meta property="og:title" content="Vacaciones con todo el barrio!">
+  <meta property="og:description" content="El viaje grupal que siempre soñaron!">
+  <meta property="og:url" content="https://alasrisas.netlify.app/">
+  <meta property="og:image" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
+  <meta property="og:image:secure_url" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Grupo de amigos del barrio celebrando en la playa de Florianópolis">
+  <meta property="og:image:alt" content="Grupo en bondi">
   <meta property="og:locale" content="es_UY">
   <meta property="og:locale:alternate" content="es_ES">
 
@@ -45,12 +44,12 @@
   <meta name="twitter:site" content="@alasrisas">
   <meta name="twitter:creator" content="@alasrisas">
   <meta name="twitter:title" content="Vacaciones con todo el barrio 2026 — ¡Florianópolis!">
-  <meta name="twitter:description" content="El viaje grupal que siempre soñaron. ¡Esta vez sí va!">
-  <meta name="twitter:image" content="./imgs/barra2 (1).jpg">
-  <meta name="twitter:image:alt" content="Amigos del barrio en la playa de Florianópolis">
+  <meta name="twitter:description" content="El viaje grupal que siempre soñaron!">
+  <meta name="twitter:image" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
+  <meta name="twitter:image:alt" content="Grupo en bondi">
 
   <!-- ============ PWA ============ -->
-  <meta name="application-name" content="alasRisas trip">
+  <meta name="application-name" content=" El viaje del barrio">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="alasRisas trip">
@@ -63,7 +62,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./imgs/Transporte6.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./imgs/Transporte6.png">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f4c2a">
-  <link rel="shortcut icon" href="./imgs/Transporte6.png">
+  <link rel="icon" type="image/png" href="./imgs/Transporte6.png">
 
   <!-- ============ JSON-LD — FAQ sincronizado con el HTML ============ -->
   <script type="application/ld+json">
@@ -155,12 +154,33 @@
         transition-duration: .01ms !important;
       }
     }
+	
 
     :root {
+	
+	   /* Brand palette */
+      --c-bg:          #0d0d14;
+      --c-surface:     #16161f;
+      --c-surface2:    #1e1e2c;
+      --c-border:      rgba(255,255,255,0.08);
+      --c-text:        #f0eee8;
+      --c-text-muted:  #7a7a8c;
+      --c-accent:      #e8c84a;       /* gold drip */
+      --c-accent2:     #c43b8a;       /* magenta splatter */
+      --c-accent3:     #3b8ac4;       /* cobalt */
+      --c-danger:      #e84a4a;
+      --c-success:     #4ae8a0;	  
+	  
+    --drip-1: #e8c84a;
+    --drip-2: #c43b8a;
+    --drip-3: #3b8ac4;
+    --drip-4: #4ae8a0;
+	
       --neon-pink:   #ff2d95;
       --neon-purple: #b026ff;
       --neon-blue:   #00d4ff;
       --neon-green:  #00ff88;
+	  --verdecito: #7ad294;
       --neon-amber:  #ffb800;
       --neon-arena:  #e9ff00;
       --color-quatre: #e4dad0;
@@ -176,10 +196,24 @@
 	  
 	  --shadow: 0 3px 4px rgb(0 0 0 / 74%);
 
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+            --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* párrafos */
+            --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.875rem); /* h3 */
+            --font-size-xl: clamp(1.875rem, 1.5rem + 1.875vw, 3rem); /* h2 */
+            --font-size-2xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+			--landing-dot-size: clamp(5rem, 10vw, 10rem);
+			 --landing-ring-size: clamp(8rem, 18vw, 18rem);
+			 --landing-core-color: #ff2d95;
+    --landing-ring-color: #00d4ff;
+	--landing-speed: 2s;
 
       --transition-smooth: 400ms cubic-bezier(.4, 0, .2, 1);
       --transition-spring: 600ms cubic-bezier(.34, 1.56, .64, 1);
       --transition-slow:   800ms cubic-bezier(.4, 0, .2, 1);
+	      --transition1: all 1s ease;
+    --transition2: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
       --radius-card: 20px;
       --radius-btn:  50px;
@@ -203,9 +237,18 @@
       --bg_viola:#140420e3;
       --footer-bg: rgba(18,18,26,0.6);
       --border-color: rgba(255,255,255,0.06);
+	  --bg-color: linear-gradient(135deg, #2d1b69 0%, #2e0709 100%);
+    --c-limpiar: #e84a4a;
     }
 
     [data-theme="light"] {
+	 --c-bg:         #f5f3ee;
+      --c-surface:    #ffffff;
+      --c-surface2:   #ece9e0;
+      --c-border:     rgba(0,0,0,0.09);
+      --c-text:       #1a1a22;
+      --c-text-muted: #6b6b78;
+	  
       --text-muted:  #606080;
       --color-accent: #059669;
       --color_celeste: rgba(200, 230, 255, .8);
@@ -228,10 +271,6 @@
       pointer-events: none;
     }
 
-    @keyframes neonPulse {
-      0%, 100% { box-shadow: 0 0 20px rgba(255,45,149,0.3), 0 0 60px rgba(176,38,255,0.15); }
-      50% { box-shadow: 0 0 40px rgba(255,45,149,0.5), 0 0 80px rgba(0,212,255,0.25); }
-    }
     @keyframes borderRotate {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -255,7 +294,7 @@
       height: 100vh;
       z-index: 100;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       overflow: hidden;
       background: var(--bg-deep);
@@ -278,6 +317,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
+	  min-height: 100svh;
       object-fit: cover;
       object-position: center;
       transform: scale(0.08);
@@ -322,99 +362,163 @@
     .landing_image.is-expanding ~ .landing_overlay { opacity: 0; }
 
     .landing-content {
-      width: 70%;
-      border-radius: 2rem;
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: .2rem;
-      align-items: center;
-      position: relative;
-      z-index: 6;
-      height: 70%;
-      max-height: 90vh;
-      text-align: center;
-      padding: 1rem .6rem;
-      max-width: 600px;
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
-      background: transparent;
       justify-content: space-around;
-      animation: neonPulse 3s ease-in-out infinite;
+	  align-items:center;
+      border-radius:  var(--radius-card);
+      gap: var(--space-xs);
+	  padding:1rem .6rem;
+      text-align: center;	  
+	  background:rgb(32 31 34 / 41%);
+	  backdrop-filter:blur(8px);  	  
+	  opacity:0;
+	  translate:0 20px;
+	  transition:
+		opacity .6s ease,
+		translate .6s ease;	
+	  contain:layout paint;	
+      width: 95%;
+      max-width: 900px;
+	   height: auto; 
+	   min-height: max-content; 
+	   overflow-y: auto;       
+      z-index: 3;
     }
+	  
     .landing-content.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
+       opacity:1;
+		translate:0 0;
+		pointer-events: auto;
     }
+	
     .landing-content::before {
       content: '';
       position: absolute;
-      inset: -2px;
-      border-radius: 2rem;
-      background: linear-gradient(135deg, var(--neon-pink), var(--neon-green), var(--neon-blue), var(--neon-green));
-      z-index: -1;
-      animation: borderRotate 4s linear infinite;
-      background-size: 300% 300%;
+       border-radius:inherit;
+	   opacity:.7;
+		pointer-events:none;
     }
+	
     .landing-content::after {
       content: '';
       position: absolute; inset: 0;
-      border-radius: 2rem;
-      background: rgb(32 23 42 / 43%);
+      border-radius: inherit;
+      background: rgb(32 31 34 / 41%);
       z-index: -1;
-    }
-
-    .landing-dot {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 3rem; height: 3rem;
-      background: transparent;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 12px var(--neon-pink), 0 0 30px var(--color-text-dark);
-      animation: dotPulse 1.2s infinite;
-      z-index: 3;
     }
 
     .landing-content h1 {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 6vw, 2.8rem);
-      font-weight: 800;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
+      font-size:var(--font-size-base);  
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+	   text-wrap:balance;
       background: linear-gradient(135deg, var(--neon-green) 30%, var(--neon-arena) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .landing-content p {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+       font-size:var(--font-size-sm);
       color: var(--color-text-brown);
       line-height: 1.6;
+		text-wrap:pretty;
     }
+
+    .landing-dot {
+      position: absolute;
+      top: 50%; left: 50%;
+       width: var(--landing-dot-size);
+		aspect-ratio: 1;
+      background: transparent;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient( circle,var(--bg_violeta) 0%,var(--neon-purple) 60%,yellow 100%);
+    cursor: pointer;
+      z-index: 3;
+      animation: corePulse 2s ease-in-out infinite;
+	  will-change: transform;
+    }
+	/* ==========================================
+   ANILLOS
+========================================== */
+
+.landing-dot::before,.landing-dot::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--landing-ring-size);
+    aspect-ratio: 1;
+    border: 2px solid var(--landing-ring-color);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform:translate(-50%, -50%)scale(.2);
+    will-change:transform,opacity;
+}
+
+.landing-dot::before{
+    animation:
+        waveExpand var(--landing-speed)
+        linear infinite;
+}
+.landing-dot::after{
+    animation:
+        waveExpand var(--landing-speed)
+        linear infinite;
+    animation-delay:
+        calc(var(--landing-speed) / 2);
+}
+
+/* ============LATIDO============================== */
+
+@keyframes corePulse{
+    0%,
+    100%{
+        transform:translate(-50%, -50%)scale(1);    }
+    50%{
+        transform:translate(-50%, -50%)scale(3.15);
+    }
+}
+
+/* ======================ONDAS======================= */
+
+@keyframes waveExpand{
+    0%{
+        opacity: .8;
+        transform:translate(-50%, -50%)scale(.2);
+    }
+    100%{
+        opacity: 0;
+        transform:translate(-50%, -50%)scale(1);
+    }
+}
 
     .enter-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      border: 2px solid var(--neon-arena);
+      border: 1px solid var(--neon-arena);
       background: transparent;
       color: var(--neon-arena);
       border-radius: var(--radius-btn);
       font-family: var(--font-display);
-      font-size: .7rem;
+      font-size: var(--font-size-xs);
       padding: .3rem 2rem;
       letter-spacing: 0.05em;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
       position: relative;
       overflow: hidden;
       width: fit-content;
       justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .enter-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(255,45,149,0.45), 0 4px 12px rgba(176,38,255,0.3);
+      box-shadow: 0 2px 10px var(--neon-arena);
     }
 
     .landing_hint {
@@ -451,7 +555,7 @@
       background: transparent;
       box-shadow: 0 1px 15px var(--footer-bg);
       transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-      z-index: 95;
+      z-index: 20;
 	   will-change: transform, opacity;
     }
     .header-container {
@@ -514,7 +618,7 @@
       visibility: visible;
       transition: opacity 0.6s ease, visibility 0s linear 0s;
     }
-	#header-sidebar {
+	#header_sidebar {
 	  position: fixed;
 	  top: 0;
 	  left: 0;
@@ -529,15 +633,16 @@
 	  box-sizing: border-box;
 	  transform: translateY(-100%);
 	  opacity: 0;
-	  transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.1, 1), opacity 0.4s ease;
+	  transition: transform 1s cubic-bezier(0.1, 0.8, 0.1, 1), opacity 1s ease;
+	  
 	}
 	
-	body.nav-active #header-sidebar {
+	body.nav-active #header_sidebar {
 	  transform: translateY(0);
 	  opacity: 1;
 	  }
 	
-	#header-sidebar .top {
+	#header_sidebar .top {
 	  flex-grow: 1;
 	  display: flex;
 	  flex-direction: column;
@@ -546,7 +651,7 @@
 	  text-align: center;
 	}
 
-	#header-sidebar .bottom {
+	#header_sidebar .bottom {
 	  margin-top: auto;
 	  border-top: 1px solid rgba(255, 255, 255, 0.1);
 	  padding-top: 20px;
@@ -599,9 +704,65 @@
       border: none;
       cursor: pointer;
     }
-    .nav__toggle span { width: 100%; height: 2px; background-color: var(--mercedes_color); border-radius: 2px; transition: transform 0.5s ease, opacity 0.5s ease; }
+    .nav__toggle span { width: 100%; height: 2px; background-color: var(--text-primary); border-radius: 2px; transition: transform 0.5s ease, opacity 0.5s ease; }
     #main-content.nav-active .nav__toggle span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
     #main-content.nav-active .nav__toggle span:nth-child(2) { transform: rotate(-45deg) translate(4px, -6px); }
+
+
+.grad-text {
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple), var(--neon-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-section h2 {
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+	color:yelllow;
+}
+.hero-section p {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: green;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    line-height: 1.2;
+}
+.hero-badge::before {
+    content: '✈';
+    font-size: 13px;
+}
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+	flex-direction: column;
+        align-items: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeDown .7s .3s ease both;
+	& a{
+    background: red;
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 99px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .01em;
+    box-shadow: 0 6px 24px rgba(217, 119, 6, .4);
+    transition: transform .2s, box-shadow .2s, background .2s;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    color: #fff;
+    border-radius: var(--radius-btn);
+    font-family: var(--font-display);
+    min-height: 52px;
+}
+
+}
+
 
     <!-- /* ============ REVEAL ANIMATIONS ============ */ -->
     .reveal, .fade-in {
@@ -619,35 +780,6 @@
     .reveal-delay-2 { transition-delay: 0.3s; }
     .reveal-delay-3 { transition-delay: 0.45s; }
 
-	<!-- /* ============ VIDEO YOUTUBE EMBED ============ */ -->
-	.youtube-embed {
-	  width: 100%;
-	  max-width: 900px;
-	  margin: 2rem auto;
-	  padding: 2rem 1.5rem;
-	  background: linear-gradient(135deg, rgba(176,38,255,0.08), rgba(255,45,149,0.08));
-	  border: 1px solid rgba(255,255,255,0.1);
-	  border-radius: var(--radius-card);
-	  backdrop-filter: blur(10px);
-	  text-align: center;
-	  opacity: 1 !important;
-	  visibility: visible !important;
-	}
-
-	.youtube-embed__title {
-	  font-family: var(--font-display);
-	  font-size: clamp(1.3rem, 4vw, 2rem);
-	  background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
-	  -webkit-background-clip: text;
-	  -webkit-text-fill-color: transparent;
-	  background-clip: text;
-	  margin-bottom: 0.5rem;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  gap: 0.7rem;
-	  color: transparent;
-	}
 
 	.live-indicator {
 	  display: inline-block;
@@ -670,40 +802,8 @@
 	  }
 	}
 
-	.youtube-embed__subtitle {
-	  color: var(--text-muted);
-	  font-size: 1rem;
-	  margin-bottom: 1.5rem;
-	}
-
-	.youtube-embed__wrapper {
-	  position: relative;
-	  width: 100%;
-	  padding-bottom: 56.25%;
-	  height: 0;
-	  overflow: hidden;
-	  border-radius: 12px;
-	  box-shadow: 0 20px 50px rgba(0,0,0,0.5),
-				  0 0 40px rgba(176,38,255,0.25);
-	}
-
-	.youtube-embed__iframe {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  border: none;
-	}
-
-	.youtube-embed__hint {
-	  margin-top: 1rem;
-	  font-size: 0.85rem;
-	  color: var(--text-muted);
-	}
-
     <!-- /* ============ VIDEO ============ */ -->
-    .video-section {
+    .inicio {
       position: relative;
       min-height: 100vh;
       display: flex;
@@ -727,15 +827,216 @@
       background: rgba(0,0,0,0.5);
       z-index: 1;
     }
-    .video-section .section-content { position: relative; z-index: 2; max-width: 800px; }
-    .video-section h2 {
+    .inicio .section-content { position: relative; z-index: 2; max-width: 800px; color: var(--text-primary); }
+    .section-content h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      color: #fff;
+      font-size: var(--font-size-xl);
       margin-bottom: 1rem;
     }
-    .video-section p { color: rgba(255,255,255,0.9); font-size: 1.1rem; font-style: italic; }
+    .section-content p { font-size: var(--font-size-lg); font-style: italic; line-height: 1.6;}
+	.section-content .pdelay{color:var(--neon-pink); padding-top: 2rem;text-shadow: rgb(0, 0, 0) 2px 2px 4px;}
 
+    <!-- /* ============ FORMULARIO ============ */ -->
+	
+    .form-section {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--form-radius);
+      padding: clamp(1.5rem, 5vw, 2.5rem);
+      position: relative;
+      overflow: hidden;
+      animation: form-appear .6s ease both;
+    }
+
+    /* Drip art decoration */
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg,
+        var(--drip-1) 0%,
+        var(--drip-2) 33%,
+        var(--drip-3) 66%,
+        var(--drip-4) 100%);
+      border-radius: var(--form-radius) var(--form-radius) 0 0;
+    }
+	
+
+    .drip-top {
+      position: absolute;
+      top: 5px; left: 0; right: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 1rem;
+    }
+
+    .drip-drop {
+      width: 10px;
+      border-radius: 0 0 10px 10px;
+      transform-origin: top center;
+      animation: drip-fall .8s ease both;
+    }
+
+    .drip-drop:nth-child(1) { height: 28px; background: var(--drip-1); animation-delay: .1s; }
+    .drip-drop:nth-child(2) { height: 44px; background: var(--drip-2); animation-delay: .25s; }
+    .drip-drop:nth-child(3) { height: 20px; background: var(--drip-3); animation-delay: .15s; }
+    .drip-drop:nth-child(4) { height: 36px; background: var(--drip-4); animation-delay: .3s; }
+    .drip-drop:nth-child(5) { height: 18px; background: var(--drip-1); animation-delay: .05s; }
+    .drip-drop:nth-child(6) { height: 52px; background: var(--drip-2); animation-delay: .2s; }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      margin-bottom: .25rem;
+      margin-top: .5rem;
+    }
+
+    .form-title span { color: var(--c-accent2); font-style: italic; }
+
+    .form-subtitle {
+      font-size: .88rem;
+      color: var(--c-text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 480px) {
+      .form-grid { grid-template-columns: 1fr 1fr; }
+      .form-grid .full { grid-column: 1 / -1; }
+    }
+
+    .form-field {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+
+    .form-field label {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+      transition: color .2s;
+    }
+
+    .form-field:focus-within label { color: var(--c-accent); }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: var(--input-height);
+      background: var(--c-surface2);
+      border: 1.5px solid var(--c-border);
+      border-radius: var(--input-radius);
+      color: var(--c-text);
+      font-family: inherit;
+      font-size: 1rem;            /* ≥16px prevents iOS zoom */
+      padding: .75rem 1rem;
+      outline: none;
+      transition: border-color .25s, background .25s, box-shadow .25s;
+      -webkit-appearance: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field select::placeholder,
+    .form-field textarea::placeholder { color: var(--c-text-muted); opacity: .7; }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--c-accent);
+      background: var(--c-surface);
+      box-shadow: 0 0 0 3px rgba(232,200,74,.14);
+    }
+
+    .form-field textarea { resize: vertical; min-height: 100px; }
+
+    /* Focus underline animation */
+    .form-field::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--c-accent), var(--c-accent2));
+      transform: scaleX(0);
+      border-radius: 0 0 var(--input-radius) var(--input-radius);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+    .form-field:focus-within::after { transform: scaleX(1); }
+
+    /* ── Submit button ── */
+    @keyframes submit-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(196,59,138,.3); }
+      50%       { box-shadow: 0 8px 36px rgba(196,59,138,.55); }
+    }
+
+    @keyframes submit-icon-bounce {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      30%      { transform: translateY(-3px) rotate(-8deg); }
+      60%      { transform: translateY(1px) rotate(4deg); }
+    }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      width: 100%;
+      min-height: 52px;
+      border-radius: var(--input-radius);
+      background: linear-gradient(135deg, var(--c-accent2) 0%, var(--c-accent3) 100%);
+      background-size: 200% auto;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      animation: submit-pulse 2.6s ease-in-out infinite;
+      transition: transform .2s, filter .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-submit::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+      transform: translateX(-100%);
+      transition: transform .5s ease;
+    }
+
+    .form-submit:hover::after { transform: translateX(100%); }
+
+    .form-submit:hover { transform: translateY(-2px); filter: brightness(1.1); }
+    .form-submit:active { transform: translateY(0) scale(.98); }
+
+    .form-submit:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .submit-icon {
+      font-size: 1.25rem;
+      animation: submit-icon-bounce 2s ease-in-out infinite;
+    }
     <!-- /* ============ FAQ ============ */ -->
     .faq-section {
       display: flex;
@@ -775,7 +1076,7 @@
     .faq-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
       padding: 0 1.5rem;
       color: var(--text-muted);
       font-size: clamp(.75em, 4vw, .95em);
@@ -783,7 +1084,7 @@
     .faq-item.is-open { border-color: rgba(0, 212, 255, 0.3); }
     .faq-item.is-open .faq-icon { transform: rotate(180deg); color: var(--neon-blue); }
     .faq-item.is-open .faq-content {
-      max-height: 200px;
+      max-height: fit-content;
       padding: 0 1.5rem 1.2rem;
     }
 
@@ -813,29 +1114,32 @@
     }
     .carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
     .carousel-slide { min-width: 100%; position: relative; }
-    .carousel-slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
+    .carousel-slide img { width: 100%; height: 300px; object-fit: cover; display: block; }
     .carousel-caption {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 30px;
       background: linear-gradient(transparent, rgba(0,0,0,0.8));
     }
-    .carousel-caption h3 { color: white; font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
-    .carousel-caption p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+    .carousel-caption h3 { color:  var(--color_claro3); font-size: var(--font-size-lg); font-weight: 700; margin-bottom: 4px; }
+    .carousel-caption p { color: rgba(255,255,255,0.8); font-size: var(--font-size-sm); }
     .carousel-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 50px; height: 50px;
+      position: absolute; 
+	  top: 50%; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px; 
+	  height: 50px;
       border-radius: 50%;
       background: rgba(0,0,0,0.45);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.15);
-      color: white;
-      font-size: 1.3rem;
+      color: var(--color_accent);
+      font-size: clamp(2rem, 2vw, 3rem);
+	  transform: translateY(-50%);
+      transition: var(--transition-smooth);
       cursor: pointer;
       z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition-smooth);
     }
     .carousel-btn:hover { background: rgba(0,0,0,0.7); transform: translateY(-50%) scale(1.1); }
     .carousel-btn.prev { left: 20px; }
@@ -846,7 +1150,7 @@
       backdrop-filter: blur(10px);
       padding: 8px 16px;
       border-radius: 20px;
-      color: white;
+      color: var(--color_accent);
       font-size: 0.85rem;
       font-weight: 600;
       z-index: 10;
@@ -863,12 +1167,12 @@
     .carousel-dot {
       width: 10px; height: 10px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.4);
+      background: var(--color_celeste);
       border: none;
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    .carousel-dot.active { background: white; transform: scale(1.3); box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    .carousel-dot.active { background: var(--color_accent); transform: scale(1.3); box-shadow: 0 0 10px var(--color_celeste); }
 	
 	<!-- /* Contenedor principal del Modal */ -->
 	.lightbox-modal {
@@ -987,48 +1291,143 @@
 	  opacity: 1 !important; 
 		visibility: visible !important; 
     }
-    .ti-usu-profile, .ti-profile, .ti-stars { display: flex; align-items: center; gap: 0.5rem; }
-    .ti-round img { border-radius: 50%; }
-    .ti-date { color: var(--text-primary); font-size: 0.85rem; }
+    .ti-usu-profile, .ti-profile{ display: flex; align-items: center; gap: 0.5rem; }
+	.ti-profile img{width: 50px; height:auto}
+    .ti-date { color: var(--neon-blue); font-size: 0.85rem; }
     .footer-bottom p { font-size: 0.85rem; margin: 0.2rem 0; }
     .footer-text { font-style: italic; }
+	
+	/* ============ Politica de contrato ============ */
+	
+.f-toggle-movil {
+    width: 100%;
+}
+.ft-toggle{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    border:0;
+    background:none;
+    color:inherit;
+    cursor:pointer;
+    padding:0;
+}
+
+.ft-toggle::after{
+    content:"+";
+    font-size:24px;
+    transition:transform .25s ease;
+}
+
+.ft-toggle.active::after{
+    content:"−";
+}
+
+.ft-content{
+    display:none;
+}
+
+.ft-content.open{
+    display:block;
+}
+
 
 .footer.reveal {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
-    <!-- /* ============ WHATSAPP ============ */ -->
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px; right: 30px;
-      width: 65px; height: 65px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: 0 5px 25px rgba(37,211,102,0.4);
-      transition: var(--transition-smooth);
-      text-decoration: none;
-      font-size: 2rem;
+ .site-footer {
+      background: var(--color-bg-alt); padding: 3rem 1rem; margin-top: 4rem;
+      border-top: 1px solid var(--color-border);
     }
-    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 35px rgba(37,211,102,0.5); }
+    .footer-links {
+      margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .footer-links a { color: var(--neon-amber); text-decoration: none;position: relative;
+		transition: var(--transition1); padding:3px;
+	}
+    .footer-links a:hover { color: var(--neon-blue); }
+
+		.footer-links a::after {
+			content: '';
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: var(--neon-blue);
+			transition: var(--transition2);
+		}
+		.footer-links a:hover::after {
+			width: 100%;
+		}
+			
+		.btn_floating{
+		  position:fixed;
+			  bottom:1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		  opacity:0;
+		  visibility:hidden;
+		  border:none;
+		  border-radius:var(--radius-btn);
+			  cursor:pointer;
+		  transform:translateY(20px) scale(.8);
+		  transition:
+			opacity .3s ease,
+			transform .3s ease,
+			visibility .3s ease;;
+			  cursor:pointer;
+			  box-shadow:0 5px 25px var(--color-text-dark);
+		  pointer-events:none;
+			  z-index:15;
+			  width:clamp(3.5rem,8vw,6rem);
+		}
+
+		.btn_floating.show{
+		  opacity:1;
+		  visibility:visible;
+		  transform:translateY(0) scale(1);
+		  pointer-events:auto;
+		}	
+		.btn_whatsapp {
+			  right:1rem;
+			  aspect-ratio:1;		
+			  text-decoration:none;
+			  font-size:var(--font-size-xl);
+		}
+		.btn_whatsapp:hover { transform:translateY(0) scale(1.1);}	
+
+		.scroll-top-btn{
+		  left:1rem;
+		   aspect-ratio:1;		
+		}
+
+	.scroll-top-btn:hover{transform:translateY(-2px) scale(1.05);}
 
     <!-- /* ============ RESPONSIVE ============ */ -->
-	@media (min-width: 768px) {
-	 .faq-container {grid-template-columns: repeat(2, 1fr);}
-	 .logo_title {display:block;}
-	 }
+
+	@media (min-width: 768px) {		 
+		.ft-content{ 
+			display: flex;
+			background-color: yellow;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.ft-toggle::after{display:none;}
+	 }  
 	 
-    @media screen and (min-width: 992px) {
-      .video-bg { display: block; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
-      .nav__toggle { display: none; }
-      .nav-menu { position: static; display: flex; gap: var(--space-xs); flex-direction: row; align-items: center; background: transparent; padding: 0; height: auto; backdrop-filter: none; }
-      #header-sidebar { display: none; } 
-      #main-content.nav-active { transform: none; } 
-      .cards-section { grid-template-columns: repeat(2, 1fr); max-width: 1200px; margin: 0 auto; }
-	  .faq-container {grid-template-columns: repeat(2, 1fr);}
-	  .logo-icon {width: 80px;    height: 60px;}
+    @media (min-width: 992px) {
+		.video-bg { display: block; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
+		.nav__toggle { display: none; }
+		.nav-menu { position: static; display: flex; gap: var(--space-xs); flex-direction: row; align-items: center; background: transparent; padding: 0; height: auto; backdrop-filter: none; }
+		#header_sidebar { display: none; } 
+		#main-content.nav-active { transform: none; } 
+		.cards-section { grid-template-columns: repeat(2, 1fr); max-width: 1200px; margin: 0 auto; }
+		.faq-container {grid-template-columns: repeat(2, 1fr);}
+		.logo-icon {width: 80px;    height: 60px;}
 		.logo_title { display:block; }
     }
 	
@@ -1038,15 +1437,7 @@
 	  .faq-container {grid-template-columns: repeat(3, 1fr);}
     }
 	
-    @media (max-width: 768px) {
-      .carousel-slide img { height: 300px; }
-      .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
-      .carousel-btn.prev { left: 10px; }
-      .carousel-btn.next { right: 10px; }
-      .faq-container { grid-template-columns: 1fr; }
-	  .youtube-embed { padding: 1.5rem 1rem; margin: 1.5rem auto; }
-    }
-		@media (orientation: landscape) {
+	@media (orientation: landscape) {
 		.landing-content {
 			gap:.5rem; padding:1rem 2rem; height: 80%; top:.1rem;
 		    & h1 { font-size: clamp(20px, 4vw, 28px); }
@@ -1056,21 +1447,27 @@
 	}
 	
   </style>
+  
+  
+  <!-- <link rel="stylesheet" href="./css/style.css"> -->
+   <!-- <script src="./js/main.js" defer></script> -->
+   
+<!-- <script src="./js/menu.js" defer></script> -->
 </head>
 <body>
 
   <!-- ============ LANDING ============ -->
   <section class="landing" id="landingSection" aria-label="Pantalla de bienvenida">
-    <div class="landing-dot" id="landingDot"></div>
+  <div id="landingDot" class="landing-dot" aria-label="Iniciar experiencia" role="button"></div>
     <img src="./imgs/Barra (4).jpeg" alt="Grupo de amigos del barrio disfrutando" class="landing_image" id="landingImg">
     <div class="landing_overlay"></div>
 
-    <div class="landing-content" id="landingContent">
-      <h1>El barrio de <em>vacaciones</em></h1>
+    <div class="landing-content" id="landingContent" aria-labelledby="hero-title">
+      <h1 id="hero-title">El barrio de <em>vacaciones</em></h1>
       <p>Los amigos de la infancia son los testigos de nuestra historia.</p>
       <p>Es hora de escribir un nuevo capítulo juntos.</p>
       <p>Ese viaje que llevan años postergando.<br><strong>¡Esta vez sí va!</strong></p>
-      <button class="enter-btn" id="enterBtn" aria-label="Ingresar al sitio">
+      <button type="button" class="enter-btn" id="enterBtn" aria-label="Ingresar al sitio">
         ✦ Entrar al viaje ✦ <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </button>
     </div>
@@ -1092,7 +1489,7 @@
 				  <a href="#inicio">Inicio</a>
 				  <a href="#itinerario">Itinerario</a>
 				  <a href="#galeria">Galería</a>
-				  <a href="#contacto">Contacto</a>
+				  <a href="#formContact">Me anoto</a>
 				  <a href="#faq">Preguntas</a>
 			</ul>
         </nav>
@@ -1103,7 +1500,7 @@
       </div>
     </header>
 
-    <aside id="header-sidebar" aria-label="Menú de navegación de pantalla completa">
+    <aside id="header_sidebar" aria-label="Menú de navegación de pantalla completa">
       <div class="top">
         <div id="sidebar-logo">
           <h3>Menu</h3>
@@ -1114,7 +1511,8 @@
             <li><a href="#inicio" class="active"><span class="icon solid fa-home">Inicio</span></a></li>
             <li><a href="#itinerario"><span class="icon solid fa-map-marker-alt">Itinerario</span></a></li>
             <li><a href="#galeria"><span class="icon solid fa-images">Galería</span></a></li>
-            <li><a href="#contacto"><span class="icon solid fa-envelope">Contacto</span></a></li>
+            <li><a href="#formContact"><span class="icon solid fa-envelope">Me anoto</span></a></li>
+            <li><a href="#faq"><span class="icon solid fa-envelope">Preguntas</span></a></li>
           </ul>
         </nav>
       </div>
@@ -1129,45 +1527,174 @@
     </aside>
     
 	<main id="main-content">
-      <section class="video-section reveal" id="video-section" aria-label="Introducción cinematográfica">
+      <section class="inicio reveal" id="inicio" aria-label="Introducción cinematográfica">
         <video class="video-bg" autoplay loop muted playsinline aria-hidden="true">
           <source src="./imgs/istockphoto-.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
-        <div class="section-content">
+        <div class="section-content reveal">
           <h2 class="reveal">"Crecer no significa dejar de soñar, sino soñar juntos."</h2>
           <p class="reveal reveal-delay-1">"No viajamos para escapar de la vida, viajamos para que la vida no se nos escape."</p>
+		   <p class="reveal pdelay reveal-delay-3">Tu viaje ideal comienza aquí.</p>
         </div>
+		
+
+      </section>
+	  
+	      <section class="hero-section" id="nosotros" aria-labelledby="hero-heading">
+        <h2 id="hero-heading" class="reveal">
+          Las calles que nos cruzaron,<br>
+          <span class="grad-text">todavía las andamos.</span>
+        </h2>
+        <p class="reveal reveal-delay-1">
+          Organizamos el viaje que todos soñamos desde el barrio.
+          Fechas, gastos, y recuerdos — todo en un solo lugar.
+        </p>
+		
+		<section class="hero" aria-labelledby="hero-heading">
+		<p class="hero-sub">
+        Ese viaje que llevan años postergando. Esta vez sí va. Destinos épicos, costos compartidos
+        y recuerdos que van a contar por décadas.
+      </p>
+      <div class="hero-badge"style="color:white">Verano 2025 · Cupos limitados</div>
+	  
+	  <div class="hero-actions">
+        <a href="#inscripcion" class="btn-primary">
+          ⚧️ Quiero sumarme
+        </a>
+        <a href="#destinos" class="btn-secondary">
+          Ver destinos →
+        </a>
+      </div>
+	  
+      <h1 class="hero-title" id="hero-heading">
+        El barrio entero<br>
+        <em>de vacaciones</em>
+      </h1>
+      <p class="hero-sub">
+        Ese viaje que llevan años postergando. Esta vez sí va. Destinos épicos, costos compartidos
+        y recuerdos que van a contar por décadas.
+      </p>
+	  
+      <div class="hero-scroll" aria-hidden="true">scroll</div>
+    </section>
+	
+		<div class="card reveal is-visible">
+          <div class="card-icon">🗺️</div>
+          <h3>Destinos votados</h3>
+          <p>Cada uno propone, todos votan. El destino lo elige el barrio entero, democráticamente.</p>
+        </div>
+		
+		<div class="card reveal reveal-delay-1 is-visible">
+          <div class="card-icon">💸</div>
+          <h3>Gastos compartidos</h3>
+          <p>Sin Excel. Sin grupos de WhatsApp interminables. Los gastos se dividen solos.</p>
+        </div>
+		<div class="card reveal reveal-delay-2 is-visible">
+          <div class="card-icon">🤝</div>
+          <h3>El barrio unido</h3>
+          <p>Los mismos que corrían por la misma cuadra, ahora corriendo juntos hacia el aeropuerto.</p>
+        </div>
+		<div class="card reveal reveal-delay-2 is-visible">
+          <p class="reveal reveal-delay-1 is-visible">Esta vez sí va.</p>
+        </div>
+		<div class="card reveal reveal-delay-2 is-visible">
+          <p class="reveal reveal-delay-1 is-visible">No más "el año que viene". El año que viene ya llegó.</p>
+        </div>
+		
       </section>
 
-      <section class="faq-section reveal" id="faq" aria-labelledby="faq-heading">
+
+<section class="faq-section reveal" id="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading" class="reveal">Preguntas Frecuentes</h2>
         <div class="faq-container reveal reveal-delay-1">
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>¿Por qué elegimos Florianópolis?</span>
+              <span>¿Por qué Florianópolis y no otro lugar?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
             <div class="faq-content">
-              <p>Ofrece el balance perfecto entre playas paradisíacas, actividades económicas en grupo, cercanía y una excelente vida nocturna ideal para un grupo grande de amigos.</p>
+              <p>Porque tiene TODO lo que un grupo grande necesita: playas paradisíacas, paz para los que quieren paz, y planes para los que quieren plan <i>(por si nos extrañamos, nunca estamos a más de un par de cuadras)</i>. Alojamiento a pasos de la playa, así que ni excusa para no ir.<br> Y si el cuerpo todavía aguanta después del sol: noches que se estiran lindo, ideales para un batallón de amigos como el nuestro.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>¿Cómo se van a dividir los gastos compartidos?</span>
+              <span>Cosas que NO te podés olvidar</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
             <div class="faq-content">
-              <p>A través de la app de alasRisas. Cargamos los costos fijos (alojamiento, traslados) y la plataforma calcula automáticamente la cuota equitativa sin intermediarios.</p>
+				<p>* Salivar y hablar al conductor.<br>* Sacar el brazo para afuera de las ventanillas.<br>* No es obligatorio estar tooodo el día pegados, cada uno hace lo suyo también. <br>* Está PROHIBIDO enojarse con alguien del grupo por más de 3 minutos seguidos.* Que en algún momento alguien va a terminar en un nosocomio de allá, son gajes del oficio.<br> </p>
+				<p class="frase-final">Y, sobre todo, no te podés olvidar de las ganas de volver a compartir tiempo, historias y risas con los de siempre.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>¿Qué pasa si alguien se baja a último momento?</span>
+              <span>¿Qué vamos a hacer allá?</span>
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-content actividades-lista">
+			<p>No hay una lista obligatoria de actividades ni cronograma militar. Cada uno va a encontrar la suya. Unos van a leer, otros van a caminar, otros van a conversar hasta la madrugada. Lo único importante es estar ahí, sumando paisajes, anécdotas y recuerdos que todavía no existen pero que en unos meses vamos a estar contando mil veces.</p>
+				<ul class="actividades-lista">
+					<li>✦ Leer.</li> <li>✦ Escuchar música.</li> <li>✦ Caminar por la playa.</li>  <li>✦ Realizar trilhas entre morros.</li><li>✦ Observar la naturaleza.</li> <li>✦ Escuchar el silencio y los pájaros.</li>  <li>✦ Contemplar el cielo nocturno.</li>
+					<li>✦ Disfrutar de la aurora y el atardecer.</li>  <li>✦ Hacer aquello que te gusta, sól@ (como siempre).</li>  <li>✦ Degustar gastronomía local.</li> <li>✦ Probar mariscos y muchas frutas.</li> <li>✦ Pescar.</li> <li>✦ Practicar surf.</li> <li>✦ Realizar paseos y descubrir nuevos rincones.</li> <li>✦ Gritar de alegría frente al mar.</li>
+				</ul>
+             </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Cómo dividimos los gastos sin pelearnos?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
             <div class="faq-content">
-              <p>Las reservas iniciales de hospedaje tienen políticas claras. El formulario nos ayuda a congelar el número de confirmados para evitar sobrecostos al resto del barrio.</p>
+              <p>Fácil: a través de la app de alasRisas cargamos los costos fijos (alojamiento y traslados) y la plataforma calcula automáticamente la cuota equitativa de cada uno, sin intermediarios ni números en una libretita.</p>
+              <p>El resto de los gastos del día a día corre por cuenta de cada familia, así cada uno gasta a su ritmo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Y si alguien se baja a último momento?</span>
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Tranquilo, no pasa nada grave: se devuelve la plata hasta el último centavo y seguro esa persona se va a estar muriendo de ganas de venir en la próxima.</p>
+              <p>Y si lo que complica es justamente el maldito dinero, seguro entre todos le encontramos una vuelta. <br> Lo único que no negociamos es que ¡tenemos que ir!</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Por qué tengo que anotarme ya?</span>
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Porque las reservas de hospedaje hay que hacerlas cuanto antes para asegurar los mejores lugares al mejor precio. <br> Anotándote nos ayudás a saber cuántos somos realmente, así reservamos a tiempo y evitamos que el barrio entero pague de más por llegar tarde.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Dónde nos vamos a quedar?</span>
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Vamos a buscar los mejores lugares y precios para asegurar la estadía con tiempo. La idea es estar lo más cerca posible del agua y, sobre todo, lo más cerca posible los unos de los otros. Porque seguro nos vamos a estar viendo todos los días y todas las noches.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Y el itinerario, ya está armado?</span>
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Plan A, Plan B, Plan C... lo que termine saliendo en el momento. <br> Porque los amigos del barrio nunca fallamos en una cosa: Improvisar.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>¿Va a quedar registrado en algún lado?</span>
+              <span class="faq-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Sí, las fotos de todos van a estar juntas en un solo lugar.</p><p>El recuerdo más organizado que vas a tener en tu vida lo va a armar también la app de alasRisas.</p>
+			  <p><i>(Próximamente)</i></p>
             </div>
           </div>
         </div>
@@ -1186,11 +1713,6 @@
         <div class="carousel-dots" id="carouselDots"></div>
       </section>
 
-      <section id="inicio" class="reveal" style="padding: 3rem 1rem; text-align: center;">
-        <h2 style="color: var(--text-primary); font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 1rem;">Contenido Inicial</h2>
-        <p style="color: var(--text-muted);">Tu viaje ideal comienza aquí.</p>
-      </section>
-
       <section class="audio-player-container reveal" aria-label="Reproductor de música de fondo">
         <div class="audio-card">
           <button id="audioToggleBtn" class="audio-btn" aria-label="Reproducir música de viaje" aria-pressed="false">
@@ -1201,67 +1723,218 @@
 		<!-- <audio id="tripAudio" src="./imgs/WhatsApp audio.ogg" loop preload="none"></audio> -->
         </div>
       </section>
-    </main>
+	  
+	  
+	  <section id="form-section" class="form-section" aria-labelledby="form-title">
+      <div class="form-card" role="region" aria-label="Formulario de registro">
+        <!-- Drip drops decoration -->
+        <div class="drip-top" aria-hidden="true">
+          <div class="drip-drop"></div>
+          <div class="drip-drop"></div>
+          <div class="drip-drop"></div>
+          <div class="drip-drop"></div>
+          <div class="drip-drop"></div>
+          <div class="drip-drop"></div>
+        </div>
 
-  <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <h2 id="form-title" class="form-title">Únete a <span>T-Saludo</span></h2>
+        <p class="form-subtitle">Completa tus datos y forma parte de nuestra comunidad</p>
+
+        <form
+          
+	  id="formContact"
+          novalidate
+          aria-label="Formulario de registro de usuario"
+          onsubmit="handleFormSubmit(event)"
+        >
+          <div class="form-grid">
+            <!-- Nombre -->
+            <div class="form-field">
+              <label for="fn-nombre">Nombre</label>
+              <input
+                type="text"
+                id="fn-nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                autocomplete="given-name"
+                required
+                minlength="2"
+                aria-required="true"
+                aria-describedby="fn-nombre-err"
+              />
+              <span id="fn-nombre-err" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Apellido -->
+            <div class="form-field">
+              <label for="fn-apellido">Apellido</label>
+              <input
+                type="text"
+                id="fn-apellido"
+                name="apellido"
+                placeholder="Tu apellido"
+                autocomplete="family-name"
+                required
+                minlength="2"
+                aria-required="true"
+                aria-describedby="fn-apellido-err"
+              />
+              <span id="fn-apellido-err" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field full">
+              <label for="fn-email">Correo electrónico</label>
+              <input
+                type="email"
+                id="fn-email"
+                name="email"
+                placeholder="hola@ejemplo.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+                aria-describedby="fn-email-err"
+              />
+              <span id="fn-email-err" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form-field">
+              <label for="fn-tel">Teléfono</label>
+              <input
+                type="tel"
+                id="fn-tel"
+                name="telefono"
+                placeholder="+598 9x xxx xxx"
+                required
+                autocomplete="tel"
+                aria-required="true"
+                aria-describedby="fn-tel-err"
+              />
+              <span id="fn-tel-err" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Ciudad -->
+            <div class="form-field">
+              <label for="fn-ciudad">Ciudad</label>
+              <input
+                type="text"
+                id="fn-ciudad"
+                name="ciudad"
+                placeholder="Montevideo"
+                autocomplete="address-level2"
+              />
+            </div>
+
+            <!-- Rol -->
+            <div class="form-field">
+              <label for="fn-rol">Rol</label>
+              <select id="fn-rol" name="rol" aria-label="Selecciona tu rol">
+                <option value="user">Usuario</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </div>
+
+            <!-- Password -->
+            <div class="form-field">
+              <label for="fn-pass">Contraseña</label>
+              <input
+                type="password"
+                id="fn-pass"
+                name="password"
+                placeholder="Mínimo 3 caracteres"
+                required
+                minlength="3"
+                autocomplete="new-password"
+                aria-required="true"
+                aria-describedby="fn-pass-err"
+              />
+              <span id="fn-pass-err" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="form-field full">
+              <label for="fn-msg">Mensaje (opcional)</label>
+              <textarea
+                id="fn-msg"
+                name="mensaje"
+                placeholder="Cuéntanos algo sobre ti..."
+                rows="3"
+                aria-label="Mensaje opcional"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="form-submit full" aria-label="Enviar formulario de registro" >
+              <span class="submit-icon" aria-hidden="true">👋</span>
+              Unirme ahora
+            </button>
+			<button type="reset" class="btn_reset ">Limpiar Formulario</button>
+          </div>
+        </form>
+		</div>
+		</section>
+		
+    </main>
+	
+	<button id="scrollTopBtn" class="btn_floating scroll-top-btn" aria-label="Volver arriba"> 
+		<img src="assets/flechaArriba.svg" alt=""width="24"height="24" loading="lazy" decoding="async">
+	</button>
+
+
+  <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener" class="btn_floating btn_whatsapp" id="btn_whatsapp"aria-label="Contactar por WhatsApp">
     <span aria-hidden="true">👋</span>
   </a>
   
-  <!-- YouTube Live Stream -->
-<!-- YouTube Live Stream -->
 <footer class="footer reveal">
-  <!-- YouTube Live Stream -->
-  <section class="youtube-embed" id="youtubeSection" aria-label="Transmisión en vivo">
     <h3 class="youtube-embed__title">
       <span class="live-indicator"></span>
       En vivo ahora
     </h3>
-    <p class="youtube-embed__subtitle">Mira lo que está pasando en tiempo real</p>
-    
-    <div class="youtube-embed__wrapper">
-      <iframe
-        class="youtube-embed__iframe"
-        id="youtubePlayer"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/live/OidQ1nh3yII?si=BGsBZY_EpcPa2qxv"
-        title="Transmisión en vivo desde el barrio"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-    <p class="youtube-embed__hint">🔊 Click en el video para activar el sonido</p>
-  </section>
 
   <!-- Resto del footer (estrellas, créditos, etc) -->
   <div class="ti-usu reveal">
     <div class="ti-usu-profile">
       <div class="ti-profile">
-        <div class="ti-round">
-          <img src="./imgs/google_logo_icon.png" width="25" height="25" alt="Google logo" loading="lazy">
-        </div>
-        <div class="ti-stars">
-          <img src="./imgs/star.png" alt="star" width="20" height="20" loading="lazy">
-          <img src="./imgs/star.png" alt="star" width="20" height="20" loading="lazy">
-          <img src="./imgs/star.png" alt="star" width="20" height="20" loading="lazy">
-          <img src="./imgs/star.png" alt="star" width="20" height="20" loading="lazy">
-          <img src="./imgs/star.png" alt="star" width="20" height="20" loading="lazy">
-        </div>
+		<img
+		  src="assets/google-5-stars.svg"
+		  alt="5 estrellas en Google"
+		  loading="lazy"
+		  decoding="async">
       </div>
       <div class="ti-data">
         <div class="ti-date" id="ti-date"></div>
       </div>
     </div>
   </div>
+	
+	<section class="reveal">
+		<div class="f-toggle-movil">
+			<button class="ft-toggle" type="button"
+               aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
+				<span>Legal</span>
+			</button>
+			<div id="legal-links" class="ft-content"aria-hidden="true" aria-labelledby="Mostrar enlaces legales">
+				<p><a href="/aviso-legal/" rel="nofollow">Aviso Legal</a> </p>
+				<p><a href="/politica-de-privacidad/" rel="nofollow">Política de privacidad</a></p>
+				<p><a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener">Icono Alado by Lorc</a></p>
+				<p><a href="/configuración-de-cookies/" rel="nofollow">Configuración de cookies</a></p>
+				<p><a href="/termino-de-uso/" rel="nofollow"> Términos de Uso</a></p>
+			</div>
+		</div>
+	</section>
 
-  <section class="reveal" id="creditos" style="font-size: 0.85rem; color: #666;">
-    <p>Iconos utilizados: Icono Alado emblema by Lorc, Delapouite &amp; contributors on <a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener">Icon-Icons.com</a></p>
-  </section>
-
+	<nav class="footer-links" aria-label="Enlaces legales">
+        <a href="#galeria">Imagenes del viaje>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#formContact">Me anoto</a>
+      </nav>
+	  
   <div class="footer-bottom reveal">
+  
     <p>&copy; 2026 kikiriya DevOps. Todos los derechos reservados.</p>
+
+  
     <p class="footer-text">De Capurro al mundo, juntos siempre</p>
   </div>
 </footer>
@@ -1315,7 +1988,6 @@
     let mainContent, logoBtn, navToggle, sidebarLinks, mainHeader;
     let track, dotsContainer, progressBar, counter, carouselEl;
 
-    let animStarted = false;
     let currentSlide = 0;
     let carouselAutoplay = null;
     let carouselProgressInterval = null;
@@ -1370,29 +2042,35 @@
       navToggle       = $('#navToggle');
       sidebarLinks    = $$('#sidebar-nav ul li a');
       mainHeader      = $('#mainHeader');
-
       track           = $('#carouselTrack');
       dotsContainer   = $('#carouselDots');
       progressBar     = $('#carouselProgress');
       counter         = $('#carouselCounter');
       carouselEl      = $('#carousel');
 
+		let animStarted = false;
+		let timerInicio=null;
+	
       /* ---------- Animación inicial del landing ---------- */
       const startExpandingAnimation = () => {
         if (animStarted) return;
+		landingContent.style.willChange = 'translate, opacity';
         animStarted = true;
-
-        landingDot.style.display = 'none';
-        landingHint.classList.remove('is-visible');
+		clearTimeout(timerInicio); 
+        landingDot.style.display = 'none';	  
+        landingHint.classList.add('is-visible');
         landingImg.classList.add('is-expanding');
         landingContent.classList.add('is-visible');
       };
+	  
+	  landingContent.addEventListener('transitionend', () => {
+		  landingContent.style.willChange = 'auto';
+		}, { once: true });
 
-      // Mostrar hint después de 1s si no interactúan
-      setTimeout(() => {
-        if (!animStarted) landingHint.classList.add('is-visible');
-      }, 1000);
+	  
+		landingDot.addEventListener('click', startExpandingAnimation);
 
+     
       landing.addEventListener('click', (e) => {
         if (e.target === enterBtn || enterBtn.contains(e.target)) return;
         startExpandingAnimation();
@@ -1417,22 +2095,36 @@
 
       /* ---------- Retorno al landing desde el logo ---------- */
       const showLanding = async () => {
+		clearTimeout(timerInicio);
         mainContent.classList.remove('nav-active');
         mainContent.classList.remove('visible');
-
-        await waitForTransition(mainContent, 'opacity');
-
+		
+		 if (mainContent.classList.contains('visible')) {
+			await waitForTransition(mainContent, 'opacity');
+		}
         animStarted = false;
         landing.classList.remove('is-hidden', 'is-exiting');
         landingDot.style.display = 'block';
         landingImg.classList.remove('is-expanding');
         landingContent.classList.remove('is-visible');
-
+		landingHint.classList.remove('is-visible');
+		
         setTimeout(() => {
-          if (!animStarted) landingHint.classList.add('is-visible');
-        }, 1000);
+          if (!animStarted) 
+			landingHint.classList.add('is-visible');
+        }, 1000);				
+		  timerInicio = setTimeout(() => {
+		   console.log('AUTO START');		  
+			if (!animStarted) {
+			  startExpandingAnimation();
+		landingHint.classList.remove('is-visible');
+			   console.log('START EXPANDING');
+			}
+		  }, 5000);
       };
-
+	  
+	  showLanding();	  
+	  
       logoBtn.addEventListener('click', showLanding);
       logoBtn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -1440,6 +2132,7 @@
           showLanding();
         }
       });
+	  
 
       /* ---------- Menú hamburguesa ---------- */
       navToggle.addEventListener('click', (e) => {
@@ -1453,28 +2146,34 @@
         }
 		
       });
-
-      document.addEventListener('click', (e) => {
-        const sidebar = $('#header-sidebar');
-        
-        // CORRECCIÓN: Si el menú está abierto, solo se cierra si haces clic 
+		const sidebar= $('#header_sidebar');
+      document.addEventListener('click', (e) => {	
+		sidebar.style.willChange = 'transform, opacity';
          if (document.body.classList.contains('nav-active') &&
             !sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-          document.body.classList.remove('nav-active', 'no-scroll');
-          navToggle.setAttribute('aria-expanded', 'false');
+			document.body.classList.remove('nav-active', 'no-scroll');
+			navToggle.setAttribute('aria-expanded', 'false');
+			
+			sidebar.addEventListener('transitionend', () => {
+			  sidebar.style.willChange = 'auto';
+			}, { once: true });
         }
+	  
       });
 
       sidebarLinks.forEach(link => {
         link.addEventListener('click', function() {
           sidebarLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
-		            
-          // Cerrar y restaurar estados al navegar hacia una sección
           document.body.classList.remove('nav-active', 'no-scroll');
           navToggle.setAttribute('aria-expanded', 'false');
         });
       });
+	  
+	  sidebar.addEventListener('click', () => {
+		navToggle.setAttribute('aria-expanded', 'false');
+		document.body.classList.remove('nav-active', 'no-scroll');
+	  });
 
       /* ---------- FAQ accordion ---------- */
       $$('.faq-trigger').forEach(trigger => {
@@ -1491,8 +2190,6 @@
           }
         });
       });
-	  
-	  
 
       /* ---------- EFECTO LIGHTBOX (Clic en Imagen) ---------- */
       // 1. Crear el contenedor del modal dinámicamente si no existe en el HTML
@@ -1586,70 +2283,76 @@
 
       /* ============== initIntersectionObservers ============== */
       const initIntersectionObservers = () => {
-        const observerOptions = {
-          threshold: 0.15,
-          rootMargin: '0px 0px -50px 0px'
-        };
+			const observerOptions = {
+				root: null,
+			  threshold: 0.15,
+			  rootMargin: '0px 0px -50px 0px'
+			};
 
-        const revealObserver = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
+			const revealObserver = new IntersectionObserver((entries, obs) => {
+			  entries.forEach(entry => {
+				if (entry.isIntersecting) {
+				  entry.target.classList.add('is-visible');
+				  obs.unobserve(entry.target);
+				}
+			  });
+			}, observerOptions);
 
-        // Observer 2: Galería (efecto ligeramente distinto)
-		
-		const galleryObserver = new IntersectionObserver((entries, obs) => {
-			entries.forEach(entry => {
+			// Observer 2: Galería (efecto ligeramente distinto)
+			
+			const galleryObserver = new IntersectionObserver((entries, obs) => {
+				entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('is-visible');
 					if (entry.target.id === 'carousel') startAutoplay();
 					obs.unobserve(entry.target);
 				}
 			});
-		}, { threshold: 0.2 });
-					
-		const footerObserver = new IntersectionObserver((entries, obs) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('is-visible');
-					obs.unobserve(entry.target);
-				}
-			});
-		}, { threshold: 0.1 });
-	   // Asignar cada elemento a su observer
-	   $$('.reveal, .fade-in').forEach(el => {
-		if (el.closest('footer')) 
-			footerObserver.observe(el);
-		else if (el.id === 'carousel' || el.closest('#galeria')) 
-			galleryObserver.observe(el);
-		else revealObserver.observe(el);});
+			}, { threshold: 0.2 });
+						
+			const footerObserver = new IntersectionObserver((entries, obs) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						obs.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.1 });
 		
-		if (mainHeader) {
-			let lastScrollY = 0;
-			let ticking = false;
-			const triggerPoint = window.innerHeight * 0.8;
-			const onScroll = () => {
-				const scrollY = window.scrollY;
-				if (scrollY > triggerPoint && scrollY > lastScrollY) {
-					mainHeader.style.transform = 'translateY(-100%)';
-				} else {
-					mainHeader.style.transform = 'translateY(0)';
-				}
-				lastScrollY = scrollY;ticking = false;
-			};
+		   // Asignar cada elemento a su observer
+		   $$('.reveal, .fade-in').forEach(el => {
+			if (el.closest('footer')) 
+				footerObserver.observe(el);
+			else if (el.id === 'carousel' || el.closest('#galeria')) 
+				galleryObserver.observe(el);
+			else revealObserver.observe(el);});
+			
+			if (mainHeader) {
+				let lastScrollY = 0;
+				let ejecutandoScroll = false;
+				const triggerPoint = window.innerHeight * 0.6;
+				const onScroll = () => {
+					const scrollY = window.scrollY;
+					if (scrollY > triggerPoint && scrollY > lastScrollY) {
+						mainHeader.style.transform = 'translateY(-100%)';
+					} else {
+						mainHeader.style.transform = 'translateY(0)';
+					}
+					lastScrollY = scrollY;
+					ejecutandoScroll = false;
+				
+				};
 		
 			window.addEventListener('scroll', () => {
-				if (!ticking) {
+				if (!ejecutandoScroll) {
 					requestAnimationFrame(onScroll);
-					ticking = true;
+					ejecutandoScroll = true;
 				}
 			},{ passive: true });
 		}};
 		
+		 
+	  
 		/* ========== CAROUSEL ========== */
 		<!-- type="image/webp" -->
       const initCarousel = () => {
@@ -1720,6 +2423,57 @@
 	
 	<!-- fin DOMContentLoaded -->
 	});
+		
+		<!-- LEGAL -->
+		document.querySelectorAll('.ft-toggle').forEach(btn => {
+
+			btn.addEventListener('click', () => {
+
+				if (window.innerWidth > 768) return;
+
+				const content = document.getElementById( btn.getAttribute('aria-controls') );
+				const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+				btn.setAttribute( 'aria-expanded', !expanded );
+
+				btn.setAttribute( 'aria-label', expanded
+						? 'Mostrar enlaces legales'
+						: 'Ocultar enlaces legales'
+				);
+
+				content.setAttribute( 'aria-hidden', expanded );
+
+				btn.classList.toggle('active');
+				content.classList.toggle('open');
+			});
+
+		});
+		    
+			<!-- BOTONES FLOTANTES -->			
+			const floatingButtons =  document.querySelectorAll('.btn_floating');
+			let ticking = false;
+
+			function toggleFloatingButtons(show){
+			  floatingButtons.forEach(btn => {
+				btn.classList.toggle('show', show);
+			  });
+			}
+
+			function updateFloatingButtons(){
+			  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+			  const show = window.scrollY >= maxScroll * 0.5;
+			  toggleFloatingButtons(show);
+			  ticking = false;
+			}
+
+			window.addEventListener('scroll', () => {
+			  if (ticking) return;
+			  ticking = true;
+			  requestAnimationFrame(updateFloatingButtons);
+			});
+
+			requestAnimationFrame(updateFloatingButtons);
+				
 })();
 
   </script>
