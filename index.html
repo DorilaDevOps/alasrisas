@@ -1291,48 +1291,109 @@
 	  opacity: 1 !important; 
 		visibility: visible !important; 
     }
-    .ti-usu-profile, .ti-profile{ display: flex; align-items: center; gap: 0.5rem; }
+	
+	.ti-usu {  width: 100%;  display: flex;  justify-content: center;}
+    .ti-usu-profile, .ti-profile{ display: flex; align-items: center; gap: 0.5rem; padding: var(--space-3, .75rem) var(--space-5, 1.25rem);}
 	.ti-profile img{width: 50px; height:auto}
     .ti-date { color: var(--neon-blue); font-size: 0.85rem; }
     .footer-bottom p { font-size: 0.85rem; margin: 0.2rem 0; }
     .footer-text { font-style: italic; }
 	
 	/* ============ Politica de contrato ============ */
-	
+
 .f-toggle-movil {
-    width: 100%;
+  width: 100%;
+  position: relative; /* contiene el acordeón, evita que .ft-content se superponga a hermanos */
 }
-.ft-toggle{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-    border:0;
-    background:none;
-    color:inherit;
-    cursor:pointer;
-    padding:0;
-}
-
-.ft-toggle::after{
-    content:"+";
-    font-size:24px;
-    transition:transform .25s ease;
-}
-
-.ft-toggle.active::after{
-    content:"−";
+ 
+.ft-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--footer-bg, rgba(255,255,255,.15));
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  gap: .5rem;
+  padding: .75rem 1.25rem;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
 }
 
-.ft-content{
-    display:none;
+.ft-toggle::after {
+  content: "+";
+  font-size: 24px;
+  transition: transform .25s ease;
+}
+ 
+.ft-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+ 
+.ft-toggle.active::after {
+  content: "−";
+}
+ 
+/* ── Estado base (mobile): acordeón colapsado ── */
+.ft-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height var(--transition-base, 250ms ease),
+              opacity var(--transition-base, 250ms ease),
+              margin var(--transition-base, 250ms ease);
+}
+ 
+/* Abierto en mobile vía JS (aria-hidden="false" + .open) */
+.ft-content[aria-hidden="false"],
+.ft-content.open {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 1.75rem;
 }
 
-.ft-content.open{
-    display:block;
+.ft-content p {
+  margin: 0;
 }
-
-
+ 
+.ft-content a {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+  padding: 0 .5rem;
+  color: var(--text-secondary, #cbd5e1);
+  font-size: .875rem;
+  transition: color var(--transition-fast, 150ms ease);
+  /* sin shadow en ningún breakpoint, mobile-optimizado */
+  box-shadow: none;
+}
+ 
+.ft-content a:hover,
+.ft-content a:focus-visible {
+  color: var(--accent-solid, #ef4444);
+}
+ 
+.ft-content a:focus-visible {
+  outline: 2px solid var(--accent-solid, #ef4444);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+ 
+/* Utilidad accesible (por si no la tenés ya global) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+ 
 .footer.reveal {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -1347,7 +1408,8 @@
     .footer-links a { color: var(--neon-amber); text-decoration: none;position: relative;
 		transition: var(--transition1); padding:3px;
 	}
-    .footer-links a:hover { color: var(--neon-blue); }
+    .footer-links a:hover,
+.footer-links a:focus-visible { color: var(--neon-blue); }
 
 		.footer-links a::after {
 			content: '';
@@ -1410,13 +1472,39 @@
     <!-- /* ============ RESPONSIVE ============ */ -->
 
 	@media (min-width: 768px) {		 
-		.ft-content{ 
+		.f-toggle-movil {
 			display: flex;
-			background-color: yellow;
 			flex-direction: column;
-			align-items: flex-start;
-		}
-		.ft-toggle::after{display:none;}
+			align-items: flex-end; /* alinea todo el bloque a la derecha */
+		  }
+		 
+		  .ft-toggle {
+			width: auto;
+			border: none;
+			padding: 0;
+			cursor: default;
+			pointer-events: none; /* ya no actúa como botón en desktop */
+		  }
+		 
+		  .ft-toggle::after {
+			display: none;
+		  }
+		 
+		  .ft-content,
+		  .ft-content[aria-hidden="true"],
+		  .ft-content[aria-hidden="false"] {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end; /* contenido alineado a la derecha, como pediste */
+			overflow: visible;
+			max-height: none;
+			opacity: 1;
+			margin-top: .75rem;
+		  }
+		 
+		  .ft-content a {
+			text-align: right;
+		  }
 	 }  
 	 
     @media (min-width: 992px) {
@@ -1886,57 +1974,68 @@
     <span aria-hidden="true">👋</span>
   </a>
   
-<footer class="footer reveal">
-    <h3 class="youtube-embed__title">
-      <span class="live-indicator"></span>
-      En vivo ahora
-    </h3>
-
+<footer class="footer reveal" role="contentinfo" aria-label="Pie de página">
+ 
+  <h3 class="youtube-embed__title">
+    <span class="live-indicator" aria-hidden="true"></span>
+    En vivo ahora
+  </h3>
+ 
   <!-- Resto del footer (estrellas, créditos, etc) -->
   <div class="ti-usu reveal">
     <div class="ti-usu-profile">
       <div class="ti-profile">
-		<img
-		  src="./assets/google-5-stars.svg"
-		  alt="5 estrellas en Google"
-		  loading="lazy"
-		  decoding="async">
+        <img
+          src="./assets/google-5-stars.svg"
+          alt="Calificación de 5 estrellas en Google"
+          loading="lazy"
+          decoding="async"
+          width="120"
+          height="24">
       </div>
       <div class="ti-data">
-        <div class="ti-date" id="ti-date"></div>
+        <div class="ti-date" id="ti-date" aria-live="polite"></div>
       </div>
     </div>
   </div>
-	
-	<section class="reveal">
-		<div class="f-toggle-movil">
-			<button class="ft-toggle" type="button"
-               aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
-				<span>Legal</span>
-			</button>
-			<div id="legal-links" class="ft-content"aria-hidden="true" aria-labelledby="Mostrar enlaces legales">
-				<p><a href="/aviso-legal/" rel="nofollow">Aviso Legal</a> </p>
-				<p><a href="/politica-de-privacidad/" rel="nofollow">Política de privacidad</a></p>
-				<p><a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener">Icono Alado by Lorc</a></p>
-				<p><a href="/configuración-de-cookies/" rel="nofollow">Configuración de cookies</a></p>
-				<p><a href="/termino-de-uso/" rel="nofollow"> Términos de Uso</a></p>
-			</div>
-		</div>
-	</section>
-
-	<nav class="footer-links" aria-label="Enlaces legales">
-        <a href="#galeria">Imagenes del viaje>
-        <a href="#faq">Preguntas frecuentes</a>
-        <a href="#formContact">Me anoto</a>
-      </nav>
-	  
+ 
+<section class="reveal" aria-label="Información legal">
+  <div class="f-toggle-movil">
+    <button
+      class="ft-toggle"
+      type="button"
+      id="legal-toggle"
+      aria-label="Mostrar enlaces legales"
+      aria-expanded="false"
+      aria-controls="legal-links">
+      <span>Legal</span>
+    </button>
+    <div
+      id="legal-links"
+      class="ft-content"
+      aria-hidden="true"
+      role="group"
+      aria-labelledby="legal-toggle">
+      <p><a href="/aviso-legal/" rel="nofollow">Aviso Legal</a></p>
+      <p><a href="/politica-de-privacidad/" rel="nofollow">Política de privacidad</a></p>
+      <p><a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener noreferrer">Icono Alado by Lorc <span class="visually-hidden">(se abre en una nueva pestaña)</span></a></p>
+      <p><a href="/configuración-de-cookies/" rel="nofollow">Configuración de cookies</a></p>
+      <p><a href="/termino-de-uso/" rel="nofollow">Términos de Uso</a></p>
+    </div>
+  </div>
+</section>
+ 
+  <nav class="footer-links" aria-label="Navegación del pie de página">
+    <a href="#galeria">Imágenes del viaje</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#formContact">Me anoto</a>
+  </nav>
+ 
   <div class="footer-bottom reveal">
-  
     <p>&copy; 2026 kikiriya DevOps. Todos los derechos reservados.</p>
-
-  
     <p class="footer-text">De Capurro al mundo, juntos siempre</p>
   </div>
+ 
 </footer>
 
   <script>
@@ -2421,34 +2520,50 @@
 		<!-- fininitCarousel -->
 		}; 
 	
+	syncLegalA11y();
 	<!-- fin DOMContentLoaded -->
 	});
 		
 		<!-- LEGAL -->
-		document.querySelectorAll('.ft-toggle').forEach(btn => {
-
-			btn.addEventListener('click', () => {
-
-				if (window.innerWidth > 768) return;
-
-				const content = document.getElementById( btn.getAttribute('aria-controls') );
+			function syncLegalA11y() {
+			  document.querySelectorAll('.ft-toggle').forEach(btn => {
+				const content = document.getElementById(btn.getAttribute('aria-controls'));
+				if (!content) return;
+			 
+				if (window.innerWidth >= 768) {
+				  // Desktop: contenido siempre visible, el botón no es interactivo
+				  btn.setAttribute('aria-expanded', 'true');
+				  btn.setAttribute('aria-label', 'Enlaces legales');
+				  content.setAttribute('aria-hidden', 'false');
+				} else {
+				  // Mobile: si no fue abierto manualmente, queda colapsado
+				  if (!btn.classList.contains('active')) {
+					btn.setAttribute('aria-expanded', 'false');
+					btn.setAttribute('aria-label', 'Mostrar enlaces legales');
+					content.setAttribute('aria-hidden', 'true');
+				  }
+				}
+			  });
+			}
+			 
+			document.querySelectorAll('.ft-toggle').forEach(btn => {
+			  btn.addEventListener('click', () => {
+				if (window.innerWidth >= 768) return; // en desktop el botón no hace nada
+			 
+				const content = document.getElementById(btn.getAttribute('aria-controls'));
 				const expanded = btn.getAttribute('aria-expanded') === 'true';
-
-				btn.setAttribute( 'aria-expanded', !expanded );
-
-				btn.setAttribute( 'aria-label', expanded
-						? 'Mostrar enlaces legales'
-						: 'Ocultar enlaces legales'
+			 
+				btn.setAttribute('aria-expanded', !expanded);
+				btn.setAttribute('aria-label', expanded
+				  ? 'Mostrar enlaces legales'
+				  : 'Ocultar enlaces legales'
 				);
-
-				content.setAttribute( 'aria-hidden', expanded );
-
+				content.setAttribute('aria-hidden', expanded);
 				btn.classList.toggle('active');
 				content.classList.toggle('open');
+			  });
 			});
-
-		});
-		    
+ 		    
 			<!-- BOTONES FLOTANTES -->			
 			const floatingButtons =  document.querySelectorAll('.btn_floating');
 			let ticking = false;
@@ -2472,10 +2587,13 @@
 			  requestAnimationFrame(updateFloatingButtons);
 			});
 
+			window.addEventListener('resize', syncLegalA11y);
+
 			requestAnimationFrame(updateFloatingButtons);
 				
 })();
 
+/****************************************************************************/
   </script>
 </body>
 </html>
