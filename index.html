@@ -13,9 +13,13 @@
   <meta name="language" content="Spanish">
   <meta name="theme-color" content="#0f4c2a" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0a2e19" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="dark light">
 
-  <title> El viaje del barrio</title>
+  <title>El viaje del barrio — Vacaciones grupales </title>
   <link rel="icon" type="image/png" href="./imgs/Transporte6.png">
+
+  <!-- Preload de la imagen LCP (landing) para mejorar Core Web Vitals en mobile -->
+  <link rel="preload" as="image" href="./imgs/Barra%20(4).jpeg" fetchpriority="high">
 
   <!-- Canonical -->
 	<link rel="canonical" href="https://alasrisas.netlify.app/">
@@ -43,7 +47,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@alasrisas">
   <meta name="twitter:creator" content="@alasrisas">
-  <meta name="twitter:title" content="Vacaciones con todo el barrio 2026 — ¡Florianópolis!">
+  <meta name="twitter:title" content="Vacaciones con todo el barrio — ¡Florianópolis!">
   <meta name="twitter:description" content="El viaje grupal que siempre soñaron!">
   <meta name="twitter:image" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
   <meta name="twitter:image:alt" content="Grupo en bondi">
@@ -63,6 +67,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./imgs/Transporte6.png">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f4c2a">
   <link rel="icon" type="image/png" href="./imgs/Transporte6.png">
+
+<!-- código que te dio Umami Cloud -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="436caa38-77c3-43bd-a1ac-0cbd6958f3b3" data-domains="alasrisas.netlify.app,127.0.0.1"></script>
 
   <!-- ============ JSON-LD — FAQ sincronizado con el HTML ============ -->
   <script type="application/ld+json">
@@ -133,7 +140,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      width: 100%;
+    overflow-y: auto;
       font-family: var(--font-body);
       background-color: var(--bg-card);
     }
@@ -264,7 +271,7 @@
       position: fixed; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: 80vw; height: 80vw;
-      background: url('./imgs/ChatGPT 88kb.webp') no-repeat center;
+      background: url('imgs/logoGPT 21kb.png') no-repeat center;
       background-size: contain;
       opacity: .03;
       z-index: 1;
@@ -607,6 +614,7 @@
       opacity: 0;
       visibility: hidden;
       min-height: 100vh;
+  height: auto;
       background-color: var(--bg-deep);
       position: relative;
       width: 100%;
@@ -764,7 +772,7 @@
 }
 
 
-    <!-- /* ============ REVEAL ANIMATIONS ============ */ -->
+    /* ============ REVEAL ANIMATIONS ============ */
     .reveal, .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -781,28 +789,7 @@
     .reveal-delay-3 { transition-delay: 0.45s; }
 
 
-	.live-indicator {
-	  display: inline-block;
-	  width: 14px;
-	  height: 14px;
-	  background: #ff0000;
-	  border-radius: 50%;
-	  box-shadow: 0 0 12px #ff0000, 0 0 24px #ff0000;
-	  animation: livePulse 1.5s ease-in-out infinite;
-	}
-
-	@keyframes livePulse {
-	  0%, 100% { 
-		opacity: 1; 
-		transform: scale(1);
-	  }
-	  50% { 
-		opacity: 0.6; 
-		transform: scale(0.85);
-	  }
-	}
-
-    <!-- /* ============ VIDEO ============ */ -->
+    /* ============ VIDEO ============ */
     .inicio {
       position: relative;
       min-height: 100vh;
@@ -836,7 +823,7 @@
     .section-content p { font-size: var(--font-size-lg); font-style: italic; line-height: 1.6;}
 	.section-content .pdelay{color:var(--neon-pink); padding-top: 2rem;text-shadow: rgb(0, 0, 0) 2px 2px 4px;}
 
-    <!-- /* ============ FORMULARIO ============ */ -->
+    /* ============ FORMULARIO ============ */
 	
     .form-section {
       max-width: 700px;
@@ -1037,7 +1024,7 @@
       font-size: 1.25rem;
       animation: submit-icon-bounce 2s ease-in-out infinite;
     }
-    <!-- /* ============ FAQ ============ */ -->
+    /* ============ FAQ ============ */
     .faq-section {
       display: flex;
       flex-direction: column;
@@ -1088,7 +1075,7 @@
       padding: 0 1.5rem 1.2rem;
     }
 
-    <!-- /* ============ CAROUSEL ============ */ -->
+    /* ============ CAROUSEL ============ */
     #galeria {
       padding: 3rem 1rem;
       text-align: center;
@@ -1174,7 +1161,7 @@
     }
     .carousel-dot.active { background: var(--color_accent); transform: scale(1.3); box-shadow: 0 0 10px var(--color_celeste); }
 	
-	<!-- /* Contenedor principal del Modal */ -->
+	/* Contenedor principal del Modal */
 	.lightbox-modal {
 	  position: fixed;
 	  top: 0;
@@ -1191,13 +1178,13 @@
 	  transition: opacity 0.3s ease;
 	}
 
-	<!-- /* Estado activo del Modal */ -->
+	/* Estado activo del Modal */
 	.lightbox-modal.is-active {
 	  opacity: 1;
 	  pointer-events: auto;
 	}
 
-	<!-- /* Contenedor interno de elementos */ -->
+	/* Contenedor interno de elementos */
 	.lightbox-content {
 	  max-width: 85%;
 	  max-height: 80vh;
@@ -1205,7 +1192,7 @@
 	  position: relative;
 	}
 			
-	<!-- /* La imagen expandida */ -->
+	/* La imagen expandida */
 	.lightbox-content img {
 	  max-width: 100%;
 	  max-height: 70vh;
@@ -1214,7 +1201,7 @@
 	  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 	}
 
-	<!-- /* Textos informativos inferiores */ -->
+	/* Textos informativos inferiores */
 	.lightbox-caption {
 	  color: #ffffff;
 	  margin-top: 15px;
@@ -1232,7 +1219,7 @@
 	  opacity: 0.85;
 	}		
 
-	<!-- /* Botón de cierre (X) */ -->
+	/* Botón de cierre (X) */
 	.lightbox-close {
 	  position: absolute;
 	  top: 20px;
@@ -1250,7 +1237,7 @@
 	  transform: scale(1.2);
 	}
 
-    <!-- /* ============ AUDIO ============ */ -->
+    /* ============ AUDIO ============ */
     .audio-player-container {
       display: flex;
       justify-content: center;
@@ -1469,7 +1456,7 @@
 
 	.scroll-top-btn:hover{transform:translateY(-2px) scale(1.05);}
 
-    <!-- /* ============ RESPONSIVE ============ */ -->
+    /* ============ RESPONSIVE ============ */
 
 	@media (min-width: 768px) {		 
 		.f-toggle-movil {
@@ -1536,18 +1523,13 @@
 	
   </style>
   
-  
-  <!-- <link rel="stylesheet" href="./css/style.css"> -->
-   <!-- <script src="./js/main.js" defer></script> -->
-   
-<!-- <script src="./js/menu.js" defer></script> -->
 </head>
 <body>
 
   <!-- ============ LANDING ============ -->
   <section class="landing" id="landingSection" aria-label="Pantalla de bienvenida">
   <div id="landingDot" class="landing-dot" aria-label="Iniciar experiencia" role="button"></div>
-    <img src="./imgs/Barra (4).jpeg" alt="Grupo de amigos del barrio disfrutando" class="landing_image" id="landingImg">
+    <img src="./imgs/Barra (4).jpeg" alt="Grupo de amigos del barrio disfrutando" class="landing_image" id="landingImg" fetchpriority="high" width="1200" height="1600">
     <div class="landing_overlay"></div>
 
     <div class="landing-content" id="landingContent" aria-labelledby="hero-title">
@@ -1568,7 +1550,7 @@
     <header class="header" id="mainHeader">
       <div class="header-container">
         <div class="logo" id="logoBtn" tabindex="0" role="button" aria-label="Volver al inicio">
-          <img src="./imgs/ChatGPT 88kb.webp" alt="Logo" class="logo-icon">
+          <img src="./imgs/ChatGPT 88kb.webp" alt="Logo" class="logo-icon" width="170" height="80">
           <h2 class="logo_title">alasRisas <span>trip</span></h2>
         </div>
 
@@ -1639,13 +1621,16 @@
           Fechas, gastos, y recuerdos — todo en un solo lugar.
         </p>
 		
-		<section class="hero" aria-labelledby="hero-heading">
-		<p class="hero-sub">
+		<section class="hero">
+      <p class="hero-title-eyebrow">
+        <em>El barrio entero de vacaciones</em>
+      </p>
+      <p class="hero-sub">
         Ese viaje que llevan años postergando. Esta vez sí va. Destinos épicos, costos compartidos
         y recuerdos que van a contar por décadas.
       </p>
-      <div class="hero-badge"style="color:white">Verano 2025 · Cupos limitados</div>
-	  
+      <div class="hero-badge" style="color:white">Verano 2025 · Cupos limitados</div>
+
 	  <div class="hero-actions">
         <a href="#inscripcion" class="btn-primary">
           ⚧️ Quiero sumarme
@@ -1654,16 +1639,7 @@
           Ver destinos →
         </a>
       </div>
-	  
-      <h1 class="hero-title" id="hero-heading">
-        El barrio entero<br>
-        <em>de vacaciones</em>
-      </h1>
-      <p class="hero-sub">
-        Ese viaje que llevan años postergando. Esta vez sí va. Destinos épicos, costos compartidos
-        y recuerdos que van a contar por décadas.
-      </p>
-	  
+
       <div class="hero-scroll" aria-hidden="true">scroll</div>
     </section>
 	
@@ -1808,7 +1784,6 @@
             <span class="audio-status-text">Música de viaje desactivada</span>
           </button>
           <audio id="tripAudio" src="./imgs/Augsburg.mp3" loop preload="none"></audio>
-		<!-- <audio id="tripAudio" src="./imgs/WhatsApp audio.ogg" loop preload="none"></audio> -->
         </div>
       </section>
 	  
@@ -1957,31 +1932,45 @@
               <span class="submit-icon" aria-hidden="true">👋</span>
               Unirme ahora
             </button>
-			<button type="reset" class="btn_reset ">Limpiar Formulario</button>
+			<button type="reset" class="btn_reset" aria-label="Limpiar todos los campos del formulario">Limpiar Formulario</button>
           </div>
         </form>
 		</div>
 		</section>
+    
+<!-- Bloque del Contador Público de alasRisas Iframe accesible con tu enlace de Umami Cloud -->
+<section class="contador-visitas" style="width: 100%; margin: 30px auto; padding: 0 15px; box-sizing: border-box; text-align: center;" aria-labelledby="titulo-contador">     
+    <div style="width: 100%; max-width: 450px; margin: 0 auto;">               
+        <h4 id="titulo-contador" style=" font-size: clamp(1.2rem, 4vw, 1.6rem); color: #ff5722; margin: 0 0 15px 0; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+            👁️ ¡El barrio está chusmeando en vivo! 
+        </h4>        
+        <iframe 
+            src="https://cloud.umami.is/share/gR9raFEWoz7MzA1J" 
+            title="Gráfica interactiva de visitas al sitio alasRisas"
+            aria-live="polite"
+            width="100%" 
+            height="220" 
+            frameborder="0" 
+            scrolling="no" 
+            style="border: 1px solid #222; border-radius: 12px; background: #121212; color-scheme: dark; display: block; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+        </iframe>        
+    </div>
+</section>
 		
     </main>
 	
-	<button id="scrollTopBtn" class="btn_floating scroll-top-btn" aria-label="Volver arriba"> 
-		<img src="./assets/flechaArriba.svg" alt=""width="24"height="24" loading="lazy" decoding="async">
+	<button id="scrollTopBtn" class="btn_floating scroll-top-btn" aria-label="Volver arriba">
+		<img src="./assets/flechaArriba.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
 	</button>
 
 
-  <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener" class="btn_floating btn_whatsapp" id="btn_whatsapp"aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener" class="btn_floating btn_whatsapp" id="btn_whatsapp" aria-label="Contactar por WhatsApp">
     <span aria-hidden="true">👋</span>
   </a>
   
 <footer class="footer reveal" role="contentinfo" aria-label="Pie de página">
- 
-  <h3 class="youtube-embed__title">
-    <span class="live-indicator" aria-hidden="true"></span>
-    En vivo ahora
-  </h3>
- 
-  <!-- Resto del footer (estrellas, créditos, etc) -->
+
+  <!-- Reseñas / estrellas -->
   <div class="ti-usu reveal">
     <div class="ti-usu-profile">
       <div class="ti-profile">
@@ -2030,11 +2019,13 @@
     <a href="#faq">Preguntas frecuentes</a>
     <a href="#formContact">Me anoto</a>
   </nav>
- 
-  <div class="footer-bottom reveal">
-    <p>&copy; 2026 kikiriya DevOps. Todos los derechos reservados.</p>
+  
+
+<div class="footer-bottom reveal is-visible">
+    <p>© 2026 kikiriya DevOps. Todos los derechos reservados.</p>
     <p class="footer-text">De Capurro al mundo, juntos siempre</p>
   </div>
+
  
 </footer>
 
@@ -2042,7 +2033,7 @@
     (() => {
     'use strict';
 
-    /* ====== UTILIDAD MODERNA: Esperar fin de transición con Promise ====== */
+    /* ====== UTILIDAD: esperar fin de transición con Promise ====== */
     const waitForTransition = (element, propertyName) => new Promise(resolve => {
       const handler = (e) => {
         if (e.target === element && (!propertyName || e.propertyName === propertyName)) {
@@ -2053,7 +2044,24 @@
       element.addEventListener('transitionend', handler);
     });
 
-    // Datos estáticos del carrusel (Seguros de declarar fuera del DOM)
+    /* ====== UTILIDAD: throttle de scroll/resize compartido vía rAF ======
+       Reemplaza los dos patrones repetidos (uno con "ejecutandoScroll"
+       para el header, otro con "ticking" para los botones flotantes).
+       Cualquier callback que solo necesite correr una vez por frame
+       puede envolverse con esto. */
+    const rafThrottle = (callback) => {
+      let queued = false;
+      return (...args) => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+          callback(...args);
+          queued = false;
+        });
+      };
+    };
+
+    // Datos estáticos del carrusel
     const galleryMeta = [
       { label: 'Playa Joaquina',     desc: 'Aguas cristalinas y olas perfectas' },
       { label: 'Costa Atlántica',    desc: 'El océano en su máxima expresión' },
@@ -2068,9 +2076,7 @@
       { label: 'Sendero Tropical',   desc: 'Caminos que nos llevan a la aventura' },
       { label: 'Puente Hercílio Luz',desc: 'Ícono histórico de Florianópolis' }
     ];
-	  
-    const PLACEHOLDER = './imgs/placeholder.jpg';
-	   
+
     const galleryImages = galleryMeta.map((meta, i) => {
       const num = String(i + 1).padStart(2, '0');
       return {
@@ -2078,11 +2084,11 @@
         alt: meta.label,
         label: meta.label,
         desc: meta.desc,
-        _placeholder: './imgs/star.png'              
+        _placeholder: './imgs/star.png'
       };
     });
 
-    // Variables globales internas (Se inicializan formalmente dentro del DOMContentLoaded)
+    // Variables internas (se inicializan dentro de DOMContentLoaded)
     let landing, landingDot, landingImg, landingContent, landingHint, enterBtn;
     let mainContent, logoBtn, navToggle, sidebarLinks, mainHeader;
     let track, dotsContainer, progressBar, counter, carouselEl;
@@ -2093,7 +2099,7 @@
     const AUTOPLAY_DELAY = 5000;
     let isMainContentVisible = false;
 
-    // Funciones globales del carrusel con acceso a las variables del ámbito superior
+    /* ========== CARRUSEL: funciones de nivel superior ========== */
     const goToSlide = (idx) => {
       currentSlide = idx;
       track.style.transform = `translateX(-${idx * 100}%)`;
@@ -2103,6 +2109,12 @@
 
     const nextSlide = () => goToSlide((currentSlide + 1) % galleryImages.length);
     const prevSlide = () => goToSlide((currentSlide - 1 + galleryImages.length) % galleryImages.length);
+
+    const stopAutoplay = () => {
+      if (carouselAutoplay) clearInterval(carouselAutoplay);
+      if (carouselProgressInterval) clearInterval(carouselProgressInterval);
+      if (progressBar) progressBar.style.width = '0%';
+    };
 
     const startAutoplay = () => {
       stopAutoplay();
@@ -2114,22 +2126,81 @@
       }, 50);
     };
 
-    const stopAutoplay = () => {
-      if (carouselAutoplay) clearInterval(carouselAutoplay);
-      if (carouselProgressInterval) clearInterval(carouselProgressInterval);
-      if (progressBar) progressBar.style.width = '0%';
-    };
-
     const resetAutoplay = () => { stopAutoplay(); startAutoplay(); };
 
+    /* ========== VALIDACIÓN Y ENVÍO DEL FORMULARIO ==========
+       Se referencia desde el HTML vía onsubmit="handleFormSubmit(event)".
+       Se expone en window porque el atributo inline onsubmit solo puede
+       llamar a funciones accesibles globalmente. */
+    const FORM_VALIDATORS = {
+      'fn-nombre':   (v) => v.trim().length >= 2 || 'Ingresá tu nombre (mínimo 2 caracteres).',
+      'fn-apellido': (v) => v.trim().length >= 2 || 'Ingresá tu apellido (mínimo 2 caracteres).',
+      'fn-email':    (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Ingresá un correo electrónico válido.',
+      'fn-tel':      (v) => v.trim().length >= 6 || 'Ingresá un teléfono válido.',
+      'fn-pass':     (v) => v.length >= 3 || 'La contraseña debe tener al menos 3 caracteres.'
+    };
+
+    window.handleFormSubmit = function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      let firstInvalid = null;
+      let isValid = true;
+
+      Object.entries(FORM_VALIDATORS).forEach(([fieldId, validate]) => {
+        const field = document.getElementById(fieldId);
+        const errorEl = document.getElementById(`${fieldId}-err`);
+        if (!field) return;
+
+        const result = validate(field.value);
+        const message = result === true ? '' : result;
+
+        if (errorEl) errorEl.textContent = message;
+        field.setAttribute('aria-invalid', message ? 'true' : 'false');
+
+        if (message) {
+          isValid = false;
+          if (!firstInvalid) firstInvalid = field;
+        }
+      });
+
+      if (!isValid) {
+        firstInvalid?.focus();
+        return false;
+      }
+
+      const submitBtn = form.querySelector('.form-submit');
+      const originalLabel = submitBtn?.innerHTML;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span aria-hidden="true">⏳</span> Enviando...';
+      }
+
+      // Punto de integración: reemplazar este timeout por el fetch/POST real
+      // hacia tu backend o servicio de formularios cuando esté listo.
+      setTimeout(() => {
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalLabel;
+        }
+        const formCard = form.closest('.form-card');
+        if (formCard) {
+          formCard.setAttribute('aria-live', 'polite');
+          const successMsg = document.createElement('p');
+          successMsg.className = 'form-success-msg';
+          successMsg.textContent = '¡Listo! Te anotaste al viaje. Te vamos a estar escribiendo pronto.';
+          formCard.appendChild(successMsg);
+        }
+      }, 600);
+
+      return false;
+    };
 
     /* ========== ENTRADA PRINCIPAL AL CONTROL DEL DOM ========== */
     document.addEventListener('DOMContentLoaded', () => {
-      // Selectores utilitarios locales
       const $ = (sel, ctx = document) => ctx.querySelector(sel);
       const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-      // Asignación segura de elementos del DOM
       landing         = $('#landingSection');
       landingDot      = $('#landingDot');
       landingImg      = $('#landingImg');
@@ -2147,29 +2218,27 @@
       counter         = $('#carouselCounter');
       carouselEl      = $('#carousel');
 
-		let animStarted = false;
-		let timerInicio=null;
-	
+      let animStarted = false;
+      let timerInicio = null;
+
       /* ---------- Animación inicial del landing ---------- */
       const startExpandingAnimation = () => {
         if (animStarted) return;
-		landingContent.style.willChange = 'translate, opacity';
+        landingContent.style.willChange = 'translate, opacity';
         animStarted = true;
-		clearTimeout(timerInicio); 
-        landingDot.style.display = 'none';	  
+        clearTimeout(timerInicio);
+        landingDot.style.display = 'none';
         landingHint.classList.add('is-visible');
         landingImg.classList.add('is-expanding');
         landingContent.classList.add('is-visible');
       };
-	  
-	  landingContent.addEventListener('transitionend', () => {
-		  landingContent.style.willChange = 'auto';
-		}, { once: true });
 
-	  
-		landingDot.addEventListener('click', startExpandingAnimation);
+      landingContent.addEventListener('transitionend', () => {
+        landingContent.style.willChange = 'auto';
+      }, { once: true });
 
-     
+      landingDot.addEventListener('click', startExpandingAnimation);
+
       landing.addEventListener('click', (e) => {
         if (e.target === enterBtn || enterBtn.contains(e.target)) return;
         startExpandingAnimation();
@@ -2194,36 +2263,34 @@
 
       /* ---------- Retorno al landing desde el logo ---------- */
       const showLanding = async () => {
-		clearTimeout(timerInicio);
+        clearTimeout(timerInicio);
         mainContent.classList.remove('nav-active');
         mainContent.classList.remove('visible');
-		
-		 if (mainContent.classList.contains('visible')) {
-			await waitForTransition(mainContent, 'opacity');
-		}
+
+        if (mainContent.classList.contains('visible')) {
+          await waitForTransition(mainContent, 'opacity');
+        }
         animStarted = false;
         landing.classList.remove('is-hidden', 'is-exiting');
         landingDot.style.display = 'block';
         landingImg.classList.remove('is-expanding');
         landingContent.classList.remove('is-visible');
-		landingHint.classList.remove('is-visible');
-		
+        landingHint.classList.remove('is-visible');
+
         setTimeout(() => {
-          if (!animStarted) 
-			landingHint.classList.add('is-visible');
-        }, 1000);				
-		  timerInicio = setTimeout(() => {
-		   console.log('AUTO START');		  
-			if (!animStarted) {
-			  startExpandingAnimation();
-		landingHint.classList.remove('is-visible');
-			   console.log('START EXPANDING');
-			}
-		  }, 5000);
+          if (!animStarted) landingHint.classList.add('is-visible');
+        }, 1000);
+
+        timerInicio = setTimeout(() => {
+          if (!animStarted) {
+            startExpandingAnimation();
+            landingHint.classList.remove('is-visible');
+          }
+        }, 5000);
       };
-	  
-	  showLanding();	  
-	  
+
+      showLanding();
+
       logoBtn.addEventListener('click', showLanding);
       logoBtn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -2231,33 +2298,27 @@
           showLanding();
         }
       });
-	  
 
       /* ---------- Menú hamburguesa ---------- */
       navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = document.body.classList.toggle('nav-active');
         navToggle.setAttribute('aria-expanded', isOpen);
-        if (isOpen) {
-          document.body.classList.add('no-scroll');
-        } else {
-          document.body.classList.remove('no-scroll');
-        }
-		
+        document.body.classList.toggle('no-scroll', isOpen);
       });
-		const sidebar= $('#header_sidebar');
-      document.addEventListener('click', (e) => {	
-		sidebar.style.willChange = 'transform, opacity';
-         if (document.body.classList.contains('nav-active') &&
+
+      const sidebar = $('#header_sidebar');
+      document.addEventListener('click', (e) => {
+        sidebar.style.willChange = 'transform, opacity';
+        if (document.body.classList.contains('nav-active') &&
             !sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-			document.body.classList.remove('nav-active', 'no-scroll');
-			navToggle.setAttribute('aria-expanded', 'false');
-			
-			sidebar.addEventListener('transitionend', () => {
-			  sidebar.style.willChange = 'auto';
-			}, { once: true });
+          document.body.classList.remove('nav-active', 'no-scroll');
+          navToggle.setAttribute('aria-expanded', 'false');
+
+          sidebar.addEventListener('transitionend', () => {
+            sidebar.style.willChange = 'auto';
+          }, { once: true });
         }
-	  
       });
 
       sidebarLinks.forEach(link => {
@@ -2268,11 +2329,11 @@
           navToggle.setAttribute('aria-expanded', 'false');
         });
       });
-	  
-	  sidebar.addEventListener('click', () => {
-		navToggle.setAttribute('aria-expanded', 'false');
-		document.body.classList.remove('nav-active', 'no-scroll');
-	  });
+
+      sidebar.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-active', 'no-scroll');
+      });
 
       /* ---------- FAQ accordion ---------- */
       $$('.faq-trigger').forEach(trigger => {
@@ -2290,8 +2351,7 @@
         });
       });
 
-      /* ---------- EFECTO LIGHTBOX (Clic en Imagen) ---------- */
-      // 1. Crear el contenedor del modal dinámicamente si no existe en el HTML
+      /* ---------- Lightbox (clic en imagen del carrusel) ---------- */
       let lightbox = $('#lightboxModal');
       if (!lightbox) {
         lightbox = document.createElement('div');
@@ -2315,30 +2375,24 @@
       const lightboxDesc = $('#lightboxDesc', lightbox);
       const lightboxClose = $('.lightbox-close', lightbox);
 
-      // 2. Escuchar clics en las imágenes del carrusel usando delegación de eventos
       if (track) {
         track.addEventListener('click', (e) => {
           const targetImg = e.target.closest('img');
-          if (!targetImg) return; // Si no es una imagen, ignorar
+          if (!targetImg) return;
 
-          // Pausar el autoplay del carrusel para que no avance de fondo
-          if (typeof stopAutoplay === 'function') stopAutoplay();
+          stopAutoplay();
 
-          // Extraer datos guardados en los atributos del elemento
           lightboxImg.src = targetImg.src;
           lightboxImg.alt = targetImg.alt;
           lightboxTitle.textContent = targetImg.getAttribute('data-title') || targetImg.alt;
           lightboxDesc.textContent = targetImg.getAttribute('data-desc') || '';
-          // Mostrar modal
           lightbox.classList.add('is-active');
         });
       }
 
-      // 3. Cerrar el modal al hacer clic en la (X) o fuera de la imagen
       const cerrarLightbox = () => {
         lightbox.classList.remove('is-active');
-        // Reanudar el carrusel si el usuario sale del modal
-        if (typeof startAutoplay === 'function') startAutoplay();
+        startAutoplay();
       };
 
       lightboxClose.addEventListener('click', cerrarLightbox);
@@ -2346,13 +2400,11 @@
         if (e.target === lightbox) cerrarLightbox();
       });
 
-      // 4. Cerrar presionando la tecla Escape
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('is-active')) {
           cerrarLightbox();
         }
       });
-
 
       /* ---------- Audio toggle ---------- */
       const audio = $('#tripAudio');
@@ -2374,233 +2426,168 @@
           audioStatus.textContent = 'Música de viaje pausada';
         }
       });
+
       /* ---------- Fecha dinámica ---------- */
       const dateEl = $('#ti-date');
       if (dateEl) {
         dateEl.textContent = 'Actualizado: ' + new Date().toLocaleDateString('es-AR');
       }
 
-      /* ============== initIntersectionObservers ============== */
+      /* ============== Observers de scroll-reveal (unificados) ==============
+         Antes había 3 IntersectionObserver casi idénticos (reveal, galería,
+         footer). Se consolidan en uno solo; la única diferencia real era
+         disparar startAutoplay() cuando entra el carrusel, que ahora se
+         resuelve con un chequeo puntual dentro del mismo callback. */
       const initIntersectionObservers = () => {
-			const observerOptions = {
-				root: null,
-			  threshold: 0.15,
-			  rootMargin: '0px 0px -50px 0px'
-			};
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            if (entry.target.id === 'carousel') startAutoplay();
+            obs.unobserve(entry.target);
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
 
-			const revealObserver = new IntersectionObserver((entries, obs) => {
-			  entries.forEach(entry => {
-				if (entry.isIntersecting) {
-				  entry.target.classList.add('is-visible');
-				  obs.unobserve(entry.target);
-				}
-			  });
-			}, observerOptions);
+        $$('.reveal, .fade-in').forEach(el => revealObserver.observe(el));
 
-			// Observer 2: Galería (efecto ligeramente distinto)
-			
-			const galleryObserver = new IntersectionObserver((entries, obs) => {
-				entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('is-visible');
-					if (entry.target.id === 'carousel') startAutoplay();
-					obs.unobserve(entry.target);
-				}
-			});
-			}, { threshold: 0.2 });
-						
-			const footerObserver = new IntersectionObserver((entries, obs) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('is-visible');
-						obs.unobserve(entry.target);
-					}
-				});
-			}, { threshold: 0.1 });
-		
-		   // Asignar cada elemento a su observer
-		   $$('.reveal, .fade-in').forEach(el => {
-			if (el.closest('footer')) 
-				footerObserver.observe(el);
-			else if (el.id === 'carousel' || el.closest('#galeria')) 
-				galleryObserver.observe(el);
-			else revealObserver.observe(el);});
-			
-			if (mainHeader) {
-				let lastScrollY = 0;
-				let ejecutandoScroll = false;
-				const triggerPoint = window.innerHeight * 0.6;
-				const onScroll = () => {
-					const scrollY = window.scrollY;
-					if (scrollY > triggerPoint && scrollY > lastScrollY) {
-						mainHeader.style.transform = 'translateY(-100%)';
-					} else {
-						mainHeader.style.transform = 'translateY(0)';
-					}
-					lastScrollY = scrollY;
-					ejecutandoScroll = false;
-				
-				};
-		
-			window.addEventListener('scroll', () => {
-				if (!ejecutandoScroll) {
-					requestAnimationFrame(onScroll);
-					ejecutandoScroll = true;
-				}
-			},{ passive: true });
-		}};
-		
-		 
-	  
-		/* ========== CAROUSEL ========== */
-		<!-- type="image/webp" -->
+        if (mainHeader) {
+          let lastScrollY = 0;
+          const triggerPoint = window.innerHeight * 0.6;
+
+          const onHeaderScroll = rafThrottle(() => {
+            const scrollY = window.scrollY;
+            mainHeader.style.transform =
+              (scrollY > triggerPoint && scrollY > lastScrollY) ? 'translateY(-100%)' : 'translateY(0)';
+            lastScrollY = scrollY;
+          });
+
+          window.addEventListener('scroll', onHeaderScroll, { passive: true });
+        }
+      };
+
+      /* ========== CAROUSEL ========== */
       const initCarousel = () => {
         if (!track) return;
         isMainContentVisible = true;
         track.innerHTML = '';
         dotsContainer.innerHTML = '';
-			galleryImages.forEach((img, idx) => {
-			  const slide = document.createElement('div');
-			  slide.className = 'carousel-slide';
-			  slide.innerHTML = `
-				<img 
-				  src="${img.src}" 
-				  alt="${img.alt}" 
-				  type="image/jpg"
-				  loading="lazy"
-				  onerror="this.onerror=null; this.src='${img._placeholder}'; this.classList.add('img-error');"
-				  data-title="${img.label || img.alt}"
-					data-desc="${img.desc}"
-				>
-				<div class="carousel-caption">
-				  <h3>${img.label}</h3>
-				  <p>${img.desc}</p>
-				</div>
-			  `;
-			  track.appendChild(slide);
 
-			  const dot = document.createElement('button');
-			  dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
-			  dot.setAttribute('aria-label', 'Ir a imagen ' + (idx + 1));
-			  dot.addEventListener('click', () => { goToSlide(idx); resetAutoplay(); });
-			  dotsContainer.appendChild(dot);
-			});
+        galleryImages.forEach((img, idx) => {
+          const slide = document.createElement('div');
+          slide.className = 'carousel-slide';
+          slide.innerHTML = `
+            <img
+              src="${img.src}"
+              alt="${img.alt}"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              onerror="this.onerror=null; this.src='${img._placeholder}'; this.classList.add('img-error');"
+              data-title="${img.label || img.alt}"
+              data-desc="${img.desc}"
+            >
+            <div class="carousel-caption">
+              <h3>${img.label}</h3>
+              <p>${img.desc}</p>
+            </div>
+          `;
+          track.appendChild(slide);
 
-			if (counter) counter.textContent = `1 / ${galleryImages.length}`;
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Ir a imagen ' + (idx + 1));
+          dot.addEventListener('click', () => { goToSlide(idx); resetAutoplay(); });
+          dotsContainer.appendChild(dot);
+        });
 
-			goToSlide(0);
-			
-			$('#carouselPrev').addEventListener('click', () => { 
-				prevSlide(); 
-				resetAutoplay(); 
-			});
-			$('#carouselNext').addEventListener('click', () => { 
-				nextSlide(); 
-				resetAutoplay(); 
-			});
-			let touchStartX = 0;
-			carouselEl.addEventListener('touchstart', e => { 
-				touchStartX = e.touches[0].clientX; 
-			}, { passive: true });
-			carouselEl.addEventListener('touchend', e => {
-				const diff = touchStartX - e.changedTouches[0].clientX;
-				if (Math.abs(diff) > 50) { 
-					diff > 0 ? nextSlide() : prevSlide(); 
-					resetAutoplay(); 
-				}}, { passive: true }
-			);
-			document.addEventListener('keydown', (e) => {
-				if (!isMainContentVisible) return;
-				if (e.key === 'ArrowLeft') { prevSlide(); resetAutoplay(); }
-				if (e.key === 'ArrowRight') { 
-					nextSlide(); 
-					resetAutoplay(); 
-				}
-			});
-		<!-- fininitCarousel -->
-		}; 
-	
-	syncLegalA11y();
-	<!-- fin DOMContentLoaded -->
-	});
-		
-		<!-- LEGAL -->
-			function syncLegalA11y() {
-			  document.querySelectorAll('.ft-toggle').forEach(btn => {
-				const content = document.getElementById(btn.getAttribute('aria-controls'));
-				if (!content) return;
-			 
-				if (window.innerWidth >= 768) {
-				  // Desktop: contenido siempre visible, el botón no es interactivo
-				  btn.setAttribute('aria-expanded', 'true');
-				  btn.setAttribute('aria-label', 'Enlaces legales');
-				  content.setAttribute('aria-hidden', 'false');
-				} else {
-				  // Mobile: si no fue abierto manualmente, queda colapsado
-				  if (!btn.classList.contains('active')) {
-					btn.setAttribute('aria-expanded', 'false');
-					btn.setAttribute('aria-label', 'Mostrar enlaces legales');
-					content.setAttribute('aria-hidden', 'true');
-				  }
-				}
-			  });
-			}
-			 
-			document.querySelectorAll('.ft-toggle').forEach(btn => {
-			  btn.addEventListener('click', () => {
-				if (window.innerWidth >= 768) return; // en desktop el botón no hace nada
-			 
-				const content = document.getElementById(btn.getAttribute('aria-controls'));
-				const expanded = btn.getAttribute('aria-expanded') === 'true';
-			 
-				btn.setAttribute('aria-expanded', !expanded);
-				btn.setAttribute('aria-label', expanded
-				  ? 'Mostrar enlaces legales'
-				  : 'Ocultar enlaces legales'
-				);
-				content.setAttribute('aria-hidden', expanded);
-				btn.classList.toggle('active');
-				content.classList.toggle('open');
-			  });
-			});
- 		    
-			<!-- BOTONES FLOTANTES -->			
-			const floatingButtons =  document.querySelectorAll('.btn_floating');
-			let ticking = false;
+        if (counter) counter.textContent = `1 / ${galleryImages.length}`;
 
-			function toggleFloatingButtons(show){
-			  floatingButtons.forEach(btn => {
-				btn.classList.toggle('show', show);
-			  });
-			}
+        goToSlide(0);
 
-			function updateFloatingButtons(){
-			  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-			  const show = window.scrollY >= maxScroll * 0.5;
-			  toggleFloatingButtons(show);
-			  ticking = false;
-			}
+        $('#carouselPrev').addEventListener('click', () => { prevSlide(); resetAutoplay(); });
+        $('#carouselNext').addEventListener('click', () => { nextSlide(); resetAutoplay(); });
 
-			window.addEventListener('scroll', () => {
-			  if (ticking) return;
-			  ticking = true;
-			  requestAnimationFrame(updateFloatingButtons);
-			});	  
-			
-			document.getElementById('scrollTopBtn').addEventListener('click', () => {
-			  document.getElementById('inicio').scrollIntoView({
-				behavior: 'smooth',
-				block: 'start'
-			  });
-			});
+        let touchStartX = 0;
+        carouselEl.addEventListener('touchstart', e => {
+          touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        carouselEl.addEventListener('touchend', e => {
+          const diff = touchStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) {
+            diff > 0 ? nextSlide() : prevSlide();
+            resetAutoplay();
+          }
+        }, { passive: true });
 
-			window.addEventListener('resize', syncLegalA11y);
+        document.addEventListener('keydown', (e) => {
+          if (!isMainContentVisible) return;
+          if (e.key === 'ArrowLeft') { prevSlide(); resetAutoplay(); }
+          if (e.key === 'ArrowRight') { nextSlide(); resetAutoplay(); }
+        });
+      };
 
-			requestAnimationFrame(updateFloatingButtons);
-				
-})();
+      /* ---------- Toggle de enlaces legales (footer) ---------- */
+      syncLegalA11y();
+    });
 
-/****************************************************************************/
+    /* ========== LEGAL: sincroniza visibilidad del bloque de enlaces ========== */
+    function syncLegalA11y() {
+      document.querySelectorAll('.ft-toggle').forEach(btn => {
+        const content = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!content) return;
+
+        if (window.innerWidth >= 768) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Enlaces legales');
+          content.setAttribute('aria-hidden', 'false');
+        } else if (!btn.classList.contains('active')) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Mostrar enlaces legales');
+          content.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }
+
+    document.querySelectorAll('.ft-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window.innerWidth >= 768) return;
+
+        const content = document.getElementById(btn.getAttribute('aria-controls'));
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        btn.setAttribute('aria-expanded', !expanded);
+        btn.setAttribute('aria-label', expanded ? 'Mostrar enlaces legales' : 'Ocultar enlaces legales');
+        content.setAttribute('aria-hidden', expanded);
+        btn.classList.toggle('active');
+        content.classList.toggle('open');
+      });
+    });
+
+    /* ========== Botones flotantes (scroll-to-top, WhatsApp) ==========
+       Usa el mismo helper rafThrottle que el header, en vez de su propio
+       patrón "ticking" duplicado. */
+    const floatingButtons = document.querySelectorAll('.btn_floating');
+
+    function toggleFloatingButtons(show) {
+      floatingButtons.forEach(btn => btn.classList.toggle('show', show));
+    }
+
+    function updateFloatingButtons() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const show = window.scrollY >= maxScroll * 0.5;
+      toggleFloatingButtons(show);
+    }
+
+    window.addEventListener('scroll', rafThrottle(updateFloatingButtons), { passive: true });
+    window.addEventListener('resize', syncLegalA11y);
+
+    requestAnimationFrame(updateFloatingButtons);
+
+    })();
   </script>
 </body>
 </html>
