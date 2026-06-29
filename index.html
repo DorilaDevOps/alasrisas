@@ -203,7 +203,7 @@
   "eventStatus": "https://schema.org/EventScheduled",
   "url": "https://alasrisas.netlify.app/",
   "image": [
-    "https://alasrisas.netlify.app/imgs/floripa-08.jpg"
+    "https://alasrisas.netlify.app/imgs/floripa-12.jpg"
   ],
   "location": {
     "@type": "Place",
@@ -275,8 +275,31 @@
       --color-accent-cool:  #00d4ff;
       --color-accent-warm:  #e9ff00;
 	  --bg_violeta:       #76409f;
+      --color-gris_copyright: #555;
+      --green-900: #052e16;
+      --green-600: #16a34a;
+          --green-300: #7df9c8;
+          --green-100: #dcfce7;
+	  
+	  /* ============ SISTEMA DE COLOR ccesibilidad WCAG AAA 
+				Color	HEX	Uso recomendadodesde https://paletacolorpro.com/accesibilidad ============*/
+  
+	  --blancoOverlay: #f1e7da8a;
+	  --marrronOverlay: #7a5c468c;;
+	  --marronOscuro: #2B1D14;
+	  --marronMedio: #5A4331;
+		--marronClaro: #7A5C46;
+		--marronMuyClaro: #CBB8A5;
+		--gris_casi_negro:#1A1A1A;
+		--gris_oscuro:#2D2D2D;
+		--gris_medio:#4A4A4A;
+		--gris_claro:#a49b9b;
+		--gris_blanco:#F5F5F5;
+		--blanco_roto:#FAFAFA;
+		
 
       --font-display: 'Syne', system-ui, sans-serif;
+      --font-display_2: 'Playfair Display', Georgia, serif;
       --font-mono: 'Space Mono', monospace;
       --font-body: 'DM Sans', system-ui, sans-serif;
       --font-Playfair: 'Playfair Display', serif;;
@@ -319,6 +342,21 @@
       --color-accent:      #7DF9C8;
       --color-accent-cool: rgb(25 44 59 / 80%);
       --color-danger:      #e84a4a;
+      --color_green_dark:  #676767;
+	  
+	   --blancoOverlay: #f1e7da8a;
+	  --marrronOverlay: #7a5c468c;
+	  --marronOscuro: #2B1D14;
+	  --marronMedio: #5A4331;
+		--marronClaro: #7A5C46;
+		--marronMuyClaro: #CBB8A5;
+		--gris_casi_negro:#1A1A1A;
+		--gris_oscuro:#2D2D2D;
+		--gris_medio:#4A4A4A;
+		--gris_claro:#a49b9b;
+		--gris_blanco:#F5F5F5;
+		--blanco_roto:#FAFAFA;
+		
     }
 
     /* ============ TEMA CLARO ============ */
@@ -331,7 +369,21 @@
       --color-text-muted:  #8080a0;
       --color-accent:      #059669;
       --color-accent-cool: rgba(200, 230, 255, .8);
-      --color-danger:      #e84a4a;
+      --color-danger:      #e84a4a;      
+      --color_green_dark:  #052e16;
+	  
+	   --blancoOverlay: #7a5c468c;
+	  --marrronOverlay: #f1e7da8a;
+	  --marronOscuro: #FAFAFA;
+	  --marronMedio: #2D2D2D;
+		--marronClaro: #7A5C46;
+		--marronMuyClaro: #1A1A1A;
+		--gris_casi_negro:#CBB8A5;
+		--gris_oscuro:#a49b9b;
+		--gris_medio:#F5F5F5;
+		--gris_claro:#4A4A4A;
+		--gris_blanco:#5A4331;
+		--blanco_roto:#2B1D14;
     }
 
     .logo-watermark {
@@ -965,7 +1017,6 @@
       padding: .75rem 1rem;
       outline: none;
       transition: border-color .25s, background .25s, box-shadow .25s;
-      -webkit-appearance: none;
     }
 
     .form-field input::placeholder,
@@ -1062,8 +1113,10 @@
       margin: 0 auto;
     }
     .faq-section h2 { text-align: center; font-family: var(--font-display); margin-bottom: 1.2rem; font-size: clamp(1.2em, 5vw, 2em); color: var(--color-text); }
-    .faq-container { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+   /* <!-- .faq-container { display: grid; grid-template-columns: 1fr; gap: .75rem; } -->*/
+    .faq-container { display:flex;flex-wrap:wrap; gap: .75rem; }
     .faq-item {
+		flex: 1 0 100%;
       background: var(--color-surface);
       border: 1px solid var(--color-text-muted);
       border-radius: 14px;
@@ -1193,10 +1246,11 @@
 	/* Contenedor principal del Modal */
 	.lightbox-modal {
 	  position: fixed;
-	  top: 0;
+	  /*top: 0;
 	  left: 0;
 	  width: 100%;
-	  height: 100%;
+	  height: 100%;*/
+	  inset: 0; /*es un atajo (shorthand)*/
 	  background-color: rgba(0, 0, 0, 0.9);
 	  z-index: 9999; 
 	  display: flex;
@@ -1219,13 +1273,19 @@
 	  max-height: 80vh;
 	  text-align: center;
 	  position: relative;
+	      border: 1px solid var(--color-text);
+		  
+    background-color: var(--gris_medio);
 	}
 			
 	/* La imagen expandida */
 	.lightbox-content img {
-	  max-width: 100%;
-	  max-height: 70vh;
-	  object-fit: contain;
+		display: inline-block;
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		max-height: 30vh;
+	  object-fit: cover;
 	  border-radius: 4px;
 	  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 	}
@@ -1251,14 +1311,16 @@
 	/* Botón de cierre (X) */
 	.lightbox-close {
 	  position: absolute;
-	  top: 20px;
+	  top: 30vh;
 	  right: 25px;
 	  background: none;
 	  border: none;
-	  color: var(--color-text);
+	  color: var(--color-danger);	  
+      font-weight: 600;
 	  font-size: 40px;
 	  cursor: pointer;
 	  line-height: 1;
+	  z-index:2;
 	  transition: transform 0.2s ease;
 	}
 
@@ -1293,20 +1355,131 @@
       text-shadow: 0 0 5px var(--color-accent-2);
     }
 /* ===== BREADCRUMBS ===== */
-    .breadcrumbs {display: flex;justify-content: center; padding: var(--space-md) 0; background-color:var(--color-surface); border-bottom: 1px solid red;}
+    .breadcrumbs {display: flex;flex-direction:column;justify-content: center; padding: var(--space-md) 0; background-color:var(--color-surface); border-bottom: 1px solid red;}
     .breadcrumbs-list { display: flex; flex-wrap: wrap; gap: var(--space-xs); list-style: none; font-size: var(--font-size-sm); color: var(--color-danger); }
     .breadcrumbs-list a { color: var(--color-text); }
     .breadcrumbs-list li:not(:last-child)::after { content: "/"; margin-left: var(--space-xs); color: var(--color-accent); }
 	
-	.ti-usu {  width: 100%;  display: flex;  justify-content: center;}
-    .ti-usu-profile, .ti-profile{ display: flex; align-items: flex-end; gap: 0.5rem; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem);}
-	.ti-profile img{width: 60px; height:auto}
-    .ti-date { color: var(--color-text); font-size: var(--font-size-xs); }
+	.bread_coloresAAA{display:grid;  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));gap:10px;}	
+	.bread_coloresAAA{display:flex;flex-wrap: wrap;padding:0 10px;background-color:var(--gris_medio);}	
+	.bread_coloresAAA>div{
+		flex: 1 0 100px; 
+		height:100px;
+		border:1px solid var(--gris_oscuro);
+		background-image:url("./imgs/Transporte6.png");
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius:20px;
+		}
+	
+	.bread_coloresAAA::nth-child(1){background-color:var();}
+	.bread_coloresAAA::nth-child(2){background-color:var();}
+	.bread_coloresAAA::nth-child(3){background-color:var();}
+	.bread_coloresAAA::nth-child(4){background-color:var();}
+	.bread_coloresAAA::nth-child(5){background-color:var();}
+	.bread_coloresAAA>div:hover{background-color:red;}
+	
+  
+  .timeline {
+    background: var(--green-900);
+    color: var(--white);
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+  .section-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+}
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size:var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--green-600);
+    margin-bottom: .8rem;
+}
+.section-tag::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--green-600);
+    border-radius: 2px;
+}
+.timeline-list {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.timeline-list::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to top, transparent, var(--green-600) 70%);
+}
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    position: relative;
+}
+.timeline-dot {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--green-900);
+    border: 2px solid var(--green-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+}
+.timeline-content {
+    padding-top: 8px;
+}.timeline-step {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--sand-300);
+    margin-bottom: 4px;
+}
+.timeline-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+.timeline-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, .55);
+    line-height: 1.6;
+}	
+    .ti-usu-profile, .ti-profile, .ti-date{ display: flex;  gap: 0.5rem; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem);}
+	.ti-profile img{width: 60px; height:auto; align-items: center;}
+	.ti-profile { justify-content: space-between;align-items: center; }
+  .ti-date{font-size:var(--font-size-xs)}
+  .ti-usu-profile{justify-content: space-between; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem); margin-top: .5rem;}
+   
     /* ============ FOOTER ============ */
     .footer {
       background: var(--color-surface-2);
-      border-top: 1px solid var(--color-border);
-      padding: 40px 20px;
+      padding: 2rem 1rem;
       text-align: center;
       display: grid;  
       grid-template-columns: repeat(1, minmax(200px, 1fr));
@@ -1315,9 +1488,25 @@
 	  opacity: 1 !important; 
 		visibility: visible !important; 
     }
+    .footer-disclaimer {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 0.75rem;
+      opacity: 0.6;
+      line-height: 1.4;
+    }
     .footer.footer-bottom { display: flex; flex-direction: column;gap: .3rem;}
     .footer-bottom p { font-size: var(--font-size-xs);}
     .footer-text { font-style: italic; }
+    .footer-copyright{
+		    border-top: 1px solid var(--color-gris_copyright);
+        max-width: 500px;
+        margin: 0 auto;
+        color: var(--color-gris_copyright);
+        padding-top: 18px;
+        font-size: 11px;
+        font-weight: 400;
+      }
 	
 	/* ============ Politica de contrato ============ */
 
@@ -1328,11 +1517,10 @@
  
 .ft-toggle {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   min-height: 44px;
-  border: 1px solid var(--color-text-muted);
   background: transparent;
   color: inherit;
   cursor: pointer;
@@ -1375,7 +1563,7 @@
 /* Abierto en mobile vía JS (aria-hidden="false" + .open) */
 .ft-content[aria-hidden="false"],
 .ft-content.open {
-  max-height: 400px;
+  max-height: 900px;
   opacity: 1;
   margin-top: 1rem;
 }
@@ -1406,6 +1594,17 @@
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+		details{
+			padding:.5em;
+      display:grid; 
+      gap:10px;
+			&[open]{
+				color:var(--color_green_dark);
+        text-align: start;
+			}
+		}
+
  
 /* Utilidad accesible (por si no la tenés ya global) */
 .visually-hidden {
@@ -1421,12 +1620,16 @@
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
- .site-footer {
-      background: var(--color-surface-2); padding: 3rem 1rem; margin-top: 4rem;
-      border-top: 1px solid var(--color-border);
-    }
+
     .footer-links {
-      margin-top: 1rem; display: flex; justify-content: center; gap: .5rem; flex-wrap: wrap;font-size: var(--font-size-sm);
+      margin-top: 1rem; 
+      display: flex; 
+      justify-content: center; 
+      gap: .5rem; 
+      flex-wrap: wrap;
+      font-size: var(--font-size-sm);
+      padding: 3rem 1rem;     
+      border-top: 1px solid var(--color-border);
     }
 	
   .footer-links a, #mainHeader > div > nav > ul > a { 
@@ -1556,6 +1759,49 @@
 			  font-size:var(--font-size-xl);
 		}
 		.btn_whatsapp:hover { transform:translateY(0) scale(1.1);}	
+    /* --- Código del Aviso / Tooltip --- */
+  
+  /* Crear el contenedor del texto oculto */
+  .btn_whatsapp::after {
+    content: attr(data-tooltip); /* Toma el texto "Llamar" del HTML */
+    position: absolute;
+    bottom: 125%; /* Lo posiciona justo encima del botón */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: normal;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  }
+
+  /* Crear la pequeña flecha del aviso */
+  .btn_whatsapp::before {
+    content: "";
+    position: absolute;
+    bottom: 110%; 
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent; /* Triángulo invertido */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  /* Mostrar el aviso y la flecha al hacer HOVER */
+  .btn_whatsapp:hover::after,
+  .btn_whatsapp:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Desplazamiento suave hacia arriba */
+  }
+
 
 		.scroll-top-btn{
 		  left:1rem;
@@ -1602,6 +1848,9 @@
 		  .ft-content a {
 			text-align: right;
 		  }
+		  
+		/*<!-- .faq-container {grid-template-columns: repeat(2, 1fr);} -->*/
+		.faq-item {flex: 1 0 calc(50% - 10px); }
 	 }  
 	 
     @media (min-width: 992px) {
@@ -1610,8 +1859,6 @@
 		.nav-menu { position: static; display: flex; gap: var(--space-xs); flex-direction: row; align-items: center; background: transparent; padding: 0; height: auto; backdrop-filter: none; }
 		#header_sidebar { display: none; } 
 		#main-content.nav-active { transform: none; } 
-		.cards-section { grid-template-columns: repeat(2, 1fr); max-width: 1200px; margin: 0 auto; }
-		.faq-container {grid-template-columns: repeat(2, 1fr);}
 		.logo-icon {width: 80px;    height: 60px;}
 		.logo_title { display:block; }
      .footer-links { gap: 1.5rem; }
@@ -1619,8 +1866,8 @@
 	
     @media (min-width: 1024px) {
       .landing-content h1 { font-size: clamp(1.7rem, 4vh, 2.0rem);	  }
-      .cards-section { grid-template-columns: repeat(3, 1fr); }
-	  .faq-container {grid-template-columns: repeat(3, 1fr);}
+	  /*<!-- .faq-container {grid-template-columns: repeat(3, 1fr);} -->*/
+		.faq-item {flex: 1 0 calc(33.33% - 10px); }
     }
 	
 	@media (orientation: landscape) {
@@ -1730,6 +1977,13 @@
 	  <section >
 	   <!-- Breadcrumbs -->
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
+	<div class="bread_coloresAAA" >
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
       <div class="container">
         <ol class="breadcrumbs-list">
           <li><a href="/">Inicio</a></li>
@@ -1905,6 +2159,38 @@
           <audio id="tripAudio" src="./imgs/Augsburg.mp3" loop preload="none"></audio>
         </div>
       </section>
+
+      <section class="timeline reveal" id="como-funciona" aria-labelledby="como-heading">
+        <div class="section-tag" style="color:var(--sand-300)">Pasos simples</div>
+        <h2 class="section-title" id="como-heading">¿Cómo funciona?</h2>
+        <p class="section-sub">Sin complicaciones. De la inscripción al paseo en 3 pasos.</p>
+        <ol class="timeline-list" aria-label="Pasos para unirse al viaje">
+          <li class="timeline-item reveal visible">
+            <div class="timeline-dot" aria-hidden="true">📝</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Paso 01</div>
+              <h3 class="timeline-title">Completás el formulario</h3>
+              <p class="timeline-desc">Llenás tus datos y preferencias. Tarda menos de 2 minutos.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal reveal-delay-2 visible">
+            <div class="timeline-dot" aria-hidden="true">💰</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Paso 02</div>
+              <h3 class="timeline-title">Coordinamos gastos</h3>
+              <p class="timeline-desc">Dividimos todo en partes iguales. Seguro que nos va a servir mucho.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal reveal-delay-3 visible">
+            <div class="timeline-dot" aria-hidden="true">🚌</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Paso 03</div>
+              <h3 class="timeline-title">¡A viajar!</h3>
+              <p class="timeline-desc">Solo llegás con el bolso. El resto ya está resuelto.</p>
+            </div>
+          </li>
+        </ol>
+    </section>
 	  
 	  
 	  <section id="form_section" class="form-section" aria-labelledby="form-title">
@@ -2010,38 +2296,18 @@
 		<img src="./assets/flechaArriba.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
 	</button>
 
-
-  <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener" class="btn_floating btn_whatsapp" id="btn_whatsapp" aria-label="Contactar por WhatsApp">
-    <span aria-hidden="true">👋</span>
+  <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener noreferrer" 
+    data-tooltip="Llamame" class="btn_floating btn_whatsapp" 
+    id="btn_whatsapp" 
+    aria-label="Contactar por WhatsApp">
+    <span aria-hidden="true">
+      <img src="./assets/telefono-imagen-animada-0003.gif" alt="" width="34" height="34" loading="lazy" decoding="async">
+    </span>
   </a>
+
   
 <footer class="footer reveal" role="contentinfo" aria-label="Pie de página">
- 
-<section class="reveal" aria-label="Información legal">
-  <div class="f-toggle-movil">
-    <button
-      class="ft-toggle"
-      type="button"
-      id="legal-toggle"
-      aria-label="Mostrar enlaces legales"
-      aria-expanded="false"
-      aria-controls="legal-links">
-      <span>Legal</span>
-    </button>
-    <div
-      id="legal-links"
-      class="ft-content"
-      aria-hidden="true"
-      role="group"
-      aria-labelledby="legal-toggle">
-      <p><a href="/aviso-legal/" rel="nofollow">Aviso Legal</a></p>
-      <p><a href="/politica-de-privacidad/" rel="nofollow">Política de privacidad</a></p>
-      <p><a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener noreferrer">Icono Alado by Lorc <span class="visually-hidden">(se abre en una nueva pestaña)</span></a></p>
-      <p><a href="/configuración-de-cookies/" rel="nofollow">Configuración de cookies</a></p>
-      <p><a href="/termino-de-uso/" rel="nofollow">Términos de Uso</a></p>
-    </div>
-  </div>
-</section>
+  
  
   <nav class="footer-links" aria-label="Navegación del pie de página">
     <a href="#galeria">Imágenes del viaje</a> .
@@ -2049,49 +2315,116 @@
     <a href="#formContact">Me anoto</a>
   </nav>
 
-  <!-- Reseñas / estrellas -->
-  <div class="ti-usu reveal">
-    <div class="ti-usu-profile">
-      <div class="ti-profile">
-        <img
-          src="./assets/google-5-stars.svg"
-          alt="Calificación de 5 estrellas en Google"
-          loading="lazy"
-          decoding="async"
-          width="120"
-          height="24">
+ 
+<section class="reveal" aria-label="Información legal">
+  <div class="f-toggle-movil">
+    <button class="ft-toggle" type="button" id="legal-toggle" aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
+      <span>Legal</span>
+    </button>
+    <div id="legal-links" class="ft-content" aria-hidden="true" role="group" aria-labelledby="legal-toggle">       
+						<details>	
+							<summary>Disclaimer</summary>
+								<p ><strong>Disclaimer / Descargo de responsabilidad:</strong> </p>	
+								<p >alasRisas es una herramienta comunitaria colaborativa para la autoorganización de viajes recreativos entre amigos.</p>
+								<p >No opera como una agencia de viajes minorista o mayorista ni comercializa paquetes turísticos bajo regulaciones comerciales. </p>
+								<p >Todo acuerdo financiero o logístico se efectúa bajo la responsabilidad de los participantes (O sea Nosotros).</p>
+                <p>Nos encargamos de organizar ideas, no de controlar el clima, los vuelos ni la suerte.</p>
+                <p>Importante: Las decisiones finales siempre pertenecen al grupo.</p>
+						</details>
+           <details>	
+							<summary>Aviso Legal</summary>
+                <p>Proyecto independiente.</p>
+								<p >Los resultados mencionados no son típicos.</p>	
+								<p >Los resultados individuales pueden variar.</p>	
+								<p >Este sitio no forma parte de Facebook ni de Google, YouTube, Facebook, Instagram, TikTok ni nada. Y no me importan una mierda.</p>	
+								<p>alasRisas no representa ni está patrocinado por ninguna gran empresa tecnológica.</p>
+						</details>
+            <details>
+              <summary>Política de privacidad</summary>
+              <p>En alasRisas recopilamos únicamente la información necesaria para organizar el viaje y mejorar la experiencia del grupo.</p>
+              <p>Tus datos son tuyos.</p>
+              <p>No vendemos tus datos, no los compartimos con terceros sin necesidad y tampoco hacemos cosas raras con ellos.</p>
+              <p>Si algún dato deja de ser necesario, podrá eliminarse cuando corresponda.</p>
+              <p>Tus datos sirven para organizar el viaje, no para perseguirte por Internet.</p>
+              <p>No vendemos información, no hacemos spam y tampoco tenemos tiempo para eso.</p>
+            </details>
+            <details>
+              <summary>Términos de uso</summary>
+              <p>Usar alasRisas significa jugar en equipo.</p>
+              <p>El uso de alasRisas implica aceptar un ambiente de respeto, colaboración y buena onda entre todos los participantes.</p>
+              <p>Cada integrante es responsable de la información que comparte y de las decisiones que toma durante la organización del viaje.</p>
+              <p>La idea es simple: disfrutar el viaje antes de que empiece.</p>
+          </details>
+          <details>
+            <summary>Soporte</summary>
+            <p>¿Encontraste un error o tienes una idea para mejorar alasRisas?</p>
+            <p>El desarrollo y mantenimiento del sitio se realiza desde 
+              <a href="https://kikiriya-software.netlify.app/" target="_blank" rel="noopener noreferrer" style="color:red">Kikiriya Software</a> 
+            </p>
+            <p>Si algo explota (esperemos que no), avísanos.</p>
+            <p>Puedes comunicarte desde la página de soporte cuando quieras. Toda sugerencia suma.</p>
+            <p>Reporta errores y comparte ideas para mejorar alasRisas.</p>
+          </details>
+          <details>
+            <summary>Configuración de cookies</summary>
+              <p>Las únicas galletitas que nos gustan son las de la merienda, pero el navegador necesita algunas cookies para funcionar.</p>
+              <p>Puedes configurar o eliminar las cookies desde tu navegador cuando lo desees.</p>
+              <p>Si decides desactivarlas, algunas funciones podrían comportarse de forma diferente.</p>
+              <p>Tratamos de conseguir el máximo funcionamiento con lo aprendido.</p>
+          </details>
+          <details>
+            <summary>Agradecimientos</summary>
+              <p>Obligatorio a </p>
+              <p>
+                <a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener noreferrer">
+                      Icono Alado by Lorc <span class="visually-hidden">(se abre en una nueva pestaña)</span>
+                </a>
+              </p>
+          </details>
+          <details>
+              <summary>Términos de uso</summary>
+              <p>Usar alasRisas significa jugar en equipo.</p>
+              <p>El uso de alasRisas implica aceptar un ambiente de respeto, colaboración y buena onda entre todos los participantes.</p>
+              <p>Cada integrante es responsable de la información que comparte y de las decisiones que toma durante la organización del viaje.</p>
+              <p>La idea es simple: disfrutar el viaje antes de que empiece.</p>
+          </details>
+
+        </div>
+  </div>
+</section>
+    <div class="ti-usu-profile reveal">
+      <div class="ti-profile">        
+				<img src="./imgs/logo- 63kb.png" class="img-fluid" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async">
+        <img src="./assets/google-5-stars.svg" alt="Calificación de 5 estrellas en Google" loading="lazy" decoding="async" width="120" height="24">
       </div>
       <div class="ti-data">
-        <div class="ti-date" id="ti-date" aria-live="polite"></div>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo claro" aria-pressed="false">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="12" y1="2.5" x2="12" y2="5"/>
+              <line x1="12" y1="19" x2="12" y2="21.5"/>
+              <line x1="2.5" y1="12" x2="5" y2="12"/>
+              <line x1="19" y1="12" x2="21.5" y2="12"/>
+              <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/>
+              <line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
+              <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/>
+              <line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
+            </g>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/>
+          </svg>
+        </button>              
+        <div class="ti-date" id="ti-date" aria-live="polite"></div>  
       </div>      
-      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo claro" aria-pressed="false">
-        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
-          <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <line x1="12" y1="2.5" x2="12" y2="5"/>
-            <line x1="12" y1="19" x2="12" y2="21.5"/>
-            <line x1="2.5" y1="12" x2="5" y2="12"/>
-            <line x1="19" y1="12" x2="21.5" y2="12"/>
-            <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/>
-            <line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
-            <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/>
-            <line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
-          </g>
-        </svg>
-        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/>
-        </svg>
-      </button>
     </div>
-  </div>
-  
-
-  <div class="footer-bottom reveal">
-    <p>Hecho con cariño por &copy; 2026 kikiriya DevOps. </p>
-    <p>Todos los derechos reservados.</p>
-    <p class="footer-text">De Capurro al mundo, juntos siempre!</p>
-  </div>
- 
+					<!-- Copyright -->
+           <div class="footer-copyright reveal"> 
+            <p>Hecho con cariño por &copy; 2026 kikiriya DevOps.</p>
+            <p>Todos los derechos reservados.</p>
+            <p class="footer-text">De Capurro al mundo, juntos siempre!</p>
+          </div>
 </footer>
 
   <script>
@@ -2143,6 +2476,7 @@
       { label: 'Caminos Secretos',            desc: 'Un recorrido de trekking rodeado de vegetación nativa y aventura pura' },
       { label: 'Noite na Barra',              desc: 'Cenário dos sonhos onde barcos e luzes douradas inspiram o amor' },
       { label: 'Hospitalidad Costera',        desc: 'La calidez de los paradores locales con una excelente infraestructura' },
+      { label: 'Praia da Barra',              desc: 'Vista aérea panorâmica de uma praia vibrante com areias douradas e o mar cristalino' }
     ];
 
     const galleryImages = galleryMeta.map((meta, i) => {
@@ -2473,6 +2807,12 @@
         lightbox = document.createElement('div');
         lightbox.id = 'lightboxModal';
         lightbox.className = 'lightbox-modal';
+		
+		lightbox.role = 'dialog'; 
+		  lightbox.setAttribute('aria-modal', 'true'); 
+		  lightbox.setAttribute('aria-labelledby', 'lightboxTitle'); 
+		  lightbox.setAttribute('aria-hidden', 'false');  
+  
         lightbox.innerHTML = `
           <button class="lightbox-close" aria-label="Cerrar">&times;</button>
           <div class="lightbox-content">
@@ -2508,6 +2848,7 @@
 
       const cerrarLightbox = () => {
         lightbox.classList.remove('is-active');
+		  lightbox.setAttribute('aria-hidden', 'true'); 
         startAutoplay();
       };
 
@@ -2608,7 +2949,6 @@
             >
             <div class="carousel-caption">
               <h3>${img.label}</h3>
-              <p>${img.desc}</p>
             </div>
           `;
           track.appendChild(slide);
