@@ -737,6 +737,7 @@
       background-color: var(--color-bg);
       position: relative;
       width: 100%;
+      padding-bottom: 1rem;
       transition: opacity 0.6s ease, visibility 0s linear 0.6s;
       will-change: opacity;
     }
@@ -1472,9 +1473,9 @@
 }	
     .ti-usu-profile, .ti-profile, .ti-date{ display: flex;  gap: 0.5rem; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem);}
 	.ti-profile img{width: 60px; height:auto; align-items: center;}
-	.ti-profile { justify-content: space-between;align-items: center; }
+	.ti-profile {flex-direction: column; justify-content: space-between;align-items: center; }
   .ti-date{font-size:var(--font-size-xs)}
-  .ti-usu-profile{justify-content: space-between; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem); margin-top: .5rem;}
+  .ti-usu-profile{ flex-direction: column; justify-content: space-between; margin-top: .5rem;}
    
     /* ============ FOOTER ============ */
     .footer {
@@ -1507,17 +1508,48 @@
         font-size: 11px;
         font-weight: 400;
       }
+      .ft_info { 
+        display: grid; 
+        grid-template-columns:2fr 1fr;
+        gap: 0.5rem; font-size: 
+        var(--font-size-xs); 
+        color: var(--color-text-muted); 
+        position: relative;
+      }
 	
-	/* ============ Politica de contrato ============ */
-
-.f-toggle-movil {
+.legal_container {
   width: 100%;
   position: relative; /* contiene el acordeón, evita que .ft-content se superponga a hermanos */
 }
+
+/*  Estado animado: Se activa de inmediato cuando el botón LEGAL se ABRE (aria-expanded="true") */
+.legal_container:has(.legal_toggle[aria-expanded="true"]) .ft_img_float {
+  top: 15px; /* Sube cerca del borde superior */
+  left: calc(100% - 40px); /* Se posiciona en el extremo derecho calculando su nuevo tamaño */  
+  /* Quitamos el traslado de centrado, se achica al 40% (más sutil) */
+  transform: translate(0, 0) scale(0.4);   
+  opacity: 0.15; /* Súper sutil para que no interfiera visualmente */
+}
+
+.ft_img_float {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1); 
+  opacity: 1;  
+  width: 100px; 
+  height: auto;
+  z-index: 2;  
+  pointer-events: none; 
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              left 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.4s ease,
+              top 0.4s ease;
+}
  
-.ft-toggle {
+.legal_toggle {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 44px;
@@ -1532,17 +1564,17 @@
   text-transform: uppercase;
 }
 
-.ft-toggle::after {
+.legal_toggle::after {
   content: "+";
   font-size: 24px;
   transition: transform .25s ease;
 }
  
-.ft-toggle[aria-expanded="true"]::after {
+.legal_toggle[aria-expanded="true"]::after {
   transform: rotate(180deg);
 }
  
-.ft-toggle.active::after {
+.legal_toggle.active::after {
   content: "−";
 }
  
@@ -1598,7 +1630,7 @@
 		details{
 			padding:.5em;
       display:grid; 
-      gap:10px;
+      gap:2px;
 			&[open]{
 				color:var(--color_green_dark);
         text-align: start;
@@ -1627,9 +1659,9 @@
       justify-content: center; 
       gap: .5rem; 
       flex-wrap: wrap;
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-xs);
       padding: 3rem 1rem;     
-      border-top: 1px solid var(--color-border);
+      border-top: 1px solid var(--color-accent);
     }
 	
   .footer-links a, #mainHeader > div > nav > ul > a { 
@@ -1816,13 +1848,13 @@
 
     .footer{display: grid;  grid-template-columns: repeat(3, minmax(200px, 1fr));}
 
-		.f-toggle-movil {
+		.legal_container {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 		  }
 		 
-		  .ft-toggle {
+		  .legal_toggle {
 			width: auto;
 			border: none;
 			padding: 0;
@@ -1830,7 +1862,7 @@
 			pointer-events: none; /* ya no actúa como botón en desktop */
 		  }
 		 
-		  .ft-toggle::after {
+		  .legal_toggle::after {
 			display: none;
 		  }
 		 
@@ -2003,7 +2035,7 @@
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
             <div class="faq-content">
-              <p>Porque tiene TODO lo que un grupo grande necesita: playas paradisíacas, paz para los que quieren paz, y planes para los que quieren plan <i>(por si nos extrañamos, nunca estamos a más de un par de cuadras)</i>. Alojamiento a pasos de la playa, así que ni excusa para no ir.<br> Y si el cuerpo todavía aguanta después del sol: noches que se estiran lindo, ideales para un batallón de amigos como el nuestro.</p>
+              <p>Porque tiene TODO lo que un grupo grande necesita: playas paradisíacas, paz para los que quieren paz, y planes para los que quieren plan <i>(por si nos extrañamos, nunca estamos a más de un par de cuadras)</i>.<br> Alojamiento a pasos de la playa, así que ni excusa para no ir.<br> Y si el cuerpo todavía aguanta después del sol: noches que se estiran lindo, ideales para un batallón de amigos como el nuestro.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -2316,12 +2348,14 @@
   </nav>
 
  
-<section class="reveal" aria-label="Información legal">
-  <div class="f-toggle-movil">
-    <button class="ft-toggle" type="button" id="legal-toggle" aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
+<section class="ft_info reveal" aria-label="Información legal">
+  <section class="legal_container">
+      <img src="./imgs/logo- 63kb.png" class="ft_img_float" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async" >
+
+    <button class="legal_toggle" type="button" id="legal-toggle" aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
       <span>Legal</span>
     </button>
-    <div id="legal-links" class="ft-content" aria-hidden="true" role="group" aria-labelledby="legal-toggle">       
+    <section id="legal-links" class="ft-content" aria-hidden="true" role="group" aria-labelledby="legal-toggle">       
 						<details>	
 							<summary>Disclaimer</summary>
 								<p ><strong>Disclaimer / Descargo de responsabilidad:</strong> </p>	
@@ -2381,20 +2415,11 @@
                 </a>
               </p>
           </details>
-          <details>
-              <summary>Términos de uso</summary>
-              <p>Usar alasRisas significa jugar en equipo.</p>
-              <p>El uso de alasRisas implica aceptar un ambiente de respeto, colaboración y buena onda entre todos los participantes.</p>
-              <p>Cada integrante es responsable de la información que comparte y de las decisiones que toma durante la organización del viaje.</p>
-              <p>La idea es simple: disfrutar el viaje antes de que empiece.</p>
-          </details>
-
-        </div>
-  </div>
-</section>
-    <div class="ti-usu-profile reveal">
+        </section>
+  </section>
+    <section class="ti-usu-profile reveal">
       <div class="ti-profile">        
-				<img src="./imgs/logo- 63kb.png" class="img-fluid" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async">
+				<!-- <img src="./imgs/logo- 63kb.png" class="img-fluid" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async"> -->
         <img src="./assets/google-5-stars.svg" alt="Calificación de 5 estrellas en Google" loading="lazy" decoding="async" width="120" height="24">
       </div>
       <div class="ti-data">
@@ -2418,13 +2443,14 @@
         </button>              
         <div class="ti-date" id="ti-date" aria-live="polite"></div>  
       </div>      
-    </div>
+    </section>
+</section>
 					<!-- Copyright -->
-           <div class="footer-copyright reveal"> 
+    <section class="footer-copyright reveal"> 
             <p>Hecho con cariño por &copy; 2026 kikiriya DevOps.</p>
             <p>Todos los derechos reservados.</p>
             <p class="footer-text">De Capurro al mundo, juntos siempre!</p>
-          </div>
+      </section>
 </footer>
 
   <script>
@@ -3026,7 +3052,7 @@
 
     /* ========== LEGAL: sincroniza visibilidad del bloque de enlaces ========== */
     function syncLegalA11y() {
-      document.querySelectorAll('.ft-toggle').forEach(btn => {
+      document.querySelectorAll('.legal_toggle').forEach(btn => {
         const content = document.getElementById(btn.getAttribute('aria-controls'));
         if (!content) return;
 
@@ -3042,7 +3068,7 @@
       });
     }
 
-    document.querySelectorAll('.ft-toggle').forEach(btn => {
+    document.querySelectorAll('.legal_toggle').forEach(btn => {
       btn.addEventListener('click', () => {
         if (window.innerWidth >= 768) return;
 
