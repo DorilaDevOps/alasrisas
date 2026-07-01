@@ -25,7 +25,7 @@
 	<link rel="canonical" href="https://alasrisas.netlify.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- ============ OPEN GRAPH ============ -->
@@ -274,6 +274,7 @@
          decorativos del landing/drips, sin sumar variables nuevas */
       --color-accent-cool:  #00d4ff;
       --color-accent-warm:  #e9ff00;
+      --color-title:#fdfa87;
 	  --bg_violeta:       #76409f;
       --color-gris_copyright: #555;
       --green-900: #052e16;
@@ -319,9 +320,6 @@
       --shadow: 0 3px 4px rgb(0 0 0 / 74%);
 
       --transition-smooth: 400ms cubic-bezier(.4, 0, .2, 1);
-      --transition1: all 1s ease;
-      --transition2: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
       --radius-card: 20px;
       --radius-btn:  50px;
 
@@ -343,20 +341,8 @@
       --color-accent-cool: rgb(25 44 59 / 80%);
       --color-danger:      #e84a4a;
       --color_green_dark:  #676767;
+      --green-750: #2f4f4f;
 	  
-	   --blancoOverlay: #f1e7da8a;
-	  --marrronOverlay: #7a5c468c;
-	  --marronOscuro: #2B1D14;
-	  --marronMedio: #5A4331;
-		--marronClaro: #7A5C46;
-		--marronMuyClaro: #CBB8A5;
-		--gris_casi_negro:#1A1A1A;
-		--gris_oscuro:#2D2D2D;
-		--gris_medio:#4A4A4A;
-		--gris_claro:#a49b9b;
-		--gris_blanco:#F5F5F5;
-		--blanco_roto:#FAFAFA;
-		
     }
 
     /* ============ TEMA CLARO ============ */
@@ -371,13 +357,13 @@
       --color-accent-cool: rgba(200, 230, 255, .8);
       --color-danger:      #e84a4a;      
       --color_green_dark:  #052e16;
+      --green-750: #dceaea;
 	  
 	   --blancoOverlay: #7a5c468c;
 	  --marrronOverlay: #f1e7da8a;
 	  --marronOscuro: #FAFAFA;
 	  --marronMedio: #2D2D2D;
 		--marronClaro: #7A5C46;
-		--marronMuyClaro: #1A1A1A;
 		--gris_casi_negro:#CBB8A5;
 		--gris_oscuro:#a49b9b;
 		--gris_medio:#F5F5F5;
@@ -502,9 +488,7 @@
 	  backdrop-filter:blur(0px);  	  
 	  opacity:0;
 	  translate:0 0;
-	  transition:
-		opacity .6s ease,
-		translate .6s ease;	
+	  transition: opacity .6s ease, translate .6s ease;	
 	  contain:layout paint;	
       width: 95%;
       max-width: 900px;
@@ -538,15 +522,16 @@
 
     .landing-content h1 {
       font-family: var(--font-Playfair);
-      font-size:var(--font-size-2xl);  
+      font-size:var(--font-size-xl);  
       font-weight: 500;
       line-height: 1.1;
       letter-spacing: -0.03em;
 	   text-wrap:balance;
-      background: linear-gradient(135deg, var(--color-accent) 30%, var(--color-accent-warm) 100%);
+      background: linear-gradient(360deg, var(--color-accent) 30%, var(--color-title) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    filter: drop-shadow(2px 9px 4px rgba(0, 0, 0, 0.5));
     }
     .landing-content p {
        font-size:var(--font-size-sm);
@@ -633,7 +618,7 @@
       background: transparent;
       color: var(--color-accent-warm);
       border-radius: var(--radius-btn);
-      font-family: var(--font-display);
+      font-family: var(--font-mono);
       font-size: var(--font-size-base);
       padding: 1.3rem 2rem;
       letter-spacing: 0.05em;
@@ -656,7 +641,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--color-accent);
+      color: var(--blanco_roto);
       opacity: 0;
       transition: opacity 0.5s ease;
       white-space: nowrap;
@@ -666,7 +651,7 @@
       content: '';
       display: block;
       width: 1px; height: 32px;
-      background: var(--color-accent);
+      background: var(--blanco_roto);
       margin: 0 auto 0.5rem;
       animation: lineScroll 1.8s ease-in-out infinite;
     }
@@ -716,7 +701,7 @@
       font-weight: 800;
       font-size: clamp(1em, 4vw, 1.2em);
       letter-spacing: 1px;
-      background: linear-gradient(135deg, var(--color-accent-2), var(--color-accent-cool));
+      background:var(--color-title);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -832,23 +817,23 @@
       border: none;
       cursor: pointer;
     }
-    .nav__toggle span { width: 100%; height: 2px; background-color: var(--color-text); border-radius: 2px; transition: transform 0.5s ease, opacity 0.5s ease; }
+    .nav__toggle span { width: 100%; height: 2px; background-color: var(--marronMuyClaro); border-radius: 2px; transition: transform 0.5s ease, opacity 0.5s ease; }
     #main-content.nav-active .nav__toggle span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
     #main-content.nav-active .nav__toggle span:nth-child(2) { transform: rotate(-45deg) translate(4px, -6px); }
 
-
+.hero-section{font-family: var(--font-mono);}
 .hero-section h2 {
     font-size: clamp(1rem, 3vw, 2.5rem);
     background: var(--color-accent-2);
     font-weight: 400;
     line-height: 1.1;
-    margin-bottom: 1.25rem;
+    text-align: center;
 }
 .hero-section p {
     font-size: clamp(1rem, 2.5vw, 1.15rem);    
 	color: var(--color-text);
     max-width: 480px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     line-height: 1.2;
 }
 
@@ -861,9 +846,10 @@
                   transform 0.8s cubic-bezier(.16, 1, .3, 1);
       will-change: transform, opacity;
     }
-    .reveal.is-visible, .fade-in.is-visible {
+    .reveal.is-visible, .fade-in.is-visible, .form-section.is-visible, .form-card.is-visible {
       opacity: 1;
       transform: translateY(0);
+      will-change: transform, opacity;
     }
     .reveal-delay-1 { transition-delay: 0.15s; }
     .reveal-delay-2 { transition-delay: 0.3s; }
@@ -895,7 +881,7 @@
       background: rgba(0,0,0,0.5);
       z-index: 1;
     }
-    .inicio .section-content { position: relative; z-index: 2; max-width: 800px; color: var(--color-text); }
+    .inicio .section-content { position: relative; z-index: 2; max-width: 800px; color: var(--green-100); }
     .section-content h2 {
       font-family: var(--font-display);
       font-size: var(--font-size-xl);
@@ -907,16 +893,18 @@
     /* ============ FORMULARIO ============ */
 	
     .form-section {
-      max-width: 700px;
-      margin: 0 auto;
+      max-width: 800px;
+       margin: 0 auto; /*para centrarlo*/
+       padding: .6rem 2rem;
     }
 
     .form-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-card);
       padding: clamp(1.5rem, 5vw, 2.5rem);
       position: relative;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);box-shadow: -1px 4px 7px -2px var(--color-text-muted);
+      -webkit-box-shadow: -1px 4px 7px -2px var(--color-text-muted);    
       overflow: hidden;
       animation: form-appear .6s ease both;
     }
@@ -963,11 +951,31 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.4rem, 4vw, 1.9rem);
       margin-bottom: .25rem;
-      margin-top: .5rem;
+      margin-top: 1.5rem;
       color:var(--color-accent);
     }
 
     .form-title span { color: var(--color-accent-2); font-style: italic; }
+
+    .live-indicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ff0000, 0 0 24px #ff0000;
+    animation: livePulse 1.5s ease-in-out infinite;
+}
+	@keyframes livePulse {
+	  0%, 100% { 
+		opacity: 1; 
+		transform: scale(1);
+	  }
+	  50% { 
+		opacity: 0.6; 
+		transform: scale(0.85);
+	  }
+	}
 
     .form-subtitle {
       font-size: .88rem;
@@ -977,13 +985,7 @@
 
     .form-grid {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 1rem;
-    }
-
-    @media (min-width: 480px) {
-      .form-grid { grid-template-columns: 1fr 1fr; }
-      .form-grid .full { grid-column: 1 / -1; }
     }
 
     .form-field {
@@ -991,6 +993,9 @@
       display: flex;
       flex-direction: column;
       gap: .35rem;
+    }
+    .form-field:hover label{
+      color:red;transform:scale(1.05);transition:transform .2s,color .2s;
     }
 
     .form-field label {
@@ -1070,7 +1075,7 @@
       width: 100%;
       min-height: 52px;
       border-radius: var(--radius-card);
-      background: linear-gradient(135deg, var(--color-accent-2) 0%, var(--color-accent-cool) 100%);
+      background: linear-gradient(180deg, var(--color-accent-2) 70%, var(--color-text-muted) 100%);
       background-size: 200% auto;
       color: var(--color-text);
       font-size: 1rem;
@@ -1105,6 +1110,9 @@
       font-size: 1.25rem;
       animation: submit-icon-bounce 2s ease-in-out infinite;
     }
+
+    .form_btn_reset{ grid-column: 2 / -1; width: 50%;justify-self: end;padding:.5rem; font-size: var(--font-size-xs); color:var(--color-text-muted); }
+
     /* ============ FAQ ============ */
     .faq-section {
       display: flex;
@@ -1160,13 +1168,13 @@
 
     /* ============ CAROUSEL ============ */
     #galeria {
-      padding: 3rem 1rem;
+      padding: 1rem 1rem;
       text-align: center;
     }
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(1.5rem, 5vw, 2.5rem);
-      color: var(--color-text);
+      color: var(--green-100);
       margin-bottom: 0.5rem;
     }
     .section-subtitle {
@@ -1374,11 +1382,6 @@
 		border-radius:20px;
 		}
 	
-	.bread_coloresAAA::nth-child(1){background-color:var();}
-	.bread_coloresAAA::nth-child(2){background-color:var();}
-	.bread_coloresAAA::nth-child(3){background-color:var();}
-	.bread_coloresAAA::nth-child(4){background-color:var();}
-	.bread_coloresAAA::nth-child(5){background-color:var();}
 	.bread_coloresAAA>div:hover{background-color:red;}
 	
   
@@ -1471,23 +1474,24 @@
     color: rgba(255, 255, 255, .55);
     line-height: 1.6;
 }	
-    .ti-usu-profile, .ti-profile, .ti-date{ display: flex;  gap: 0.5rem; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem);}
+    .ti-usu-profile, .ti-profile, .ti-date, .ti-data{ display: flex;  gap: 0.5rem; padding: var(--space-xs, .75rem) var(--space-sm, 1.25rem);}
 	.ti-profile img{width: 60px; height:auto; align-items: center;}
-	.ti-profile {flex-direction: column; justify-content: space-between;align-items: center; }
+	.ti-profile, .ti-data {flex-direction: column; justify-content: space-between;align-items: center; }
   .ti-date{font-size:var(--font-size-xs)}
   .ti-usu-profile{ flex-direction: column; justify-content: space-between; margin-top: .5rem;}
+  .ti-data {gap: 1rem;}
    
     /* ============ FOOTER ============ */
     .footer {
       background: var(--color-surface-2);
-      padding: 2rem 1rem;
+      padding: .5rem 1rem;
       text-align: center;
       display: grid;  
       grid-template-columns: repeat(1, minmax(200px, 1fr));
       gap: 1rem;
       color: var(--color-text-muted);
-	  opacity: 1 !important; 
-		visibility: visible !important; 
+	    opacity: 1 !important; 
+		  visibility: visible !important; 
     }
     .footer-disclaimer {
       max-width: 600px;
@@ -1508,6 +1512,7 @@
         font-size: 11px;
         font-weight: 400;
       }
+
       .ft_info { 
         display: grid; 
         grid-template-columns:2fr 1fr;
@@ -1519,7 +1524,7 @@
 	
 .legal_container {
   width: 100%;
-  position: relative; /* contiene el acordeón, evita que .ft-content se superponga a hermanos */
+  position: relative; /* contiene el acordeón, evita que .ft_content_details se superponga a hermanos */
 }
 
 /*  Estado animado: Se activa de inmediato cuando el botón LEGAL se ABRE (aria-expanded="true") */
@@ -1579,7 +1584,7 @@
 }
  
 /* ── Estado base (mobile): acordeón colapsado ── */
-.ft-content {
+.ft_content_details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1593,35 +1598,34 @@
 }
  
 /* Abierto en mobile vía JS (aria-hidden="false" + .open) */
-.ft-content[aria-hidden="false"],
-.ft-content.open {
+.ft_content_details[aria-hidden="false"],
+.ft_content_details.open {
   max-height: 900px;
   opacity: 1;
   margin-top: 1rem;
 }
 
-.ft-content p {
+.ft_content_details p {
   margin: 0;
 }
  
-.ft-content a {
+.ft_content_details a {
   display: inline-block;
-  min-height: 44px;
-  line-height: 44px;
+  /*min-height: 44px;
+  line-height: 44px;*/
   padding: 0 .5rem;
-  color: var(--color-text-muted);
-  font-size: .875rem;
+  color: var(--color-danger);
   transition: color var(--transition-fast, 150ms ease);
   /* sin shadow en ningún breakpoint, mobile-optimizado */
   box-shadow: none;
 }
  
-.ft-content a:hover,
-.ft-content a:focus-visible {
+.ft_content_details a:hover,
+.ft_content_details a:focus-visible {
   color: var(--color-accent);
 }
  
-.ft-content a:focus-visible {
+.ft_content_details a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: 4px;
@@ -1636,7 +1640,6 @@
         text-align: start;
 			}
 		}
-
  
 /* Utilidad accesible (por si no la tenés ya global) */
 .visually-hidden {
@@ -1647,41 +1650,44 @@
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
- 
+ .footer{
+      border-top: 1px solid var(--color-text-muted);
+  }
+
 .footer.reveal {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
     .footer-links {
-      margin-top: 1rem; 
+    grid-column: 1 / -1;
+      margin-top: .3rem; 
       display: flex; 
       justify-content: center; 
-      gap: .5rem; 
+      gap: 1rem; 
       flex-wrap: wrap;
       font-size: var(--font-size-xs);
-      padding: 3rem 1rem;     
-      border-top: 1px solid var(--color-accent);
+      padding: 1rem;     
     }
 	
-  .footer-links a, #mainHeader > div > nav > ul > a { 
-	    color: var(--color-text-muted); text-decoration: none;position: relative; transition: var(--transition1); padding:3px;
+  .footer-links a, #mainHeader .nav-menu a { 
+	    color: var(--marronMuyClaro); text-decoration: none;position: relative; transition: all 0.3s ease; padding:3px;
 	}
 	
-    .footer-links a:hover, .footer-links a:focus-visible,#mainHeader > div > nav > ul > a:hover { color: var(--color-accent-cool); }
+    .footer-links a:hover, .footer-links a:focus-visible,#mainHeader .nav-menu a:hover { color: var(--color-accent); }
 
-		.footer-links a::after, #mainHeader > div > nav > ul > a::after {
+		.footer-links a::after, #mainHeader .nav-menu a::after {
 			content: '';
 			position: absolute;
 			bottom: -4px;
 			left: 0;
 			width: 0;
 			height: 2px;
-			background: var(--color-accent-cool);
-			transition: var(--transition2);
+			background: var(--color-accent);
+			transition: all 0.3s ease;
 		}
 		
-		.footer-links a:hover::after, #mainHeader > div > nav > ul > a:hover::after {
+		.footer-links a:hover::after, #mainHeader .nav-menu a:hover::after {
 			width: 100%;
 		}
 
@@ -1843,10 +1849,17 @@
 	.scroll-top-btn:hover{transform:translateY(-2px) scale(1.05);}
 
     /* ============ RESPONSIVE ============ */
+    
+    @media (min-width: 480px) {
+      .form-grid .full { grid-column: 1 / -1; }
+    }
 
 	@media (min-width: 768px) {	
 
-    .footer{display: grid;  grid-template-columns: repeat(3, minmax(200px, 1fr));}
+    .form-grid { grid-template-columns: 1fr 1fr; }
+    .ft_info{grid-column: 1 / 3;}
+    .footer{display: grid;  grid-template-columns: repeat(2, minmax(200px, 1fr));}
+    .footer-copyright{ grid-column: 1 / -1; width: 100%; }
 
 		.legal_container {
 			display: flex;
@@ -1866,9 +1879,9 @@
 			display: none;
 		  }
 		 
-		  .ft-content,
-		  .ft-content[aria-hidden="true"],
-		  .ft-content[aria-hidden="false"] {
+		  .ft_content_details,
+		  .ft_content_details[aria-hidden="true"],
+		  .ft_content_details[aria-hidden="false"] {
 			display: flex;
 			flex-direction: column;
 			overflow: visible;
@@ -1877,7 +1890,7 @@
 			margin-top: .75rem;
 		  }
 		 
-		  .ft-content a {
+		  .ft_content_details a {
 			text-align: right;
 		  }
 		  
@@ -1889,6 +1902,7 @@
 		.video-bg { display: block; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
 		.nav__toggle { display: none; }
 		.nav-menu { position: static; display: flex; gap: var(--space-xs); flex-direction: row; align-items: center; background: transparent; padding: 0; height: auto; backdrop-filter: none; }
+		.nav-menu ul { display: flex; flex-direction: row; gap: var(--space-xs); align-items: center; }
 		#header_sidebar { display: none; } 
 		#main-content.nav-active { transform: none; } 
 		.logo-icon {width: 80px;    height: 60px;}
@@ -1905,7 +1919,7 @@
 	@media (orientation: landscape) {
 		.landing-content {
 			gap:.5rem; padding:1rem 2rem; top:.1rem;padding-bottom: 1rem;
-		    & h1 { font-size: clamp(20px, 4vw, 28px); }
+		    & h1 { font-size: clamp(1.25rem, 4vw, 2.25rem); }
 		    & p{ line-height: 1.1;}
 		}
 		.landing-hint{display:none;}
@@ -1942,11 +1956,11 @@
 
         <nav class="nav-menu" aria-label="Navegación principal">
 			 <ul>
-				  <a href="#inicio">Inicio</a>
-				  <a href="#itinerario">Itinerario</a>
-				  <a href="#galeria">Galería</a>
-				  <a href="#formContact">Me anoto</a>
-				  <a href="#faq">Preguntas</a>
+				  <li><a href="#inicio">Inicio</a></li>
+				  <li><a href="#itinerario">Itinerario</a></li>
+				  <li><a href="#galeria">Galería</a></li>
+				  <li><a href="#formContact">Me anoto</a></li>
+				  <li><a href="#faq">Preguntas</a></li>
 			</ul>
         </nav>
 
@@ -1983,7 +1997,7 @@
     </aside>
     
 	<main id="main-content">
-      <section class="inicio reveal" id="inicio" aria-label="Introducción cinematográfica">
+      <section class="inicio reveal" id="inicio" aria-label="Presentacion aerea de bienvenida">
         <video class="video-bg" autoplay loop muted playsinline aria-hidden="true">
           <source src="./imgs/istockphoto-.mp4" type="video/mp4">
         </video>
@@ -1999,11 +2013,9 @@
 	  
 	      <section class="hero-section" id="nosotros" aria-labelledby="hero-heading">
             <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron,todavía las andamos.</h2>
-            <p class="reveal reveal-delay-1">Organizamos el viaje que todos soñamos desde el barrio.
-              Fechas, gastos, y recuerdos — todo en un solo lugar.
-            </p>
-            <p>Verano 2025 · Cupos limitados</p>
-            <div class="hero-scroll" aria-hidden="true">scroll</div>
+            <p class="reveal reveal-delay-1">Organizamos el viaje que todos soñamos desde el barrio.</p>
+            <p class="reveal reveal-delay-2"> Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
+            <p class="reveal reveal-delay-3">Verano 2025 · Cupos limitados</p>
         </section>	
 	  
 	  <section >
@@ -2177,7 +2189,7 @@
           <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">‹</button>
           <button class="carousel-btn next" id="carouselNext" aria-label="Siguiente">›</button>
           <div class="carousel-counter" id="carouselCounter">1 / 12</div>
-          <div class="carousel-progress" id="carouselProgress"></div>
+          <div class="carousel-progress" id="carouselProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <div class="carousel-dots" id="carouselDots"></div>
       </section>
@@ -2188,13 +2200,13 @@
             <span class="audio-icon" aria-hidden="true">▶</span>
             <span class="audio-status-text">Música de viaje desactivada</span>
           </button>
-          <audio id="tripAudio" src="./imgs/Augsburg.mp3" loop preload="none"></audio>
+          <audio id="tripAudio" src="./imgs/Augsburg.mp3" loop preload="none" aria-label="Música de fondo del viaje a Florianópolis"></audio>
         </div>
       </section>
 
-      <section class="timeline reveal" id="como-funciona" aria-labelledby="como-heading">
+      <section class="timeline reveal" id="como_funciona" aria-labelledby="como_funciona_title">
         <div class="section-tag" style="color:var(--sand-300)">Pasos simples</div>
-        <h2 class="section-title" id="como-heading">¿Cómo funciona?</h2>
+        <h2 class="section-title" id="como_funciona_title">¿Cómo funciona?</h2>
         <p class="section-sub">Sin complicaciones. De la inscripción al paseo en 3 pasos.</p>
         <ol class="timeline-list" aria-label="Pasos para unirse al viaje">
           <li class="timeline-item reveal visible">
@@ -2226,7 +2238,7 @@
 	  
 	  
 	  <section id="form_section" class="form-section" aria-labelledby="form-title">
-      <div class="form-card" role="region" aria-label="Formulario de registro">
+      <div class="form-card reveal-delay-2" role="region" aria-label="Formulario de registro">
         <!-- Drip drops decoration -->
         <div class="drip-top" aria-hidden="true">
           <div class="drip-drop"></div>
@@ -2237,8 +2249,8 @@
           <div class="drip-drop"></div>
         </div>
 
-        <h2 id="form-title" class="form-title">El Registro de la Banda <span>T-Saludo</span></h2>
-        <p class="form-subtitle">Completa tus datos y forma parte de nuestra comunidad</p>
+        <h2 id="form-title" class="form-title">Registro de la <span>Banda </span><span class="live-indicator" aria-hidden="true"></span></h2>
+        <p class="form-subtitle">Completa tus datos</p>
 
         <form id="formContact" novalidate aria-label="Formulario de registro de usuario" onsubmit="handleFormSubmit(event)" >
           <div class="form-grid">
@@ -2259,23 +2271,6 @@
               <span id="nombre-err" class="error-msg" role="alert" aria-live="polite"></span>
             </div>
 
-            <!-- Nick -->
-            <div class="form-field">
-              <label for="nick">Nick</label>
-              <input
-                type="text"
-                id="nick" 
-                name="nick"
-                placeholder="@nick_de_barrio"
-                autocomplete="family-name"
-                required
-                minlength="2"
-                aria-required="true"
-                aria-describedby="nick-err"
-              />
-              <span id="nick-err" class="error-msg" role="alert" aria-live="polite"></span>
-            </div>
-
             <!-- Password -->
             <div class="form-field">
               <label for="password">Contraseña</label>
@@ -2283,8 +2278,7 @@
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Mínimo 1 caracteres"
-                placeholder="Máximo 4 caracteres"
+                placeholder="Entre 1 y 4 caracteres"
                 required
                 minlength="1"
                 maxlength="4"
@@ -2294,8 +2288,28 @@
               />
               <span id="password-err" class="error-msg" role="alert" aria-live="polite"></span>
             </div>
+
+            <!-- Nick -->
+            <div class="form-field">
+              <label for="nick">Nick</label>
+              <input
+                type="text"
+                id="nick" 
+                name="nick"
+                placeholder="@nick_de_barrio"
+                autocomplete="family-name"
+                minlength="2"
+                aria-describedby="nick-err"
+              />
+              <span id="nick-err" class="error-msg" role="alert" aria-live="polite"></span>
+            </div> 
+            <div class="form-field">
+              <label for="avatar">Foto para el Nick (Mística)</label>
+              <input type="file" id="avatar" accept="image/*" style="color:grey;">
+              <canvas id="previewCanvas" style="display:none;"></canvas>
+            </div>
             <!-- Mensaje -->
-            <div class="form-field full">
+            <div class="form-field  full">
               <label for="fn-msg">Mensaje (opcional)</label>
               <textarea
                 id="fn-msg"
@@ -2304,19 +2318,15 @@
                 rows="3"
                 aria-label="Mensaje opcional"
               ></textarea>
-            </div>            
-            <div class="form-field">
-              <label for="avatar">Foto para el Nick (Mística)</label>
-              <input type="file" id="avatar" accept="image/*" style="color:grey;">
-              <canvas id="previewCanvas" style="display:none;"></canvas>
-            </div>
+            </div>           
 
             <!-- Submit -->
             <button type="submit" class="form-submit full" aria-label="Enviar formulario de registro" >
-              <span class="submit-icon" aria-hidden="true">👋</span>
+              <span class="submit-icon" aria-hidden="true">👍</span>
               GUARDAR ESENCIA
             </button>
-			<button type="reset" class="btn_reset" aria-label="Limpiar todos los campos del formulario">Limpiar Formulario</button>
+            
+			    <button type="reset" class="form_btn_reset" aria-label="Limpiar todos los campos del formulario">Limpiar Formulario</button>
           </div>
         </form>
 		</div>
@@ -2348,14 +2358,14 @@
   </nav>
 
  
-<section class="ft_info reveal" aria-label="Información legal">
-  <section class="legal_container">
+  <section class="ft_info reveal" aria-label="Información legal">
+  <div class="legal_container">
       <img src="./imgs/logo- 63kb.png" class="ft_img_float" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async" >
 
     <button class="legal_toggle" type="button" id="legal-toggle" aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
       <span>Legal</span>
     </button>
-    <section id="legal-links" class="ft-content" aria-hidden="true" role="group" aria-labelledby="legal-toggle">       
+    <section id="legal-links" class="ft_content_details" aria-hidden="true" role="group" aria-labelledby="legal-toggle">       
 						<details>	
 							<summary>Disclaimer</summary>
 								<p ><strong>Disclaimer / Descargo de responsabilidad:</strong> </p>	
@@ -2393,7 +2403,9 @@
             <summary>Soporte</summary>
             <p>¿Encontraste un error o tienes una idea para mejorar alasRisas?</p>
             <p>El desarrollo y mantenimiento del sitio se realiza desde 
-              <a href="https://kikiriya-software.netlify.app/" target="_blank" rel="noopener noreferrer" style="color:red">Kikiriya Software</a> 
+              <a href="https://kikiriya-software.netlify.app/" target="_blank" rel="noopener noreferrer" >Kikiriya Software
+                <span class="visually-hidden">(se abre en una nueva pestaña)</span>
+              </a> 
             </p>
             <p>Si algo explota (esperemos que no), avísanos.</p>
             <p>Puedes comunicarte desde la página de soporte cuando quieras. Toda sugerencia suma.</p>
@@ -2408,7 +2420,7 @@
           </details>
           <details>
             <summary>Agradecimientos</summary>
-              <p>Obligatorio a </p>
+              <p>Por colaborar con el icono </p>
               <p>
                 <a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener noreferrer">
                       Icono Alado by Lorc <span class="visually-hidden">(se abre en una nueva pestaña)</span>
@@ -2416,8 +2428,9 @@
               </p>
           </details>
         </section>
-  </section>
-    <section class="ti-usu-profile reveal">
+        </div>
+        
+    <div class="ti-usu-profile reveal">
       <div class="ti-profile">        
 				<!-- <img src="./imgs/logo- 63kb.png" class="img-fluid" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async"> -->
         <img src="./assets/google-5-stars.svg" alt="Calificación de 5 estrellas en Google" loading="lazy" decoding="async" width="120" height="24">
@@ -2443,7 +2456,8 @@
         </button>              
         <div class="ti-date" id="ti-date" aria-live="polite"></div>  
       </div>      
-    </section>
+    </div>
+  </section>
 </section>
 					<!-- Copyright -->
     <section class="footer-copyright reveal"> 
@@ -2558,7 +2572,7 @@
 
         /* --  // AVATRA Lógica de Reducción de Imagen y LocalStorage   - */
       const avatarInput = document.getElementById('avatar');
-      let optimizedImageData = "";
+      window._avatarData = '';
 
       avatarInput.addEventListener('change', (e) => {
           const reader = new FileReader();
@@ -2567,43 +2581,23 @@
               img.onload = () => {
                   const canvas = document.getElementById('previewCanvas');
                   const ctx = canvas.getContext('2d');
-                  // Tamaño óptimo para Nick: 150x150
                   canvas.width = 150; canvas.height = 150;
                   ctx.drawImage(img, 0, 0, 150, 150);
-                  optimizedImageData = canvas.toDataURL('image/webp', 0.7); // WebP para máximo ahorro
+                  window._avatarData = canvas.toDataURL('image/webp', 0.7);
               };
               img.src = event.target.result;
           };
           reader.readAsDataURL(e.target.files[0]);
       });
 
-      document.getElementById('formContact').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const newUser = {
-        id: Date.now(),
-        nombre: document.getElementById('nombre').value,
-        nick: document.getElementById('nick').value,
-        desc: document.getElementById('password').value,
-        img: optimizedImageData
-    };
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    users.push(newUser);
-    localStorage.setItem('users', JSON.stringify(users));
-    alert("¡Tu esencia ha sido guardada!");
-    location.reload(); // Recarga para ver el cambio
-});
-
-
     /* ========== VALIDACIÓN Y ENVÍO DEL FORMULARIO ==========
        Se referencia desde el HTML vía onsubmit="handleFormSubmit(event)".
        Se expone en window porque el atributo inline onsubmit solo puede
        llamar a funciones accesibles globalmente. */
     const FORM_VALIDATORS = {
-      'fn-nombre':   (v) => v.trim().length >= 2 || 'Ingresá tu nombre (mínimo 2 caracteres).',
-      'fn-apellido': (v) => v.trim().length >= 2 || 'Ingresá tu apellido (mínimo 2 caracteres).',
-      'fn-email':    (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Ingresá un correo electrónico válido.',
-      'fn-tel':      (v) => v.trim().length >= 6 || 'Ingresá un teléfono válido.',
-      'fn-pass':     (v) => v.length >= 3 || 'La contraseña debe tener al menos 3 caracteres.'
+      'nombre':   (v) => v.trim().length >= 2 || 'Ingresá tu nombre (mínimo 2 caracteres).',
+      'password': (v) => (v.length >= 1 && v.length <= 4) || 'La contraseña debe tener entre 1 y 4 caracteres.',
+      'nick':     (v) => !v || v.trim().length >= 2 || 'El nick debe tener al menos 2 caracteres.'
     };
 
     window.handleFormSubmit = function handleFormSubmit(event) {
@@ -2641,10 +2635,21 @@
         submitBtn.innerHTML = '<span aria-hidden="true">⏳</span> Enviando...';
       }
 
-      // Punto de integración: reemplazar este timeout por el fetch/POST real
-      // hacia tu backend o servicio de formularios cuando esté listo.
+      // Guardar en localStorage (incluye avatar si se cargó)
+      const newUser = {
+        id: Date.now(),
+        nombre: document.getElementById('nombre')?.value || '',
+        nick: document.getElementById('nick')?.value || '',
+        desc: document.getElementById('password')?.value || '',
+        img: window._avatarData || ''
+      };
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
       setTimeout(() => {
         form.reset();
+        window._avatarData = '';
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalLabel;
@@ -2657,7 +2662,7 @@
           successMsg.textContent = '¡Listo! Te anotaste al viaje. Te vamos a estar escribiendo pronto.';
           formCard.appendChild(successMsg);
         }
-      }, 600);
+      }, 2000);
 
       return false;
     };
@@ -2912,9 +2917,17 @@
 
       /* ---------- Fecha dinámica ---------- */
       const dateEl = $('#ti-date');
-      if (dateEl) {
-        dateEl.textContent = 'Actualizado: ' + new Date().toLocaleDateString('es-AR');
+     if (dateEl) {
+      function actualizarReloj() {
+        dateEl.textContent = '⏰ ' + new Date().toLocaleTimeString('es-UY', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit' 
+        });
       }
+      actualizarReloj(); 
+      setInterval(actualizarReloj, 1000); 
+    }
 
       /* ============== Observers de scroll-reveal (unificados) ==============
          Antes había 3 IntersectionObserver casi idénticos (reveal, galería,
@@ -2934,7 +2947,7 @@
           rootMargin: '0px 0px -50px 0px'
         });
 
-        $$('.reveal, .fade-in').forEach(el => revealObserver.observe(el));
+        $$('.reveal, .fade-in, .form-section, .form-card').forEach(el => revealObserver.observe(el));
 
         if (mainHeader) {
           let lastScrollY = 0;
