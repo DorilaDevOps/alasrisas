@@ -259,17 +259,18 @@
 
   <!-- ============ LANDING ============ -->
   <section class="landing" id="landingSection" aria-label="Pantalla de bienvenida">
-  <div id="landingDot" class="landing-dot" aria-label="Iniciar experiencia" role="button" tabindex="0"></div>
+  <button type="button" id="landingDot" class="landing-dot" aria-label="Iniciar experiencia"></button>
     <img src="./imgs/floripa-landing.webp" alt="Disfrutando el entorno" class="landing_image" id="landingImg" fetchpriority="high" width="1200" height="1600">
-    <div class="landing_overlay"></div>
+    <div class="landing_overlay" aria-hidden="true"></div>
 
-    <div class="landing-content" id="landingContent" aria-labelledby="hero-title">
-      <h1 id="hero-title">El barrio de <em>vacaciones</em></h1>
+    <div class="landing-content" id="landingContent" aria-labelledby="hero-title" aria-describedby="hero-subtitle">
+      <h1 id="hero-title">El viaje del barrio, <em>organizado juntos</em></h1>
+      <p class="hero-subtitle" id="hero-subtitle">La plataforma para planificar tu próximo viaje con amigos</p>
       <button type="button" class="enter-btn" id="enterBtn" aria-label="Ingresar al sitio">
          ✦ ¡Esta vez sí va!  <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="landing_hint" id="landingHint">Haz clic en cualquier lugar</div>
+    <div class="landing_hint" id="landingHint" role="status">Tocá para comenzar</div>
   </section>
 
   <section class="logo-watermark" aria-hidden="true"></section>
@@ -277,9 +278,9 @@
   <!-- ============ MAIN CONTENT ============ -->
     <header class="header" id="mainHeader">
       <div class="header-container">
-        <button class="logo" id="logoBtn" tabindex="0" role="button" aria-label="Volver al inicio">
+        <button class="logo" id="logoBtn" aria-label="Volver al inicio">
           <img src="./imgs/ChatGPT 88kb.webp" alt="Logo" class="logo-icon" width="170" height="80">
-          <h2 class="logo_title">alasRisas <span>trip</span></h2>
+          <p class="logo_title" aria-label="alasRisas trip">alasRisas <span>trip</span></p>
         </button>
 
         <nav class="nav-menu" id="nav_menu" aria-label="Navegación principal de escritorio" aria-hidden="true">
@@ -317,7 +318,7 @@
         </nav>
       </div>
 	  
-      <div class="bottom" role="contentinfo">
+      <div class="bottom">
         <ul class="icons">
           <li><a href="#" class="icon brands fa-twitter" aria-label="Twitter"><span class="label"aria-hidden="true">Twitter</span></a></li>
           <li><a href="#" class="icon brands fa-facebook-f" aria-label="Facebook"><span class="label"aria-hidden="true">Facebook</span></a></li>
@@ -341,11 +342,13 @@
       </section>
 	  
 	      <section class="hero-section reveal" id="que-es-la-app" aria-labelledby="hero-heading">
-            <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron, todavía las andamos.</h2>
-            <p class="reveal reveal-delay-1">Ahora también sabemos organizar el viaje que todos soñamos desde el barrio.</p>
-            <p class="reveal reveal-delay-2">Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
-            <p class="reveal reveal-delay-3">Porque los recuerdos empiezan mucho antes de viajar.</p>
-            <p class="reveal reveal-delay-4">Verano 2026 · Cupos limitados</p>
+            <div class="hero-content">
+              <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron, todavía las andamos.</h2>
+              <p class="reveal reveal-delay-1">Ahora también sabemos organizar el viaje que todos soñamos desde el barrio.</p>
+              <p class="reveal reveal-delay-2">Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
+              <p class="reveal reveal-delay-3">Porque los recuerdos empiezan mucho antes de viajar.</p>
+              <p class="reveal reveal-delay-4">Verano 2026 · Cupos limitados</p>
+            </div>
         </section>		  
 
       <section class="timeline reveal" id="como-funciona" aria-labelledby="como_funciona_title">
@@ -380,8 +383,8 @@
         </ol>
     </section>
 
-      <section id="galeria" class="reveal">
-        <h2 class="section-title fade-in">Florianópolis</h2>
+      <section id="galeria" class="reveal" aria-labelledby="galeria-title">
+        <h2 id="galeria-title" class="section-title fade-in">Florianópolis</h2>
         <p class="section-subtitle fade-in">Un vistazo al paraíso que nos espera</p>
         <div class="carousel-container fade-in" id="carousel">
           <div class="carousel-track" id="carouselTrack"></div>
@@ -397,38 +400,38 @@
         <h2 id="faq-heading" class="reveal">Preguntas Frecuentes</h2>
         <div class="faq-container reveal reveal-delay-1">
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
               <span>¿Por qué Florianópolis y no otro lugar?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-1" role="region">
               <p>Porque tiene TODO lo que un grupo grande necesita: playas paradisíacas, paz para los que quieren paz, y planes para los que quieren plan <i>(por si nos extrañamos, nunca estamos a más de un par de cuadras)</i>.<br> Alojamiento a pasos de la playa, así que ni excusa para no ir.<br> Y si el cuerpo todavía aguanta después del sol: noches que se estiran lindo, ideales para un batallón de amigos como el nuestro.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
               <span>¿Cuándo es el viaje exactamente?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-2" role="region">
               <p>Estamos apuntando a salir el 26 de Diciembre y pasar el fin de año del 2026 allá, y quedarnos 10/15 días. Las fechas exactas se confirman una vez que cerremos el cupo mínimo de participantes.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
               <span>¿Dónde nos vamos a quedar?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-3" role="region">
               <p>Vamos a buscar los mejores lugares y precios para asegurar la estadía con tiempo. La idea es estar lo más cerca posible del agua y, sobre todo, lo más cerca posible los unos de los otros. Porque seguro nos vamos a estar viendo todos los días y todas las noches.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
               <span>¿Qué vamos a hacer allá?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content actividades-lista">
+            <div class="faq-content actividades-lista" id="faq-4" role="region">
               <p>No hay una lista obligatoria de actividades ni cronograma militar. Cada uno va a encontrar la suya. Unos van a leer, otros van a caminar, otros van a conversar hasta la madrugada. Lo único importante es estar ahí, sumando paisajes, anécdotas y recuerdos que todavía no existen pero que en unos meses vamos a estar contando mil veces.</p>
                 <ul class="actividades-lista">
                   <li>✦ Leer.</li> <li>✦ Escuchar música.</li> <li>✦ Caminar por la playa.</li>  <li>✦ Realizar trilhas entre morros.</li><li>✦ Observar la naturaleza.</li> <li>✦ Escuchar el silencio y los pájaros.</li>  <li>✦ Contemplar el cielo nocturno.</li>
@@ -437,11 +440,11 @@
              </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
               <span>¿Por qué tengo que anotarme ya?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-5" role="region">
               <p>Porque las reservas de hospedaje hay que hacerlas cuanto antes para asegurar los mejores lugares al mejor precio. <br> Anotándote nos ayudás a saber cuántos somos realmente, así reservamos a tiempo y evitamos que el barrio entero pague de más por llegar tarde.</p>
               <p>Cada vez que alguien se sume al viaje, veremos la cantidad de viajeros en pantalla.</p>
               <p>Cuanta más gente se anote, más barato para todos.</p>
@@ -450,22 +453,22 @@
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-6">
               <span>¿Cuánto cuesta en total?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-6" role="region">
               <p>Depende de la cantidad de personas que se sumen. El rango estimado va de 200 a 400 dólares por persona, incluye transporte y alojamiento. ( no las actividades ni comidas en el destino). </p>
               <p>El ómnibus sale 5000 dolares, y la estadia la tenemos que reservar lo antes posible</p>
               <p>Cuanta más gente, más barato para todos.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-7">
               <span>¿Cómo dividimos los gastos sin pelearnos?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-7" role="region">
               <p>Lo único que hay para dividir es el traslado y la estadía.</p>
               <p>Fácil: a través de la app de alasRisas cargamos los costos fijos (alojamiento y traslados) y la plataforma calcula automáticamente la cuota equitativa de cada uno, sin intermediarios ni números en una libretita.</p>
               <p>El cupo máximo es de 50 personas para llenar el bondi y conseguir los mejores precios grupales. Ya hay algunos confirmados 😉, así que los cupos restantes son limitados.</p>
@@ -473,61 +476,61 @@
             </div>
           </div>
           <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false">
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-8">
                 <span>¿Y si alguien se baja a último momento?</span>
                 <span class="faq-icon" aria-hidden="true">▼</span>
               </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-8" role="region">
               <p>Tranquilo, no pasa nada grave: se devuelve la plata hasta el último centavo y seguro esa persona se va a estar muriendo de ganas de venir en la próxima.</p>
               <p>Y si lo que complica es justamente el maldito dinero, seguro entre todos le encontramos una vuelta. <br> Lo único que no negociamos es que ¡tenemos que ir!</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-9">
               <span>Cosas que NO te podés olvidar</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-9" role="region">
               <p>* Salivar y hablar al conductor.<br>* Sacar el brazo para afuera de las ventanillas.<br>* No es obligatorio estar tooodo el día pegados, cada uno hace lo suyo también. <br>* Está PROHIBIDO enojarse con alguien del grupo por más de 3 minutos seguidos.* Que en algún momento alguien va a terminar en un nosocomio de allá, son gajes del oficio.<br> </p>
               <p class="frase-final">Y, sobre todo, no te podés olvidar de las ganas de volver a compartir tiempo, historias y risas con los de siempre.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-10">
               <span>¿Y el itinerario, ya está armado?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-10" role="region">
               <p>Plan A, Plan B, Plan C... lo que termine saliendo en el momento. <br> Porque los amigos del barrio nunca fallamos en una cosa: Improvisar.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-11">
               <span>¿Todo organizado?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-11" role="region">
               <p>No, naa que ver!!. Faltaria organizar la comida durante el viaje, algunas salidas, las bromas...</p>
               <p>Solamente tendremos más tranquilidad, más sguridad, más libertad para disfrutar sin preocupaciones y todo lo que se nos ocurra para hacer de este viaje algo inolvidable.</p>
               <p>Porque hay cosas que solo se disfrutan en barra y las mejores historias se cuentan en plural.</p> 
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-12">
               <span>¿Va a quedar registrado en algún lado?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-12" role="region">
               <p>Sí, las fotos de todos van a estar juntas en un solo lugar.</p><p>El recuerdo más organizado que vas a tener en tu vida lo va a armar también la app de alasRisas.</p>
 			        <p><i>(Próximamente)</i></p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-13">
               <span>¿Qué más puedo hacer con la app alasrisas?</span>
               <span class="faq-icon" aria-hidden="true">▼</span>
             </button>
-            <div class="faq-content">
+            <div class="faq-content" id="faq-13" role="region">
               <p>• <strong>Sugerencias:</strong> Proponé paseos, actividades, nuevas fechas, destinos próximos y nuevas ideas para mejorar la experiencia de todos.</p>
                 <p>• <strong>Finanzas seguras:</strong> <a href="#formContact" style="text-decoration: underline;font-style: italic;">Controlá tu estado financiero del viaje.</a>  Tu información es privada y solo podés acceder con tu usuario y contraseña.</p> 
               <p>¡Buscá en la app y comprobalo vos mismo!</p> 
@@ -536,7 +539,7 @@
         </div>
       </section>
 
-	  <section id="countdown-section" class="container reveal">
+	  <section id="countdown-section" class="container reveal" aria-label="Cuenta regresiva">
 			<div class="section-tag">Comunidad</div>
 		  <h2 class="countdown-title">Nos vamos el: 26/12/2026</h2>
 		  <div class="countdown-grid">
@@ -567,8 +570,8 @@
 		  </div>
 		</section>
 	
-      <section id="stats-section" class="section-inner reveal">
-        <h2 class="section-title">Estadísticas del viaje</h2>
+      <section id="stats-section" class="section-inner reveal" aria-labelledby="stats-title">
+        <h2 id="stats-title" class="section-title">Estadísticas del viaje</h2>
         <div class="stats-grid" id="statsGrid">
           <div class="stat-card">
             <div class="stat-icon"><i class="fas fa-users"></i></div>
@@ -588,8 +591,8 @@
         </div>
       </section> 
 
-      <section id="amigos-section" class="section-inner reveal">
-        <h2 class="section-title">Amigos anotados</h2>
+      <section id="amigos-section" class="section-inner reveal" aria-labelledby="amigos-title">
+        <h2 id="amigos-title" class="section-title">Amigos anotados</h2>
         <div class="amigos-section">
           <div class="amigos-table-wrap" id="amigosTableWrap">
             <table class="amigos-table" id="amigosTable">
