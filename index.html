@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -285,10 +285,11 @@
         <nav class="nav-menu" id="nav_menu" aria-label="Navegación principal de escritorio" aria-hidden="true">
           <ul>
               <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#como-funciona">Cómo funciona</a></li>
               <li><a href="#galeria">Galería</a></li>
-              <li><a href="#formContact">Me anoto</a></li>
               <li><a href="#amigos-section">Amigos</a></li>
-              <li><a href="#faq">Preguntas</a></li>				  
+              <li><a href="#muro-comentarios">Comentarios</a></li>
+              <li><a href="#formContact">Me anoto</a></li>
           </ul>
         </nav>
 
@@ -308,13 +309,10 @@
         <nav id="sidebar-nav" aria-label="Enlaces del menú lateral">
           <ul>
             <li><a href="#inicio" class="active"><span class="icon solid fa-home" aria-hidden="true"></span> Inicio</a></li>
+            <li><a href="#como-funciona"><span class="icon solid fa-info-circle" aria-hidden="true"></span> Cómo funciona</a></li>
             <li><a href="#galeria"><span class="icon solid fa-images" aria-hidden="true"></span> Galería</a></li>
-            <li><a href="#formContact"><span class="icon solid fa-envelope" aria-hidden="true"></span> Me anoto</a></li>
-            <li><a href="#stats-section"><span class="icon solid fa-chart-bar" aria-hidden="true"></span> Estadisticas</a></li>
             <li><a href="#amigos-section"><span class="icon solid fa-users" aria-hidden="true"></span> Amigos</a></li>
-            <li><a href="#faq"><span class="icon solid fa-question" aria-hidden="true"></span> Preguntas</a></li>
-            <li><a href="#countdown-section"><span class="icon solid fa-hourglass" aria-hidden="true"></span> Cuenta Regresiva</a></li>
-            <li><a href="#muro-comentarios"><span class="icon solid fa-comments" aria-hidden="true"></span> Comentarios</a></li>
+            <li><a href="#formContact"><span class="icon solid fa-user-plus" aria-hidden="true"></span> Me anoto</a></li>
           </ul>
         </nav>
       </div>
@@ -340,20 +338,62 @@
           <p class="reveal reveal-delay-1">"No viajamos para escapar de la vida, viajamos para que la vida no se nos escape."</p>
 		   <p class="reveal pdelay reveal-delay-3">Tu viaje ideal comienza aquí.</p>
         </div>
-		
-
       </section>
 	  
-	      <section class="hero-section" id="nosotros" aria-labelledby="hero-heading">
-            <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron,todavía las andamos.</h2>
-            <p class="reveal reveal-delay-1">Organizamos el viaje que todos soñamos desde el barrio.</p>
-            <p class="reveal reveal-delay-2"> Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
-            <p class="reveal reveal-delay-3">Verano 2025 · Cupos limitados</p>
-        </section>	
-	  
-	  <section >
+	      <section class="hero-section reveal" id="que-es-la-app" aria-labelledby="hero-heading">
+            <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron, todavía las andamos.</h2>
+            <p class="reveal reveal-delay-1">Ahora también sabemos organizar el viaje que todos soñamos desde el barrio.</p>
+            <p class="reveal reveal-delay-2">Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
+            <p class="reveal reveal-delay-3">Porque los recuerdos empiezan mucho antes de viajar.</p>
+            <p class="reveal reveal-delay-4">Verano 2026 · Cupos limitados</p>
+        </section>		  
 
-	 <section class="faq-section reveal" id="faq" aria-labelledby="faq-heading">
+      <section class="timeline reveal" id="como-funciona" aria-labelledby="como_funciona_title">
+        <div class="section-tag">Pasos simples</div>
+        <h2 class="section-title" id="como_funciona_title">¿Cómo funciona?</h2>
+        <p class="section-sub">Sin complicaciones. De la inscripción al paseo en 3 pasos.</p>
+        <ol class="timeline-list" aria-label="Pasos para unirse al viaje">
+          <li class="timeline-item reveal visible">
+            <div class="timeline-dot" aria-hidden="true">📝</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Paso 01</div>
+              <h3 class="timeline-title">Completás el formulario</h3>
+              <p class="timeline-pass">Llenás tus datos y preferencias. Tarda menos de 2 minutos.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal reveal-delay-2 visible">
+            <div class="timeline-dot" aria-hidden="true">💰</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Paso 02</div>
+              <h3 class="timeline-title">Coordinamos gastos</h3>
+              <p class="timeline-pass">Dividimos todo en partes iguales. Seguro que nos va a servir mucho.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal reveal-delay-3 visible">
+            <div class="timeline-dot" aria-hidden="true">🚌</div>
+            <div class="timeline-content">
+              <div class="timeline-step">Paso 03</div>
+              <h3 class="timeline-title">¡A viajar!</h3>
+              <p class="timeline-pass">Solo llegás con el bolso. El resto ya está resuelto.</p>
+            </div>
+          </li>
+        </ol>
+    </section>
+
+      <section id="galeria" class="reveal">
+        <h2 class="section-title fade-in">Florianópolis</h2>
+        <p class="section-subtitle fade-in">Un vistazo al paraíso que nos espera</p>
+        <div class="carousel-container fade-in" id="carousel">
+          <div class="carousel-track" id="carouselTrack"></div>
+          <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn next" id="carouselNext" aria-label="Siguiente">›</button>
+          <div class="carousel-counter" id="carouselCounter">1 / 12</div>
+          <div class="carousel-progress" id="carouselProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </section>
+
+	    <section class="faq-section reveal" id="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading" class="reveal">Preguntas Frecuentes</h2>
         <div class="faq-container reveal reveal-delay-1">
           <div class="faq-item">
@@ -496,61 +536,247 @@
         </div>
       </section>
 
-      <section id="galeria" class="reveal">
-        <h2 class="section-title fade-in">Florianópolis</h2>
-        <p class="section-subtitle fade-in">Un vistazo al paraíso que nos espera</p>
-        <div class="carousel-container fade-in" id="carousel">
-          <div class="carousel-track" id="carouselTrack"></div>
-          <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">‹</button>
-          <button class="carousel-btn next" id="carouselNext" aria-label="Siguiente">›</button>
-          <div class="carousel-counter" id="carouselCounter">1 / 12</div>
-          <div class="carousel-progress" id="carouselProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+	  <section id="countdown-section" class="container reveal">
+			<div class="section-tag">Comunidad</div>
+		  <h2 class="countdown-title">Nos vamos el: 26/12/2026</h2>
+		  <div class="countdown-grid">
+			<div class="countdown-item">
+			  <div class="number-wrapper">
+				<span class="countdown-number" id="cd-days">00</span>
+			  </div>
+			  <span class="countdown-label">Días</span>
+			</div>
+			<div class="countdown-item">
+			  <div class="number-wrapper">
+				<span class="countdown-number" id="cd-hours">00</span>
+			  </div>
+			  <span class="countdown-label">Horas</span>
+			</div>
+			<div class="countdown-item">
+			  <div class="number-wrapper">
+				<span class="countdown-number" id="cd-minutes">00</span>
+			  </div>
+			  <span class="countdown-label">Min</span>
+			</div>
+			<div class="countdown-item">
+			  <div class="number-wrapper">
+				<span class="countdown-number" id="cd-seconds">00</span>
+			  </div>
+			  <span class="countdown-label">Seg</span>
+			</div>
+		  </div>
+		</section>
+	
+      <section id="stats-section" class="section-inner reveal">
+        <h2 class="section-title">Estadísticas del viaje</h2>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-number" id="stat-total">0</div>
+            <div class="stat-label">Viajeros</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-divide"></i></div>
+            <div class="stat-number" id="stat-cuota">$0</div>
+            <div class="stat-label">C/U Debe Poner</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-flag-checkered"></i></div>
+            <div class="stat-number" id="stat-meta">$200,000</div>
+            <div class="stat-label">Meta Requerida</div>
+          </div>
         </div>
-        <div class="carousel-dots" id="carouselDots"></div>
+      </section> 
+
+      <section id="amigos-section" class="section-inner reveal">
+        <h2 class="section-title">Amigos anotados</h2>
+        <div class="amigos-section">
+          <div class="amigos-table-wrap" id="amigosTableWrap">
+            <table class="amigos-table" id="amigosTable">
+              <thead>
+                <tr>
+                  <th>Avatar</th>
+                  <th>Nombre</th>
+                  <th>Nick</th>
+                  <th>Descripcion</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="amigosBody"></tbody>
+            </table>
+            <div class="empty-state" id="amigosEmpty">Aún no hay viajeros anotados. ¡Sé el primero!</div>
+          </div>
+        </div>
       </section>
 
-      <section class="audio-player-container reveal" aria-label="Reproductor de música de fondo">
-        <div class="audio-card">
-          <button id="audioToggleBtn" class="audio-btn" aria-label="Reproducir música de viaje" aria-pressed="false">
-            <span class="audio-icon" aria-hidden="true"><i class="fas fa-music"></i></span>
-            <span class="audio-status-text">Música de viaje desactivada</span>
-          </button>
-          <audio id="tripAudio" src="./imgs/Augsburg.mp3" loop preload="none" aria-label="Música de fondo del viaje a Florianópolis"></audio>
+      <div class="modal-overlay" id="userModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
+          <h3 id="modalTitle">Detalle del viajero</h3>
+          <div id="modalBody"></div>
+        </div>
+      </div>
+
+      <!-- ============ MURO DE COMENTARIOS ============ -->
+      <section id="muro-comentarios" class="section-inner reveal" aria-labelledby="comentarios-title">
+        <h2 id="comentarios-title" class="section-title">Muro de comentarios</h2>
+        <p class="section-subtitle">Comparti algo con el barrio</p>
+
+        <!-- Panel de usuario logueado (SE MUESTRA SIEMPRE) -->
+        <div class="user-panel" id="user-panel" style="display:none">
+          <div class="user-panel-card">
+            <div class="user-panel-avatar" id="panel-user-avatar"></div>
+            <div class="user-panel-info">
+              <strong id="panel-user-name"></strong>
+              <small id="panel-user-nick"></small>
+            </div>
+            <div class="user-panel-actions">
+              <button type="button" class="user-panel-btn active" id="panel-btn-comments" aria-label="Mis comentarios" title="Mis comentarios">
+                <i class="fas fa-comments" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="user-panel-btn" id="panel-btn-wallet" aria-label="Ver billetera" title="Ver billetera">
+                <i class="fas fa-wallet" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="user-panel-btn" id="panel-btn-edit" aria-label="Editar perfil" title="Editar perfil">
+                <i class="fas fa-pen" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="user-panel-btn user-panel-btn--logout" id="panel-btn-logout" aria-label="Salir" title="Salir">
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido: COMENTARIOS (default) -->
+        <div id="panel-content-comments"  class="panel-content-comments">
+          <!-- Formulario de comentario -->
+          <div class="comentarios-form-card" id="comentarios-form-card">
+            <div class="comentarios-form-header">
+              <i class="fas fa-pen-to-square" aria-hidden="true"></i>
+              <span>Agregar comentario</span>
+            </div>
+            <div class="comentarios-write">
+              <div class="comentarios-write-form">
+                <textarea id="comment-text-input" rows="3" placeholder="Escribi tu comentario..." maxlength="500" aria-label="Escribi un comentario"></textarea>
+                <div class="comentarios-write-actions">
+                  <span class="char-count"><span id="comment-char-count">0</span>/500</span>
+                  <button type="button" class="wallet-btn wallet-btn-add" id="comment-publish-btn" aria-label="Publicar comentario">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tus comentarios -->
+          <div class="comentarios-mis-comentarios" id="comentarios-mis-comentarios" style="display:none">
+            <h3 class="comentarios-subsection-title">
+              <i class="fas fa-user" aria-hidden="true"></i> Tus comentarios
+            </h3>
+            <div id="comentarios-mis-lista" class="comentarios-lista"></div>
+          </div>
+        </div>
+
+        <!-- Comentarios del barrio (SIEMPRE visible) -->
+        <div class="comentarios-barrio">
+          <h3 class="comentarios-subsection-title">
+            <i class="fas fa-users" aria-hidden="true"></i> Comentarios del barrio
+          </h3>
+          <div id="comentarios-lista" class="comentarios-lista"></div>
+        </div>
+        
+        <!-- Estado NO logueado -->
+        <div class="comentarios-not-logged-in" id="comentarios-not-logged-in">
+          <div class="comentarios-not-logged-card">
+            <p>Para agregar un comentario, tenes que estar registrado.</p>
+            <button type="button" class="btn-registrate" id="comentarios-register-btn"
+              data-tooltip="Para agregar un comentario, tenes que estar registrado"
+              aria-label="Para agregar un comentario, tenes que estar registrado">
+              <i class="fas fa-comment" aria-hidden="true"></i> Registrate aca
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenido: WALLET (reemplaza comentarios) -->
+        <div id="panel-content-wallet" style="display:none">
+          <section class="wallet-section" id="wallet-section">
+            <div class="wallet-header">
+              <h2 id="wallet-user-name">Billetera <small>cargando...</small></h2>
+              <div class="wallet-actions">
+                <button type="button" class="wallet-btn-action wallet-btn-edit" id="btn-edit-profile" aria-label="Editar perfil"><i class="fas fa-pen" aria-hidden="true"></i></button>
+                <button type="button" class="wallet-btn-action wallet-btn-delete" id="wallet-delete-btn" aria-label="Eliminar usuario"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+                <button type="button" class="wallet-btn-action wallet-btn-logout" id="wallet-logout-btn" aria-label="Cerrar sesion"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></button>
+              </div>
+            </div>
+
+            <div class="profile-edit-form" id="profile-edit-form" style="display:none">
+              <div class="form-field">
+                <label for="edit-profile-name">Nombre</label>
+                <input type="text" id="edit-profile-name" placeholder="Tu nombre" minlength="2" required>
+              </div>
+              <div class="form-field">
+                <label for="edit-profile-nick">Nick</label>
+                <input type="text" id="edit-profile-nick" placeholder="@podo (opcional)" minlength="2">
+              </div>
+              <div class="form-field">
+                <label for="edit-profile-descripcion">Descripcion</label>
+                <textarea id="edit-profile-descripcion" rows="2" placeholder="Algo sobre ti..."></textarea>
+              </div>
+              <div class="form-field">
+                <label for="edit-profile-pass">Contrasena <small>(1-4 caracteres)</small></label>
+                <input type="text" id="edit-profile-pass" minlength="1" maxlength="4" placeholder="Nueva contrasena">
+              </div>
+              <div class="form-actions">
+                <button type="button" class="wallet-btn wallet-btn-add" id="save-profile-edit">Guardar</button>
+                <button type="button" class="wallet-btn wallet-btn-withdraw" id="cancel-profile-edit">Cancelar</button>
+              </div>
+            </div>
+
+            <div class="wallet-stats">
+              <div class="wallet-stat-card">
+                <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
+                <div class="stat-value accent" id="wallet-total">$0</div>
+                <div class="stat-label">Total Acumulado</div>
+              </div>
+              <div class="wallet-stat-card">
+                <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                <div class="stat-value danger" id="wallet-pending">$0</div>
+                <div class="stat-label">Saldo Pendiente</div>
+              </div>
+              <div class="wallet-stat-card">
+                <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                <div class="stat-value" id="wallet-meta">$0</div>
+                <div class="stat-label">Mi Meta</div>
+              </div>
+            </div>
+
+            <div class="wallet-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="wallet-amount">Monto <small>(solo $ UYU)</small></label>
+                  <input type="number" id="wallet-amount" min="1" step="1" placeholder="Ej: 500" inputmode="numeric" />
+                </div>
+                <div class="form-actions">
+                  <button class="wallet-btn wallet-btn-add" id="wallet-btn-add">
+                    <i class="fas fa-plus"></i> Agregar
+                  </button>
+                  <button class="wallet-btn wallet-btn-withdraw" id="wallet-btn-withdraw">
+                    <i class="fas fa-minus"></i> Retirar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="wallet-history">
+              <h3><i class="fas fa-history"></i> Historial de Transacciones</h3>
+              <div id="wallet-history-body">
+                <div class="history-empty">Aun no hay transacciones registradas.</div>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
-      <section class="timeline reveal" id="como_funciona" aria-labelledby="como_funciona_title">
-        <div class="section-tag">Pasos simples</div>
-        <h2 class="section-title" id="como_funciona_title">¿Cómo funciona?</h2>
-        <p class="section-sub">Sin complicaciones. De la inscripción al paseo en 3 pasos.</p>
-        <ol class="timeline-list" aria-label="Pasos para unirse al viaje">
-          <li class="timeline-item reveal visible">
-            <div class="timeline-dot" aria-hidden="true">📝</div>
-            <div class="timeline-content">
-              <div class="timeline-step">Paso 01</div>
-              <h3 class="timeline-title">Completás el formulario</h3>
-              <p class="timeline-pass">Llenás tus datos y preferencias. Tarda menos de 2 minutos.</p>
-            </div>
-          </li>
-          <li class="timeline-item reveal reveal-delay-2 visible">
-            <div class="timeline-dot" aria-hidden="true">💰</div>
-            <div class="timeline-content">
-              <div class="timeline-step">Paso 02</div>
-              <h3 class="timeline-title">Coordinamos gastos</h3>
-              <p class="timeline-pass">Dividimos todo en partes iguales. Seguro que nos va a servir mucho.</p>
-            </div>
-          </li>
-          <li class="timeline-item reveal reveal-delay-3 visible">
-            <div class="timeline-dot" aria-hidden="true">🚌</div>
-            <div class="timeline-content">
-              <div class="timeline-step">Paso 03</div>
-              <h3 class="timeline-title">¡A viajar!</h3>
-              <p class="timeline-pass">Solo llegás con el bolso. El resto ya está resuelto.</p>
-            </div>
-          </li>
-        </ol>
-    </section>
-	  
 	  <section id="form_section" class="form-section reveal" aria-labelledby="form-title">
 	  
 	    <div id="toast-container" aria-live="polite"></div>
@@ -569,7 +795,6 @@
         <h2 id="form-title" class="form-title">Mi <span>Usuario</span><span class="live-indicator" aria-hidden="true"></span></h2>
         <p class="form-subtitle">Ingresá con tu nombre y contraseña</p>
         <button type="button" id="formModeToggle" class="form-mode-toggle">¿Ya tenés cuenta? Ingresá</button>
-		
 		
         <form id="formContact" novalidate 
 			    aria-label="Formulario de registro e ingreso" 
@@ -635,20 +860,20 @@
             </div> 
 
             <div class="form-field file-upload reg-field">
-              <label class="file-label" for="avatar">📷 Foto Mística (Opcional)</label>
+              <label class="file-label" for="avatar">Foto Mistica (Opcional)</label>
               <input type="file" id="avatar" accept="image/*" style="color:grey;">
               <canvas id="previewCanvas" style="display:none;"></canvas>
             </div>
 
-            <!-- Comentario -->
+            <!-- Descripcion -->
             <div class="form-field full reg-field">
-              <label for="fn-comentario">Comentario (opcional)</label>
+              <label for="fn-descripcion">Descripcion (opcional)</label>
               <textarea
-                id="fn-comentario"
-                name="comentario"
-                placeholder="Deja tu comentario..."
+                id="fn-descripcion"
+                name="descripcion"
+                placeholder="Contanos algo sobre vos..."
                 rows="3"
-                aria-label="Comentario opcional"
+                aria-label="Descripcion opcional"
               ></textarea>
             </div>           
 
@@ -662,202 +887,21 @@
           </div>
         </form>
 		  </div>
-		</section>	
-
-		<section id="countdown-section" class="container reveal">
-			<div class="section-tag">Comunidad</div>
-		  <h2 class="countdown-title">Nos vamos el: 26/12/2026</h2>
-		  <div class="countdown-grid">
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-days">00</span>
-			  </div>
-			  <span class="countdown-label">Días</span>
-			</div>
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-hours">00</span>
-			  </div>
-			  <span class="countdown-label">Horas</span>
-			</div>
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-minutes">00</span>
-			  </div>
-			  <span class="countdown-label">Min</span>
-			</div>
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-seconds">00</span>
-			  </div>
-			  <span class="countdown-label">Seg</span>
-			</div>
-		  </div>
 		</section>
-	
-      <section id="stats-section" class="section-inner reveal">
-        <h2 class="section-title">Estadisticas del viaje</h2>
-        <div class="stats-grid" id="statsGrid">
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-users"></i></div>
-            <div class="stat-number" id="stat-total">0</div>
-            <div class="stat-label">Viajeros</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-divide"></i></div>
-            <div class="stat-number" id="stat-cuota">$0</div>
-            <div class="stat-label">C/U Debe Poner</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-flag-checkered"></i></div>
-            <div class="stat-number" id="stat-meta">$200,000</div>
-            <div class="stat-label">Meta Requerida</div>
-          </div>
-        </div>
-      </section> 
-
-      <section id="amigos-section" class="section-inner reveal">
-        <h2 class="section-title">Amigos anotados</h2>
-        <div class="amigos-section">
-          <div class="amigos-table-wrap" id="amigosTableWrap">
-            <table class="amigos-table" id="amigosTable">
-              <thead>
-                <tr>
-                  <th>Avatar</th>
-                  <th>Nombre</th>
-                  <th>Nick</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="amigosBody"></tbody>
-            </table>
-            <div class="empty-state" id="amigosEmpty">Aún no hay viajeros anotados. ¡Sé el primero!</div>
-          </div>
-        </div>
-      </section>
-
-      <div class="modal-overlay" id="userModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-          <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
-          <h3 id="modalTitle">Detalle del viajero</h3>
-          <div id="modalBody"></div>
-        </div>
-      </div>
-
-      <!-- ============ WALLET ============ -->
-      <section class="wallet-section" id="wallet-section">
-        <div class="wallet-header">
-          <h2 id="wallet-user-name">Billetera <small>de cargando...</small></h2>
-          <div class="wallet-actions">
-            <button type="button" class="wallet-btn-action wallet-btn-edit" id="btn-edit-profile" aria-label="Editar perfil"><i class="fas fa-pen" aria-hidden="true"></i></button>
-            <button type="button" class="wallet-btn-action wallet-btn-delete" id="wallet-delete-btn" aria-label="Eliminar usuario"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-            <button type="button" class="wallet-btn-action wallet-btn-logout" id="wallet-logout-btn" aria-label="Cerrar sesión"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></button>
-          </div>
-        </div>
-
-        <div class="profile-edit-form" id="profile-edit-form" style="display:none">
-          <div class="form-field">
-            <label for="edit-profile-name">Nombre</label>
-            <input type="text" id="edit-profile-name" placeholder="Tu nombre" minlength="2" required>
-          </div>
-          <div class="form-field">
-            <label for="edit-profile-nick">Nick</label>
-            <input type="text" id="edit-profile-nick" placeholder="@podo (opcional)" minlength="2">
-          </div>
-          <div class="form-field">
-            <label for="edit-profile-comentario">Comentario</label>
-            <textarea id="edit-profile-comentario" rows="2" placeholder="Algo sobre ti..."></textarea>
-          </div>
-          <div class="form-field">
-            <label for="edit-profile-pass">Contraseña <small>(1-4 caracteres)</small></label>
-            <input type="text" id="edit-profile-pass" minlength="1" maxlength="4" placeholder="Nueva contraseña">
-          </div>
-          <div class="form-actions">
-            <button type="button" class="wallet-btn wallet-btn-add" id="save-profile-edit">💾 Guardar</button>
-            <button type="button" class="wallet-btn wallet-btn-withdraw" id="cancel-profile-edit">Cancelar</button>
-          </div>
-        </div>
-
-        <div class="wallet-stats">
-          <div class="wallet-stat-card">
-            <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
-            <div class="stat-value accent" id="wallet-total">$0</div>
-            <div class="stat-label">Total Acumulado</div>
-          </div>
-          <div class="wallet-stat-card">
-            <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
-            <div class="stat-value danger" id="wallet-pending">$0</div>
-            <div class="stat-label">Saldo Pendiente</div>
-          </div>
-          <div class="wallet-stat-card">
-            <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
-            <div class="stat-value" id="wallet-meta">$0</div>
-            <div class="stat-label">Mi Meta</div>
-          </div>
-        </div>
-
-        <div class="wallet-form">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="wallet-amount">Monto <small>(solo $ UYU)</small></label>
-              <input
-                type="number"
-                id="wallet-amount"
-                min="1"
-                step="1"
-                placeholder="Ej: 500"
-                inputmode="numeric"
-              />
-            </div>
-            <div class="form-actions">
-              <button class="wallet-btn wallet-btn-add" id="wallet-btn-add">
-                <i class="fas fa-plus"></i> Agregar
-              </button>
-              <button class="wallet-btn wallet-btn-withdraw" id="wallet-btn-withdraw">
-                <i class="fas fa-minus"></i> Retirar
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="wallet-history">
-          <h3><i class="fas fa-history"></i> Historial de Transacciones</h3>
-          <div id="wallet-history-body">
-            <div class="history-empty">Aún no hay transacciones registradas.</div>
-          </div>
-        </div>
-
-        <!-- ============ COMENTARIOS DEL USUARIO (edit mode) ============ -->
-        <div class="wallet-comments" id="wallet-comments" style="display:none">
-          <h3 class="wallet-comments-title"><i class="fas fa-comments" aria-hidden="true"></i> Mis comentarios</h3>
-          <div id="wallet-comments-list" class="wallet-comments-list"></div>
-          <div class="wallet-comment-form" id="wallet-comment-form">
-            <div class="form-field">
-              <textarea id="wallet-comment-text" rows="2" placeholder="Escribí un comentario..." maxlength="500" aria-label="Escribí un comentario"></textarea>
-            </div>
-            <div class="wallet-comment-form-actions">
-              <span class="char-count"><span id="wallet-comment-char-count">0</span>/500</span>
-              <button type="button" class="wallet-btn wallet-btn-add" id="btn-wallet-enviar-comentario" aria-label="Publicar comentario">
-                <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ MURO DE COMENTARIOS ============ -->
-      <section id="muro-comentarios" class="section-inner reveal" aria-labelledby="comentarios-title">
-        <h2 id="comentarios-title" class="section-title">Muro de comentarios</h2>
-        <p class="section-subtitle">Compartí algo con el barrio</p>
-
-        <div id="comentarios-lista" class="comentarios-lista"></div>
-      </section>
 
     </main>
 	
-	<button id="scrollTopBtn" class="btn_floating scroll-top-btn" aria-label="Volver arriba">
+  <button id="scrollTopBtn" class="btn_floating scroll-top-btn" aria-label="Volver arriba">
 		<img src="./assets/flechaArriba.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
 	</button>
+
+  <!-- Audio flotante -->
+  <div class="audio-float" id="audioFloat" role="region" aria-label="Reproductor de música de fondo">
+    <button id="audioToggleBtn" class="audio-float-btn" aria-label="Reproducir música de viaje" aria-pressed="false">
+      <i class="fas fa-music" aria-hidden="true"></i>
+    </button>
+    <audio id="tripAudio" src="./assets/porqueseme_antoja.mp3" loop preload="none" aria-label="Música de fondo del viaje a Florianópolis"></audio>
+  </div>
 
   <a href="https://wa.me/?text=¡Quiero%20unirme%20al%20viaje!" target="_blank" rel="noopener noreferrer" 
     data-tooltip="Llamame" class="btn_floating btn_whatsapp" 
@@ -875,7 +919,6 @@
   <nav class="footer-links" aria-label="Navegación del pie de página">
     <a href="#faq">Preguntas frecuentes</a> .
     <a href="#formContact">Me anoto</a> .
-    <a href="#amigos-section">Amigos</a> .
     <a href="#muro-comentarios">Comentarios</a>
   </nav>
 
