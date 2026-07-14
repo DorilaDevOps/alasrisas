@@ -267,7 +267,7 @@
       <h1 id="hero-title">El viaje del barrio, <em>organizado juntos</em></h1>
       <p class="hero-subtitle" id="hero-subtitle">La plataforma para planificar tu próximo viaje con amigos</p>
       <button type="button" class="enter-btn" id="enterBtn" aria-label="Ingresar al sitio">
-         ✦ ¡Esta vez sí va!  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          ✦ ¡Esta vez sí va!
       </button>
     </div>
     <div class="landing_hint" id="landingHint" role="status">Tocá para comenzar</div>
@@ -348,8 +348,9 @@
               <p class="reveal reveal-delay-2">Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
               <p class="reveal reveal-delay-3">Porque los recuerdos empiezan mucho antes de viajar.</p>
               <p class="reveal reveal-delay-4">Verano 2026 · Cupos limitados</p>
-            </div>
-        </section>		  
+        </div>
+
+      </section>
 
       <section class="timeline reveal" id="como-funciona" aria-labelledby="como_funciona_title">
         <div class="section-tag">Pasos simples</div>
@@ -589,7 +590,7 @@
             <div class="stat-label">Meta Requerida</div>
           </div>
         </div>
-      </section> 
+      </section>
 
       <section id="amigos-section" class="section-inner reveal" aria-labelledby="amigos-title">
         <h2 id="amigos-title" class="section-title">Amigos anotados</h2>
@@ -601,7 +602,6 @@
                   <th>Avatar</th>
                   <th>Nombre</th>
                   <th>Nick</th>
-                  <th>Descripcion</th>
                   <th></th>
                 </tr>
               </thead>
@@ -612,72 +612,153 @@
         </div>
       </section>
 
-      <div class="modal-overlay" id="userModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-          <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
-          <h3 id="modalTitle">Detalle del viajero</h3>
-          <div id="modalBody"></div>
-        </div>
-      </div>
-
       <!-- ============ MURO DE COMENTARIOS ============ -->
       <section id="muro-comentarios" class="section-inner reveal" aria-labelledby="comentarios-title">
         <h2 id="comentarios-title" class="section-title">Muro de comentarios</h2>
         <p class="section-subtitle">Comparti algo con el barrio</p>
 
-        <!-- Panel de usuario logueado (SE MUESTRA SIEMPRE) -->
-        <div class="user-panel" id="user-panel" style="display:none">
-          <div class="user-panel-card">
-            <div class="user-panel-avatar" id="panel-user-avatar"></div>
-            <div class="user-panel-info">
-              <strong id="panel-user-name"></strong>
-              <small id="panel-user-nick"></small>
-            </div>
-            <div class="user-panel-actions">
-              <button type="button" class="user-panel-btn active" id="panel-btn-comments" aria-label="Mis comentarios" title="Mis comentarios">
-                <i class="fas fa-comments" aria-hidden="true"></i>
-              </button>
-              <button type="button" class="user-panel-btn" id="panel-btn-wallet" aria-label="Ver billetera" title="Ver billetera">
-                <i class="fas fa-wallet" aria-hidden="true"></i>
-              </button>
-              <button type="button" class="user-panel-btn" id="panel-btn-edit" aria-label="Editar perfil" title="Editar perfil">
-                <i class="fas fa-pen" aria-hidden="true"></i>
-              </button>
-              <button type="button" class="user-panel-btn user-panel-btn--logout" id="panel-btn-logout" aria-label="Salir" title="Salir">
-                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        <!-- Dashboard del usuario logueado -->
+        <div id="user-dashboard" class="user-dashboard" style="display:none">
 
-        <!-- Contenido: COMENTARIOS (default) -->
-        <div id="panel-content-comments"  class="panel-content-comments">
-          <!-- Formulario de comentario -->
-          <div class="comentarios-form-card" id="comentarios-form-card">
-            <div class="comentarios-form-header">
-              <i class="fas fa-pen-to-square" aria-hidden="true"></i>
-              <span>Agregar comentario</span>
-            </div>
-            <div class="comentarios-write">
-              <div class="comentarios-write-form">
-                <textarea id="comment-text-input" rows="3" placeholder="Escribi tu comentario..." maxlength="500" aria-label="Escribi un comentario"></textarea>
-                <div class="comentarios-write-actions">
-                  <span class="char-count"><span id="comment-char-count">0</span>/500</span>
-                  <button type="button" class="wallet-btn wallet-btn-add" id="comment-publish-btn" aria-label="Publicar comentario">
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
-                  </button>
-                </div>
+          <!-- Barra de usuario -->
+          <div class="user-panel" id="user-panel">
+            <div class="user-panel-card">
+              <div class="user-panel-avatar" id="panel-user-avatar"></div>
+              <div class="user-panel-info">
+                <strong id="panel-user-name"></strong>
+                <small id="panel-user-nick"></small>
+              </div>
+              <div class="user-panel-actions">
+                <button type="button" class="user-panel-btn" id="panel-btn-comments" aria-label="Mis comentarios" title="Mis comentarios">
+                  <i class="fas fa-comments" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="user-panel-btn" id="panel-btn-wallet" aria-label="Ver billetera" title="Ver billetera">
+                  <i class="fas fa-wallet" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="user-panel-btn" id="panel-btn-edit" aria-label="Editar perfil" title="Editar perfil">
+                  <i class="fas fa-pen" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="user-panel-btn user-panel-btn--logout" id="panel-btn-logout" aria-label="Salir" title="Salir">
+                  <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- Tus comentarios -->
-          <div class="comentarios-mis-comentarios" id="comentarios-mis-comentarios" style="display:none">
-            <h3 class="comentarios-subsection-title">
-              <i class="fas fa-user" aria-hidden="true"></i> Tus comentarios
-            </h3>
-            <div id="comentarios-mis-lista" class="comentarios-lista"></div>
+          <!-- Contenido: COMENTARIOS (default) -->
+          <div id="panel-content-comments" class="panel-content-comments">
+            <!-- Formulario de comentario -->
+            <div class="comentarios-form-card" id="comentarios-form-card">
+              <div class="comentarios-form-header">
+                <i class="fas fa-pen-to-square" aria-hidden="true"></i>
+                <span>Agregar comentario</span>
+              </div>
+              <div class="comentarios-write">
+                <div class="comentarios-write-form">
+                  <textarea id="comment-text-input" rows="3" placeholder="Escribi tu comentario..." maxlength="500" aria-label="Escribi un comentario"></textarea>
+                  <div class="comentarios-write-actions">
+                    <span class="char-count"><span id="comment-char-count">0</span>/500</span>
+                    <button type="button" class="wallet-btn wallet-btn-add" id="comment-publish-btn" aria-label="Publicar comentario">
+                      <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tus comentarios -->
+            <div class="comentarios-mis-comentarios" id="comentarios-mis-comentarios" style="display:none">
+              <h3 class="comentarios-subsection-title">
+                <i class="fas fa-user" aria-hidden="true"></i> Tus comentarios
+              </h3>
+              <div id="comentarios-mis-lista" class="comentarios-lista"></div>
+            </div>
           </div>
+
+          <!-- Contenido: WALLET -->
+          <div id="panel-content-wallet" style="display:none">
+            <section class="wallet-section" id="wallet-section">
+              <div class="wallet-header">
+                <h2 id="wallet-user-name">Billetera <small>cargando...</small></h2>
+                <div class="wallet-actions">
+                  <button type="button" class="wallet-btn-action wallet-btn-edit" id="btn-edit-profile" aria-label="Editar perfil"><i class="fas fa-pen" aria-hidden="true"></i></button>
+                  <button type="button" class="wallet-btn-action wallet-btn-delete" id="wallet-delete-btn" aria-label="Eliminar usuario"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+                  <button type="button" class="wallet-btn-action wallet-btn-logout" id="wallet-logout-btn" aria-label="Cerrar sesion"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="profile-edit-form" id="profile-edit-form" style="display:none">
+                <div class="form-field">
+                  <label for="edit-profile-name">Nombre</label>
+                  <input type="text" id="edit-profile-name" placeholder="Tu nombre" minlength="2" required>
+                </div>
+                <div class="form-field">
+                  <label for="edit-profile-nick">Nick</label>
+                  <input type="text" id="edit-profile-nick" placeholder="@podo (opcional)" minlength="2">
+                </div>
+                <div class="form-field">
+                  <label for="edit-profile-descripcion">Descripcion</label>
+                  <textarea id="edit-profile-descripcion" rows="2" placeholder="Algo sobre ti..."></textarea>
+                </div>
+                <div class="form-field">
+                  <label for="edit-profile-pass">Contrasena <small>(1-4 caracteres)</small></label>
+                  <input type="text" id="edit-profile-pass" minlength="1" maxlength="4" placeholder="Nueva contrasena">
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="wallet-btn wallet-btn-add" id="save-profile-edit">Guardar</button>
+                  <button type="button" class="wallet-btn wallet-btn-withdraw" id="cancel-profile-edit">Cancelar</button>
+                </div>
+              </div>
+
+              <div class="wallet-stats">
+                <div class="wallet-stat-card">
+                  <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
+                  <div class="stat-value accent" id="wallet-total">$0</div>
+                  <div class="stat-label">Total Acumulado</div>
+                </div>
+                <div class="wallet-stat-card">
+                  <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                  <div class="stat-value danger" id="wallet-pending">$0</div>
+                  <div class="stat-label">Saldo Pendiente</div>
+                </div>
+                <div class="wallet-stat-card">
+                  <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                  <div class="stat-value" id="wallet-meta">$0</div>
+                  <div class="stat-label">Mi Meta</div>
+                </div>
+              </div>
+
+              <div class="wallet-form">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="wallet-amount">Monto <small>(solo $ UYU)</small></label>
+                    <input type="number" id="wallet-amount" min="1" step="1" placeholder="Ej: 500" inputmode="numeric" />
+                  </div>
+                  <div class="form-actions">
+                    <button class="wallet-btn wallet-btn-add" id="wallet-btn-add">
+                      <i class="fas fa-plus"></i> Agregar
+                    </button>
+                    <button class="wallet-btn wallet-btn-withdraw" id="wallet-btn-withdraw">
+                      <i class="fas fa-minus"></i> Retirar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wallet-history">
+                <h3><i class="fas fa-history"></i> Historial de Transacciones</h3>
+                <div id="wallet-history-body">
+                  <div class="history-empty">Aun no hay transacciones registradas.</div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Contenido: EDITAR PERFIL -->
+          <div id="panel-content-edit" style="display:none">
+            <div id="panel-edit-body" class="panel-edit-body"></div>
+          </div>
+
         </div>
 
         <!-- Comentarios del barrio (SIEMPRE visible) -->
@@ -687,11 +768,11 @@
           </h3>
           <div id="comentarios-lista" class="comentarios-lista"></div>
         </div>
-        
+
         <!-- Estado NO logueado -->
         <div class="comentarios-not-logged-in" id="comentarios-not-logged-in">
           <div class="comentarios-not-logged-card">
-            <p>Para agregar un comentario, tenes que estar registrado.</p>
+            <p>Agregar un comentario.</p>
             <button type="button" class="btn-registrate" id="comentarios-register-btn"
               data-tooltip="Para agregar un comentario, tenes que estar registrado"
               aria-label="Para agregar un comentario, tenes que estar registrado">
@@ -700,85 +781,16 @@
           </div>
         </div>
 
-        <!-- Contenido: WALLET (reemplaza comentarios) -->
-        <div id="panel-content-wallet" style="display:none">
-          <section class="wallet-section" id="wallet-section">
-            <div class="wallet-header">
-              <h2 id="wallet-user-name">Billetera <small>cargando...</small></h2>
-              <div class="wallet-actions">
-                <button type="button" class="wallet-btn-action wallet-btn-edit" id="btn-edit-profile" aria-label="Editar perfil"><i class="fas fa-pen" aria-hidden="true"></i></button>
-                <button type="button" class="wallet-btn-action wallet-btn-delete" id="wallet-delete-btn" aria-label="Eliminar usuario"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                <button type="button" class="wallet-btn-action wallet-btn-logout" id="wallet-logout-btn" aria-label="Cerrar sesion"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></button>
-              </div>
-            </div>
-
-            <div class="profile-edit-form" id="profile-edit-form" style="display:none">
-              <div class="form-field">
-                <label for="edit-profile-name">Nombre</label>
-                <input type="text" id="edit-profile-name" placeholder="Tu nombre" minlength="2" required>
-              </div>
-              <div class="form-field">
-                <label for="edit-profile-nick">Nick</label>
-                <input type="text" id="edit-profile-nick" placeholder="@podo (opcional)" minlength="2">
-              </div>
-              <div class="form-field">
-                <label for="edit-profile-descripcion">Descripcion</label>
-                <textarea id="edit-profile-descripcion" rows="2" placeholder="Algo sobre ti..."></textarea>
-              </div>
-              <div class="form-field">
-                <label for="edit-profile-pass">Contrasena <small>(1-4 caracteres)</small></label>
-                <input type="text" id="edit-profile-pass" minlength="1" maxlength="4" placeholder="Nueva contrasena">
-              </div>
-              <div class="form-actions">
-                <button type="button" class="wallet-btn wallet-btn-add" id="save-profile-edit">Guardar</button>
-                <button type="button" class="wallet-btn wallet-btn-withdraw" id="cancel-profile-edit">Cancelar</button>
-              </div>
-            </div>
-
-            <div class="wallet-stats">
-              <div class="wallet-stat-card">
-                <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
-                <div class="stat-value accent" id="wallet-total">$0</div>
-                <div class="stat-label">Total Acumulado</div>
-              </div>
-              <div class="wallet-stat-card">
-                <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
-                <div class="stat-value danger" id="wallet-pending">$0</div>
-                <div class="stat-label">Saldo Pendiente</div>
-              </div>
-              <div class="wallet-stat-card">
-                <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
-                <div class="stat-value" id="wallet-meta">$0</div>
-                <div class="stat-label">Mi Meta</div>
-              </div>
-            </div>
-
-            <div class="wallet-form">
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="wallet-amount">Monto <small>(solo $ UYU)</small></label>
-                  <input type="number" id="wallet-amount" min="1" step="1" placeholder="Ej: 500" inputmode="numeric" />
-                </div>
-                <div class="form-actions">
-                  <button class="wallet-btn wallet-btn-add" id="wallet-btn-add">
-                    <i class="fas fa-plus"></i> Agregar
-                  </button>
-                  <button class="wallet-btn wallet-btn-withdraw" id="wallet-btn-withdraw">
-                    <i class="fas fa-minus"></i> Retirar
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="wallet-history">
-              <h3><i class="fas fa-history"></i> Historial de Transacciones</h3>
-              <div id="wallet-history-body">
-                <div class="history-empty">Aun no hay transacciones registradas.</div>
-              </div>
-            </div>
-          </section>
-        </div>
       </section>
+      
+
+      <div class="modal-overlay" id="userModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
+          <h3 id="modalTitle">Detalle del viajero</h3>
+          <div id="modalBody"></div>
+        </div>
+      </div>
 
 	  <section id="form_section" class="form-section reveal" aria-labelledby="form-title">
 	  
