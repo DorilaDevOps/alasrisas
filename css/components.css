@@ -1229,7 +1229,6 @@ ul.icons .label {
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem;
-  max-width: 1300px;
   margin: 0 auto;
   background: var(--color-faq-bg);
 }
@@ -1531,7 +1530,6 @@ section h2 {
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-  max-width: 1100px;
   margin: 0 auto;
 }
 .section-inner {
@@ -3390,14 +3388,14 @@ body.modal-open #mainHeader {
 /* ============ RESPONSIVE ≥ 1200px (large desktop) ============ */
 @media (min-width: 1200px) {
   .form-section {
-    max-width: 1000px;
+    max-width: 1400px;
   }
   .comentarios-barrio {
     max-width: 1100px;
   }
 
   .form-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4,1fr);
   }
 
   .faq-item {
