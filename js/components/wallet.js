@@ -15,7 +15,6 @@ function walletAnchor() {
   return document.getElementById('muro-comentarios') || document.getElementById('wallet-section');
 }
 
-/* ========== WALLET ========== */
 export function openWallet(user) {
   setCurrentUser(user);
   const contentComments = document.getElementById('panel-content-comments');
@@ -49,9 +48,9 @@ export function closeWallet() {
   }
 }
 
-function renderWallet(user) {
-  const wallet = WalletService.getWallet(user.id);
-  const perUser = WalletService.getPerUserAmount();
+async function renderWallet(user) {
+  const wallet = await WalletService.getWallet(user.id);
+  const perUser = await WalletService.getPerUserAmount();
   const pending = perUser - wallet.totalAcumulado;
 
   const nameEl = document.getElementById('wallet-user-name');
@@ -96,7 +95,7 @@ function renderHistory(historial) {
   container.innerHTML = html;
 }
 
-function doTransaction(tipo) {
+async function doTransaction(tipo) {
   const user = getCurrentUser();
   if (!user) { showToast('Inicia sesion primero.', 'error', walletAnchor()); return; }
   const input = document.getElementById('wallet-amount');
@@ -105,24 +104,23 @@ function doTransaction(tipo) {
     showToast('Ingresa un monto valido mayor a $0.', 'error', walletAnchor());
     return;
   }
-  const wallet = WalletService.getWallet(user.id);
+  const wallet = await WalletService.getWallet(user.id);
   if (tipo === 'retirar') {
     if (amount > wallet.totalAcumulado) {
       showToast('No podes retirar mas de lo que tenes acumulado.', 'error', walletAnchor());
       return;
     }
-    WalletService.addTransaction(user.id, -amount, 'retirar');
+    await WalletService.addTransaction(user.id, -amount, 'retirar');
     showToast(`Retiraste $${amount.toLocaleString('es-UY')} de tu billetera.`, 'success', walletAnchor());
   } else {
-    WalletService.addTransaction(user.id, amount, 'agregar');
+    await WalletService.addTransaction(user.id, amount, 'agregar');
     showToast(`Agregaste $${amount.toLocaleString('es-UY')} a tu billetera.`, 'success', walletAnchor());
   }
   input.value = '';
-  renderWallet(getCurrentUser());
+  await renderWallet(getCurrentUser());
   if (_updateStatsRef) _updateStatsRef();
 }
 
-/* ========== EDIT MODE ========== */
 function toggleEditMode(active) {
   const profileForm = document.getElementById('profile-edit-form');
   if (active) {
@@ -132,7 +130,6 @@ function toggleEditMode(active) {
   }
 }
 
-/* ========== PROFILE EDIT ========== */
 export function initProfileEdit() {
   const btnEdit = document.getElementById('btn-edit-profile');
   const profileForm = document.getElementById('profile-edit-form');
@@ -141,7 +138,7 @@ export function initProfileEdit() {
   const editIcon = '<i class="fas fa-pen" aria-hidden="true"></i>';
   const closeIcon = '<i class="fas fa-times" aria-hidden="true"></i>';
 
-  btnEdit.addEventListener('click', () => {
+  btnEdit.addEventListener('click', async () => {
     const isOpen = profileForm.style.display !== 'none';
     profileForm.style.display = isOpen ? 'none' : 'flex';
     btnEdit.innerHTML = isOpen ? editIcon : closeIcon;
@@ -159,7 +156,7 @@ export function initProfileEdit() {
     if (passInput) passInput.value = '';
   });
 
-  document.getElementById('save-profile-edit')?.addEventListener('click', () => {
+  document.getElementById('save-profile-edit')?.addEventListener('click', async () => {
     const user = getCurrentUser();
     if (!user) return;
     const name = document.getElementById('edit-profile-name')?.value.trim() || '';
@@ -171,7 +168,7 @@ export function initProfileEdit() {
       return;
     }
     const effectivePass = (pass.length >= 1 && pass.length <= 4) ? pass : user.pass;
-    const allUsers = DataService.getAll();
+    const allUsers = await DataService.getAll();
     const conflict = allUsers.find(u =>
       u.id !== user.id &&
       u.nombre.toLowerCase() === name.toLowerCase() &&
@@ -183,10 +180,10 @@ export function initProfileEdit() {
     }
     const data = { nombre: name, nick, descripcion };
     if (pass.length >= 1 && pass.length <= 4) data.pass = pass;
-    DataService.updateUser(user.id, data);
-    setCurrentUser(DataService.getUserById(user.id));
+    await DataService.updateUser(user.id, data);
+    setCurrentUser(await DataService.getUserById(user.id));
     showToast('Perfil actualizado.', 'success', walletAnchor());
-    renderWallet(getCurrentUser());
+    await renderWallet(getCurrentUser());
     if (_renderUsersRef) _renderUsersRef();
     profileForm.style.display = 'none';
     btnEdit.innerHTML = editIcon;
@@ -200,7 +197,6 @@ export function initProfileEdit() {
   });
 }
 
-/* ========== WALLET EVENT LISTENERS ========== */
 export function initWalletListeners() {
   document.getElementById('wallet-btn-add')?.addEventListener('click', () => doTransaction('agregar'));
   document.getElementById('wallet-btn-withdraw')?.addEventListener('click', () => doTransaction('retirar'));
@@ -212,11 +208,11 @@ export function initWalletListeners() {
     showToast('Sesion cerrada. Hasta la proxima!', 'info', walletAnchor());
   });
 
-  document.getElementById('wallet-delete-btn')?.addEventListener('click', () => {
+  document.getElementById('wallet-delete-btn')?.addEventListener('click', async () => {
     const user = getCurrentUser();
     if (!user) return;
     if (!confirm(`Eliminar tu usuario "${user.nombre}"?\nSe borrarán tus datos. No se puede deshacer.`)) return;
-    DataService.removeUser(user.id);
+    await DataService.removeUser(user.id);
     doLogout();
     closeWallet();
     if (_onLogoutCallback) _onLogoutCallback();

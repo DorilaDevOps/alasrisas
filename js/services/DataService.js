@@ -1,17 +1,105 @@
+import { api } from '../api.js';
+
+const LS_KEY = 'viaje_amigos_users';
+
+let _usersCache = null;
+let _apiAvailable = null;
+
+async function checkApi() {
+  if (_apiAvailable !== null) return _apiAvailable;
+  try {
+    await api.getUsers();
+    _apiAvailable = true;
+  } catch {
+    _apiAvailable = false;
+  }
+  return _apiAvailable;
+}
+
+function lsGetAll() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; }
+  catch { return []; }
+}
+
+function lsSaveAll(users) {
+  localStorage.setItem(LS_KEY, JSON.stringify(users));
+}
+
+async function migrateLocalToApi() {
+  const local = lsGetAll();
+  if (local.length === 0) return;
+  for (const u of local) {
+    try {
+      const existing = await api.getUsers();
+      const exists = existing.find(e => e.id === u.id);
+      if (!exists) {
+        await api.createUser({
+          nombre: u.nombre,
+          nick: u.nick,
+          pass: u.pass,
+          descripcion: u.descripcion,
+          img: u.img
+        });
+      }
+    } catch { /* skip on error */ }
+  }
+  _usersCache = null;
+}
+
 export const DataService = {
-  STORAGE_KEY: 'viaje_amigos_users',
+  STORAGE_KEY: LS_KEY,
 
-  getAll() {
-    try { return JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || []; }
-    catch { return []; }
+  async _ensureApi() {
+    const available = await checkApi();
+    if (available && !_usersCache) {
+      try {
+        _usersCache = await api.getUsers();
+      } catch {
+        _usersCache = lsGetAll();
+      }
+    }
+    return available;
   },
 
-  saveAll(users) {
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(users));
+  async getAll() {
+    const apiOk = await this._ensureApi();
+    if (apiOk) {
+      try {
+        _usersCache = await api.getUsers();
+        lsSaveAll(_usersCache);
+        return _usersCache;
+      } catch {
+        if (_usersCache) return _usersCache;
+      }
+    }
+    return lsGetAll();
   },
 
-  addUser(userData) {
-    const users = this.getAll();
+  async saveAll(users) {
+    _usersCache = users;
+    lsSaveAll(users);
+    const apiOk = await checkApi();
+    if (apiOk) {
+      for (const u of users) {
+        try {
+          await api.updateUser(u.id, { nick: u.nick, descripcion: u.descripcion, img: u.img, comentarios: u.comentarios, rol: u.rol, nombre: u.nombre });
+        } catch { /* skip individual errors */ }
+      }
+    }
+  },
+
+  async addUser(userData) {
+    const apiOk = await checkApi();
+    if (apiOk) {
+      try {
+        const saved = await api.createUser(userData);
+        _usersCache = null;
+        return saved;
+      } catch (e) {
+        if (e.message.includes('Ya estas registrado')) throw e;
+      }
+    }
+    const users = lsGetAll();
     const newUser = {
       id: Date.now(),
       nombre: userData.nombre || '',
@@ -24,40 +112,70 @@ export const DataService = {
       fecha: new Date().toISOString()
     };
     users.push(newUser);
-    this.saveAll(users);
+    lsSaveAll(users);
+    _usersCache = users;
     return newUser;
   },
 
-  getUserById(id) {
-    return this.getAll().find(u => u.id === id) || null;
+  async getUserById(id) {
+    const users = await this.getAll();
+    return users.find(u => u.id === id) || null;
   },
 
-  removeUser(id) {
-    const users = this.getAll().filter(u => u.id !== id);
-    this.saveAll(users);
+  async removeUser(id) {
+    const apiOk = await checkApi();
+    if (apiOk) {
+      try {
+        await api.deleteUser(id);
+        _usersCache = null;
+        return;
+      } catch { /* fallback */ }
+    }
+    const users = lsGetAll().filter(u => u.id !== id);
+    lsSaveAll(users);
+    _usersCache = users;
   },
 
-  updateUser(id, data) {
-    const users = this.getAll();
+  async updateUser(id, data) {
+    const apiOk = await checkApi();
+    if (apiOk) {
+      try {
+        const updated = await api.updateUser(id, data);
+        _usersCache = null;
+        return updated;
+      } catch { /* fallback */ }
+    }
+    const users = lsGetAll();
     const idx = users.findIndex(u => u.id === id);
     if (idx === -1) return null;
     Object.assign(users[idx], data);
-    this.saveAll(users);
+    lsSaveAll(users);
+    _usersCache = users;
     return users[idx];
   },
 
-  getTotal() {
-    return this.getAll().length;
+  async getTotal() {
+    const users = await this.getAll();
+    return users.length;
+  },
+
+  async syncUser(user) {
+    const apiOk = await checkApi();
+    if (apiOk) {
+      try {
+        await api.updateUser(user.id, { nick: user.nick, descripcion: user.descripcion, img: user.img, comentarios: user.comentarios, rol: user.rol, nombre: user.nombre });
+      } catch { /* fallback only */ }
+    }
   },
 
   /* ========== USER COMMENTS CRUD ========== */
-  getUserComments(userId) {
-    const user = this.getUserById(userId);
+  async getUserComments(userId) {
+    const user = await this.getUserById(userId);
     return user ? (user.comentarios || []) : [];
   },
 
-  addUserComment(userId, texto) {
-    const users = this.getAll();
+  async addUserComment(userId, texto) {
+    const users = await this.getAll();
     const idx = users.findIndex(u => u.id === userId);
     if (idx === -1) return null;
     if (!users[idx].comentarios) users[idx].comentarios = [];
@@ -67,12 +185,14 @@ export const DataService = {
       fecha: new Date().toISOString()
     };
     users[idx].comentarios.push(comment);
-    this.saveAll(users);
+    _usersCache = users;
+    lsSaveAll(users);
+    await this.syncUser(users[idx]);
     return comment;
   },
 
-  updateUserComment(userId, commentId, newText) {
-    const users = this.getAll();
+  async updateUserComment(userId, commentId, newText) {
+    const users = await this.getAll();
     const idx = users.findIndex(u => u.id === userId);
     if (idx === -1) return null;
     const comments = users[idx].comentarios || [];
@@ -80,21 +200,25 @@ export const DataService = {
     if (cIdx === -1) return null;
     comments[cIdx].texto = newText.trim();
     comments[cIdx].fecha = new Date().toISOString();
-    this.saveAll(users);
+    _usersCache = users;
+    lsSaveAll(users);
+    await this.syncUser(users[idx]);
     return comments[cIdx];
   },
 
-  removeUserComment(userId, commentId) {
-    const users = this.getAll();
+  async removeUserComment(userId, commentId) {
+    const users = await this.getAll();
     const idx = users.findIndex(u => u.id === userId);
     if (idx === -1) return false;
     users[idx].comentarios = (users[idx].comentarios || []).filter(c => c.id !== commentId);
-    this.saveAll(users);
+    _usersCache = users;
+    lsSaveAll(users);
+    await this.syncUser(users[idx]);
     return true;
   },
 
-  getAllCommentsFlat() {
-    const users = this.getAll();
+  async getAllCommentsFlat() {
+    const users = await this.getAll();
     const all = [];
     users.forEach(u => {
       (u.comentarios || []).forEach(c => {
@@ -111,8 +235,8 @@ export const DataService = {
     return all;
   },
 
-  migrateLegacyData() {
-    const users = this.getAll();
+  async migrateLegacyData() {
+    const users = await this.getAll();
     let changed = false;
     users.forEach(u => {
       if (u.mensaje && !u.descripcion) {
@@ -130,6 +254,11 @@ export const DataService = {
         changed = true;
       }
     });
-    if (changed) this.saveAll(users);
+    if (changed) await this.saveAll(users);
+  },
+
+  async migrateLocalData() {
+    const apiOk = await checkApi();
+    if (apiOk) await migrateLocalToApi();
   }
 };

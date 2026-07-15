@@ -11,7 +11,7 @@ import { initProfileEdit, initWalletListeners, setStatsCallbacks, setWalletLogou
 import { updateStats, renderUsers, initSeedData, initModal } from './components/user.js';
 import { initComments, refreshComments } from './components/comments.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
 
   setFormOnLogin((user) => {
     refreshComments();
@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initProfileEdit();
   initWalletListeners();
 
-  initSeedData();
-  updateStats();
-  renderUsers();
+  await initSeedData();
+  await updateStats();
+  await renderUsers();
   initComments();
 
   function initIntersectionObservers() {
@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
 });
 
-/* Floating buttons */
 const floatingButtons = document.querySelectorAll('.btn_floating');
 const audioFloat = document.getElementById('audioFloat');
 function toggleFloatingButtons(show) {
@@ -103,7 +102,6 @@ document.getElementById('scrollTopBtn')?.addEventListener('click', () => {
 window.addEventListener('scroll', rafThrottle(updateFloatingButtons), { passive: true });
 requestAnimationFrame(updateFloatingButtons);
 
-/* Legal toggles */
 function syncLegalA11y() {
   document.querySelectorAll('.legal_toggle').forEach(btn => {
     const content = document.getElementById(btn.getAttribute('aria-controls'));

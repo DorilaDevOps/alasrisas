@@ -67,7 +67,7 @@ function validateField(fieldId) {
   return !!message;
 }
 
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
   const formAnchor = document.getElementById('form_section');
@@ -97,7 +97,9 @@ function handleFormSubmit(event) {
 
   const nombreVal = document.getElementById('nombre')?.value.trim() || '';
   const passVal = document.getElementById('password')?.value.trim() || '';
-  const existingUser = DataService.getAll().find(
+
+  const allUsers = await DataService.getAll();
+  const existingUser = allUsers.find(
     u => u.nombre.toLowerCase() === nombreVal.toLowerCase() && u.pass === passVal
   );
 
@@ -109,7 +111,7 @@ function handleFormSubmit(event) {
       form.reset();
       return false;
     }
-    const userByName = DataService.getAll().find(
+    const userByName = allUsers.find(
       u => u.nombre.toLowerCase() === nombreVal.toLowerCase()
     );
     if (userByName) {
@@ -142,20 +144,30 @@ function handleFormSubmit(event) {
     descripcion: document.getElementById('fn-descripcion')?.value || '',
     img: window._avatarData || ''
   };
-  const savedUser = DataService.addUser(newUser);
-  if (_afterRegister) _afterRegister();
 
-  setTimeout(() => {
-    form.reset();
-    clearErrors();
-    window._avatarData = '';
+  try {
+    const savedUser = await DataService.addUser(newUser);
+    if (_afterRegister) _afterRegister();
+
+    setTimeout(() => {
+      form.reset();
+      clearErrors();
+      window._avatarData = '';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('form-submit--loading');
+        submitBtn.innerHTML = originalLabel;
+      }
+      showToast(`¡Listo, ${savedUser.nombre}! Te anotaste al viaje.`, 'success', formAnchor);
+    }, 2000);
+  } catch (e) {
     if (submitBtn) {
       submitBtn.disabled = false;
       submitBtn.classList.remove('form-submit--loading');
       submitBtn.innerHTML = originalLabel;
     }
-    showToast(`¡Listo, ${savedUser.nombre}! Te anotaste al viaje.`, 'success', formAnchor);
-  }, 2000);
+    showToast(e.message || 'Error al registrar.', 'error', formAnchor);
+  }
 
   return false;
 }
@@ -171,7 +183,6 @@ export function initForm() {
   }
   setFormMode('registro');
 
-  /* Real-time clear errors on input */
   Object.keys(FORM_VALIDATORS).forEach(fieldId => {
     const field = document.getElementById(fieldId);
     if (field) {
@@ -179,7 +190,6 @@ export function initForm() {
     }
   });
 
-  /* Password toggle */
   const passwordToggle = document.querySelector('.password-toggle');
   const passwordInput = document.getElementById('password');
   if (passwordToggle && passwordInput) {
@@ -192,7 +202,6 @@ export function initForm() {
     });
   }
 
-  /* Avatar input */
   const avatarInput = document.getElementById('avatar');
   if (avatarInput) {
     window._avatarData = '';
@@ -215,7 +224,6 @@ export function initForm() {
     });
   }
 
-  /* Clear form button */
   document.getElementById('btn_clear_form')?.addEventListener('click', () => {
     clearErrors();
     showToast('Formulario limpiado', 'warning', document.getElementById('form_section'));

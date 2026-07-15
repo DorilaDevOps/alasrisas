@@ -5,7 +5,6 @@ import { showToast } from './toast.js';
 import { getCurrentUser, setCurrentUser, doLogout } from './form.js';
 import { refreshComments } from './comments.js';
 
-/* ========== INIT COUNT UP ========== */
 function initCountUp(el, target, duration) {
   duration = duration || 800;
   const start = performance.now();
@@ -21,23 +20,21 @@ function initCountUp(el, target, duration) {
   requestAnimationFrame(step);
 }
 
-/* ========== UPDATE STATS ========== */
-export function updateStats() {
-  const total = DataService.getTotal();
+export async function updateStats() {
+  const total = await DataService.getTotal();
   const el = document.getElementById('stat-total');
   if (el) initCountUp(el, total);
 
-  const meta = WalletService.getMeta();
-  const perUser = WalletService.getPerUserAmount();
+  const meta = await WalletService.getMeta();
+  const perUser = await WalletService.getPerUserAmount();
   const metaEl = document.getElementById('stat-meta');
   const cuotaEl = document.getElementById('stat-cuota');
   if (metaEl) metaEl.textContent = `$${meta.valor.toLocaleString('es-UY')}`;
   if (cuotaEl) cuotaEl.textContent = `$${perUser.toLocaleString('es-UY')}`;
 }
 
-/* ========== RENDER USERS ========== */
-export function renderUsers() {
-  const users = DataService.getAll();
+export async function renderUsers() {
+  const users = await DataService.getAll();
   const tbody = document.getElementById('amigosBody');
   const empty = document.getElementById('amigosEmpty');
   if (!tbody) return;
@@ -60,7 +57,6 @@ export function renderUsers() {
   });
 }
 
-/* ========== SHOW USER DETAIL ========== */
 function closeEditPanel() {
   const panelComments = document.getElementById('panel-content-comments');
   const panelWallet = document.getElementById('panel-content-wallet');
@@ -75,8 +71,8 @@ function closeEditPanel() {
   panelBtnComments?.classList.add('active');
 }
 
-export function showUserDetail(id, isEditMode) {
-  const user = DataService.getUserById(id);
+export async function showUserDetail(id, isEditMode) {
+  const user = await DataService.getUserById(id);
   if (!user) return;
 
   const avatarHtml = user.img
@@ -158,7 +154,7 @@ export function showUserDetail(id, isEditMode) {
       });
     }
 
-    document.getElementById('saveEditUser')?.addEventListener('click', () => {
+    document.getElementById('saveEditUser')?.addEventListener('click', async () => {
       const nombre = document.getElementById('editNombre')?.value.trim() || '';
       const nick = document.getElementById('editNick')?.value || '';
       const descripcion = document.getElementById('editDescripcion')?.value || '';
@@ -168,7 +164,7 @@ export function showUserDetail(id, isEditMode) {
         return;
       }
       const effectivePass = (pass.length >= 1 && pass.length <= 4) ? pass : user.pass;
-      const allUsers = DataService.getAll();
+      const allUsers = await DataService.getAll();
       const conflict = allUsers.find(u =>
         u.id !== user.id &&
         u.nombre.toLowerCase() === nombre.toLowerCase() &&
@@ -180,11 +176,11 @@ export function showUserDetail(id, isEditMode) {
       }
       const data = { nombre, nick, descripcion, img: window._editAvatarData || user.img };
       if (pass.length >= 1 && pass.length <= 4) data.pass = pass;
-      DataService.updateUser(user.id, data);
-      const updated = DataService.getUserById(user.id);
+      await DataService.updateUser(user.id, data);
+      const updated = await DataService.getUserById(user.id);
       setCurrentUser(updated);
       window._editAvatarData = '';
-      renderUsers();
+      await renderUsers();
       const panelUserName = document.getElementById('panel-user-name');
       const panelUserNick = document.getElementById('panel-user-nick');
       const panelUserAvatar = document.getElementById('panel-user-avatar');
@@ -197,21 +193,21 @@ export function showUserDetail(id, isEditMode) {
           panelUserAvatar.innerHTML = `<div class="user-panel-avatar-placeholder">${(updated.nombre || '?')[0]}</div>`;
         }
       }
-      refreshComments();
+      await refreshComments();
       showToast('Perfil actualizado.', 'success');
       closeEditPanel();
     });
 
-    document.getElementById('deleteEditUser')?.addEventListener('click', () => {
+    document.getElementById('deleteEditUser')?.addEventListener('click', async () => {
       if (!confirm(`Eliminar tu usuario "${user.nombre}"?\nSe borrarán tus datos. No se puede deshacer.`)) return;
-      DataService.removeUser(user.id);
+      await DataService.removeUser(user.id);
       window._editAvatarData = '';
       closeEditPanel();
       doLogout();
-      refreshComments();
+      await refreshComments();
       showToast('Usuario eliminado.', 'info');
-      updateStats();
-      renderUsers();
+      await updateStats();
+      await renderUsers();
     });
   } else {
     const modalBody = document.getElementById('modalBody');
@@ -232,59 +228,37 @@ export function showUserDetail(id, isEditMode) {
   }
 }
 
-/* ========== SEED DATA ========== */
-export function initSeedData() {
-  if (!localStorage.getItem(DataService.STORAGE_KEY)) {
+export async function initSeedData() {
+  const users = await DataService.getAll();
+
+  if (users.length === 0) {
     const seed = [
       { id: 1, nombre: 'Andres', nick: 'Loco', pass: '123', descripcion: 'Vamos que nos vamos!', img: '', comentarios: [], rol: 'usuario', fecha: new Date(Date.now() - 86400000).toISOString() },
       { id: 2, nombre: 'Conde', nick: 'chikisuel', pass: '1122', descripcion: 'Llevo la pelota', img: '', comentarios: [], rol: 'usuario', fecha: new Date(Date.now() - 43200000).toISOString() }
     ];
-    localStorage.setItem(DataService.STORAGE_KEY, JSON.stringify(seed));
+    for (const u of seed) {
+      try { await DataService.addUser(u); } catch { /* already exists */ }
+    }
   }
 
-  DataService.migrateLegacyData();
+  await DataService.migrateLegacyData();
+  await DataService.migrateLocalData();
 
-  /* Migrate old standalone comments into user.comentarios */
-  const oldKey = 'viaje_amigos_comentarios';
-  try {
-    const oldComments = JSON.parse(localStorage.getItem(oldKey)) || [];
-    if (oldComments.length > 0) {
-      const users = DataService.getAll();
-      let changed = false;
-      oldComments.forEach(oc => {
-        const user = users.find(u => u.id === oc.userId);
-        if (user) {
-          if (!user.comentarios) user.comentarios = [];
-          const alreadyHas = user.comentarios.some(c => c.id === oc.id);
-          if (!alreadyHas) {
-            user.comentarios.push({ id: oc.id, texto: oc.texto, fecha: oc.fecha });
-            changed = true;
-          }
-        }
-      });
-      if (changed) DataService.saveAll(users);
-      localStorage.removeItem(oldKey);
-    }
-  } catch {}
-
-  /* Seed comments for demo users */
-  const allUsers = DataService.getAll();
+  const allUsers = await DataService.getAll();
   const andres = allUsers.find(u => u.id === 1);
   const conde = allUsers.find(u => u.id === 2);
   if (andres && (!andres.comentarios || andres.comentarios.length === 0)) {
-    DataService.addUserComment(1, 'Vamos que nos vamos! Ya falta menos 💪');
-    DataService.addUserComment(1, 'No olviden traer protector solar');
+    await DataService.addUserComment(1, 'Vamos que nos vamos! Ya falta menos 💪');
+    await DataService.addUserComment(1, 'No olviden traer protector solar');
   }
   if (conde && (!conde.comentarios || conde.comentarios.length === 0)) {
-    DataService.addUserComment(2, 'Llevo la pelota y el mate 🧉');
-    DataService.addUserComment(2, '¿Quién trae las sillas plegables?');
+    await DataService.addUserComment(2, 'Llevo la pelota y el mate 🧉');
+    await DataService.addUserComment(2, '¿Quién trae las sillas plegables?');
   }
 
-  /* Safety net: re-render comments after seeding */
-  refreshComments();
+  await refreshComments();
 }
 
-/* ========== MODAL CLOSE ========== */
 export function initModal() {
   const modal = document.getElementById('userModal');
   const modalClose = document.getElementById('modalClose');
@@ -312,7 +286,6 @@ export function initModal() {
     });
   }
 
-  /* Delegation: view user detail */
   const amigosBody = document.getElementById('amigosBody');
   if (amigosBody) {
     amigosBody.addEventListener('click', (e) => {

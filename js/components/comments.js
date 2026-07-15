@@ -1,7 +1,7 @@
 import { DataService } from '../services/DataService.js';
 import { showToast } from './toast.js';
 import { escHtml } from '../utils.js';
-import { getCurrentUser, setCurrentUser, doLogout } from './form.js';
+import { getCurrentUser, doLogout } from './form.js';
 import { openWallet, closeWallet } from './wallet.js';
 import { showUserDetail } from './user.js';
 
@@ -14,7 +14,6 @@ function formatDate(iso) {
   });
 }
 
-/* ========== RENDER COMMENT CARD ========== */
 function renderCommentCard(c, options = {}) {
   const { isOwn = false, isEditing = false } = options;
   const fecha = formatDate(c.fecha);
@@ -66,15 +65,14 @@ function renderCommentCard(c, options = {}) {
     </div>`;
 }
 
-/* ========== RENDER MY COMMENTS ========== */
-function renderMisComentarios() {
+async function renderMisComentarios() {
   const container = document.getElementById('comentarios-mis-lista');
   const wrapper = document.getElementById('comentarios-mis-comentarios');
   if (!container || !wrapper) return;
   const user = getCurrentUser();
   if (!user) { wrapper.style.display = 'none'; return; }
 
-  const mine = DataService.getUserComments(user.id).reverse();
+  const mine = (await DataService.getUserComments(user.id)).reverse();
 
   if (mine.length === 0) {
     container.innerHTML = '<div class="comentarios-empty">Aun no tenes comentarios publicados.</div>';
@@ -95,11 +93,10 @@ function renderMisComentarios() {
   wrapper.style.display = 'block';
 }
 
-/* ========== RENDER ALL COMMENTS ========== */
-function renderAllComments() {
+async function renderAllComments() {
   const container = document.getElementById('comentarios-lista');
   if (!container) return;
-  const items = DataService.getAllCommentsFlat();
+  const items = await DataService.getAllCommentsFlat();
 
   if (items.length === 0) {
     container.innerHTML = '<div class="comentarios-empty">Aun no hay comentarios. Se el primero!</div>';
@@ -115,16 +112,15 @@ function renderAllComments() {
   attachCommentListeners(container, false);
 }
 
-/* ========== ATTACH LISTENERS ========== */
 function attachCommentListeners(container, isOwnSection) {
   container.querySelectorAll('.comentario-btn-eliminar').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const userId = Number(btn.dataset.userId);
       const commentId = Number(btn.dataset.commentId);
       if (!confirm('Eliminar este comentario?')) return;
-      DataService.removeUserComment(userId, commentId);
-      renderMisComentarios();
-      renderAllComments();
+      await DataService.removeUserComment(userId, commentId);
+      await renderMisComentarios();
+      await renderAllComments();
       showToast('Comentario eliminado.', 'info', anchor());
     });
   });
@@ -138,9 +134,8 @@ function attachCommentListeners(container, isOwnSection) {
   });
 }
 
-/* ========== START EDITING ========== */
-function startEditing(userId, commentId) {
-  const user = DataService.getUserById(userId);
+async function startEditing(userId, commentId) {
+  const user = await DataService.getUserById(userId);
   if (!user) return;
   const comment = (user.comentarios || []).find(c => c.id === commentId);
   if (!comment) return;
@@ -164,24 +159,23 @@ function startEditing(userId, commentId) {
     });
   }
 
-  editCard.querySelector('.comentario-btn-cancelar')?.addEventListener('click', () => {
-    renderMisComentarios();
-    renderAllComments();
+  editCard.querySelector('.comentario-btn-cancelar')?.addEventListener('click', async () => {
+    await renderMisComentarios();
+    await renderAllComments();
   });
 
-  editCard.querySelector('.comentario-btn-guardar')?.addEventListener('click', () => {
+  editCard.querySelector('.comentario-btn-guardar')?.addEventListener('click', async () => {
     const newText = textarea?.value.trim();
     if (!newText) { showToast('El comentario no puede estar vacio.', 'error', anchor()); return; }
     if (newText.length > 500) { showToast('Maximo 500 caracteres.', 'error', anchor()); return; }
-    DataService.updateUserComment(userId, commentId, newText);
-    renderMisComentarios();
-    renderAllComments();
+    await DataService.updateUserComment(userId, commentId, newText);
+    await renderMisComentarios();
+    await renderAllComments();
     showToast('Comentario actualizado.', 'success', anchor());
   });
 }
 
-/* ========== UPDATE LOGIN STATE ========== */
-function updateLoginState() {
+async function updateLoginState() {
   const user = getCurrentUser();
   const dashboard = document.getElementById('user-dashboard');
   const notLoggedIn = document.getElementById('comentarios-not-logged-in');
@@ -213,14 +207,13 @@ function updateLoginState() {
       }
     }
     closeWallet();
-    renderMisComentarios();
+    await renderMisComentarios();
   } else {
     if (dashboard) dashboard.style.display = 'none';
     if (notLoggedIn) notLoggedIn.style.display = 'flex';
   }
 }
 
-/* ========== INIT ========== */
 export function initComments() {
   const publishBtn = document.getElementById('comment-publish-btn');
   const textInput = document.getElementById('comment-text-input');
@@ -231,31 +224,28 @@ export function initComments() {
   const panelBtnEdit = document.getElementById('panel-btn-edit');
   const panelBtnLogout = document.getElementById('panel-btn-logout');
 
-  /* Character counter */
   if (textInput && charCount) {
     textInput.addEventListener('input', () => {
       charCount.textContent = textInput.value.length;
     });
   }
 
-  /* Publish comment */
   if (publishBtn) {
-    publishBtn.addEventListener('click', () => {
+    publishBtn.addEventListener('click', async () => {
       const user = getCurrentUser();
       if (!user) { showToast('Ingresa para comentar.', 'warning', anchor()); return; }
       const texto = textInput?.value.trim();
       if (!texto) { showToast('Escribi algo para publicar.', 'warning', anchor()); return; }
       if (texto.length > 500) { showToast('Maximo 500 caracteres.', 'error', anchor()); return; }
-      DataService.addUserComment(user.id, texto);
+      await DataService.addUserComment(user.id, texto);
       if (textInput) textInput.value = '';
       if (charCount) charCount.textContent = '0';
-      renderMisComentarios();
-      renderAllComments();
+      await renderMisComentarios();
+      await renderAllComments();
       showToast('Comentario publicado.', 'success', anchor());
     });
   }
 
-  /* Register button */
   if (registerBtn) {
     registerBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -263,7 +253,6 @@ export function initComments() {
     });
   }
 
-  /* Panel buttons */
   if (panelBtnComments) {
     panelBtnComments.addEventListener('click', () => {
       const panelComments = document.getElementById('panel-content-comments');
@@ -289,20 +278,20 @@ export function initComments() {
   }
 
   if (panelBtnEdit) {
-    panelBtnEdit.addEventListener('click', () => {
+    panelBtnEdit.addEventListener('click', async () => {
       const user = getCurrentUser();
       if (!user) return;
-      showUserDetail(user.id, true);
+      await showUserDetail(user.id, true);
       [panelBtnComments, panelBtnWallet, panelBtnEdit].forEach(b => b?.classList.remove('active'));
       panelBtnEdit.classList.add('active');
     });
   }
 
   if (panelBtnLogout) {
-    panelBtnLogout.addEventListener('click', () => {
+    panelBtnLogout.addEventListener('click', async () => {
       doLogout();
-      updateLoginState();
-      renderAllComments();
+      await updateLoginState();
+      await renderAllComments();
       showToast('Sesion cerrada. Hasta la proxima!', 'info', anchor());
     });
   }
@@ -311,8 +300,7 @@ export function initComments() {
   renderAllComments();
 }
 
-/* ========== REFRESH (called on login/logout) ========== */
-export function refreshComments() {
-  updateLoginState();
-  renderAllComments();
+export async function refreshComments() {
+  await updateLoginState();
+  await renderAllComments();
 }
