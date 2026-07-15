@@ -7,7 +7,7 @@ import { initAudio } from './components/audio.js';
 import { initCountdown } from './components/countdown.js';
 import { initForm, setFormOnLogin, setFormOnLogout, setFormAfterRegister } from './components/form.js';
 import { initCarousel, stopAutoplay, startAutoplay } from './components/carousel.js';
-import { initProfileEdit, initWalletListeners, setStatsCallbacks, setWalletLogoutCallback } from './components/wallet.js';
+import { initWalletListeners, setStatsCallbacks, setWalletLogoutCallback } from './components/wallet.js';
 import { updateStats, renderUsers, initSeedData, initModal } from './components/user.js';
 import { initComments, refreshComments } from './components/comments.js';
 
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initAudio();
   initForm();
   initModal();
-  initProfileEdit();
   initWalletListeners();
 
   await initSeedData();

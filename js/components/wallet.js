@@ -30,7 +30,6 @@ export function openWallet(user) {
 }
 
 export function closeWallet() {
-  toggleEditMode(false);
   const contentComments = document.getElementById('panel-content-comments');
   const contentWallet = document.getElementById('panel-content-wallet');
   if (contentComments) contentComments.style.display = 'block';
@@ -39,13 +38,6 @@ export function closeWallet() {
   if (section) section.classList.remove('is-active');
   const input = document.getElementById('wallet-amount');
   if (input) input.value = '';
-  const btnEdit = document.getElementById('btn-edit-profile');
-  const profileForm = document.getElementById('profile-edit-form');
-  if (profileForm) profileForm.style.display = 'none';
-  if (btnEdit) {
-    btnEdit.innerHTML = '<i class="fas fa-pen" aria-hidden="true"></i>';
-    btnEdit.setAttribute('aria-label', 'Editar perfil');
-  }
 }
 
 async function renderWallet(user) {
@@ -105,6 +97,9 @@ async function doTransaction(tipo) {
     return;
   }
   const wallet = await WalletService.getWallet(user.id);
+  const perUser = await WalletService.getPerUserAmount();
+  const pending = perUser - wallet.totalAcumulado;
+
   if (tipo === 'retirar') {
     if (amount > wallet.totalAcumulado) {
       showToast('No podes retirar mas de lo que tenes acumulado.', 'error', walletAnchor());
@@ -113,6 +108,10 @@ async function doTransaction(tipo) {
     await WalletService.addTransaction(user.id, -amount, 'retirar');
     showToast(`Retiraste $${amount.toLocaleString('es-UY')} de tu billetera.`, 'success', walletAnchor());
   } else {
+    if (pending > 0 && amount > pending) {
+      showToast('El monto no puede superar el saldo pendiente.', 'error', walletAnchor());
+      return;
+    }
     await WalletService.addTransaction(user.id, amount, 'agregar');
     showToast(`Agregaste $${amount.toLocaleString('es-UY')} a tu billetera.`, 'success', walletAnchor());
   }
@@ -121,92 +120,9 @@ async function doTransaction(tipo) {
   if (_updateStatsRef) _updateStatsRef();
 }
 
-function toggleEditMode(active) {
-  const profileForm = document.getElementById('profile-edit-form');
-  if (active) {
-    if (profileForm) profileForm.style.display = 'flex';
-  } else {
-    if (profileForm) profileForm.style.display = 'none';
-  }
-}
-
-export function initProfileEdit() {
-  const btnEdit = document.getElementById('btn-edit-profile');
-  const profileForm = document.getElementById('profile-edit-form');
-  if (!btnEdit || !profileForm) return;
-
-  const editIcon = '<i class="fas fa-pen" aria-hidden="true"></i>';
-  const closeIcon = '<i class="fas fa-times" aria-hidden="true"></i>';
-
-  btnEdit.addEventListener('click', async () => {
-    const isOpen = profileForm.style.display !== 'none';
-    profileForm.style.display = isOpen ? 'none' : 'flex';
-    btnEdit.innerHTML = isOpen ? editIcon : closeIcon;
-    btnEdit.setAttribute('aria-label', isOpen ? 'Editar perfil' : 'Cerrar edicion');
-    if (isOpen) return;
-    const user = getCurrentUser();
-    if (!user) return;
-    const nameInput = document.getElementById('edit-profile-name');
-    const nickInput = document.getElementById('edit-profile-nick');
-    const descInput = document.getElementById('edit-profile-descripcion');
-    const passInput = document.getElementById('edit-profile-pass');
-    if (nameInput) nameInput.value = user.nombre || '';
-    if (nickInput) nickInput.value = user.nick || '';
-    if (descInput) descInput.value = user.descripcion || '';
-    if (passInput) passInput.value = '';
-  });
-
-  document.getElementById('save-profile-edit')?.addEventListener('click', async () => {
-    const user = getCurrentUser();
-    if (!user) return;
-    const name = document.getElementById('edit-profile-name')?.value.trim() || '';
-    const nick = document.getElementById('edit-profile-nick')?.value || '';
-    const descripcion = document.getElementById('edit-profile-descripcion')?.value || '';
-    const pass = document.getElementById('edit-profile-pass')?.value || '';
-    if (!name || name.length < 2) {
-      showToast('El nombre debe tener al menos 2 caracteres.', 'error', walletAnchor());
-      return;
-    }
-    const effectivePass = (pass.length >= 1 && pass.length <= 4) ? pass : user.pass;
-    const allUsers = await DataService.getAll();
-    const conflict = allUsers.find(u =>
-      u.id !== user.id &&
-      u.nombre.toLowerCase() === name.toLowerCase() &&
-      u.pass === effectivePass
-    );
-    if (conflict) {
-      showToast('Ya existe otro usuario con ese nombre y contrasena.', 'error', walletAnchor());
-      return;
-    }
-    const data = { nombre: name, nick, descripcion };
-    if (pass.length >= 1 && pass.length <= 4) data.pass = pass;
-    await DataService.updateUser(user.id, data);
-    setCurrentUser(await DataService.getUserById(user.id));
-    showToast('Perfil actualizado.', 'success', walletAnchor());
-    await renderWallet(getCurrentUser());
-    if (_renderUsersRef) _renderUsersRef();
-    profileForm.style.display = 'none';
-    btnEdit.innerHTML = editIcon;
-    btnEdit.setAttribute('aria-label', 'Editar perfil');
-  });
-
-  document.getElementById('cancel-profile-edit')?.addEventListener('click', () => {
-    profileForm.style.display = 'none';
-    btnEdit.innerHTML = editIcon;
-    btnEdit.setAttribute('aria-label', 'Editar perfil');
-  });
-}
-
 export function initWalletListeners() {
   document.getElementById('wallet-btn-add')?.addEventListener('click', () => doTransaction('agregar'));
   document.getElementById('wallet-btn-withdraw')?.addEventListener('click', () => doTransaction('retirar'));
-
-  document.getElementById('wallet-logout-btn')?.addEventListener('click', () => {
-    doLogout();
-    closeWallet();
-    if (_onLogoutCallback) _onLogoutCallback();
-    showToast('Sesion cerrada. Hasta la proxima!', 'info', walletAnchor());
-  });
 
   document.getElementById('wallet-delete-btn')?.addEventListener('click', async () => {
     const user = getCurrentUser();

@@ -219,7 +219,6 @@ export async function showUserDetail(id, isEditMode) {
       <div class="user-detail">${avatarHtml}
         <p style="font-weight:700;font-size:var(--font-size-lg);margin:0.5rem 0 0.25rem">${escHtml(user.nombre)}</p>
         <p style="font-size:var(--font-size-base);color:var(--color-text-muted);margin:0 0 0.25rem">${escHtml(user.nick ? '@' + user.nick : '')}</p>
-        <p style="font-size:var(--font-size-sm);margin:0">Contraseña: ${escHtml(user.pass || 'Sin contraseña')}</p>
         ${user.descripcion ? `<p style="font-size:var(--font-size-sm);color:var(--color-accent);margin:0.5rem 0 0;font-style:italic">\u201C${escHtml(user.descripcion)}\u201D</p>` : ''}
         ${fechaHtml}</div>`;
     modal.classList.add('is-open');

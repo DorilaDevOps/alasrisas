@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -345,8 +345,8 @@
             <div class="hero-content">
               <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron, todavía las andamos.</h2>
               <p class="reveal reveal-delay-1">Ahora también sabemos organizar el viaje que todos soñamos desde el barrio.</p>
-              <p class="reveal reveal-delay-2">Fechas, gastos, y recuerdos — todo en un solo lugar.</p>
               <p class="reveal reveal-delay-3">Porque los recuerdos empiezan mucho antes de viajar.</p>
+              <p class="reveal reveal-delay-2">Fechas, dudasd, gastos, y recuerdos — todo en un solo lugar.</p>
               <p class="reveal reveal-delay-4">Verano 2026 · Cupos limitados</p>
         </div>
 
@@ -615,7 +615,6 @@
       <!-- ============ MURO DE COMENTARIOS ============ -->
       <section id="muro-comentarios" class="section-inner reveal" aria-labelledby="comentarios-title">
         <h2 id="comentarios-title" class="section-title">Muro de comentarios</h2>
-        <p class="section-subtitle">Comparti algo con el barrio</p>
 
         <!-- Dashboard del usuario logueado -->
         <div id="user-dashboard" class="user-dashboard" style="display:none">
@@ -668,7 +667,7 @@
 
             <!-- Tus comentarios -->
             <div class="comentarios-mis-comentarios" id="comentarios-mis-comentarios" style="display:none">
-              <h3 class="comentarios-subsection-title">
+              <h3 class="section-subtitle fade-in">
                 <i class="fas fa-user" aria-hidden="true"></i> Tus comentarios
               </h3>
               <div id="comentarios-mis-lista" class="comentarios-lista"></div>
@@ -681,32 +680,7 @@
               <div class="wallet-header">
                 <h2 id="wallet-user-name">Billetera <small>cargando...</small></h2>
                 <div class="wallet-actions">
-                  <button type="button" class="wallet-btn-action wallet-btn-edit" id="btn-edit-profile" aria-label="Editar perfil"><i class="fas fa-pen" aria-hidden="true"></i></button>
                   <button type="button" class="wallet-btn-action wallet-btn-delete" id="wallet-delete-btn" aria-label="Eliminar usuario"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                  <button type="button" class="wallet-btn-action wallet-btn-logout" id="wallet-logout-btn" aria-label="Cerrar sesion"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></button>
-                </div>
-              </div>
-
-              <div class="profile-edit-form" id="profile-edit-form" style="display:none">
-                <div class="form-field">
-                  <label for="edit-profile-name">Nombre</label>
-                  <input type="text" id="edit-profile-name" placeholder="Tu nombre" minlength="2" required>
-                </div>
-                <div class="form-field">
-                  <label for="edit-profile-nick">Nick</label>
-                  <input type="text" id="edit-profile-nick" placeholder="@podo (opcional)" minlength="2">
-                </div>
-                <div class="form-field">
-                  <label for="edit-profile-descripcion">Descripcion</label>
-                  <textarea id="edit-profile-descripcion" rows="2" placeholder="Algo sobre ti..."></textarea>
-                </div>
-                <div class="form-field">
-                  <label for="edit-profile-pass">Contrasena <small>(1-4 caracteres)</small></label>
-                  <input type="text" id="edit-profile-pass" minlength="1" maxlength="4" placeholder="Nueva contrasena">
-                </div>
-                <div class="form-actions">
-                  <button type="button" class="wallet-btn wallet-btn-add" id="save-profile-edit">Guardar</button>
-                  <button type="button" class="wallet-btn wallet-btn-withdraw" id="cancel-profile-edit">Cancelar</button>
                 </div>
               </div>
 
@@ -763,7 +737,7 @@
 
         <!-- Comentarios del barrio (SIEMPRE visible) -->
         <div class="comentarios-barrio">
-          <h3 class="comentarios-subsection-title">
+          <h3 class="section-subtitle fade-in">
             <i class="fas fa-users" aria-hidden="true"></i> Comentarios del barrio
           </h3>
           <div id="comentarios-lista" class="comentarios-lista"></div>
