@@ -29,10 +29,10 @@ export const api = {
     });
   },
 
-  async updateUser(id, data, authPass) {
+  async updateUser(id, data) {
     return request('/users', {
       method: 'PUT',
-      body: JSON.stringify({ id, ...data, pass: authPass })
+      body: JSON.stringify({ id, ...data })
     });
   },
 

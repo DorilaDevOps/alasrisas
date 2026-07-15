@@ -166,7 +166,12 @@ async function handleFormSubmit(event) {
       submitBtn.classList.remove('form-submit--loading');
       submitBtn.innerHTML = originalLabel;
     }
-    showToast(e.message || 'Error al registrar.', 'error', formAnchor);
+    if (e.message.includes('Ya estas registrado')) {
+      setFormMode('ingreso');
+      showToast('Ya tenés cuenta. Ingresá con tu contraseña.', 'info', formAnchor);
+    } else {
+      showToast(e.message || 'Error al registrar.', 'error', formAnchor);
+    }
   }
 
   return false;

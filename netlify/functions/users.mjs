@@ -41,8 +41,7 @@ export default async (request) => {
     switch (request.method) {
       case 'GET': {
         const users = await getUsers(store);
-        const safe = users.map(({ pass, ...rest }) => rest);
-        return json(safe);
+        return json(users);
       }
 
       case 'POST': {
@@ -87,8 +86,7 @@ export default async (request) => {
         if (body.pass !== undefined) users[idx].pass = body.pass;
 
         await saveUsers(store, users);
-        const { pass: _, ...safe } = users[idx];
-        return json(safe);
+        return json(users[idx]);
       }
 
       case 'DELETE': {
