@@ -1,4 +1,4 @@
-const API_BASE = '/.netlify/functions';
+const API_BASE = '/api';
 
 function buildHeaders(extras = {}) {
   const h = { 'Content-Type': 'application/json', ...extras };
