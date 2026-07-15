@@ -2434,14 +2434,6 @@ body.modal-open #mainHeader {
   color: #fff;
   border-color: var(--color-danger);
 }
-.wallet-btn-logout {
-  border-color: var(--color-danger);
-  color: var(--color-danger);
-}
-.wallet-btn-logout:hover {
-  background: var(--color-danger);
-  color: #fff;
-}
 .wallet-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
@@ -2625,49 +2617,6 @@ body.modal-open #mainHeader {
   font-weight: 700;
   background: rgba(239, 68, 68, 0.15);
   color: var(--error);
-}
-
-.profile-edit-form {
-  background: var(--color-surface-2);
-  border: 1.5px solid var(--color-accent);
-  border-radius: var(--radius-card);
-  padding: clamp(1rem, 3vw, 1.5rem);
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  text-align: left;
-  box-shadow: 0 0 20px rgba(125, 249, 200, 0.08);
-  animation: form-appear 0.4s ease both;
-}
-.profile-edit-form .form-field input,
-.profile-edit-form .form-field textarea {
-  width: 100%;
-  background: var(--color-surface-2);
-  border: 1.5px solid var(--color-border);
-  border-radius: 12px;
-  color: var(--color-text);
-  padding: 0.85rem 1.2rem;
-  outline: none;
-  font-size: 1rem;
-  transition:
-    border-color 0.25s,
-    box-shadow 0.25s;
-}
-.profile-edit-form .form-field input:focus,
-.profile-edit-form .form-field textarea:focus {
-  border-color: var(--color-accent-warm);
-  box-shadow: 0 0 0 3px rgba(232, 200, 74, 0.14);
-}
-.profile-edit-form .form-actions {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-}
-.profile-edit-form .form-actions .wallet-btn {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  min-width: 140px;
 }
 
 /* ============ MURO DE COMENTARIOS ============ */
@@ -3275,11 +3224,6 @@ body.modal-open #mainHeader {
   .audio-float {
     left: 1.5rem;
   }
-}
-
-/* Wallet edit button icon-only */
-.wallet-btn-edit i {
-  font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
 /* ============ RESPONSIVE ≥ 576px (small tablets / landscape) ============ */
