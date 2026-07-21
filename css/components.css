@@ -936,7 +936,7 @@ ul.icons .label {
   font-size: 0.85rem;
   display: inline-block;
   margin-bottom: 1rem;
-  padding: 0;
+  padding: 0;font-size: var(--font-size-base);
 }
 .form-mode-toggle:hover,
 .form-mode-toggle:focus-visible {

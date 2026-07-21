@@ -14,6 +14,16 @@
     Access-Control-Allow-Headers = "Content-Type, X-User-Id, X-User-Pass"
     Access-Control-Max-Age = "86400"
 
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/imgs/Transporte6.ico"
+  status = 200
+
+[[redirects]]
+  from = "/safari-pinned-tab.svg"
+  to = "/imgs/Transporte6.ico"
+  status = 200
+
 [[headers]]
   for = "/.netlify/functions/*"
   [headers.values]
