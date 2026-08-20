@@ -1,1044 +1,3380 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- VitraWeb v2.0 -->
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vitra - Lentes de segunda mano originales en Montevideo. Restauramos lentes de marca con calidad premium, precios únicos y compromiso sustentable.">
+    <meta name="keywords" content="lentes segunda mano, gafas originales Montevideo, lentes de marca Uruguay, lentes sustentables, second hand eyewear, restauración lentes, gafas usadas originales, vitra montevideo">
+    <meta name="author" content="Vitra">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="UY-MO">
+    <meta name="geo.placename" content="Montevideo">
+    <meta name="geo.position" content="-34.905034;-56.191170">
+    <link rel="canonical" href="https://vitrasty.netlify.app/">
+    <meta name="google-site-verification" content="jJRaaNc0toVGGmlLSQyb7B8Mu33BW7Xa2gcTDUQ5P1A" />
 
-  <!-- ============ SEO BASE ============ -->
-  <meta name="description" content="El viaje grupal que siempre soñaron: Florianópolis 2026. Playas paradisíacas, aventuras con amigos del barrio y recuerdos para toda la vida. ¡Esta vez sí va!">
-  <meta name="keywords" content="viaje Florianópolis 2026, viaje con amigos, vacaciones grupales, barrio, Floripa, vacaciones amigos, turismo grupal">
-  <meta name="author" content="Kikiriya DevOps by Andres">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
-  <meta name="language" content="Spanish">
-  <meta name="theme-color" content="#9943f0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#2a084d" media="(prefers-color-scheme: dark)">
-  <meta name="color-scheme" content="dark light">
+    <!-- Mobile Web App Tags -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F0E1">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d0d0d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Vitra">
 
-  <title>El viaje del barrio — Vacaciones grupales en Florianópolis 2026</title>
-  <link rel="icon" type="image/x-icon" href="./imgs/Transporte6.ico">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Vitra - Second Hand de Lentes Originales en Montevideo">
+    <meta property="og:description" content="Restauramos y vendemos lentes de marca originales. Sustentabilidad, calidad y estilo. Galería Libertador, Montevideo.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_UY">
+    <meta property="og:site_name" content="Vitra">
+    <meta property="og:url" content="https://vitrasty.netlify.app/">
+    <meta property="og:image" content="https://vitrasty.netlify.app/logo_icons/og-vitra.jpg">
+    <meta property="og:image:alt" content="Vitra - Lentes originales second hand en Montevideo, Galería Libertador">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-  <!-- Preload de la imagen LCP (landing) para mejorar Core Web Vitals en mobile -->
-  <link rel="preload" as="image" href="./imgs/floripa-landing.webp" fetchpriority="high">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vitra - Lentes Originales Second Hand">
+    <meta name="twitter:description" content="La mejor calidad en lentes de marca restaurados. Precios únicos y compromiso sustentable.">
+    <meta name="twitter:image" content="https://vitrasty.netlify.app/logo_icons/og-vitra.jpg">
+    
+    <title>Vitra | Lentes Originales Second Hand - Montevideo</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="logo_icons/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo_icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="logo_icons/favicon-48.png">
+    <link rel="shortcut icon" type="image/png" href="logo_icons/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo_icons/apple-touch-icon.png">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Canonical -->
-	<link rel="canonical" href="https://alasrisas.netlify.app/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-
-  <!-- ============ OPEN GRAPH ============ -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="alasRisas viaje entre amigos">
-  <meta property="og:title" content="Vacaciones con todo el barrio!">
-  <meta property="og:description" content="El viaje grupal que siempre soñaron!">
-  <meta property="og:url" content="https://alasrisas.netlify.app/">
-  <meta property="og:image" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
-  <meta property="og:image:secure_url" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Grupo en bondi">
-  <meta property="og:locale" content="es_UY">
-  <meta property="og:locale:alternate" content="es_ES">
-
-  <!-- ============ TWITTER ============ -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@alasrisas">
-  <meta name="twitter:creator" content="@alasrisas">
-  <meta name="twitter:title" content="Vacaciones con todo el barrio 2026 — ¡Florianópolis!">
-  <meta name="twitter:description" content="El viaje grupal que siempre soñaron!">
-  <meta name="twitter:image" content="https://alasrisas.netlify.app/imgs/Transporte6.png">
-  <meta name="twitter:image:alt" content="Grupo en bondi">
-
-  <!-- ============ PWA ============ -->
-  <meta name="application-name" content=" El viaje del barrio">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="alasRisas trip">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="msapplication-TileColor" content="#0f4c2a">
-  <meta name="format-detection" content="telephone=no">
-
-  <!-- ============ FAVICONS ============ -->
-  <link rel="icon" type="image/x-icon" href="./imgs/Transporte6.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="./imgs/Transporte6.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./imgs/Transporte6.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./imgs/Transporte6.png">
-
-  <!-- ============ JSON-LD — FAQ sincronizado con el HTML ============ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Por qué Florianópolis y no otro lugar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tiene todo lo que un grupo grande necesita: playas paradisíacas, paz para los que quieren paz, y planes para los que quieren plan. Alojamiento a pasos de la playa y noches ideales para un batallón de amigos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuándo es el viaje exactamente?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Estamos apuntando a salir el 26 de Diciembre y pasar el fin de año del 2026 allá, y quedarnos 10/15 días. Las fechas exactas se confirman una vez que cerremos el cupo mínimo de participantes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Dónde nos vamos a quedar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Vamos a buscar los mejores lugares y precios para asegurar la estadía con tiempo. La idea estar lo más cerca posible del agua y los unos de los otros."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué vamos a hacer allá?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No hay cronograma obligatorio. Cada uno va a encontrar la suya: leer, caminar, conversar hasta la madrugada, practicar surf, pescar, degustar gastronomía local, contemplar el cielo nocturno y mucho más."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Por qué tengo que anotarme ya?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las reservas de hospedaje hay que hacerlas cuanto antes para asegurar los mejores lugares al mejor precio. Anotándote nos ayudás a saber cuántos somos y evitamos sobrecostos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuesta en total?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El rango estimado va de 300 a 400 dólares por persona, incluye transporte y alojamiento. El ómnibus sale 5000 dólares. Cuanta más gente, más barato para todos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo dividimos los gastos sin pelearnos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A través de la app de alasRisas cargamos los costos fijos y la plataforma calcula automáticamente la cuota equitativa. El resto de los gastos corre por cuenta de cada familia."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Y si alguien se baja a último momento?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Se devuelve la plata hasta el último centavo. Y si lo que complica es el dinero, seguro entre todos le encontramos una vuelta. Lo único que no negociamos es que tenemos que ir."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Cosas que NO te podés olvidar",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No es obligatorio estar todo el día pegados. Está PROHIBIDO enojarse con alguien del grupo por más de 3 minutos seguidos. Y sobre todo, no te podés olvidar de las ganas de compartir tiempo y risas con los de siempre."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Y el itinerario, ya está armado?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Plan A, Plan B, Plan C... lo que termine saliendo en el momento. Porque los amigos del barrio nunca fallamos en una cosa: Improvisar."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Todo organizado?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, falta organizar la comida durante el viaje, algunas salidas, las bromas. Pero tendremos más tranquilidad, más seguridad, más libertad para disfrutar sin preocupaciones."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Va a quedar registrado en algún lado?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, las fotos de todos van a estar juntas en un solo lugar. Entra al Instagram: alasrisas_trip. Utiliza el mail: alasrisastrip@gmail.com Contraseña: viajamos2026 (PRÖXIMAMENTE) El recuerdo más organizado que vas a tener en tu vida lo va a armar también la app de alasRisas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué más puedo hacer con la app alasrisas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sugerencias: proponé paseos, actividades, nuevas ideas. Finanzas seguras: controlá tu estado financiero del viaje con tu usuario y contraseña. Tranqui, lo que pasa acá, se queda acá. Ningún dato se guarda.¡Es nuestra app privada!"
-        }
-      }
-    ]
-  }
-  </script>  
-
-  <!-- ============ JSON-LD — Event / Travel / web site============ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "alasRisas viaje del barrio",
-  "url": "https://alasrisas.netlify.app/",
-  "description": "Sitio oficial del viaje grupal a Florianópolis 2026.",
-  "inLanguage": "es"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "alasRisas viaje del barrio",
-  "url": "https://alasrisas.netlify.app/",
-  "logo": "https://alasrisas.netlify.app/imgs/logoGPT-21kb.png"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Viaje del Barrio 2026 — Florianópolis",
-  "description": "Viaje grupal con amigos del barrio a Florianópolis. Playas, aventuras y recuerdos para toda la vida.",
-  "startDate": "2026-12-26",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "url": "https://alasrisas.netlify.app/",
-  "image": [
-    "https://alasrisas.netlify.app/imgs/floripa-12.jpg"
-  ],
-  "location": {
-    "@type": "Place",
-    "name": "Florianópolis, Brasil",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Florianópolis",
-      "addressCountry": "BR"
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://vitrasty.netlify.app/#website",
+                "url": "https://vitrasty.netlify.app/",
+                "name": "Vitra",
+                "description": "Lentes originales second hand restaurados en Montevideo, Uruguay.",
+                "inLanguage": "es-UY"
+            },
+            {
+                "@type": "Store",
+                "@id": "https://vitrasty.netlify.app/#store",
+                "name": "Vitra - Lentes Originales Second Hand",
+                "url": "https://vitrasty.netlify.app/",
+                "logo": "https://vitrasty.netlify.app/logo_icons/logo_vitra-removebg.png",
+                "image": "https://vitrasty.netlify.app/logo_icons/og-vitra.jpg",
+                "description": "Restauramos y vendemos lentes de marca originales con calidad premium, precios accesibles y compromiso sustentable.",
+                "email": "alasrisastrip@gmail.com",
+                "telephone": "+598xx xxx xxx",
+                "priceRange": "$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 de Julio 921 esq. Convención, Galería Libertador",
+                    "addressLocality": "Montevideo",
+                    "addressCountry": "UY"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "-34.906029",
+                    "longitude": "-56.196399"
+                },
+                "hasMap": "https://www.google.com/maps/search/?api=1&query=18+de+Julio+921+Galer%C3%ADa+Libertador+Montevideo",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "10:30:00",
+                        "closes": "18:00:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Saturday",
+                        "opens": "10:30:00",
+                        "closes": "14:00:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Sunday",
+                        "opens": "10:30:00",
+                        "closes": "14:00:00"
+                    }
+                ],
+                "currenciesAccepted": "UYU",
+                "paymentAccepted": "Efectivo, Mercado Pago, Transferencia bancaria",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "reviewCount": "4"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Alejandro Fleitas"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        },
+                        "reviewBody": "Increíble la calidad de los lentes. Compré unos Ray-Ban que lucen como nuevos. La atención fue excelente y los precios son realmente únicos. 100% recomendado."
+                    },
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Canibal Troilo"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        },
+                        "reviewBody": "Gracias por conseguirme lo que buscaba tan rápido. Ya no me quedo limpiando en cas y me voy al disfrutar."
+                    },
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Marcelo Tissierre"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        },
+                        "reviewBody": "Encontré los Oakley que buscaba hace meses a un precio increíble. El proceso de restauración es impecable, no se nota que son second hand. ¡Volveré seguro!"
+                    },
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "María"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        },
+                        "reviewBody": "Me encanta el concepto sustentable de Vitra. Compré unos Prada hermosos y me siento bien sabiendo que estoy contribuyendo al medio ambiente. Las chicas son súper atentas."
+                    }
+                ],
+                "sameAs": [
+                    "https://www.instagram.com/vitra.lentes"
+                ],
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "Vitra"
+                }
+            },
+            {
+                "@type": "ItemList",
+                "name": "Lentes destacados de Vitra",
+                "itemListElement": [
+                    {
+                        "@type": "Product",
+                        "name": "Ray-Ban Aviator Clásico",
+                        "image": "https://vitrasty.netlify.app/imgs/lentes15.webp",
+                        "description": "El icónico aviador con cristales nuevos polarizados. Un clásico que nunca pasa de moda.",
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "Ray-Ban"
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "5200",
+                            "priceCurrency": "UYU",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "https://schema.org/RefurbishedCondition",
+                            "url": "https://vitrasty.netlify.app/#productos",
+                            "seller": {
+                                "@id": "https://vitrasty.netlify.app/#store"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "Product",
+                        "name": "Versace Exclusividad Total",
+                        "image": "https://vitrasty.netlify.app/imgs/lente10.webp",
+                        "description": "Pieza única de Versace con cristal nuevo polarizado y filtro 400UV.",
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "Versace"
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "4400",
+                            "priceCurrency": "UYU",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "https://schema.org/RefurbishedCondition",
+                            "url": "https://vitrasty.netlify.app/#productos",
+                            "seller": {
+                                "@id": "https://vitrasty.netlify.app/#store"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "Product",
+                        "name": "Dior Exclusividad Total",
+                        "image": "https://vitrasty.netlify.app/imgs/lentes16.webp",
+                        "description": "Exclusividad de Dior: cristales nuevos polarizados y detalles de diseño que marcan la diferencia.",
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "Dior"
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "4800",
+                            "priceCurrency": "UYU",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "https://schema.org/RefurbishedCondition",
+                            "url": "https://vitrasty.netlify.app/#productos",
+                            "seller": {
+                                "@id": "https://vitrasty.netlify.app/#store"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "Product",
+                        "name": "Carrera Máxima Fortaleza",
+                        "image": "https://vitrasty.netlify.app/imgs/lentes6.webp",
+                        "description": "Construido para durar: cristales nuevos con filtro 400UV.",
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "Carrera"
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "2800",
+                            "priceCurrency": "UYU",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "https://schema.org/RefurbishedCondition",
+                            "url": "https://vitrasty.netlify.app/#productos",
+                            "seller": {
+                                "@id": "https://vitrasty.netlify.app/#store"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
     }
-  },
-  "organizer": {
-    "@type": "Organization",
-    "name": "alasRisas viaje del barrio",
-    "url": "https://alasrisas.netlify.app/"
-  }
-}
-</script>
-<script>
-    (function() {
-      // 1. Usamos tu clave unificada
-      const STORAGE_THEME = 'viaje_amigos_theme';
-      const savedTheme = localStorage.getItem(STORAGE_THEME);
-      
-      // 2. Detectamos si el sistema del usuario prefiere modo claro
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      
-      // 3. Decidimos:優先 guardado, si no, preferencia del sistema, si no, 'dark' por defecto EN EL HTML
-      const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
-      
-      // 4. Aplicamos el atributo solo si la decisión fue 'light'
-      if (initialTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
-  </script>
+    </script>
 
-  
+    
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #1a1a1a;
+            --primary_trans: #1a1a1a73;
+            --secondary: #2d2d2d;
+            --secondary_trans: #2d2d2da1;
+            --accent: #d4af37;
+            --accent-hover: #c19a2e;
+            --verdecito: #7ad294;
+            --verdecito-hover_trans:#7ad29491;
+            --bg-secondary: #f8f9fa;
+            --white_transp1: #e7e6e69e;
+            --white_transp2: #9788889e;
+            --blue_transp2: rgb(57 100 123 / 97%);
+            --text-primary: #1a1a1a;
+            --text-secondary: #6c757d;
+            --border: #e0e0e0;
+            --shadow: rgba(0, 0, 0, 0.6);
+            --shadow-hover: rgba(0, 0, 0, 0.5);
+            --gradient-start: #1a1a1a;
+			--deg1:#F2F0E1;
+			--deg2:#F2F2EB;
+			--deg3:#DED7D7;
+			--deg4:#E3E3E3;			
+
+			--transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+			--transition1s: all .7s ease;
+			--font_family_playflare: "Playfair Display", serif;
+			--font_family_poppins: "Poppins", sans-serif;
+			
+			/*UNIQUES */			
+            --overlayBlue: var(--blue_transp2);
+        }
+
+        [data-theme="dark"] {
+            --primary: #d4af37;
+			--primary_trans: #1a1a1acc;
+            --secondary: #c19a2e;
+			--secondary_trans: #2d2d2dde;
+            --accent: #d4af37;
+            --accent-hover: #e5c158;
+            --verdecito: #a8ddb8;
+            --verdecito-hover_trans:#a8ddb885;
+            --bg-secondary: #1a1a1a;
+            --white_transp1: #1f1f1f;
+            --text-primary: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --border: #333333;
+            --gradient-start: #0d0d0d;
+			--deg1: #413f3f;
+			--deg2: #363636;
+			--deg3: #181818;
+			--deg4: #050505;
+						
+			.sun-icon {display: none;}
+			.moon-icon {display: block;}
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }		
+		
+        body {
+            font-family: var(--font_family_playflare);
+             line-height: 1.6;
+            letter-spacing: 0.3px;
+            color: var(--text-primary);
+			background: linear-gradient(180deg,var(--deg1) 0%, var(--deg2) 7%, var(--deg3) 36%, var(--deg4) 100%);
+            transition: var(--transition);
+            overflow-x: hidden;
+			padding: 1rem .5rem;
+			min-height:100dvh;
+        }
+		
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .logo_img {
+            width: 50px;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+			transition: var(--transition);
+        }
+		ul{
+            list-style: none;
+		}
+
+		p{ font-family:var(--font_family_poppins);font-size:.8em;}
+		
+		h1{font-size:1.4em;}
+		h2{font-size:1.2em;}
+		h3{font-size:1em;}
+		
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition1s);
+            border: none;
+			    background: none;
+        }
+
+        :focus {
+            outline: none;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            left: 1rem;
+            z-index: 9999;
+            padding: .75rem 1.25rem;
+            background: var(--verdecito);
+            color: var(--primary);
+            font-family: var(--font_family_poppins);
+            font-weight: 600;
+            border-radius: 0 0 12px 12px;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+		
+        .header {
+            position: fixed;
+			width:100%;
+            top: 0;
+            left: 0;
+            background: var(--white_transp1);
+            
+            z-index: 10;
+            box-shadow: 0 2px 20px var(--shadow);
+            transition: var(--transition1s);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 30px var(--shadow-hover);
+            transform: translateY(-100%);
+        }
+		
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: .3rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			align-items: center;
+			font-size: 1rem;
+			gap: .5rem;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			background: linear-gradient(135deg, var(--primary), var(--verdecito));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			transition: var(--transition1s);
+			cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+			align-items: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--overlayBlue);
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px var(--shadow-hover);
+            animation: slideDown 0.3s ease;
+			height:100vh;			
+			font-size: 1.5rem;
+			& a {color:var(--verdecito);}
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--verdecito);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--verdecito);
+        }
+
+        .nav-menu a:hover::before {
+            width: 80%;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+		
+
+        .menu_toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+			align-items: flex-end;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            gap: 4px;
+            padding: .5rem;
+            cursor: pointer;
+            transition: var(--transition1s);
+        }
+        .menu_toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .menu_toggle:hover {
+            transform: scale(1.1);
+            color: var(--verdecito);
+        }
+		
+		#menuToggle > span:nth-child(2){		
+			width:14px;
+		}
+
+        .menu_toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 1px);
+        }
+
+        .menu_toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu_toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -5px);
+        }
+
+
+
+        .theme-toggle {
+            background: transparent;
+            color: var(--text-primary);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+		
+		
+		.sun-icon {
+            display: block;
+        }
+
+        .moon-icon {
+            display: none;
+        }
+
+
+        main, aside{
+			padding: 0;
+		}
+		
+        /* Secciones ocultas por defecto (navegación por vistas) */
+        .view-hidden {
+            display: none !important;
+        }
+
+        .hero {
+            margin: -1rem -0.5rem 0;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(180deg, var(--deg2) 0%, var(--white_transp1) 36%);
+            overflow: hidden;
+            border-bottom: 1px solid white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1300px;
+            text-align: center;
+            position: static;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }        
+
+        .hero-content  h1 {
+			color: white;
+			font-size: clamp(4.5rem, 15vw, 7rem);
+			-webkit-text-stroke-width: 0.5px;
+			-webkit-text-stroke-color: black;
+			text-transform: uppercase;
+			text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+			white-space: nowrap;
+            font-weight: 300;
+            
+			transition:var(--transition1s);
+			animation:creceLetterMobile 2s ease-in-out infinite alternate;
+		}
+		
+		 @keyframes creceLetter {
+			0% { 
+				opacity: .2;
+				transform: translateY(0); 
+			}
+			100% { 
+				transform: translateY(-40px);
+				letter-spacing: 1.5rem; 
+				opacity: 1;
+				-webkit-text-stroke-width: 0.1px;
+			 } 
+        }
+
+        @keyframes creceLetterMobile {
+            0% {
+                opacity: .2;
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+                letter-spacing: 0.6rem;
+                opacity: 1;
+                -webkit-text-stroke-width: 0.1px;
+            }
+        }
+		
+
+        .hero-content h2,.hero-content h3 {
+            position: relative;
+            color: var(--verdecito);
+			font-size:1.4em;
+			padding:1rem;
+			animation: fadeInUp 1.2s ease;
+			text-shadow: 0 2px 3px var(--primary);
+        }
+		.hero-content h2{
+			font-size:1.6em;
+		}
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+			padding: .5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+			display:flex;
+            position: relative;
+			gap: .6rem;
+			align-items: center;
+        }
+
+        .btn-primary{
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--secondary_trans);
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 1.8rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-primary:hover{
+            background: var(--verdecito-hover_trans);
+            color: var(--accent-hover);
+			border-color:var(--verdecito-hover_trans);
+            transform: translateY(-3px);
+			box-shadow: 0 10px 30px var(--verdecito-hover_trans);
+        }
+
+        section {
+            margin: 0 auto;
+			padding: 1.3rem .6rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			min-height: 85dvh;
+			justify-content: center;
+			scroll-margin-top: 5.5rem;
+        }
+
+        section#lentes-segunda-mano {
+            min-height: auto;
+            justify-content: flex-start;
+            padding-top: 2.5rem;
+        }
+
+        .section-header {
+		    display: flex;
+			flex-direction: column;
+			margin-bottom: 1rem;
+			animation: fadeInUp 0.8s ease;
+			background: var(--white_transp1);
+			padding: .2rem;
+			border-radius: 25px;
+			transition: var(--transition);
+			/* border: 1px solid var(--border); */
+			position: relative;
+			overflow: hidden;
+        }
+
+        .section-badge {
+			width:100%;
+            display: inline-block;
+			text-align:center;
+            color: var(--verdecito);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+			border:none;
+			border-top:2px solid var(--verdecito);
+			
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+			text-align:center;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            max-width: 700px;
+			font-size: .9em;
+            margin: 0 auto;
+			text-align:center;
+        }
+		
+		 #sustentabilidad{
+			display:flex;
+			flex-direction:column;
+			background: var(--white_transp1);
+			max-width: 1500px;
+			border-radius: 3%;
+		 }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .feature-card {
+            background: var(--white_transp1);
+            padding: .7rem;
+            border-radius: 10px;
+			box-shadow: inset 0 0 10px 0px var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--verdecito), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px var(--shadow-hover);
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+
+ /* Products Section */
+        .product-card {
+            background: var(--white_transp1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 50px var(--shadow-hover);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            padding: 0;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--border));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+		
+		.img_lente{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			transition: transform .5s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+        .product-card:hover .product-image::before {
+            left: 100%;
+        }
+
+        .product-card:hover .img_lente,
+        .product-image:focus-visible .img_lente {
+            transform: scale(1.06);
+        }
+
+        .product-image__hint {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            padding: .45rem 1.1rem;
+            border-radius: 50px;
+            background: var(--white_transp1);
+            color: var(--text-primary);
+            font-family: var(--font_family_poppins);
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            box-shadow: 0 4px 15px var(--shadow);
+            opacity: 0;
+            transition: opacity .3s ease, transform .3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .product-card:hover .product-image__hint,
+        .product-image:focus-visible .product-image__hint {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .product-content {
+            padding: 1.25rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--verdecito);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: var(--text-primary);
+            margin-bottom: .8rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--verdecito);
+            margin-bottom: 1rem;
+        }
+
+        /* Products Section - Buscador y filtros */
+        .catalog-toolbar {
+            max-width: 1080px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .catalog-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .catalog-search__icon {
+            position: absolute;
+            left: 1.1rem;
+            width: 20px;
+            height: 20px;
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        .catalog-search__input {
+            width: 100%;
+            padding: .95rem 3rem .95rem 2.9rem;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: var(--white_transp1);
+            font: inherit;
+            font-size: 1rem;
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .catalog-search__input:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .catalog-search__clear {
+            position: absolute;
+            right: .6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: var(--secondary_trans);
+            color: var(--text-secondary);
+            font-size: .8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .catalog-search__clear:hover {
+            background: var(--verdecito);
+            color: var(--primary);
+        }
+
+        .catalog-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+        }
+
+        .catalog-select {
+            flex: 1 1 220px;
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+        }
+
+        .catalog-select__label {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .catalog-select select {
+            width: 100%;
+            padding: .7rem 2.25rem .7rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--white_transp1);
+            font: inherit;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .catalog-price {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .catalog-price input {
+            width: 100%;
+            min-width: 0;
+            padding: .7rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--white_transp1);
+            font: inherit;
+            color: var(--text-primary);
+        }
+
+        .catalog-price__sep {
+            color: var(--text-secondary);
+        }
+
+        .catalog-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .catalog-chip {
+            padding: .5rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: var(--white_transp1);
+            color: var(--text-secondary);
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .catalog-chip:hover {
+            border-color: var(--verdecito);
+            color: var(--verdecito);
+        }
+
+        .catalog-chip.is-active {
+            background: linear-gradient(135deg, var(--verdecito), var(--accent));
+            border-color: transparent;
+            color: var(--primary);
+        }
+
+        .catalog-count {
+            max-width: 1080px;
+            margin: 0 auto 1rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: .9rem;
+        }
+
+        .catalog-empty {
+            max-width: 840px;
+            margin: 2rem auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            border: 1px dashed var(--border);
+            border-radius: 20px;
+            background: var(--white_transp1);
+        }
+
+        .catalog-empty__reset {
+            display: block;
+            margin: 1rem auto 0;
+            padding: .6rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: var(--verdecito);
+            color: var(--primary);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .catalog-empty__reset:hover {
+            transform: scale(1.05);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .products-grid .product-image {
+            height: 220px;
+        }
+
+        @media (min-width: 640px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Product Detail Modal */
+        .product-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .3s ease, visibility .3s ease;
+        }
+
+        .product-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .product-modal__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .product-modal__panel {
+            position: relative;
+            z-index: 1;
+            width: min(520px, 100%);
+            max-height: calc(100dvh - 2rem);
+            display: flex;
+            flex-direction: column;
+            background: var(--white_transp1);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px var(--shadow-hover);
+            overflow: hidden;
+            transform: translateY(24px) scale(.96);
+            opacity: 0;
+            transition: transform .35s cubic-bezier(0.4, 0, 0.2, 1), opacity .3s ease;
+        }
+
+        .product-modal.is-open .product-modal__panel {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .product-modal__head {
+            display: flex;
+            justify-content: flex-end;
+            padding: .75rem .75rem 0;
+            flex-shrink: 0;
+        }
+
+        .product-modal__close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--verdecito);
+            color: var(--primary);
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .product-modal__close:hover {
+            transform: rotate(90deg) scale(1.05);
+            background: var(--accent);
+        }
+
+        .product-modal__content {
+            padding: 0 1.25rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        .product-modal__content .img_lente {
+            width: 100%;
+            height: auto;
+            max-height: 40vh;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .product-modal__content .product-badge {
+            margin-top: .25rem;
+        }
+
+        .product-modal__content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            color: var(--text-primary);
+        }
+
+        .product-modal__content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .product-modal__content .product-price {
+            margin-bottom: 1rem;
+        }
+
+        .product-modal__content .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .product-modal__content {
+                padding: 0 1.75rem 1.75rem;
+            }
+        }
+
+        /* Process Section */
+        .process-timeline {
+            position: relative;
+            padding-left: 0;
+        }
+
+        .process-step {
+            display: flex;
+			align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeInLeft 0.8s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-number {
+			display:none;
+            flex:0 1 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--verdecito), var(--accent));
+            color: var(--primary);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.15) rotate(360deg);
+        }
+
+        .step-content {
+            flex: 1;
+            background: var(--white_transp1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .step-content:hover {
+            box-shadow: 0 8px 25px var(--shadow-hover);
+            transform: translateX(10px);
+        }
+
+        .step-content h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Sustainability Section */
+        .sustainability-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .stat-card {
+            background: var(--white_transp1);
+            padding: .5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--verdecito);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow-hover);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+			font-weight: 600;
+            color: var(--verdecito);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .contact-info {
+            
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--white_transp1);
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px var(--shadow-hover);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--verdecito);
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .map-container {
+			display:flex;
+			flex-direction:column;
+            width: 100%;
+            height: 400px;
+			position: relative;
+            border-radius: 20px;
+			background: var(--white_transp1);
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+        }
+		.map-container .contact_map{
+			display: flex;
+            align-items: start;
+			max-height: max-content;
+			height:auto;
+            gap: 1.5rem;
+            margin-bottom: .2rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .map-container .contact_map:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px var(--shadow-hover);
+        }
+		
+        .map-container iframe {
+			/*flex: 1; */
+			height: auto;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            position: relative;
+            width: 100%;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .testimonials-viewport {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 20px;
+            padding: .25rem;
+        }
+
+        .testimonials-viewport::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            width: 100%;
+            background: var(--white_transp1);
+            padding: .5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: var(--transition1s);
+        }
+
+        .testimonials-btn {
+            position: absolute;
+            bottom: 30%;
+            transform: translateY(-50%);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white_transp1);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            box-shadow: 0 4px 18px var(--shadow);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonials-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .testimonials-btn:hover {
+            background: var(--verdecito);
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .testimonials-btn--prev {
+            left: -.5rem;
+        }
+
+        .testimonials-btn--next {
+            right: -.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-card {
+                flex-basis: calc(50% - .5rem);
+            }
+
+            .testimonials-btn {
+                width: 52px;
+                height: 52px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .testimonial-card {
+                flex-basis: calc(33.333% - .6667rem);
+            }
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px var(--shadow-hover);
+			& .testimonial-text{
+				color: var(--accent-hover);
+			}
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--verdecito);
+            opacity: 0.2;
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-size: .7rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            border:1px solid var(--text-secondary);
+			color: var(--text-primary);
+        }
+
+        .author-info h5 {
+            color: var(--text-secondary);
+            font-size: .9rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        .stars {
+            font-size: .9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary_trans), var(--secondary_trans));
+            color: var(--text-primary);
+            padding: 1rem;
+			margin-top: 1.2rem;
+        }
+
+        .footer-content {
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-section {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .footer-section p{
+            grid-column: 2;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+
+        .footer-section a:hover {
+            color: var(--verdecito);
+            transform: translateX(5px);
+        }
+
+        .footer-section details {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            padding: .35rem .9rem;
+            margin-bottom: .6rem;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .footer-section details[open] {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-section summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: .95em;
+            letter-spacing: .04em;
+            color: var(--text-primary);
+            padding: .45rem 0;
+            list-style: none;
+            user-select: none;
+            transition: color var(--transition);
+        }
+
+        .footer-section summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .footer-section summary::before {
+            content: '+';
+            display: inline-block;
+            width: 1.1rem;
+            color: var(--verdecito);
+            font-weight: 700;
+            transition: transform var(--transition);
+        }
+
+        .footer-section details[open] > summary::before {
+            content: '−';
+        }
+
+        .footer-section summary:hover {
+            color: var(--verdecito);
+        }
+
+        .footer-section details ul {
+            padding: 0 0 .4rem 1.1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.7rem;
+            letter-spacing: .02em;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 480px) {
+			.step-number{display:flex;}
+        }
+
+        @media (min-width: 768px) {
+		
+		.nav-container{
+			padding:1rem;
+			gap:.5rem;
+		}
+            .nav-menu {
+                display: flex;
+				align-items: flex-end;
+                flex-direction: row;
+                position: static;
+                background: none;
+                padding: 0;
+                box-shadow: none;
+				& a{    padding: 0.8rem;
+						font-size:.9em;}
+            }
+			.logo_title{
+				font-size: 1.2em;
+			}
+
+            .menu_toggle {
+                display: none;
+            }
+
+        .hero {
+                margin: 1rem 0;
+                min-height: calc(100vh - 20px);
+                border-radius: 0 0 10px 10px;
+            }
+
+            .hero-content h1 {
+                animation: creceLetter 2s ease-in-out infinite alternate;
+            }
+
+            .hero h1 {
+                font-size: 5rem;
+            }
+			.btn {
+				padding: 1rem 2rem; 
+				font-size: 1rem; 
+				font-weight: 600;
+			}
+			
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sustainability-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .map-container {
+                height: 100%;
+            }
+
+            .footer-content {
+                max-width: 560px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+		
+		html{font-size:140%;}
+            .hero h1 {
+                font-size: 5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+			.footer-content {
+				max-width: 1560px;
+			}
+			.footer-bottom {    
+					display: flex;
+					gap: 2rem;
+					justify-content: center;
+					align-items: center;
+					
+					& p{
+						font-size:1em;
+					}
+			}
+        }
+
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 1rem;
+            width: 45px;
+            height: 45px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            background: var(--verdecito);
+            color: var(--gradient-start);
+            border: none;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        @media (min-width: 1280px) {
+		.hero h1 {
+                font-size: 7rem;
+            }
+			.hero-content h2,.hero-content h3 { 
+				font-size:3em;
+			}
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+		/* Conversión: botón flotante de WhatsApp */
+		.whatsapp-float {
+			position: fixed;
+			left: 0;
+			bottom: 18px;
+			z-index: 9999;
+			width: 56px;
+			height: 56px;
+			border-radius: 0;
+			background: #E53935;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+			transition: transform 0.2s ease;
+		}
+		.whatsapp-float:hover {
+			transform: scale(1.08);
+		}
+		.btn-whatsapp {
+			background: transparent;
+			color: var(--text-primary);
+			border: 2px solid #25D366;
+			display: flex;
+			justify-content: center;
+			padding: 0.5rem 1.8rem;
+			font-size: 0.9rem;
+			font-weight: 400;
+			animation: fadeInUp 1.2s ease;
+		}
+		.btn-whatsapp:hover {
+			background: rgba(37, 211, 102, 0.15);
+		}
+
+    </style>
 </head>
 <body>
+    <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container" aria-label="Navegación principal">
+            <a class="logo" href="#inicio" aria-label="Vitra - ir al inicio">
+				<img class="logo_img" src="logo_icons/logo_vitra-removebg.webp" alt="" aria-hidden="true"/>
+				<span class="logo_title">VITRA</span>
+			</a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#sustentabilidad">Sustentabilidad</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://www.instagram.com/vitra.lentes" class="social_link nav__link" aria-label="Instagram (se abre en pestaña nueva)" target="_blank" rel="noopener noreferrer">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+					</a>
+				</li>
+				<li>
+					<button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+						<img class="moon-icon" src="logo_icons/gafa_light.png" alt="" aria-hidden="true"/>
+						<img class="sun-icon" src="logo_icons/gafa_dark.png" alt="" aria-hidden="true"/>
+					</button>
+				</li>
+            </ul>
 
-  <!-- ============ LANDING ============ -->
-  <section class="landing" id="landingSection" aria-label="Pantalla de bienvenida">
-  <button type="button" id="landingDot" class="landing-dot" aria-label="Iniciar experiencia"></button>
-    <img src="./imgs/floripa-landing.webp" alt="Disfrutando el entorno" class="landing_image" id="landingImg" fetchpriority="high" width="1200" height="1600">
-    <div class="landing_overlay" aria-hidden="true"></div>
-
-    <div class="landing-content" id="landingContent" aria-labelledby="hero-title" aria-describedby="hero-subtitle">
-      <h1 id="hero-title">El viaje del barrio, <em>organizado juntos</em></h1>
-      <p class="hero-subtitle" id="hero-subtitle">La plataforma para planificar tu próximo viaje con amigos</p>
-      <button type="button" class="enter-btn" id="enterBtn" aria-label="Ingresar al sitio">
-          ✦ ¡Esta vez sí va!
-      </button>
-    </div>
-    <div class="landing_hint" id="landingHint" role="status">Tocá para comenzar</div>
-  </section>
-
-  <section class="logo-watermark" aria-hidden="true"></section>
-
-  <!-- ============ MAIN CONTENT ============ -->
-    <header class="header" id="mainHeader">
-      <div class="header-container">
-        <button class="logo" id="logoBtn" aria-label="Volver al inicio">
-          <img src="./imgs/ChatGPT 88kb.webp" alt="Logo" class="logo-icon" width="170" height="80">
-          <p class="logo_title" aria-label="alasRisas trip">alasRisas <span>trip</span></p>
-        </button>
-
-        <nav class="nav-menu" id="nav_menu" aria-label="Navegación principal de escritorio" aria-hidden="true">
-          <ul>
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#como-funciona">Cómo funciona</a></li>
-              <li><a href="#galeria">Galería</a></li>
-              <li><a href="#amigos-section">Amigos</a></li>
-              <li><a href="#muro-comentarios">Comentarios</a></li>
-              <li><a href="#formContact">Me anoto</a></li>
-              <li><a href="https://www.instagram.com/alasrisas_trip/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram" aria-label="Instagram"></a></li>
-          </ul>
+            <div class="nav-controls">								                
+                <button class="menu_toggle" id="menuToggle" aria-label="Abrir menú" aria-controls="navMenu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
-
-        <button class="nav__toggle" id="navToggle" aria-label="Abrir menú movil" aria-expanded="false" aria-controls="header_sidebar">
-          <span aria-hidden="true"></span>
-		  <span aria-hidden="true"></span>
-        </button>
-      </div>
     </header>
 
-    <aside id="header_sidebar" aria-label="Menú de navegación móvil" aria-hidden="true">
-      <div class="top">
-        <div id="sidebar-logo">
-          <h3>Menu</h3>
-          <p>alasRisas trip</p>
-        </div>
-        <nav id="sidebar-nav" aria-label="Enlaces del menú lateral">
-          <ul>
-            <li><a href="#inicio" class="active"><span class="icon solid fa-home" aria-hidden="true"></span> Inicio</a></li>
-            <li><a href="#como-funciona"><span class="icon solid fa-info-circle" aria-hidden="true"></span> Cómo funciona</a></li>
-            <li><a href="#galeria"><span class="icon solid fa-images" aria-hidden="true"></span> Galería</a></li>
-            <li><a href="#amigos-section"><span class="icon solid fa-users" aria-hidden="true"></span> Amigos</a></li>
-            <li><a href="#formContact"><span class="icon solid fa-user-plus" aria-hidden="true"></span> Me anoto</a></li>
-          </ul>
-        </nav>
-      </div>
-	  
-      <div class="bottom">
-        <ul class="icons">
-          <li><a href="https://www.instagram.com/alasrisas_trip/" class="icon brands fa-twitter" aria-label="Twitter"><span class="label"aria-hidden="true">Twitter</span></a></li>
-          <li><a href="https://www.instagram.com/alasrisas_trip/" class="icon brands fa-facebook-f" aria-label="Facebook"><span class="label"aria-hidden="true">Facebook</span></a></li>
-          <li><a href="https://www.instagram.com/alasrisas_trip/" class="icon brands fa-instagram" aria-label="Instagram"><span class="label"aria-hidden="true">Instagram</span></a></li>
-          <li><a href="mailto:alasrisastrip@gmail.com" class="icon solid fa-envelope" aria-label="Email"><span class="label"aria-hidden="true">Email</span></a></li>
-        </ul>
+	<main>	
+		<section class="hero" id="inicio">
+			<div class="hero-content">
+				<h1>VITRA</h1>
+				<h2 class="hero-highlight">Second Hand</h2>
+				<h3> Lentes Originales en Montevideo</h3>
+				<p>Reunimos lentes auténticos de marcas exclusivas de todo el mundo, para darles una segunda vida </p>
+				<p>No vendemos solo accesorios, compartimos historias,</p>
+				<div class="cta-buttons">
+					<a href="#productos" class="btn btn-primary">
+						<span>Ver Colección</span>
+					</a>
+					<a href="https://wa.me/59894872605?text=Hola%20Vitra!%20Quiero%20hacer%20una%20consulta%20sobre%20sus%20lentes." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+						<span>Consultar por WhatsApp
+							<svg width="24" height="24" viewBox="0 0 32 32" fill="currentColor">
+								<path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.465 1.71 6.417L3.2 28.8l6.54-1.67a12.74 12.74 0 0 0 6.26 1.596h.006c7.06 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.634-3.746-9.05A12.72 12.72 0 0 0 16.004 3.2zm0 23.43h-.005a10.6 10.6 0 0 1-5.4-1.48l-.388-.23-4.02 1.03 1.073-3.92-.253-.4a10.57 10.57 0 0 1-1.62-5.64c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.51 1.107 7.516 3.117a10.57 10.57 0 0 1 3.113 7.53c0 5.86-4.77 10.63-10.63 10.63zm5.83-7.96c-.32-.16-1.89-.932-2.183-1.039-.293-.107-.506-.16-.72.16-.213.32-.826 1.039-1.013 1.253-.186.213-.373.24-.693.08-.32-.16-1.35-.498-2.573-1.588-.95-.848-1.593-1.895-1.78-2.215-.186-.32-.02-.493.14-.652.144-.144.32-.373.48-.56.16-.187.213-.32.32-.533.107-.214.053-.4-.027-.56-.08-.16-.72-1.734-.987-2.374-.26-.626-.524-.54-.72-.55-.186-.01-.4-.012-.613-.012-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667 0 1.573 1.146 3.093 1.306 3.307.16.213 2.257 3.447 5.47 4.833.764.33 1.36.527 1.826.675.767.243 1.466.208 2.018.126.616-.091 1.89-.773 2.157-1.52.267-.746.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373z"/>
+							</svg>
+						</span>
+					</a>
+					
+				</div>
+			</div>
+		</section>
 
-      </div>
-    </aside>
-    
-	<main id="main-content">
-      <section class="inicio reveal" id="inicio" aria-label="Presentacion aerea de bienvenida">
-        <video class="video-bg" autoplay loop muted playsinline aria-hidden="true">
-          <source src="./imgs/istockphoto-.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-        <div class="section-content reveal">
-          <h2 class="reveal">"Crecer no significa dejar de soñar, sino soñar juntos."</h2>
-          <p class="reveal reveal-delay-1">"No viajamos para escapar de la vida, viajamos para que la vida no se nos escape."</p>
-		   <p class="reveal pdelay reveal-delay-3">Tu viaje ideal comienza aquí.</p>
-        </div>
-      </section>
-	  
-	      <section class="hero-section reveal" id="que-es-la-app" aria-labelledby="hero-heading">
-            <div class="hero-content">
-              <h2 id="hero-heading" class="reveal">Las calles que nos cruzaron, todavía las andamos.</h2>
-              <p class="reveal reveal-delay-1">Ahora también sabemos organizar el viaje que todos soñamos desde el barrio.</p>
-              <p class="reveal reveal-delay-3">Porque los recuerdos empiezan mucho antes de viajar.</p>
-              <p class="reveal reveal-delay-4">Verano 2026 · Cupos limitados</p>
-        </div>
+		<section id="nosotros">		
+            <div class="section-header">
+				<span class="section-badge">Sobre Vitra</span>
+                <h2 class="section-title">Moda Consciente y Responsable</h2>
+                <p>Somos un emprendimiento familiar que apuesta al consumo responsable, a lo original, y a las piezas con alma.
+				</p><p>Un espacio donde las piezas con pasado encuentran nuevas miradas.</p>
+				<p>Porque ver el mundo con otros ojos también significa hacerlo con más conciencia, apoyamos el consumo responsable sin perder el diseño ni la calidad.
+				</p>
+				<p>Restauramos y vendemos lentes de marca originales, combinando calidad premium con precios accesibles y compromiso ambiental.</p>
+                <p>Lo nuestro no es solo un negocio, es una forma de ver el futuro.</p>
+            </div>
+							
+			<div class="section-header">
+				<span class="section-badge">Por Qué Elegirnos</span>
+				<h2 class="section-title">Calidad y Estilo en Cada Detalle</h2>
+				<p >
+					Somos emprendedoras comprometidas con ofrecer lentes de marca originales, restaurados profesionalmente y a precios únicos.
+				</p>
+			</div>
+			<div class="features-grid">
+				<div class="feature-card">
+					<h3>100% Originales</h3>
+					<p>Lentes que ya vivieron algo… y están listos para más. Trabajamos solo con productos originales de marcas reconocidas mundialmente.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Vistos antes, pero nunca así.</h3>
+					<p>Restaurados por un proceso riguroso de restauración para lucir como nuevo, manteniendo su calidad original.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Compromiso Sustentable</h3>
+					<p>Contribuimos a la economía circular y reducimos el impacto ambiental dando nueva vida a productos de calidad.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Atención Personalizada</h3>
+					<p>Te asesoramos para encontrar el lente perfecto que se adapte a tu estilo y necesidades específicas.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Siempre Actualizado</h3>
+					<p>Constantemente renovamos nuestro stock con las últimas tendencias y modelos más buscados del mercado.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Garantía de Calidad</h3>
+					<p>Todos nuestros productos cuentan con garantía. Tu satisfacción es nuestra prioridad número uno.</p>
+				</div>				
+				<div class="feature-card">
+					<h3>De colección, pero accesibles</h3>
+					<p>Accede a lentes de marcas premium a precios accesibles. Estilo de lujo sin comprometer tu presupuesto.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Marcas Premium</h3>
+					<p>Ray-Ban, Oakley, Prada, Gucci y más. Accede a las mejores marcas del mercado a precios increíbles.</p>
+				</div>
+			</div>
+		</section>		
+	
+		<!-- Products Section -->
+		<section id="productos">
+			<div class="section-header">
+				<span class="section-badge">Nuestra Colección</span>
+				<h2 class="section-title">Descubre Tu Próximo Look</h2>
+				<p class="section-description">
+					Cada lente tiene su propia historia. Encuentra el que cuente la tuya.
+				</p>
+			</div>
 
-      </section>
+			<div class="catalog-toolbar">
+				<div class="catalog-search">
+					<svg class="catalog-search__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+						<circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+						<path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+					<input type="search" id="catalogSearch" class="catalog-search__input" placeholder="Buscar por marca o modelo…" aria-label="Buscar productos" autocomplete="off">
+					<button type="button" class="catalog-search__clear" id="catalogSearchClear" aria-label="Limpiar búsqueda" hidden>&#10005;</button>
+				</div>
 
-      <section class="timeline reveal" id="como-funciona" aria-labelledby="como_funciona_title">
-        <div class="section-tag">Pasos simples</div>
-        <h2 class="section-title" id="como_funciona_title">¿Cómo funciona?</h2>
-        <p class="section-sub">Sin complicaciones. De la inscripción al paseo en 3 pasos.</p>
-        <ol class="timeline-list" aria-label="Pasos para unirse al viaje">
-          <li class="timeline-item reveal visible">
-            <div class="timeline-dot" aria-hidden="true">📝</div>
-            <div class="timeline-content">
-              <div class="timeline-step">Paso 01</div>
-              <h3 class="timeline-title">Completás el formulario</h3>
-              <p class="timeline-pass">Llenás tus datos y preferencias. Tarda menos de 2 minutos.</p>
-            </div>
-          </li>
-          <li class="timeline-item reveal reveal-delay-2 visible">
-            <div class="timeline-dot" aria-hidden="true">💰</div>
-            <div class="timeline-content">
-              <div class="timeline-step">Paso 02</div>
-              <h3 class="timeline-title">Coordinamos gastos</h3>
-              <p class="timeline-pass">Dividimos todo en partes iguales. Seguro que nos va a servir mucho.</p>
-            </div>
-          </li>
-          <li class="timeline-item reveal reveal-delay-3 visible">
-            <div class="timeline-dot" aria-hidden="true">🚌</div>
-            <div class="timeline-content">
-              <div class="timeline-step">Paso 03</div>
-              <h3 class="timeline-title">¡A viajar!</h3>
-              <p class="timeline-pass">Solo llegás con el bolso. El resto ya está resuelto.</p>
-            </div>
-          </li>
-        </ol>
+				<div class="catalog-controls">
+					<label class="catalog-select">
+						<span class="catalog-select__label">Marca</span>
+						<select id="filterBrand" aria-label="Filtrar por marca">
+							<option value="">Todas las marcas</option>
+						</select>
+					</label>
+
+					<label class="catalog-select">
+						<span class="catalog-select__label">Precio</span>
+						<span class="catalog-price">
+							<input type="number" id="priceMin" min="0" step="100" placeholder="Mín" aria-label="Precio mínimo">
+							<span class="catalog-price__sep">–</span>
+							<input type="number" id="priceMax" min="0" step="100" placeholder="Máx" aria-label="Precio máximo">
+						</span>
+					</label>
+				</div>
+
+				<div class="catalog-categories" role="group" aria-label="Filtrar por tipo de lente">
+					<button type="button" class="catalog-chip is-active" data-category="all">Todos</button>
+					<button type="button" class="catalog-chip" data-category="de sol">De sol</button>
+					<button type="button" class="catalog-chip" data-category="deportivo">Deportivo</button>
+					<button type="button" class="catalog-chip" data-category="clasico">Clásico</button>
+				</div>
+			</div>
+
+			<p class="catalog-count" id="catalogCount" aria-live="polite">Cargando lentes…</p>
+
+			<div class="products-grid" id="productsGrid" aria-label="Galería de productos"></div>
+
+			<p class="catalog-empty" id="catalogEmpty" hidden>
+				No encontramos lentes con esos filtros.
+				<button type="button" class="catalog-empty__reset" id="catalogReset">Limpiar filtros</button>
+			</p>
+		</section>
+
+		<!-- Product Detail Modal -->
+		<div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-label="Detalle del lente" aria-hidden="true">
+			<div class="product-modal__overlay" data-modal-close></div>
+			<div class="product-modal__panel">
+				<div class="product-modal__head">
+					<button type="button" class="product-modal__close" id="productModalClose" aria-label="Cerrar detalle">&#10005;</button>
+				</div>
+				<div class="product-modal__content" id="productModalContent"></div>
+			</div>
+		</div>
+
+		<!-- Process Section -->
+		<section id="proceso">
+			<div class="section-header">
+				<span class="section-badge">Nuestro Proceso</span>
+				<h2 class="section-title">De Second Hand a Como Nuevo</h2>
+				<p class="section-description">
+					Cada lente pasa por un riguroso proceso de selección y restauración profesional.
+				</p>
+			</div>
+			<div class="process-timeline">
+				<div class="process-step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h3>Selección Rigurosa</h3>
+						<p>Solo elegimos lentes originales de marcas premium en excelente condición. Verificamos autenticidad y calidad de cada pieza.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h3>Inspección Detallada</h3>
+						<p>Examinamos cada componente: marcos, bisagras, lentes y acabados. Identificamos cualquier detalle que necesite atención.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h3>Restauración Profesional</h3>
+						<p>Limpieza profunda, pulido de marcos, reemplazo de piezas si es necesario y ajustes precisos por expertos.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">4</div>
+					<div class="step-content">
+						<h3>Control de Calidad</h3>
+						<p>Verificación final exhaustiva. Solo los lentes que cumplen nuestros estándares llegan a la venta.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">5</div>
+					<div class="step-content">
+						<h3>Listo para Ti</h3>
+						<p>Tu nuevo lente está listo para lucir increíble. Incluye estuche y paño de limpieza profesional.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sustainability Section -->
+		<section id="sustentabilidad">
+				<div class="section-header">
+					<span class="section-badge">Sustentabilidad</span>
+					<h2 class="section-title">Nuestro Compromiso Ambiental</h2>					
+					<p>En Vitra entendemos que la moda sustentable no es solo una tendencia, es una responsabilidad. Reutilizar también puede ser de lujo.</p>
+					<p>Al elegir second hand, no solo accedes a productos de calidad premium a precios accesibles, sino que también contribuyes activamente a reducir la huella ambiental de la industria de la moda.</p>
+					<p>Cada lente restaurado significa menos residuos en vertederos, menos recursos naturales utilizados y menos emisiones de carbono. Es lujo consciente al alcance de todos.</p>
+				</div>				
+				<div class="sustainability-content">	
+						<div class="stat-card">
+							<div class="stat-number">500+</div>
+							<div class="stat-label">Lentes Restaurados</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">80%</div>
+							<div class="stat-label">Menos Huella de Carbono</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">100%</div>
+							<div class="stat-label">Empaques Reciclables</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">300+</div>
+							<div class="stat-label">Clientes Satisfechos</div>
+						</div>
+				</div>
+		</section>
+	</main>
+	<aside>
+		<!-- Testimonials Section -->
+		<section id="testimonios">
+			<div class="section-header">
+				<span class="section-badge">Testimonios</span>
+				<h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+				<p class="section-description">
+					La satisfacción de nuestros clientes es nuestro mejor indicador de éxito.
+				</p>
+			</div>
+			<div class="testimonials-slider" id="testimonialsSlider" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+				<div class="testimonials-viewport" id="testimonialsViewport">
+					<div class="testimonials-track" id="testimonialsTrack">
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars" role="img" aria-label="Calificación 5 de 5">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Increíble la calidad de los lentes. Compré unos Ray-Ban que lucen como nuevos. La atención fue excelente y los precios son realmente únicos. 100% recomendado."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">AF</div>
+						<div class="author-info">
+							<h4>Alejandro Fleitas</h4>
+							<p>Cliente frecuente</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars" role="img" aria-label="Calificación 5 de 5">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Gracias por conseguirme lo que buscaba tan rápido. Ya no me quedo limpiando en cas y me voy al disfrutar."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">CT</div>
+						<div class="author-info">
+							<h4>Canibal Troilo</h4>
+							<p>Biker</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars" role="img" aria-label="Calificación 5 de 5">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Encontré los Oakley que buscaba hace meses a un precio increíble. El proceso de restauración es impecable, no se nota que son second hand. ¡Volveré seguro!"
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">MT</div>
+						<div class="author-info">
+							<h4>Marcelo Tissierre</h4>
+							<p>Deportista</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars" role="img" aria-label="Calificación 5 de 5">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Me encanta el concepto sustentable de Vitra. Compré unos Prada hermosos y me siento bien sabiendo que estoy contribuyendo al medio ambiente. Las chicas son súper atentas."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">MM</div>
+						<div class="author-info">
+							<h4>María</h4>
+							<p>Diseñadora</p>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+
+				<button class="testimonials-btn testimonials-btn--prev" id="testimonialsPrev" aria-label="Testimonio anterior">
+					<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+						<path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+				<button class="testimonials-btn testimonials-btn--next" id="testimonialsNext" aria-label="Testimonio siguiente">
+					<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+						<path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
+		</section>
+		
+	</aside>
+
+    <!-- SEO Local Content -->
+    <section id="lentes-segunda-mano">
+        <div class="section-header">
+            <span class="section-badge">Lentes en Montevideo</span>
+            <h2 class="section-title">Lentes de Segunda Mano Originales en Montevideo</h2>
+            <p>
+                En Vitra vendemos lentes de segunda mano originales en Montevideo. Trabajamos con gafas y anteojos de marcas premium como Ray-Ban, Oakley, Prada y Gucci que restauramos pieza por pieza para que luzcan como nuevas, a precios mucho más accesibles que las ópticas tradicionales.
+            </p>
+            <p>
+                Nos encontrás en la Galería Libertador, 18 de Julio 921 esquina Convención, en pleno centro de Montevideo. Si buscás lentes usados de marca, anteojos originales restaurados o gafas sustentables en Uruguay, visitanos de lunes a viernes de 10:30 a 18:00 y los sábados y domingos de 10:30 a 14:00.
+            </p>
+            <p>
+                Nuestro compromiso es dar una segunda vida a lentes de calidad: cada par pasa por un proceso riguroso de restauración, con garantía de calidad y atención personalizada. ¿Dudás de qué modelo elegir? Consultanos por WhatsApp al +598xx xxx xxx o escribinos y te asesoramos desde el centro de Montevideo.
+            </p>
+        </div>
     </section>
 
-      <section id="galeria" class="reveal" aria-labelledby="galeria-title">
-        <h2 id="galeria-title" class="section-title fade-in">Florianópolis</h2>
-        <p class="section-subtitle fade-in">Un vistazo al paraíso que nos espera</p>
-        <div class="carousel-container fade-in" id="carousel">
-          <div class="carousel-track" id="carouselTrack"></div>
-          <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">‹</button>
-          <button class="carousel-btn next" id="carouselNext" aria-label="Siguiente">›</button>
-          <div class="carousel-counter" id="carouselCounter">1 / 12</div>
-          <div class="carousel-progress" id="carouselProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <div class="carousel-dots" id="carouselDots"></div>
-      </section>
-
-	    <section class="faq-section reveal" id="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="reveal">Preguntas Frecuentes</h2>
-        <div class="faq-container reveal reveal-delay-1">
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
-              <span>¿Por qué Florianópolis y no otro lugar?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-1" role="region">
-              <p>Porque tiene TODO lo que un grupo grande necesita: playas paradisíacas, paz para los que quieren paz, y planes para los que quieren plan <i>(por si nos extrañamos, nunca estamos a más de un par de cuadras)</i>.<br> Alojamiento a pasos de la playa, así que ni excusa para no ir.<br> Y si el cuerpo todavía aguanta después del sol: noches que se estiran lindo, ideales para un batallón de amigos como el nuestro.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
-              <span>¿Cuándo es el viaje exactamente?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-2" role="region">
-              <p>Estamos apuntando a salir el 26 de Diciembre y pasar el fin de año del 2026 allá, y quedarnos 10/15 días. Las fechas exactas se confirman una vez que cerremos el cupo mínimo de participantes.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
-              <span>¿Dónde nos vamos a quedar?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-3" role="region">
-              <p>Vamos a buscar los mejores lugares y precios para asegurar la estadía con tiempo. La idea es estar lo más cerca posible del agua y, sobre todo, lo más cerca posible los unos de los otros. Porque seguro nos vamos a estar viendo todos los días y todas las noches.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
-              <span>¿Qué vamos a hacer allá?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content actividades-lista" id="faq-4" role="region">
-              <p>No hay una lista obligatoria de actividades ni cronograma militar. Cada uno va a encontrar la suya. Unos van a leer, otros van a caminar, otros van a conversar hasta la madrugada. Lo único importante es estar ahí, sumando paisajes, anécdotas y recuerdos que todavía no existen pero que en unos meses vamos a estar contando mil veces.</p>
-                <ul class="actividades-lista">
-                  <li>✦ Leer.</li> <li>✦ Escuchar música.</li> <li>✦ Caminar por la playa.</li>  <li>✦ Realizar trilhas entre morros.</li><li>✦ Observar la naturaleza.</li> <li>✦ Escuchar el silencio y los pájaros.</li>  <li>✦ Contemplar el cielo nocturno.</li>
-                  <li>✦ Disfrutar de la aurora y el atardecer.</li>  <li>✦ Hacer aquello que te gusta, sól@ (como siempre).</li>  <li>✦ Degustar gastronomía local.</li> <li>✦ Probar mariscos y muchas frutas.</li> <li>✦ Pescar.</li> <li>✦ Practicar surf.</li> <li>✦ Realizar paseos y descubrir nuevos rincones.</li> <li>✦ Gritar de alegría frente al mar.</li>
-                </ul>
-             </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
-              <span>¿Por qué tengo que anotarme ya?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-5" role="region">
-              <p>Porque las reservas de hospedaje hay que hacerlas cuanto antes para asegurar los mejores lugares al mejor precio. <br> Anotándote nos ayudás a saber cuántos somos realmente, así reservamos a tiempo y evitamos que el barrio entero pague de más por llegar tarde.</p>
-              <p>Cada vez que alguien se sume al viaje, veremos la cantidad de viajeros en pantalla.</p>
-              <p>Cuanta más gente se anote, más barato para todos.</p>
-              <p> Y si todavía no te animás a anotarte, al menos compartí esta página con los que todavía no saben que tienen que venir.</p>
-              <p>Cada uno de nosotros le aporta una magia única al grupo, porque la vida vuela y estos viajes son los que quedan grabados para siempre.<br> Anotarte hoy es el primer paso para hacer realidad el viaje que nos merecemos.</p></p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-6">
-              <span>¿Cuánto cuesta en total?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-6" role="region">
-              <p>Depende de la cantidad de personas que se sumen.</p>
-              <p>El rango estimado va de 300 a 400 dólares por persona, incluye transporte y alojamiento. ( no las actividades ni comidas en el destino). </p>
-              <p style="color:hotpink">El ómnibus sale 5000 dolares</p>
-              <p style="color:hotpink">La estadia todavia la tenemos que reservar y lo antes posible.</p>
-              <p>Cuanta más gente, más barato para todos.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-7">
-              <span>¿Cómo dividimos los gastos sin pelearnos?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-7" role="region">
-              <p>Lo único que hay para dividir es el traslado y la estadía.</p>
-              <p style="color:hotpink">Fácil: a través de la app de alasRisas cargamos los costos fijos (alojamiento y traslados) y la plataforma calcula automáticamente la cuota equitativa de cada uno, sin intermediarios ni números en una libretita.</p>
-              <p>El cupo máximo es de 50 personas para llenar el bondi y conseguir los mejores precios grupales. Ya hay algunos confirmados 😉, así que los cupos restantes son limitados.</p>
-              <p>El resto de los gastos del día a día corre por cuenta de cada familia, así cada uno gasta a su ritmo.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-8">
-                <span>¿Y si alguien se baja a último momento?</span>
-                <span class="faq-icon" aria-hidden="true">▼</span>
-              </button>
-            <div class="faq-content" id="faq-8" role="region">
-              <p>Tranquilo, no pasa nada grave: se devuelve la plata hasta el último centavo y seguro esa persona se va a estar muriendo de ganas de venir en la próxima.</p>
-              <p>Y si lo que complica es justamente el maldito dinero, seguro entre todos le encontramos una vuelta. <br> Lo único que no negociamos es que ¡tenemos que ir!</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-9">
-              <span>Cosas que NO te podés olvidar</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-9" role="region">
-              <p>* Salivar y hablar al conductor.<br>* Sacar el brazo para afuera de las ventanillas.
-                <br>* No es obligatorio estar tooodo el día pegados, cada uno hace lo suyo también. 
-                <br>* Está PROHIBIDO enojarse con alguien del grupo por más de 3 minutos seguidos.
-                <br>* Que en algún momento alguien va a terminar en un nosocomio de allá, son gajes del oficio.
-              </p>
-              <p class="frase-final" style="color:hotpink"> * Y, sobre todo, no te podés olvidar de las ganas de volver a compartir tiempo, historias y risas con los de siempre.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-10">
-              <span>¿Y el itinerario, ya está armado?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-10" role="region">
-              <p>Plan A, Plan B, Plan C... lo que termine saliendo en el momento. <br> Porque los amigos del barrio nunca fallamos en una cosa: Improvisar.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-11">
-              <span>¿Todo organizado?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-11" role="region">
-              <p>No, naa que ver!!. Faltaria organizar la comida durante el viaje, algunas salidas, las bromas...</p>
-              <p>Solamente tendremos más tranquilidad, más sguridad, más libertad para disfrutar sin preocupaciones y todo lo que se nos ocurra para hacer de este viaje algo inolvidable.</p>
-              <p>Porque hay cosas que solo se disfrutan en barra y las mejores historias se cuentan en plural.</p> 
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-12">
-              <span>¿Va a quedar registrado en algún lado?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-12" role="region">
-              <p>Sí, las fotos de todos van a estar juntas en un solo lugar.</p>
-              <p>Entra al Instagram: <a href="https://www.instagram.com/alasrisas_trip/" target="_blank" rel="noopener noreferrer">alasrisas_trip</a></p>              
-              <p>Utiliza el mail : <i>alasrisastrip@gmail.com</i></p>
-              <p>Contraseña: <i>viajamos2026</i></p>
-              <p><i>(PRÖXIMAMENTE)</i> El recuerdo más organizado que vas a tener en tu vida lo va a armar también la app de alasRisas.</p>
-			      </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-13">
-              <span>¿Qué más puedo hacer con la app alasrisas?</span>
-              <span class="faq-icon" aria-hidden="true">▼</span>
-            </button>
-            <div class="faq-content" id="faq-13" role="region">
-              <p>• <strong>Sugerencias:</strong> Proponé paseos, actividades, nuevas fechas, destinos próximos y nuevas ideas para mejorar la experiencia de todos.</p>
-              <p>• <strong>Finanzas seguras:</strong> <a href="#formContact" style="text-decoration: underline;font-style: italic;color:hotpink;">Controlá tu estado financiero del viaje.</a>  Tu información es privada y solo podés acceder con tu usuario y contraseña.</p> 
-              <p>¡Buscá en la app y comprobalo vos mismo!</p> 
-              <p style="color:hotpink;font-size: clamp(0.5em, 4vw, 0.8em);"><i>Tranqui, lo que pasa acá, se queda acá. Ningún dato se guarda.<br> ¡Es nuestra app privada!</i></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-	  <section id="countdown-section" class="container reveal" aria-label="Cuenta regresiva">
-			<div class="section-tag">Comunidad</div>
-		  <h2 class="countdown-title">Nos vamos el: 26/12/2026</h2>
-		  <div class="countdown-grid">
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-days">00</span>
-			  </div>
-			  <span class="countdown-label">Días</span>
-			</div>
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-hours">00</span>
-			  </div>
-			  <span class="countdown-label">Horas</span>
-			</div>
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-minutes">00</span>
-			  </div>
-			  <span class="countdown-label">Min</span>
-			</div>
-			<div class="countdown-item">
-			  <div class="number-wrapper">
-				<span class="countdown-number" id="cd-seconds">00</span>
-			  </div>
-			  <span class="countdown-label">Seg</span>
-			</div>
-		  </div>
-		</section>
-	
-      <section id="stats-section" class="section-inner reveal" aria-labelledby="stats-title">
-        <h2 id="stats-title" class="section-title">Estadísticas del viaje</h2>
-        <div class="stats-grid" id="statsGrid">
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-users"></i></div>
-            <div class="stat-number" id="stat-total">0</div>
-            <div class="stat-label">Viajeros</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-divide"></i></div>
-            <div class="stat-number" id="stat-cuota">$0</div>
-            <div class="stat-label">C/U Debe Poner</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fas fa-flag-checkered"></i></div>
-            <div class="stat-number" id="stat-meta">$200,000</div>
-            <div class="stat-label">Meta Requerida</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="amigos-section" class="section-inner reveal" aria-labelledby="amigos-title">
-        <h2 id="amigos-title" class="section-title">Amigos anotados</h2>
-        <div class="amigos-section">
-          <div class="amigos-table-wrap" id="amigosTableWrap">
-            <table class="amigos-table" id="amigosTable">
-              <thead>
-                <tr>
-                  <th>Avatar</th>
-                  <th>Nombre</th>
-                  <th>Nick</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="amigosBody"></tbody>
-            </table>
-            <div class="empty-state" id="amigosEmpty">Aún no hay viajeros anotados. ¡Sé el primero!</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ MURO DE COMENTARIOS ============ -->
-      <section id="muro-comentarios" class="section-inner reveal" aria-labelledby="comentarios-title">
-        <h2 id="comentarios-title" class="section-title">Muro de comentarios</h2>
-
-        <!-- Dashboard del usuario logueado -->
-        <div id="user-dashboard" class="user-dashboard" style="display:none">
-
-          <!-- Barra de usuario -->
-          <div class="user-panel" id="user-panel">
-            <div class="user-panel-card">
-              <div class="user-panel-avatar" id="panel-user-avatar"></div>
-              <div class="user-panel-info">
-                <strong id="panel-user-name"></strong>
-                <small id="panel-user-nick"></small>
-              </div>
-              <div class="user-panel-actions">
-                <button type="button" class="user-panel-btn" id="panel-btn-comments" aria-label="Mis comentarios" title="Mis comentarios">
-                  <i class="fas fa-comments" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="user-panel-btn" id="panel-btn-wallet" aria-label="Ver billetera" title="Ver billetera">
-                  <i class="fas fa-wallet" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="user-panel-btn" id="panel-btn-edit" aria-label="Editar perfil" title="Editar perfil">
-                  <i class="fas fa-pen" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="user-panel-btn user-panel-btn--logout" id="panel-btn-logout" aria-label="Salir" title="Salir">
-                  <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contenido: COMENTARIOS (default) -->
-          <div id="panel-content-comments" class="panel-content-comments">
-            <!-- Formulario de comentario -->
-            <div class="comentarios-form-card" id="comentarios-form-card">
-              <div class="comentarios-form-header">
-                <i class="fas fa-pen-to-square" aria-hidden="true"></i>
-                <span>Agregar comentario</span>
-              </div>
-              <div class="comentarios-write">
-                <div class="comentarios-write-form">
-                  <textarea id="comment-text-input" rows="3" placeholder="Escribi tu comentario..." maxlength="500" aria-label="Escribi un comentario"></textarea>
-                  <div class="comentarios-write-actions">
-                    <span class="char-count"><span id="comment-char-count">0</span>/500</span>
-                    <button type="button" class="wallet-btn wallet-btn-add" id="comment-publish-btn" aria-label="Publicar comentario">
-                      <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tus comentarios -->
-            <div class="comentarios-mis-comentarios" id="comentarios-mis-comentarios" style="display:none">
-              <h3 class="section-subtitle fade-in">
-                <i class="fas fa-user" aria-hidden="true"></i> Tus comentarios
-              </h3>
-              <div id="comentarios-mis-lista" class="comentarios-lista"></div>
-            </div>
-          </div>
-
-          <!-- Contenido: WALLET -->
-          <div id="panel-content-wallet" style="display:none">
-            <section class="wallet-section" id="wallet-section">
-              <div class="wallet-header">
-                <h2 id="wallet-user-name">Billetera <small>cargando...</small></h2>
-                <div class="wallet-actions">
-                  <button type="button" class="wallet-btn-action wallet-btn-delete" id="wallet-delete-btn" aria-label="Eliminar usuario"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                </div>
-              </div>
-
-              <div class="wallet-stats">
-                <div class="wallet-stat-card">
-                  <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
-                  <div class="stat-value accent" id="wallet-total">$0</div>
-                  <div class="stat-label">Total Acumulado</div>
-                </div>
-                <div class="wallet-stat-card">
-                  <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
-                  <div class="stat-value danger" id="wallet-pending">$0</div>
-                  <div class="stat-label">Saldo Pendiente</div>
-                </div>
-                <div class="wallet-stat-card">
-                  <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
-                  <div class="stat-value" id="wallet-meta">$0</div>
-                  <div class="stat-label">Mi Meta</div>
-                </div>
-              </div>
-
-              <div class="wallet-form">
-                <div class="form-row">
-                  <div class="form-field">
-                    <label for="wallet-amount">Monto <small>(solo $ UYU)</small></label>
-                    <input type="number" id="wallet-amount" min="1" step="1" placeholder="Ej: 500" inputmode="numeric" />
-                  </div>
-                  <div class="form-actions">
-                    <button class="wallet-btn wallet-btn-add" id="wallet-btn-add">
-                      <i class="fas fa-plus"></i> Agregar
-                    </button>
-                    <button class="wallet-btn wallet-btn-withdraw" id="wallet-btn-withdraw">
-                      <i class="fas fa-minus"></i> Retirar
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="wallet-history">
-                <h3><i class="fas fa-history"></i> Historial de Transacciones</h3>
-                <div id="wallet-history-body">
-                  <div class="history-empty">Aun no hay transacciones registradas.</div>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <!-- Contenido: EDITAR PERFIL -->
-          <div id="panel-content-edit" style="display:none">
-            <div id="panel-edit-body" class="panel-edit-body"></div>
-          </div>
-
-        </div>
-
-        <!-- Comentarios del barrio (SIEMPRE visible) -->
-        <div class="comentarios-barrio">
-          <p class="section-subtitle fade-in">
-            <i class="fas fa-users" aria-hidden="true"></i> Comentarios del barrio
-          </p>
-          <div id="comentarios-lista" class="comentarios-lista"></div>
-        </div>
-
-        <!-- Estado NO logueado -->
-        <div class="comentarios-not-logged-in" id="comentarios-not-logged-in">
-          <div class="comentarios-not-logged-card">
-            <p>Agregar un comentario.</p>
-            <button type="button" class="btn-registrate" id="comentarios-register-btn"
-              data-tooltip="Para agregar un comentario, tenes que estar registrado"
-              aria-label="Para agregar un comentario, tenes que estar registrado">
-              <i class="fas fa-comment" aria-hidden="true"></i> Registrate aca
-            </button>
-          </div>
-        </div>
-
-      </section>
-      
-
-      <div class="modal-overlay" id="userModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-          <button class="modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
-          <h3 id="modalTitle">Detalle del viajero</h3>
-          <div id="modalBody"></div>
-        </div>
-      </div>
-
-	  <section id="form_section" class="form-section reveal" aria-labelledby="form-title">
-	  
-	    <div id="toast-container" aria-live="polite"></div>
-	  
-      <div class="form-card reveal-delay-2" role="region" aria-label="Formulario de registro e ingreso">
-        <!-- Drip drops decoration -->
-        <div class="drip-top" aria-hidden="true">
-          <div class="drip-drop"></div>
-          <div class="drip-drop"></div>
-          <div class="drip-drop"></div>
-          <div class="drip-drop"></div>
-          <div class="drip-drop"></div>
-          <div class="drip-drop"></div>
-        </div>
-
-        <h2 id="form-title" class="form-title">Mi <span>Usuario</span><span class="live-indicator" aria-hidden="true"></span></h2>
-        <p class="form-subtitle">Ingresá con tu nombre y contraseña</p>
-        <button type="button" id="formModeToggle" class="form-mode-toggle">¿Ya tenés cuenta?  Ingresá</button>
-		
-        <form id="formContact" novalidate 
-			    aria-label="Formulario de registro e ingreso" 
-		      >
-          <div class="form-grid">
-            <!-- Nombre -->
-            <div class="form-field">
-              <label for="nombre">Nombre
-			          <span class="form_required">*</span>
-              </label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Nombre real"
-                autocomplete="given-name"
-                required
-                minlength="2"
-                aria-required="true"
-                aria-describedby="nombre-err"
-              />
-              <span id="nombre-err" class="form-error" role="alert" aria-live="polite"></span>
-            </div>
-
-            <!-- Password -->
-            <div class="form-field">
-              <label for="password">Contraseña
-			          <span class="form_required">*</span>
-              </label>
-              <div class="input-wrap">
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Entre 1 y 4 caracteres"
-                  required
-                  minlength="1"
-                  maxlength="4"
-                  autocomplete="new-password"
-                  aria-required="true"
-                  aria-describedby="password-err"
-                />
-                <button type="button" class="password-toggle" aria-label="Mostrar contraseña" tabindex="-1">
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-              <span id="password-err" class="form-error" role="alert" aria-live="polite"></span>
-            </div>
-
-            <!-- Nick -->
-            <div class="form-field reg-field">
-              <label for="nick">Nick</label>
-              <input
-                type="text"
-                id="nick" 
-                name="nick"
-                placeholder="@podo (opcional)"
-                autocomplete="family-name"
-                minlength="2"
-                aria-describedby="nick-err"
-              />
-              <span id="nick-err" class="form-error" role="alert" aria-live="polite"></span>
-            </div> 
-
-            <div class="form-field file-upload reg-field">
-              <label class="file-label" for="avatar">Foto Mistica (Opcional)</label>
-              <input type="file" id="avatar" accept="image/*" style="color:grey;">
-              <canvas id="previewCanvas" style="display:none;"></canvas>
-            </div>
-
-            <!-- Descripcion -->
-            <div class="form-field full reg-field">
-              <label for="fn-descripcion">Descripcion (opcional)</label>
-              <textarea
-                id="fn-descripcion"
-                name="descripcion"
-                placeholder="Contanos algo sobre vos..."
-                rows="3"
-                aria-label="Descripcion opcional"
-              ></textarea>
-            </div>           
-
-            <!-- Submit -->
-            <button type="submit" class="form-submit full" aria-label="Ingresar o registrarse" >
-              <span class="submit-icon" aria-hidden="true"><i class="fas fa-thumbs-up"></i></span>
-              INGRESAR
-            </button>
+    <!-- Contact Section -->
+    <section id="contacto">
+        
+			
             
-			    <button type="reset" class="form_btn_reset" id="btn_clear_form" aria-label="Limpiar todos los campos del formulario">Limpiar Formulario</button>
-          </div>
-        </form>
-		  </div>
-		</section>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="section-header">
+                    <span class="section-badge">Contacto</span>
+                    <h2 class="section-title">¿Buscás algo único?</h2>
+                    <p class="section-description">
+                        Encontrá tu próximo par favorito.
+                    </p>
+                </div>
 
-    </main>
-	
-  <button id="scrollTopBtn" class="btn_floating scroll-top-btn" aria-label="Volver arriba">
-		<img src="./assets/flechaArriba.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-	</button>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div class="contact-details">    
+                        <h4>Horarios de Atención</h4>
+                        <p>
+                            <strong>Lunes a Viernes:</strong> 10:30 - 18:00 hs<br>
+                            <strong>Sábados:</strong> 10:30 - 14:00 hs<br>
+                            <strong>Domingos:</strong> 10:30 - 14:00 hs (Feria Tristán Narvaja)
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h4>Contacto</h4>
+                        <p>
+                            WhatsApp: <a href="https://wa.me/59894872605" target="_blank" rel="noopener noreferrer"><strong>+598xx xxx xxx</strong></a><br>
+                            Instagram: <a href="https://www.instagram.com/alasrisas_trip/"> <strong>@alasrisas_trip</strong> </a><br>
+                            Email: <a href="mailto:alasrisastrip@gmail.com"><strong>alasrisastrip@gmail.com</strong></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💳</div>
+                    <div class="contact-details">
+                        <h4>Medios de Pago</h4>
+                        <p>
+                            Mercado Pago <br>
+							Transferencia bancaria<br>
+							Efectivo              
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Audio flotante -->
-  <div class="audio-float" id="audioFloat" role="region" aria-label="Reproductor de música de fondo">
-    <button id="audioToggleBtn" class="audio-float-btn" aria-label="Reproducir música de viaje" aria-pressed="false">
-      <i class="fas fa-music" aria-hidden="true"></i>
-    </button>
-    <audio id="tripAudio" src="./assets/porqueseme_antoja.mp3" loop preload="none" aria-label="Música de fondo del viaje a Florianópolis"></audio>
-  </div>
-
-  <a href="https://wa.me/59894872605?text=¡Quiero%20unirme%20al%20viaje!" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    data-tooltip="Llamame" 
-    class="btn_floating btn_whatsapp" 
-    id="btn_whatsapp" 
-    aria-label="Contactar por WhatsApp">
-    <span aria-hidden="true">
-      <img src="./assets/telefono-imagen-animada-0003.gif" alt="" width="34" height="34" loading="lazy" decoding="async">
-    </span>
-  </a>
-
-  
-<footer class="footer reveal" role="contentinfo" aria-label="Pie de página">
-  
- 
-  <nav class="footer-links" aria-label="Navegación del pie de página">
-    <a href="#faq">Preguntas frecuentes</a> .
-    <a href="#formContact">Me anoto</a> .
-    <a href="#muro-comentarios">Comentarios</a>
-  </nav>
-
- 
-  <section class="ft_info reveal" aria-label="Información legal">
-
-    <div class="ti-usu-profile reveal">
-      <div class="ti-profile">        
-        <img src="./assets/google-5-stars.svg" alt="Calificación de 5 estrellas en Google" loading="lazy" decoding="async" width="120" height="24">
-      </div>
-      <div class="ti-data">
-        <button type="button" id="theme_toggle" class="theme-toggle" aria-label="Cambiar a modo claro" aria-pressed="false">
-          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
-            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-              <line x1="12" y1="2.5" x2="12" y2="5"/>
-              <line x1="12" y1="19" x2="12" y2="21.5"/>
-              <line x1="2.5" y1="12" x2="5" y2="12"/>
-              <line x1="19" y1="12" x2="21.5" y2="12"/>
-              <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/>
-              <line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
-              <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/>
-              <line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
-            </g>
-          </svg>
-          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/>
-          </svg>
-        </button>              
-      </div>      
-    </div>
-
-  <div class="legal_container">
-      <img src="./imgs/logo- 63kb.png" class="ft_img_float" alt="logo alasRisas" width="120" height="120" loading="lazy" decoding="async" >
-
-    <button class="legal_toggle" type="button" id="legal-toggle" aria-label="Mostrar enlaces legales" aria-expanded="false" aria-controls="legal-links">
-      <span>Legal</span>
-    </button>
-    <section id="legal-links" class="ft_content_details" aria-hidden="true" role="group" aria-labelledby="legal-toggle" aria-live="polite">       
-						<details>	
-							<summary>Disclaimer</summary>
-								<p ><strong>Disclaimer / Descargo de responsabilidad:</strong> </p>	
-								<p >alasRisas es una herramienta comunitaria colaborativa para la autoorganización de viajes recreativos entre amigos.</p>
-								<p >No opera como una agencia de viajes minorista o mayorista ni comercializa paquetes turísticos bajo regulaciones comerciales. </p>
-								<p >Todo acuerdo financiero o logístico se efectúa bajo la responsabilidad de los participantes (O sea Nosotros).</p>
-                <p>Nos encargamos de organizar ideas, no de controlar el clima, los vuelos ni la suerte.</p>
-                <p>Importante: Las decisiones finales siempre pertenecen al grupo.</p>
-						</details>
-           <details>	
-							<summary>Aviso Legal</summary>
-                <p>Proyecto independiente.</p>
-								<p >Los resultados mencionados no son típicos.</p>	
-								<p >Los resultados individuales pueden variar.</p>	
-								<p >Este sitio no forma parte de Facebook ni de Google, YouTube, Facebook, Instagram, TikTok ni nada. Y no me importan una mierda.</p>	
-								<p>alasRisas no representa ni está patrocinado por ninguna gran empresa tecnológica.</p>
-						</details>
-            <details>
-              <summary>Política de privacidad</summary>
-              <p>En alasRisas recopilamos únicamente la información necesaria para organizar el viaje y mejorar la experiencia del grupo.</p>
-              <p>Tus datos son tuyos.</p>
-              <p>No vendemos tus datos, no los compartimos con terceros sin necesidad y tampoco hacemos cosas raras con ellos.</p>
-              <p>Si algún dato deja de ser necesario, podrá eliminarse cuando corresponda.</p>
-              <p>Tus datos sirven para organizar el viaje, no para perseguirte por Internet.</p>
-              <p>No vendemos información, no hacemos spam y tampoco tenemos tiempo para eso.</p>
-            </details>
-            <details>
-              <summary>Términos de uso</summary>
-              <p>Usar alasRisas significa jugar en equipo.</p>
-              <p>El uso de alasRisas implica aceptar un ambiente de respeto, colaboración y buena onda entre todos los participantes.</p>
-              <p>Cada integrante es responsable de la información que comparte y de las decisiones que toma durante la organización del viaje.</p>
-              <p>La idea es simple: disfrutar el viaje antes de que empiece.</p>
-          </details>
-          <details>
-            <summary>Soporte</summary>
-            <p>¿Encontraste un error o tienes una idea para mejorar alasRisas?</p>
-            <p>El desarrollo y mantenimiento del sitio se realiza desde 
-              <a href="https://kikiriya-software.netlify.app/" target="_blank" rel="noopener noreferrer" >Kikiriya Software
-                <span class="visually-hidden">(se abre en una nueva pestaña)</span>
-              </a> 
-            </p>
-            <p>Si algo explota (esperemos que no), avísanos.</p>
-            <p>Puedes comunicarte desde la página de soporte cuando quieras. Toda sugerencia suma.</p>
-            <p>Reporta errores y comparte ideas para mejorar alasRisas.</p>
-          </details>
-          <details>
-            <summary>Configuración de cookies</summary>
-              <p>Las únicas galletitas que nos gustan son las de la merienda, pero el navegador necesita algunas cookies para funcionar.</p>
-              <p>Puedes configurar o eliminar las cookies desde tu navegador cuando lo desees.</p>
-              <p>Si decides desactivarlas, algunas funciones podrían comportarse de forma diferente.</p>
-              <p>Tratamos de conseguir el máximo funcionamiento con lo aprendido.</p>
-          </details>
-          <details>
-            <summary>Agradecimientos</summary>
-              <p>Por colaborar con el icono </p>
-              <p>
-                <a href="https://icon-icons.com/es/authors/167-lorc-delapouite-contributors" target="_blank" rel="noopener noreferrer" >
-                      Icono Alado by Lorc <span class="visually-hidden">(se abre en una nueva pestaña)</span>
-                </a>
-              </p>
-          </details>
-        </section> 
+            <div class="map-container">
+			<div class="contact_map">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Ubicación</h4>
+                        <p>
+                            Galería Libertador<br>
+                            18 de Julio 921 esq. Convención<br>
+                            Montevideo, Uruguay
+                        </p>
+                    </div>
+                </div>
+				
+				<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-56.22472286224366%2C-34.92168953422568%2C-56.16807460784913%2C-34.890366415198656&amp;layer=mapnik&amp;marker=-34.90602946828792%2C-56.19639873504639" 
+				title="Mapa de la ubicación de Vitra en Galería Libertador, Montevideo" loading="lazy" style="border: 1px solid #7ad294" width="425" height="350">
+				</iframe>
+				<br/>
+				<small style= "color: #7ad294; text-align:center; font-size:.6em;">
+				<a href="https://www.openstreetmap.org/?mlat=-34.90603&amp;mlon=-56.19640#map=15/-34.90603/-56.19640"target="_blank" rel="noopener noreferrer">
+				Ver el mapa más grande
+				</a>
+				</small>
+				<br/>
+				<a href="https://www.google.com/maps/search/?api=1&query=18+de+Julio+921+Galer%C3%ADa+Libertador+Montevideo" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+					<span>Cómo llegar</span>
+				</a>
+				
+            </div>
         </div>
+    </section>
 
-  </section>
-					<!-- Copyright -->
-    <section class="footer-copyright reveal"> 
-            <p>Hecho con cariño por &copy;  <span id="current-year"></span> 
-              <a href="https://kikiriya-software.netlify.app/" target="_blank" rel="noopener noreferrer" 
-                style="text-decoration: underline;font-style: italic;">KikiriyaDevOps
-                <span class="visually-hidden">(se abre en una nueva pestaña)</span>
-              </a> </p>
-            <p>Todos los derechos reservados.</p>
-            <p class="footer-text">De Capurro al mundo, juntos siempre!</p>
-      </section>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <details>
+                    <summary>Información Legal</summary>
+                    <ul>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Envíos y Entregas</a></li>
+                        <li><a href="#">Política de Cambios</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Clicar Links</summary>
+                    <ul>
+                        <li><a href="https://kikiriya-devops.netlify.app/" target="_blank" rel="noopener noreferrer">Garantía de Autenticidad</a></li>
+                        <li><a href="disclaimer.html">Política de Privacidad</a></li>
+                    </ul>
+                </details>
+                <p id="parrafo_info_load"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> Vitra &copy; 2025 | Todos los derechos reservados.</p>
+			<p>  Lentes con alma y actitud 💚 Uruguay</p>
+        </div>
+    </footer>
 
-  <script type="module" src="js/main.js"></script>
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        ↑
+    </button>
+
+    <script>
+	const images = [
+		{
+			id: 1,
+            src: './imgs/lentes21.webp',
+            title: 'RALPH LAUREN',
+			subTitle:'Exclusividad Total',
+            description: 'Edición exclusiva con armazón original restaurado y cristal nuevo polarizado con filtro UV. Elegancia clásica en estado puro.',
+			precio: 4400,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 2,
+            src: './imgs/lentes19.webp',
+            title: 'LACOSTE',
+			subTitle:'Vanguardia y Estilo',
+            description: 'Diseño vanguardista de marca, con cristales nuevos y filtro 400UV para protección total sin perder el estilo.',
+			precio: 4600,
+			tarjeta:null,
+			category: 'de sol'
+        },
+		{
+			id: 3,
+            src: './imgs/lentes20.webp',
+            title: 'GUESS',
+			subTitle:'Lujo y Distinción',
+            description: 'Lujo y distinción en cada detalle: armazón original con cristal nuevo polarizado. Listo para robar miradas.',
+			precio: 3500,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 4,
+            src: './imgs/lentes13.webp',
+            title: 'Calvin Klein',
+			subTitle: 'Premium',
+            description: 'Modelo premium de sol con filtro 400UV. Líneas sobrias, liviano y atemporal.',
+			precio: 2600,
+			tarjeta:null,
+			category: 'de sol'
+        },
+		{
+			id: 5,
+            src: './imgs/lente12.webp',
+            title: 'RALPH LAUREN',
+			subTitle:'Elegancia Italiana',
+            description: 'Inspiración italiana: armazón original restaurado con cristal nuevo polarizado y acabados impecables.',
+			precio: 2600,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 6,
+            src: './imgs/lente10.webp',
+            title: 'VERSACE',
+			subTitle:'Exclusividad Total',
+            description: 'Pieza única de Versace con cristal nuevo polarizado y filtro 400UV. ¡Solo un par disponible!',
+			precio: 4400,
+			tarjeta:null,
+			category: 'de sol'
+        },
+		{
+			id: 7,
+            src: './imgs/lentes15.webp',
+            title: 'RAYBAN',
+			subTitle:'Aviator Clásico',
+            description: 'El icónico aviador con cristales nuevos polarizados. Un clásico que nunca pasa de moda.',
+			precio: 5200,
+			tarjeta:null,
+			category: 'de sol'
+        },
+		{
+			id: 8,
+            src: './imgs/lentes17.webp',
+            title: 'MYTHO',
+			subTitle:'Deporivo All Terrain',
+            description: 'Pensado para todo terreno: armazón original, cristales nuevos con protección UV y polarizado.',
+			precio: 3700,
+			tarjeta:null,
+			category: 'deportivo'
+        },
+		{
+			id: 9,
+            src: './imgs/lentes16.webp',
+            title: 'DIOR',
+			subTitle:'Exclusividad Total',
+            description: 'Exclusividad de Dior: cristales nuevos polarizados y detalles de diseño que marcan la diferencia.',
+			precio: 4800,
+			tarjeta:null,
+			category: 'de sol'
+        },
+		{
+			id: 10,
+            src: './imgs/lente11.webp',
+            title: 'Motor Oil',
+			subTitle:'Tu Mejor elección',
+            description: 'Tu mejor elección en estilo urbano: armazón original restaurado y cristal nuevo polarizado.',
+			precio: 2300,
+			tarjeta:null,
+			category: 'clasico'
+        },{
+			id: 11,
+            src: './imgs/lentes9.webp',
+            title: 'AIRE',
+            description: 'Liviano y fresco como el aire: cristales nuevos con filtro 400UV. ¡Última unidad!',
+			precio: 1900,
+			tarjeta:null,
+			category: 'de sol'
+        },
+		{
+			id: 12,
+            src: './imgs/lentes14.webp',
+            title: 'Paco Rabanne',
+			subTitle:'All Mind',
+            description: 'Filosofía All Mind: armazón original y cristal nuevo polarizado. ¡Solo uno disponible!',
+			precio: 2300,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 13,
+            src: './imgs/lentes1.webp',
+            title: 'Second Hand',
+			subTitle:'Super Selección',
+            description: 'Super selección de temporada: piezas únicas elegidas una por una. Tu estilo, tu historia.',
+			precio: '0X0',
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 14,
+            src: './imgs/lentes8.webp',
+            title: 'Giorgio Armani',
+			subTitle:'Viva La Vida',
+            description: 'Vive la vida con clase: armazón original restaurado y cristal nuevo polarizado.',
+			precio: 3600,
+			tarjeta:null,
+			category: 'clasico'
+        },{
+			id: 15,
+            src: './imgs/lentes3.webp',
+            title: 'MYTHO',
+            description: 'Deportivo y resistente con filtro 400UV y cristales nuevos. Máxima protección, máximo rendimiento.',
+			precio: 2600,
+			tarjeta:null,
+			category: 'deportivo'
+        },
+		{
+			id: 16,
+            src: './imgs/lentes7.webp',
+            title: 'RAYBAN',
+			subTitle:'Only You',
+            description: 'Solo para vos: armazón original con cristal ORIGINAL Ray-Ban (RB grabado en la última foto).',
+			precio: 2900,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 17,
+            src: './imgs/lente4.webp',
+            title: 'NOVA',
+			subTitle:'Elegancia y Estilo',
+            description: 'Elegancia y estilo en equilibrio: armazón original y cristal nuevo polarizado.',
+			precio: 2200,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 18,
+            src: './imgs/lentes6.webp',
+            title: 'CARRERA',
+			subTitle:'Máxima Fortaleza',
+            description: 'Construido para durar: cristales nuevos con filtro 400UV. ¡Solo uno en stock!',
+			precio: 2800,
+			tarjeta:null,
+			category: 'deportivo'
+        },
+		{
+			id: 19,
+            src: './imgs/lente2.webp',
+            title: 'MORMAII',
+			subTitle:'Deporte y Yo',
+            description: 'Tu compañero deportivo: armazón ligero y cristal nuevo polarizado con protección UV.',
+			precio: 2900,
+			tarjeta:null,
+			category: 'deportivo'
+        },
+		{
+			id: 20,
+            src: './imgs/lentes18.webp',
+            title: 'Ralph Lauren',
+			subTitle:'Mismo Estilo',
+            description: 'Sofisticación Ralph Lauren con cristales nuevos polarizados. ¡Solo una unidad disponible!',
+			precio: 3500,
+			tarjeta:null,
+			category: 'clasico'
+        },
+		{
+			id: 21,
+            src: './imgs/lente5.webp',
+            title: 'RAYBAN',
+			subTitle:'Nada Más Alto',
+            description: 'Nada más alto que esto: armazón y cristales ORIGINALES Ray-Ban (RB grabado en la última foto).',
+			precio: 3600,
+			tarjeta:null,
+			category: 'de sol'
+        }
+	];
+	
+	// Lista activa de productos. Se actualiza desde el panel vía Google Apps Script.
+	// Si no hay URL configurada o falla, se usa el catálogo estático (images) de arriba.
+	const APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqPtM21cGQYCWQ2_pRS-OzvS7FzC_QRO-BbG56bSuhwv7IILQudQPJbcOga-soRb8_1A/exec';
+	let products = images;
+
+	const CATEGORIES = ['de sol', 'deportivo', 'clasico'];
+
+	// Asigna un tipo de lente válido (de sol / deportivo / clásico) a cada producto.
+	function normalizeCategory(product) {
+		const cat = String(product.category || '').trim().toLowerCase();
+		if (CATEGORIES.includes(cat)) return cat;
+		const text = `${product.title} ${product.subTitle || ''} ${product.description || ''}`.toLowerCase();
+		if (text.includes('deport')) return 'deportivo';
+		if (text.includes('polariz') || text.includes('400uv') || text.includes('uv') || text.includes(' de sol')) return 'de sol';
+		return 'clasico';
+	}
+
+	async function loadProducts() {
+		if (!APP_SCRIPT_URL || !APP_SCRIPT_URL.startsWith('https://script.google.com')) {
+			return;
+		}
+		try {
+			const res = await fetch(`${APP_SCRIPT_URL}?action=list&_=${Date.now()}`);
+			if (!res.ok) throw new Error('Error de red');
+			const data = await res.json();
+			if (!Array.isArray(data)) throw new Error('Respuesta inválida');
+			if (data.length === 0) {
+				// La hoja está vacía: seguimos mostrando el catálogo local para que la
+				// sección nunca quede en 0 productos.
+				console.warn('La API devolvió 0 productos; usando catálogo local.');
+				return;
+			}
+			products = data.map((p) => Object.assign({}, p, { category: normalizeCategory(p) }));
+			buildBrandFilter();
+			renderProducts();
+		} catch (err) {
+			console.warn('No se pudieron cargar los productos desde la API; usando catálogo local.', err);
+		}
+	}
+
+	// Buscador + filtros + render dinámico de productos en #productos
+        const productsGrid = document.getElementById('productsGrid');
+        const catalogCount = document.getElementById('catalogCount');
+        const catalogEmpty = document.getElementById('catalogEmpty');
+        const catalogReset = document.getElementById('catalogReset');
+        const catalogSearch = document.getElementById('catalogSearch');
+        const catalogSearchClear = document.getElementById('catalogSearchClear');
+        const filterBrand = document.getElementById('filterBrand');
+        const priceMinInput = document.getElementById('priceMin');
+        const priceMaxInput = document.getElementById('priceMax');
+        const catalogChips = document.querySelectorAll('.catalog-chip');
+
+        const filters = {
+            search: '',
+            brand: '',
+            category: 'all',
+            priceMin: null,
+            priceMax: null
+        };
+
+        function formatPrice(precio) {
+            return typeof precio === 'number' ? `Desde $${precio.toLocaleString('es-UY')}` : precio;
+        }
+
+        function toTitleCase(str) {
+            return String(str || '').trim().toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase());
+        }
+
+        function productName(product) {
+            const parts = [toTitleCase(product.title), toTitleCase(product.subTitle)].filter(Boolean);
+            return parts.length ? parts.join(' ') : '';
+        }
+
+        function buildAltText(product) {
+            const name = productName(product);
+            return name
+                ? `${name}, lente restaurado - Vitra Montevideo`
+                : 'Lente de sol original restaurado - Vitra Montevideo';
+        }
+
+        function buildWaLink(product) {
+            const name = productName(product);
+            const price = typeof product.precio === 'number' ? `$${product.precio.toLocaleString('es-UY')}` : '';
+            const msg = `Hola Vitra! Me interesa ${name}${price ? ` de ${price}` : ''}.`;
+            return `https://wa.me/59894872605?text=${encodeURIComponent(msg)}`;
+        }
+
+        function getFilteredProducts() {
+            const q = filters.search.trim().toLowerCase();
+            return products.filter((p) => {
+                if (filters.category !== 'all' && p.category !== filters.category) return false;
+                if (filters.brand && p.title.trim().toUpperCase() !== filters.brand) return false;
+                if (typeof p.precio === 'number') {
+                    if (filters.priceMin !== null && p.precio < filters.priceMin) return false;
+                    if (filters.priceMax !== null && p.precio > filters.priceMax) return false;
+                }
+                if (q) {
+                    const hay = `${p.title} ${p.subTitle || ''} ${p.description || ''}`.toLowerCase();
+                    if (!hay.includes(q)) return false;
+                }
+                return true;
+            });
+        }
+
+        function buildBrandFilter() {
+            if (!filterBrand) return;
+            const seen = new Map();
+            products.forEach((p) => {
+                const key = String(p.title || '').trim().toUpperCase();
+                if (key && !seen.has(key)) seen.set(key, String(p.title).trim());
+            });
+            const brands = [...seen.values()].sort((a, b) => a.localeCompare(b, 'es'));
+            filterBrand.innerHTML = '<option value="">Todas las marcas</option>';
+            brands.forEach((b) => {
+                const opt = document.createElement('option');
+                opt.value = b.toUpperCase();
+                opt.textContent = b;
+                filterBrand.appendChild(opt);
+            });
+        }
+
+        function renderProducts() {
+            if (!productsGrid) return;
+            productsGrid.innerHTML = '';
+
+            const list = getFilteredProducts();
+            const total = products.length;
+
+            catalogCount.textContent = list.length === total
+                ? `${total} ${total === 1 ? 'lente' : 'lentes'} disponibles`
+                : `Mostrando ${list.length} de ${total} ${total === 1 ? 'lente' : 'lentes'}`;
+
+            catalogEmpty.hidden = list.length > 0;
+
+            list.forEach((image) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                const imageBtn = document.createElement('button');
+                imageBtn.type = 'button';
+                imageBtn.className = 'product-image';
+                imageBtn.setAttribute('aria-haspopup', 'dialog');
+                imageBtn.setAttribute('aria-label', `Ver detalle de ${productName(image)}`);
+                imageBtn.addEventListener('click', () => openProductModal(image));
+                imageBtn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openProductModal(image);
+                    }
+                });
+
+                const img = document.createElement('img');
+                img.className = 'img_lente';
+                img.src = image.src;
+                img.alt = buildAltText(image);
+                img.loading = 'lazy';
+
+                const hint = document.createElement('span');
+                hint.className = 'product-image__hint';
+                hint.textContent = 'Ver detalle';
+                hint.setAttribute('aria-hidden', 'true');
+
+                imageBtn.append(img, hint);
+
+                const content = document.createElement('div');
+                content.className = 'product-content';
+
+                const title = document.createElement('h3');
+                title.className = 'product-title';
+                title.textContent = toTitleCase(image.title);
+
+                const price = document.createElement('div');
+                price.className = 'product-price';
+                price.textContent = formatPrice(image.precio);
+
+                const consultar = document.createElement('a');
+                consultar.href = buildWaLink(image);
+                consultar.target = '_blank';
+                consultar.rel = 'noopener noreferrer';
+                consultar.className = 'btn btn-primary';
+                consultar.style.width = '100%';
+                consultar.style.textAlign = 'center';
+                const span = document.createElement('span');
+                span.textContent = 'Consultar';
+                consultar.appendChild(span);
+
+                content.append(title, price, consultar);
+                card.append(imageBtn, content);
+                productsGrid.appendChild(card);
+            });
+        }
+
+        // Modal de detalle de producto
+        const productModal = document.getElementById('productModal');
+        const productModalContent = document.getElementById('productModalContent');
+        const productModalClose = document.getElementById('productModalClose');
+        let lastFocused = null;
+
+        function buildProductModalContent(product) {
+            productModalContent.innerHTML = '';
+
+            const img = document.createElement('img');
+            img.className = 'img_lente';
+            img.src = product.src;
+            img.alt = buildAltText(product);
+
+            const badge = document.createElement('span');
+            badge.className = 'product-badge';
+            badge.textContent = product.title;
+
+            const title = document.createElement('h3');
+            title.textContent = product.subTitle || product.title;
+
+            const desc = document.createElement('p');
+            desc.textContent = product.description;
+
+            const price = document.createElement('div');
+            price.className = 'product-price';
+            price.textContent = formatPrice(product.precio);
+
+            const consultar = document.createElement('a');
+            consultar.href = buildWaLink(product);
+            consultar.target = '_blank';
+            consultar.rel = 'noopener noreferrer';
+            consultar.className = 'btn btn-primary';
+            const span = document.createElement('span');
+            span.textContent = 'Consultar';
+            consultar.appendChild(span);
+            consultar.addEventListener('click', closeProductModal);
+
+            productModalContent.append(img, badge, title, desc, price, consultar);
+        }
+
+        function openProductModal(product) {
+            if (!productModal) return;
+            lastFocused = document.activeElement;
+            buildProductModalContent(product);
+            productModal.classList.add('is-open');
+            productModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            productModalClose.focus();
+        }
+
+        function closeProductModal() {
+            if (!productModal || !productModal.classList.contains('is-open')) return;
+            productModal.classList.remove('is-open');
+            productModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if (lastFocused && lastFocused.focus) lastFocused.focus();
+        }
+
+        productModalClose.addEventListener('click', closeProductModal);
+
+        document.querySelectorAll('[data-modal-close]').forEach((el) => {
+            el.addEventListener('click', closeProductModal);
+        });
+
+        productModal.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                e.stopPropagation();
+                closeProductModal();
+                return;
+            }
+            if (e.key === 'Tab') {
+                const focusables = productModal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+                if (focusables.length === 0) return;
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+		
+	
+	
+ // ==================================================================================
+	// INTERSECTION OBSERVER FOR ANIMATIONS
+		// Intersection Observer for animations
+		
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+		
+		// Observe all elements
+        document.querySelectorAll('#nosotros').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(130px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+		       
+	
+		
+		
+		//========================================================================================
+	
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeToggle.setAttribute('aria-pressed', currentTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            themeToggle.setAttribute('aria-pressed', theme === 'dark');
+            localStorage.setItem('theme', theme);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        const updateMenuAria = () => {
+            menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        };
+
+        const closeMenu = () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            updateMenuAria();
+        };
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            updateMenuAria();
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        navMenu.addEventListener('click', () => {
+            closeMenu();
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > 200) {
+                header.classList.add('scrolled');
+                header.style.backgroundColor = "var(--white_transp2)";
+            } else {
+                header.classList.remove('scrolled');
+                header.style.backgroundColor = "var(--white_transp1)";
+            }
+
+            lastScroll = currentScroll;
+
+            if (currentScroll > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top:0,
+                behavior: 'smooth'				
+            });
+			
+        });
+
+        // Navegación por vistas (página única en el mismo index.html)
+        const SECTION_IDS = ['#inicio', '#nosotros', '#productos', '#proceso', '#sustentabilidad', '#testimonios', '#contacto'];
+        const DEFAULT_VIEW = ['#inicio', '#productos', '#contacto'];
+
+        function showView(href) {
+            const visible = href === '#inicio' ? DEFAULT_VIEW : [href];
+            SECTION_IDS.forEach((id) => {
+                const el = document.querySelector(id);
+                if (!el) return;
+                el.classList.toggle('view-hidden', !visible.includes(id));
+            });
+        }
+
+        showView('#inicio');
+
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (!anchor) return;
+            if (anchor.classList.contains('skip-link')) {
+                showView('#inicio');
+                return;
+            }
+            e.preventDefault();
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+            showView(href);
+            requestAnimationFrame(() => {
+                if (href === '#inicio') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+
+        // Console welcome message
+        console.log('%c¡Bienvenido a Vitra! 👓', 'font-size: 20px; color:yellow; font-weight: bold;');
+        console.log('%cEmprendedoras con + estilo en un solo lugar', 'color:yellow; font-size: 14px;');
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            const loadTime = Math.round(performance.now());
+            console.log(`Página cargada en ${loadTime}ms`);
+			const parrafo_info_load = document.getElementById('parrafo_info_load');
+			parrafo_info_load.style.fontStyle = "italic"; 
+			parrafo_info_load.style.fontFamily = 'Playfair Display';
+			parrafo_info_load.style.fontSize = '1em';
+			parrafo_info_load.style.color = 'var(--accent)';
+			parrafo_info_load.textContent=`(Página cargada en ${loadTime}ms)`;
+        });
+
+        // Easter egg - konami code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
+            
+            if (konamiCode.join('') === konamiSequence.join('')) {
+                document.body.style.animation = 'rainbow 2s infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                    alert('¡Código secreto activado! 🎉 Obtén 10% de descuento en tu próxima compra. Código: VITRA10');
+                }, 2000);
+            }
+        });
+
+        // Add rainbow animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (prefersReducedMotion) {
+            // Disable animations for users who prefer reduced motion
+            document.querySelectorAll('*').forEach(el => {
+                el.style.animation = 'none';
+                el.style.transition = 'none';
+            });
+        }
+
+        // Buscador y filtros de la colección
+        catalogSearch.addEventListener('input', () => {
+            filters.search = catalogSearch.value;
+            catalogSearchClear.hidden = !catalogSearch.value;
+            renderProducts();
+        });
+
+        catalogSearchClear.addEventListener('click', () => {
+            catalogSearch.value = '';
+            filters.search = '';
+            catalogSearchClear.hidden = true;
+            catalogSearch.focus();
+            renderProducts();
+        });
+
+        filterBrand.addEventListener('change', () => {
+            filters.brand = filterBrand.value;
+            renderProducts();
+        });
+
+        catalogChips.forEach((chip) => {
+            chip.addEventListener('click', () => {
+                catalogChips.forEach((c) => c.classList.toggle('is-active', c === chip));
+                filters.category = chip.dataset.category;
+                renderProducts();
+            });
+        });
+
+        let priceTimer = null;
+        const onPriceInput = () => {
+            clearTimeout(priceTimer);
+            priceTimer = setTimeout(() => {
+                filters.priceMin = priceMinInput.value !== '' ? Number(priceMinInput.value) : null;
+                filters.priceMax = priceMaxInput.value !== '' ? Number(priceMaxInput.value) : null;
+                renderProducts();
+            }, 250);
+        };
+        priceMinInput.addEventListener('input', onPriceInput);
+        priceMaxInput.addEventListener('input', onPriceInput);
+
+        catalogReset.addEventListener('click', () => {
+            filters.search = '';
+            filters.brand = '';
+            filters.category = 'all';
+            filters.priceMin = null;
+            filters.priceMax = null;
+            catalogSearch.value = '';
+            catalogSearchClear.hidden = true;
+            filterBrand.value = '';
+            priceMinInput.value = '';
+            priceMaxInput.value = '';
+            catalogChips.forEach((c) => c.classList.toggle('is-active', c.dataset.category === 'all'));
+            renderProducts();
+        });
+
+        function initCatalog() {
+            buildBrandFilter();
+            renderProducts();
+        }
+
+        initCatalog();
+
+		function initTestimonialsSlider() {
+            const viewport = document.getElementById('testimonialsViewport');
+            const prevBtn = document.getElementById('testimonialsPrev');
+            const nextBtn = document.getElementById('testimonialsNext');
+            if (!viewport || !prevBtn || !nextBtn) return;
+
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const scrollByCard = (direction) => {
+                const card = viewport.querySelector('.testimonial-card');
+                const width = card ? card.offsetWidth : viewport.clientWidth;
+                viewport.scrollBy({
+                    left: direction * width,
+                    behavior: reducedMotion ? 'auto' : 'smooth'
+                });
+            };
+
+            prevBtn.addEventListener('click', () => scrollByCard(-1));
+            nextBtn.addEventListener('click', () => scrollByCard(1));
+
+            viewport.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                    e.preventDefault();
+                    scrollByCard(-1);
+                }
+                if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+                    e.preventDefault();
+                    scrollByCard(1);
+                }
+            });
+        }
+
+        initTestimonialsSlider();
+
+		loadProducts();
+
+        // Add page visibility API to pause animations when tab is not active
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                document.querySelectorAll('*').forEach(el => {
+                    const style = window.getComputedStyle(el);
+                    if (style.animationName !== 'none') {
+                        el.style.animationPlayState = 'paused';
+                    }
+                });
+            } else {
+                document.querySelectorAll('*').forEach(el => {
+                    el.style.animationPlayState = 'running';
+                });
+            }
+        });
+
+        // Dynamic copyright year
+        const currentYear = new Date().getFullYear();
+        document.querySelectorAll('.footer-bottom p').forEach(p => {
+            if (p.textContent.includes('2025')) {
+                p.textContent = p.textContent.replace('2025', currentYear);
+            }
+        });
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', (e) => {
+            const typing = e.target.matches('input, textarea, select');
+            if (e.key === 'Escape') {
+                closeMenu();
+            } else if (e.key === '/' && !typing) {
+                e.preventDefault();
+                if (catalogSearch) catalogSearch.focus();
+            }
+        });
+
+        // Add loading indicator for external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            if (!link.href.includes(window.location.hostname)) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+
+        // Add print styles dynamically
+        const printStyles = document.createElement('style');
+        printStyles.textContent = `
+            @media print {
+                header, .scroll-top, .cta-buttons { display: none !important; }
+                body { background: white !important; color: black !important; }
+                a { text-decoration: underline !important; }
+            }
+        `;
+        document.head.appendChild(printStyles);
+
+        // Console easter egg
+        setTimeout(() => {
+            console.log('%c💼 ¿Buscas un sitio para tus ideas?', 'color:orange;font-size: 16px; font-weight: bold;');
+            console.log(' %cEnvía tu mail a: www.kikiriyadevops@gmail.com', ' color:orange; font-size: 14px;');
+            console.log('%c📞: 094872605', 'color:orange;font-size: 14px;');
+        }, 1500);
+
+        // Final console message
+        console.log('%cSitio desarrollado con ❤️ y 👽 por KikiriyaDevOps', 'font-size: 12px; color: #d4af37;');
+        console.log('%cTodas las funcionalidades están optimizadas y testeadas ✓', 'font-size: 12px; color: #4CAF50;');
+    </script>
+
+    <a href="https://wa.me/59894872605?text=Hola%20Vitra!%20Quiero%20hacer%20una%20consulta%20sobre%20sus%20lentes." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp (se abre en pestaña nueva)">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="#ffffff" aria-hidden="true">
+            <path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.465 1.71 6.417L3.2 28.8l6.54-1.67a12.74 12.74 0 0 0 6.26 1.596h.006c7.06 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.634-3.746-9.05A12.72 12.72 0 0 0 16.004 3.2zm0 23.43h-.005a10.6 10.6 0 0 1-5.4-1.48l-.388-.23-4.02 1.03 1.073-3.92-.253-.4a10.57 10.57 0 0 1-1.62-5.64c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.51 1.107 7.516 3.117a10.57 10.57 0 0 1 3.113 7.53c0 5.86-4.77 10.63-10.63 10.63zm5.83-7.96c-.32-.16-1.89-.932-2.183-1.039-.293-.107-.506-.16-.72.16-.213.32-.826 1.039-1.013 1.253-.186.213-.373.24-.693.08-.32-.16-1.35-.498-2.573-1.588-.95-.848-1.593-1.895-1.78-2.215-.186-.32-.02-.493.14-.652.144-.144.32-.373.48-.56.16-.187.213-.32.32-.533.107-.214.053-.4-.027-.56-.08-.16-.72-1.734-.987-2.374-.26-.626-.524-.54-.72-.55-.186-.01-.4-.012-.613-.012-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667 0 1.573 1.146 3.093 1.306 3.307.16.213 2.257 3.447 5.47 4.833.764.33 1.36.527 1.826.675.767.243 1.466.208 2.018.126.616-.091 1.89-.773 2.157-1.52.267-.746.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373z"/>
+        </svg>
+    </a>
 </body>
 </html>
-
-
